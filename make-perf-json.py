@@ -10,20 +10,22 @@ cur = db.cursor()
 
 out = {}
 for plat in PLATFORMS:
+    # * 1000 to match javascript
     cur.execute('''
-SELECT time, changeset, pull_request, compile_time, test_time
+SELECT time * 1000, changeset, pull_request, build_num, compile_time, test_time
 FROM change INNER JOIN build ON change.ROWID = build.change_id
 WHERE plat = ?
 ORDER BY time
+LIMIT 500
 ''', (plat,))
 
     compile = []
     test = []
     info = []
-    for time, changeset, pull_request, compile_time, test_time in cur:
+    for time, changeset, pull_request, build_num, compile_time, test_time in cur:
         compile.append((time,compile_time))
         test.append((time, test_time))
-        info.append({'changeset': changeset, 'pull_request': pull_request})
+        info.append({'changeset': changeset, 'pull_request': pull_request, 'build_num': build_num})
 
     out[plat] = {'plat': plat, 'compile': compile, 'info': info, 'test': test}
 

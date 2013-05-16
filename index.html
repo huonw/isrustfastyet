@@ -7,19 +7,24 @@
   </head>
   <body>
     <div id='wrapper'>
-      <h1>Is Rust fast yet?</h1>
-      <h2>Compile time</h2>
-      <div id='compile-plot-box' class='plot-box'></div>
-      <h2>Testsuite time</h2>
-      <div id='test-plot-box' class='plot-box'></div>
+      <div class='plot-block'>
+        <h2>Compile time</h2>
+        <div id='compile-plot-box' class='plot-box'></div>
+      </div>
+      <div class='plot-block'>
+        <h2>Testsuite time</h2>
+        <div id='test-plot-box' class='plot-box'></div>
+      </div>
 
-      <small>Uses data from
-        the <A href="http://buildbot.rust-lang.org/">Rust
-        buildbot</a>. <A href="https://github.com/huonw/isrustfastyet">Source</a>.</small>
+      <p id="footer"><a href="http://buildbot.rust-lang.org/">Buildbot</a>
+        build times for each successful merge by
+        bors. <A href="https://github.com/huonw/isrustfastyet">Source
+        code</a>. <small>Made by Huon Wilson (aka dbaupp).</small></p>
     </div>
 
     <script type='text/javascript' src='jquery-2.0.0.min.js'></script>
     <script type='text/javascript' src='flot/jquery.flot.min.js'></script>
+    <script type='text/javascript' src='flot/jquery.flot.time.min.js'></script>
     <script type='text/javascript' src='tooltip.js'></script>
     <script type='text/javascript' src='perf.js'></script>
     <script type='text/javascript' src='script.js'></script>

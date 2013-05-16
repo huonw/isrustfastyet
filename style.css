@@ -1,11 +1,27 @@
 #wrapper {
-  max-width: 800px;
+  max-width: 1250px;
   margin: auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: 18pt
+}
+
+.plot-block {
+  width: 600px;
+  display: inline-block
 }
 
 .plot-box {
   width: 600px;
   height: 400px;
+}
+
+#footer {
+  margin-top: 10px;
+  padding-top: 5px;
+  border-top: 1px solid gray;
 }
 
 /* taken from arewefastyet.com */

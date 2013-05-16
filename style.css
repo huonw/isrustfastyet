@@ -1,0 +1,54 @@
+#wrapper {
+  max-width: 800px;
+  margin: auto;
+}
+
+.plot-box {
+  width: 600px;
+  height: 400px;
+}
+
+/* taken from arewefastyet.com */
+.tooltip {
+  font-size: small;
+ -moz-border-radius:.5em;
+ -webkit-border-radius:.5em;
+ border-radius: .5em;
+ background-color:#000;
+ color:#FFF;
+ display:none;
+ opacity:0.8;
+ padding:.25em;
+ position:absolute;
+}
+.tooltip a:link, .tooltip a:active, .tooltip a:visited {
+ color:#FFF;
+ text-decoration: underline;
+}
+.tooltip a:hover {
+ color:#FFF;
+ text-decoration: none;
+}
+
+.closeable {
+ padding: 15px;
+ opacity: 1.0;
+ text-align: left;
+ padding-top: 8px;
+}
+
+.closeButton {
+ color:#CCC;
+ font-family: monospace;
+ cursor: pointer;
+ float: right;
+}
+
+.tiptext {
+ background: #222;
+ -moz-border-radius:.5em;
+ -webkit-border-radius:.5em;
+ border-radius: .5em;
+ padding: 10px;
+ clear: both;
+}

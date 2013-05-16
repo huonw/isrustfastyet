@@ -1,0 +1,21 @@
+Monitors the performance of Rust incoming.
+
+Heavily inspired by arewefastyet.com (including borrowing JS and
+CSS!).
+
+A fairly quick hack, doesn't do anything fancy, just hits the buildbot
+JSON api and puts it into a database, and then (separately) constructs
+a JSON file (`perf.js`, which sets the `PERF_DATA` global variable).
+
+To initialise:
+
+   sqlite3 perf.sqlite3 < perf.sql
+   ./build-perf.py
+   ./make-perf-json.py
+
+This should make the `perf.js` file, and you'll be go to go.
+
+Requires Python 3 and the requests library.
+
+(To build historical data, change the HISTORY variable in
+`build-perf.py`.)

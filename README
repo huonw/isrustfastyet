@@ -13,7 +13,10 @@ To initialise:
    ./build-perf.py
    ./make-perf-json.py
 
-This should make the `perf.js` file, and you'll be go to go.
+This should make the `perf.js` file, and you're good to go, just open
+`index.html` in your favourite browser. (The other option is to just
+use the prebuilt version hosted by GitHub pages from this repo
+http://huonw.github.io/isrustfastyet/)
 
 Requires Python 3 and the requests library.
 

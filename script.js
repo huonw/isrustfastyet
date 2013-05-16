@@ -27,7 +27,7 @@ $(function() {
       hoverable: true,
       clickable: true
     },
-    xaxis: {mode: "time"},
+    xaxis: {mode: "time", max: Date.now()},
     yaxis: {min: 0}
   };
   var comp_box = $('#compile-plot-box');

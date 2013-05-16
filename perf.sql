@@ -1,5 +1,7 @@
 DROP TABLE change;
 DROP TABLE build;
+DROP INDEX build_plat;
+DROP INDEX build_change_id;
 
 CREATE TABLE change (
        changeset CHAR(40) UNIQUE,
@@ -16,3 +18,4 @@ CREATE TABLE build (
 );
 
 CREATE INDEX build_plat ON build (plat);
+CREATE INDEX build_change_id ON build (change_id);

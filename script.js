@@ -27,7 +27,7 @@ $(function() {
       hoverable: true,
       clickable: true
     },
-    xaxis: {mode: "time", max: Date.now()},
+    xaxis: {mode: "time", min: Date.now() - 1000*3600*24*7, max: Date.now()},
     yaxis: {min: 0}
   };
   var comp_box = $('#compile-plot-box');

@@ -28,7 +28,8 @@ $(function() {
       clickable: true
     },
     xaxis: {mode: "time", min: Date.now() - 1000*3600*24*7, max: Date.now()},
-    yaxis: {min: 0}
+    yaxis: {min: 0},
+    legend: {position: "nw"}
   };
   var comp_box = $('#compile-plot-box');
   var comp_plot = $.plot(comp_box, comp_series, options);

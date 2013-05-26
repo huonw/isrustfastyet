@@ -14,7 +14,7 @@ for plat in PLATFORMS:
     cur.execute('''
 SELECT time * 1000, changeset, pull_request, build_num, compile_time, test_time
 FROM change INNER JOIN build ON change.ROWID = build.change_id
-WHERE plat = ?
+WHERE plat = ? AND datetime(time, 'unixepoch', 'utc') >= datetime('now', 'utc', '-7 day')
 ORDER BY time
 LIMIT 500
 ''', (plat,))

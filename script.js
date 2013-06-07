@@ -1,5 +1,15 @@
 $(function() {
-  var comp_series = [], test_series = [];
+  var hashes = {}, has_hash = false;
+  // allow hashes to be specified via #foo,bar,baz and they'll be
+  // marked with a vertical line
+  $.each(window.location.hash.replace(/^#/, '').split(','),
+         function(i, val) {
+           // space to avoid conflicts with built-in properties
+           hashes[' ' + val.slice(0,7)] = true;
+           has_hash = true;
+         });
+
+  var comp_series = [], test_series = [], markings = [];
   var  i = 0;
   $.each(
     PERF_DATA,
@@ -7,16 +17,32 @@ $(function() {
       comp_series.push({
         color: i,
         label: plat,
-        data: val['compile']
+        data: val.compile
       });
       test_series.push({
         color: i,
         label: plat,
-        data: val['test']
+        data: val.test
       });
 
       i++;
     });
+
+  if (has_hash) {
+    var data = PERF_DATA.linux;
+    $.each(
+      data['info'],
+      function(i, val) {
+        if (hashes[' ' + val.changeset.slice(0, 7)] === true) {
+          var position = data.compile[i][0];
+          markings.push({
+            color: 'grey',
+            lineWidth: 2,
+            xaxis: {from: position, to: position}
+          });
+        }
+      });
+  }
 
   var options = {
     series: {
@@ -25,7 +51,8 @@ $(function() {
     },
     grid: {
       hoverable: true,
-      clickable: true
+      clickable: true,
+      markings: markings
     },
     xaxis: {mode: "time", min: Date.now() - 1000*3600*24*7, max: Date.now()},
     yaxis: {min: 0},
@@ -60,7 +87,9 @@ $(function() {
 
       var b_url = 'http://buildbot.rust-lang.org/builders/auto-' + plat + '/builds/' + build_num;
       var b = 'Build: <a href="' + b_url + '"> ' + plat + ' ' + build_num + '</a>';
-      var tt = new ToolTip(item.pageX, item.pageY, item, pr + '<br>' + c + '<br>' + t + '<br>' + b);
+      var changeset_url = 'https://github.com/mozilla/rust/commit/' + changeset;
+      var cs = 'Merge commit: <a href="' + changeset_url + '">' + changeset.slice(0,7) + '</a>';
+      var tt = new ToolTip(item.pageX, item.pageY, item, [pr, c, t, b, cs].join('<br>'));
       tt.drawFloating();
     }
   }

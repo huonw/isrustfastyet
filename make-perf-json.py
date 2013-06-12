@@ -10,12 +10,12 @@ cur = db.cursor()
 
 out = {}
 for plat in PLATFORMS:
-    # * 1000 to match javascript, and -8 days to give a buffer to make
+    # * 1000 to match javascript, and -11 days to give a buffer to make
     # * the plot look nicer
     cur.execute('''
 SELECT time * 1000, changeset, pull_request, build_num, compile_time, test_time
 FROM change INNER JOIN build ON change.ROWID = build.change_id
-WHERE plat = ? AND datetime(time, 'unixepoch', 'utc') >= datetime('now', 'utc', '-8 day')
+WHERE plat = ? AND datetime(time, 'unixepoch', 'utc') >= datetime('now', 'utc', '-11 day')
 ORDER BY time
 LIMIT 500
 ''', (plat,))

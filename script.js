@@ -54,7 +54,7 @@ $(function() {
       clickable: true,
       markings: markings
     },
-    xaxis: {mode: "time", min: Date.now() - 1000*3600*24*7, max: Date.now()},
+    xaxis: {mode: "time", min: Date.now() - 1000*3600*24*10, max: Date.now()},
     yaxis: {min: 0},
     legend: {position: "nw"}
   };

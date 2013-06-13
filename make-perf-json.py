@@ -32,6 +32,6 @@ LIMIT 500
 
 
 with open('perf.js', 'w') as f:
-    f.write('window.PERF_DATA = ')
-    json.dump(out, f, separators=(',', ':'))
-    f.write(';')
+    f.write('window.PERF_DATA =\n')
+    json.dump(out, f, separators=(',\n', ':\n'))
+    f.write('\n;')

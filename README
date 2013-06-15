@@ -1,9 +1,9 @@
-Monitors the performance of Rust incoming.
+Monitors the performance of Rust master.
 
 Heavily inspired by arewefastyet.com (including borrowing JS and
 CSS!).
 
-A fairly quick hack, doesn't do anything fancy, just hits the buildbot
+A fairly quick hack: doesn't do anything fancy, just hits the buildbot
 JSON api and puts it into a database, and then (separately) constructs
 a JSON file (`perf.js`, which sets the `PERF_DATA` global variable).
 
@@ -15,7 +15,7 @@ To initialise:
 
 This should make the `perf.js` file, and you're good to go, just open
 `index.html` in your favourite browser. (The other option is to just
-use the prebuilt version hosted by GitHub pages from this repo
+use the prebuilt version hosted by GitHub pages from this repo:
 http://huonw.github.io/isrustfastyet/)
 
 Requires Python 3 and the requests library.

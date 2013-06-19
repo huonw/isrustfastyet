@@ -29,19 +29,23 @@ $(function() {
     });
 
   if (has_hash) {
-    var data = PERF_DATA.linux;
-    $.each(
-      data['info'],
-      function(i, val) {
-        if (hashes[' ' + val.changeset.slice(0, 7)] === true) {
-          var position = data.compile[i][0];
-          markings.push({
-            color: 'grey',
-            lineWidth: 2,
-            xaxis: {from: position, to: position}
-          });
-        }
-      });
+    var drawLines = function(data) {
+      if (data == undefined) return;
+      $.each(
+        data['info'],
+        function(i, val) {
+          if (hashes[' ' + val.changeset.slice(0, 7)] === true) {
+            var position = data.compile[i][0];
+            markings.push({
+              color: 'grey',
+              lineWidth: 2,
+              xaxis: {from: position, to: position}
+            });
+          }
+        });
+    };
+    drawLines(PERF_DATA.linux); // old targets
+    drawLines(PERF_DATA['linux-64-opt']); // new targets
   }
 
   var options = {
@@ -81,7 +85,12 @@ $(function() {
       var comp = series.compile[item.dataIndex][1];
       var test = series.test[item.dataIndex][1];
 
-      var pr = '<a href="https://github.com/mozilla/rust/pull/' + pr_num + '">Pull Request #' + pr_num + '</a>';
+
+      var pr = 'No pull request';
+      if (pr_num !== null) {
+        pr = '<a href="https://github.com/mozilla/rust/pull/' + pr_num +
+          '">Pull Request #' + pr_num + '</a>';
+      }
       var c = 'Compile time: ' + comp + 's';
       var t = 'Test time: ' + test + 's';
 

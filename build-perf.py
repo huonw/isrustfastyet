@@ -50,11 +50,12 @@ for plat in PLATFORMS:
 
         try:
             assert build['text'] == ['build', 'successful']
+            assert changeset is not None
         except (KeyError, AssertionError):
-            print(changeset, 'not successful (yet)')
+            print(i, changeset, 'not successful (yet)')
             continue
 
-
+        print(i, changeset, 'successful')
         builds[changeset][plat] = build
 
 
@@ -76,7 +77,10 @@ for chst, bs in builds.items():
 
     changes = changes[0]
     comment = changes['comments']
-    pull_request = int(re.match('auto merge of #(\d+)', comment).group(1))
+    try:
+        pull_request = int(re.match('auto merge of #(\d+)', comment).group(1))
+    except:
+        pull_request = None # not a merge commit
     time = changes['when']
 
     cur.execute('INSERT INTO change (changeset, pull_request, time) VALUES (?,?,?)',

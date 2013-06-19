@@ -1,9 +1,7 @@
 window.PERF_DATA =
 {"win":
 {"compile":
-[[1370727070000,
-1546],
-[1370744171000,
+[[1370744171000,
 1449],
 [1370756050000,
 1462],
@@ -165,12 +163,6 @@ window.PERF_DATA =
 1363]],
 "info":
 [{"build_num":
-1610,
-"changeset":
-"470bf0dfb362e7494cfddf4e7d443e1264dfdf2f",
-"pull_request":
-7016},
-{"build_num":
 1613,
 "changeset":
 "1f0c05ff745cbb40ad065be6522e2c671fc6bb93",
@@ -651,9 +643,7 @@ window.PERF_DATA =
 "pull_request":
 7197}],
 "test":
-[[1370727070000,
-125],
-[1370744171000,
+[[1370744171000,
 77],
 [1370756050000,
 78],
@@ -817,9 +807,7 @@ window.PERF_DATA =
 "win"},
 "mac":
 {"compile":
-[[1370727070000,
-1371],
-[1370744171000,
+[[1370744171000,
 1373],
 [1370756050000,
 1371],
@@ -981,12 +969,6 @@ window.PERF_DATA =
 1360]],
 "info":
 [{"build_num":
-1629,
-"changeset":
-"470bf0dfb362e7494cfddf4e7d443e1264dfdf2f",
-"pull_request":
-7016},
-{"build_num":
 1632,
 "changeset":
 "1f0c05ff745cbb40ad065be6522e2c671fc6bb93",
@@ -1467,9 +1449,7 @@ window.PERF_DATA =
 "pull_request":
 7197}],
 "test":
-[[1370727070000,
-1254],
-[1370744171000,
+[[1370744171000,
 1241],
 [1370756050000,
 1244],
@@ -1633,9 +1613,7 @@ window.PERF_DATA =
 "mac"},
 "linux":
 {"compile":
-[[1370727070000,
-1334],
-[1370744171000,
+[[1370744171000,
 1256],
 [1370756050000,
 1253],
@@ -1797,12 +1775,6 @@ window.PERF_DATA =
 1206]],
 "info":
 [{"build_num":
-1615,
-"changeset":
-"470bf0dfb362e7494cfddf4e7d443e1264dfdf2f",
-"pull_request":
-7016},
-{"build_num":
 1618,
 "changeset":
 "1f0c05ff745cbb40ad065be6522e2c671fc6bb93",
@@ -2283,9 +2255,7 @@ window.PERF_DATA =
 "pull_request":
 7197}],
 "test":
-[[1370727070000,
-1132],
-[1370744171000,
+[[1370744171000,
 967],
 [1370756050000,
 965],

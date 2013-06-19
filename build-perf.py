@@ -3,7 +3,31 @@
 import requests, sqlite3, json, re
 from collections import defaultdict
 
-PLATFORMS = ('linux', 'mac', 'win')
+ONLY_OPT = ['opt']
+NO_VG = ['opt', 'nopt']
+ALL_OPTS = ['opt', 'nopt', 'opt-vg']
+
+OS = {
+    'linux': {
+        '64': ALL_OPTS,
+        '32': NO_VG,
+        'all': ONLY_OPT
+    },
+    'mac': {
+        '64': ALL_OPTS,
+        '32': ONLY_OPT,
+        'all': ONLY_OPT
+    },
+    'win': {
+        '32': NO_VG
+    }
+}
+
+PLATFORMS = ['%s-%s-%s' % (os, arch, opt)
+             for os, archs in OS.items()
+             for arch, opts in archs.items()
+             for opt in opts]
+
 HISTORY = range(-10,-1 + 1)
 URL = 'http://buildbot.rust-lang.org/json/builders/auto-%s/builds?' + '&'.join('select=%d' % i
                                                                                for i in HISTORY)

@@ -2,11 +2,12 @@
 
 import sqlite3, json, sys
 
-PLATFORMS = ('linux', 'mac', 'win')
-
 db = sqlite3.connect('perf.sqlite3')
 
 cur = db.cursor()
+
+cur.execute('SELECT DISTINCT plat FROM build')
+PLATFORMS = [r[0] for r in cur]
 
 out = {}
 for plat in PLATFORMS:

@@ -71,17 +71,19 @@ for chst, bs in builds.items():
         continue # already done
 
     changes = bs[PLATFORMS[0]]['sourceStamp']['changes']
-    if not changes:
-        print(chst, 'not enough changes')
-        continue
+    if changes:
+        changes = changes[0]
+        comment = changes['comments']
+        try:
+            pull_request = int(re.match('auto merge of #(\d+)', comment).group(1))
+        except:
+            pull_request = None # not a merge commit
+        time = changes['when']
+    else:
+        comment = ''
+        pull_request = None
+        time = build['steps'][0]['times'][0] # approximate the time with the time the build started
 
-    changes = changes[0]
-    comment = changes['comments']
-    try:
-        pull_request = int(re.match('auto merge of #(\d+)', comment).group(1))
-    except:
-        pull_request = None # not a merge commit
-    time = changes['when']
 
     cur.execute('INSERT INTO change (changeset, pull_request, time) VALUES (?,?,?)',
                 (chst, pull_request, time))
@@ -99,5 +101,6 @@ for chst, bs in builds.items():
 
         cur.execute('INSERT INTO build (change_id, build_num, plat, compile_time, test_time) VALUES (?,?,?,?,?)',
                     (change_row_id, build_num, plat, compile_time, test_time))
+    print(chst, 'added ok')
 
 db.commit()

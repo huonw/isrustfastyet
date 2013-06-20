@@ -6,7 +6,10 @@ db = sqlite3.connect('perf.sqlite3')
 
 cur = db.cursor()
 
-cur.execute('SELECT DISTINCT plat FROM build')
+# only use the non-all-targets opt builds, and/or the old ones
+cur.execute('''
+SELECT DISTINCT plat FROM build
+WHERE plat LIKE '%-32-opt' OR plat LIKE '%-64-opt' OR plat NOT LIKE '%-%' ''')
 PLATFORMS = [r[0] for r in cur]
 
 out = {}

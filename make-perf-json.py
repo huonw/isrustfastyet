@@ -6,10 +6,17 @@ db = sqlite3.connect('perf.sqlite3')
 
 cur = db.cursor()
 
+if len(sys.argv) > 1 and sys.argv[1] == 'all':
+    FILTER = ''
+    FILE_NAME = 'all.js'
+    AGE = 10
+else:
+    FILTER = '''WHERE plat LIKE '%-32-opt' OR plat LIKE '%-64-opt' OR plat NOT LIKE '%-%' '''
+    FILE_NAME = 'perf.js'
+    AGE = 10
+
 # only use the non-all-targets opt builds, and/or the old ones
-cur.execute('''
-SELECT DISTINCT plat FROM build
-WHERE plat LIKE '%-32-opt' OR plat LIKE '%-64-opt' OR plat NOT LIKE '%-%' ''')
+cur.execute('SELECT DISTINCT plat FROM build %s' % FILTER)
 PLATFORMS = [r[0] for r in cur]
 
 out = {}
@@ -19,10 +26,10 @@ for plat in PLATFORMS:
     cur.execute('''
 SELECT time * 1000, changeset, pull_request, build_num, compile_time, test_time
 FROM change INNER JOIN build ON change.ROWID = build.change_id
-WHERE plat = ? AND datetime(time, 'unixepoch', 'utc') >= datetime('now', 'utc', '-11 day')
+WHERE plat = ? AND datetime(time, 'unixepoch', 'utc') >= datetime('now', 'utc', '-%d day')
 ORDER BY time
 LIMIT 500
-''', (plat,))
+''' % (AGE + 1), (plat,))
 
     compile = []
     test = []
@@ -35,7 +42,7 @@ LIMIT 500
     out[plat] = {'plat': plat, 'compile': compile, 'info': info, 'test': test}
 
 
-with open('perf.js', 'w') as f:
+with open(FILE_NAME, 'w') as f:
     f.write('window.PERF_DATA =\n')
     json.dump(out, f, separators=(',\n', ':\n'))
     f.write('\n;')

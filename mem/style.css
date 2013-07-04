@@ -1,16 +1,72 @@
 #wrapper {
-  width: 1200px;
+  width: 1302px;
   margin: 0 auto;
+  position:relative;
+}
+
+#summary, #detail {
+  width: 1000px;
+}
+
+ul {
+  padding: 0;
+}
+
+#column {
+  width: 300px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1em;
+
+  hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+}
+#text-details h2 {
+  margin: 0px;
+  font-family: monospace;
+}
+
+#text-details li {
+  list-style: none;
+}
+.text-detail {
+  border: 3px solid transparent;
+  padding: 3px;
+  position: relative;
+  margin: 1px 0;
+}
+
+.clear-button {
+  position: absolute;
+  top: 2px;
+  right: 3px;
+  cursor: pointer;
+  color: red;
+}
+
+.pr-title {
+  font-style: italic;
+}
+.mem-text, .cpu-text {
+  font-size: 0.8em;
+}
+
+.hidden {
+  display: none;
 }
 
 
 /* svg */
 
 .axis {
-  font-size: 10px;
+  font-size: 0.8em;
 }
 .axis path, .axis line {
   fill: none;
+  stroke: #000;
   shape-rendering: crispEdges;
 }
 .x.axis path, .x.axis line {
@@ -19,14 +75,16 @@
 
 .line {
   fill: none;
+  stroke: black;
   stroke-width: 1.5px;
 }
 
 .axis.cpu path, .axis.cpu line, .line.cpu, .point.cpu {
-  stroke: blue;
+  stroke: red;
+  stroke-dasharray: 3, 3;
 }
 .axis.mem path, .axis.mem line, .line.mem, .point.mem {
-  stroke: red;
+  stroke: blue;
 }
 
 .point {
@@ -35,17 +93,16 @@
 }
 .marker {
   pointer-events: all;
+  cursor: pointer;
 }
 .marker-line {
   fill: none;
-  stroke-width: 1.5px;
+  stroke-width: 2.5px;
   opacity: 0.2;
   stroke: black;
 }
-.marker:hover .marker-line {
-  opacity: 1;
-}
 
 .hash {
-  font-size: 10px;
+  font-size: 0.7em;
+  font-family: "monospace";
 }

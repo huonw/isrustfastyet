@@ -39,11 +39,18 @@ ul {
   margin: 1px 0;
 }
 
-.clear-button {
+.button {
   position: absolute;
   top: 2px;
-  right: 3px;
   cursor: pointer;
+}
+
+.keep-button {
+  right: 15px;
+  color: green;
+}
+.clear-button {
+  right: 3px;
   color: red;
 }
 
@@ -83,8 +90,14 @@ ul {
   stroke: red;
   stroke-dasharray: 3, 3;
 }
+.cpu text {
+  fill: red;
+}
 .axis.mem path, .axis.mem line, .line.mem, .point.mem {
   stroke: blue;
+}
+.mem text {
+  fill: blue;
 }
 
 .point {
@@ -105,4 +118,9 @@ ul {
 .hash {
   font-size: 0.7em;
   font-family: "monospace";
+}
+
+.time-tick {
+  stroke-dasharray: 2, 2;
+  stroke-width: 2px;
 }

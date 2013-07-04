@@ -72,10 +72,19 @@ function TextDetail(hash, data) {
 
   var clear = document.createElement('div');
   clear.classList.add('clear-button');
+  clear.classList.add('button');
   clear.innerHTML = '✘';
   clear.title = 'Remove this series';
   clear.addEventListener('click', function() { detail_toggle(hash, true) });
   text.appendChild(clear);
+
+  var keep = document.createElement('div');
+  keep.classList.add('keep-button');
+  keep.classList.add('button');
+  keep.innerHTML = '✔';
+  keep.title = 'Keep only this series';
+  keep.addEventListener('click', function() { detail_keep_only(hash) });
+  text.appendChild(keep);
 
   var ul = document.createElement('ul');
   text.appendChild(ul);
@@ -126,7 +135,7 @@ function hash_to_colour(hash) {
 }
 
 /// Toggle whether a certain hash is displayed on the detailed plot.
-var detail_toggle = (function() {
+var dt = (function() {
     var detail = Plot("#detail", width, height, margin);
     var x = d3.scale.linear().range([0, width]);
     var x_axis = Axis(x, "bottom");
@@ -134,7 +143,7 @@ var detail_toggle = (function() {
     var y_axis = Axis(y, "left");
 
     DrawAxis(detail, x_axis, '', 'x detail', {'translate-y': height});
-    DrawAxis(detail, y_axis, 'Memory (MiB)', 'y detail', {'dy': '1.5em', 'rotate': '-90'});
+    DrawAxis(detail, y_axis, 'Memory (MiB)', 'y detail', {'dy': '1.3em', 'rotate': '-90'});
 
     var detail_lines = detail.append("g");
     var line = Line(x, d_time, y, d_mem);
@@ -160,7 +169,7 @@ var detail_toggle = (function() {
       });
     })
 
-    return function(hash, adjust_hash) {
+    var toggle = function(hash, adjust_hash) {
       if (detail_cache.has(hash)) {
         inner(detail_cache.get(hash));
       } else {
@@ -209,14 +218,17 @@ var detail_toggle = (function() {
 
         detail.select(".x.axis").call(x_axis);
         detail.select(".y.axis").call(y_axis);
-        var selection = detail_lines.selectAll('.line.detail').data(visible_details.keys());
 
-        // remove old lines
-        selection.exit().remove();
-        // update existing (for scale changes, etc)
-        selection.call(draw_line);
-        // add new
-        selection.enter().append('path').call(draw_line);
+        [['line', 'path', draw_line],
+         ['time-tick', 'line', draw_tick]].forEach(function(v) {
+          var selection = detail_lines.selectAll('.detail.' + v[0]).data(visible_details.keys());
+          // update existing lines
+          selection.call(v[2]);
+          // add new lines
+          selection.enter().append(v[1]).call(v[2]);
+          // remove old ones
+          selection.exit().remove();
+        })
 
         // hide the graph if it's empty
         if (visible_details.keys().length == 0) {
@@ -232,6 +244,15 @@ var detail_toggle = (function() {
             .attr('class', 'line detail')
             .attr('d', line);
         }
+        function draw_tick(selection) {
+          selection
+            .style('stroke', function(hash) { return hash_to_colour(hash); })
+            .attr('class', 'time-tick detail')
+            .attr('x1', function(hash) { return x(detail_cache.get(hash).summary.cpu_time); })
+            .attr('x2', function(hash) { return x(detail_cache.get(hash).summary.cpu_time); })
+            .attr('y1', height - 20)
+            .attr('y2', height);
+        }
 
         function setColour(hash, colour) {
           d3.select('#marker-' + hash).style('fill', colour);
@@ -239,8 +260,18 @@ var detail_toggle = (function() {
           document.getElementById('text-' + hash).style.borderColor = colour;
         }
       }
-    }
+    };
+
+    var keep_only = function(hash) {
+      visible_details.forEach(function (other_hash) {
+        if (other_hash != hash) toggle(other_hash, true)
+      });
+    };
+    return [toggle, keep_only];
+
 })();
+
+var detail_toggle = dt[0], detail_keep_only = dt[1];
 
 // drawing the main summary plot
 (function() {
@@ -276,9 +307,9 @@ var detail_toggle = (function() {
       y_cpu_time.nice();
 
       DrawAxis(summary, xAxis, '', 'x', {'translate-y': height});
-      DrawAxis(summary, yAxis_mem, 'Memory (MiB)', 'y mem', {
+      DrawAxis(summary, yAxis_mem, 'Peak Memory (MiB)', 'y mem', {
         'rotate': '-90',
-        'dy': '1.5em'
+        'dy': '1.3em'
       });
       DrawAxis(summary, yAxis_cpu_time, 'CPU Time (s)', 'y cpu', {
         'rotate': '-90',

@@ -65,6 +65,8 @@ function TextDetail(hash, data) {
   var text = document.createElement('li');
   text.classList.add('text-detail');
   text.id = 'text-' + hash;
+  text.dataset.hash = hash;
+  text.dataset.timestamp = data.summary.timestamp;
 
   var h2 = document.createElement('h2');
   h2.innerHTML = Label(data.summary, true);
@@ -103,10 +105,22 @@ function TextDetail(hash, data) {
     ul.appendChild(l);
   }
 
+  var date = new Date(data.summary.timestamp * 1000)
+             .toISOString().replace(/\.[0-9]{3}Z/, '').replace('T', ' ');
+  ul.appendChild(li('Date: ' + date, 'date-text'))
   ul.appendChild(
     li('Max memory usage: ' + (data.summary.max_memory/(1024*1024)).toFixed(0) + ' MiB', 'mem-text'))
   ul.appendChild(li('CPU time: ' + data.summary.cpu_time.toFixed(1) + ' s', 'cpu-text'));
 
+  // insert in order of date
+  for (var i = 0, l = text_details_elem.childNodes.length; i < l; i++) {
+    var node = text_details_elem.childNodes[i];
+    if (data.summary.timestamp < parseInt(node.dataset.timestamp)) {
+      text_details_elem.insertBefore(text, node);
+      return;
+    }
+  }
+  // no smaller element, so just append.
   text_details_elem.appendChild(text);
 }
 

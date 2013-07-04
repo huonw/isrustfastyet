@@ -57,7 +57,7 @@ ul {
 .pr-title {
   font-style: italic;
 }
-.mem-text, .cpu-text {
+.date-text, .mem-text, .cpu-text {
   font-size: 0.8em;
 }
 

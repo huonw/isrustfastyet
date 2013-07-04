@@ -1,0 +1,51 @@
+#wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* svg */
+
+.axis {
+  font-size: 10px;
+}
+.axis path, .axis line {
+  fill: none;
+  shape-rendering: crispEdges;
+}
+.x.axis path, .x.axis line {
+  stroke: black;
+}
+
+.line {
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+.axis.cpu path, .axis.cpu line, .line.cpu, .point.cpu {
+  stroke: blue;
+}
+.axis.mem path, .axis.mem line, .line.mem, .point.mem {
+  stroke: red;
+}
+
+.point {
+  fill: none;
+  stroke-width: 2px;
+}
+.marker {
+  pointer-events: all;
+}
+.marker-line {
+  fill: none;
+  stroke-width: 1.5px;
+  opacity: 0.2;
+  stroke: black;
+}
+.marker:hover .marker-line {
+  opacity: 1;
+}
+
+.hash {
+  font-size: 10px;
+}

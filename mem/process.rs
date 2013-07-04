@@ -34,6 +34,7 @@ struct Data {
 struct Output {
     summary: Summary,
     memory_data: ~[(f64, f64)],
+    pass_timing: ~[(~str, f64)]
 }
 
 #[deriving(Encodable, Decodable, Clone, Ord)]
@@ -79,6 +80,7 @@ fn simplify_memory_data(v: &[(f64, f64)]) -> ~[(f64, f64)] {
     line_simplify::visvalingam(v, 100000.0)
 }
 
+/// A parser for the output of GNU time
 fn extract_time(time_str: &str) -> (f64, f64) {
     let i = time_str.find_str("user ").expect("time is formatted wrong: missing user");
     let j = time_str.find_str("system ").expect("time is formatted wrong: missing system");
@@ -87,6 +89,20 @@ fn extract_time(time_str: &str) -> (f64, f64) {
     let system = FromStr::from_str(time_str.slice(i + 5, j))
         .expect("time is formatted wrong: system not a float");;
     (user, system)
+}
+
+/// A parser for the time-passes output of rustc.
+pub fn pass_timing(s: &str) -> ~[(~str, f64)] {
+    do s.line_iter().transform |l| {
+        let time_start = l.slice_from(6);
+        let i = time_start.find(' ').expect("invalid pass timing info");
+
+        let time: f64 = FromStr::from_str(time_start.slice_to(i)).expect("invalid pass timing info");
+
+        let i = time_start.find('\t').expect("invalid pass timing info");
+
+        (time_start.slice_from(i+1).to_owned(), time)
+    }.collect()
 }
 
 fn main() {
@@ -145,6 +161,8 @@ fn main() {
             let d: Data = Decodable::decode(&mut json::Decoder(json));
             let simple_mem = simplify_memory_data(d.memory_data);
 
+            // if stdout is empty, this should just return nothing
+            let pass_timing = pass_timing(d.stdout);
 
             // create & write the output
             let summary = Summary {
@@ -156,6 +174,7 @@ fn main() {
             };
             let out = Output {
                 memory_data: simple_mem,
+                pass_timing: pass_timing,
                 summary: summary.clone()
             };
 

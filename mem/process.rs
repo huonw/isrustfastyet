@@ -8,6 +8,16 @@ use std::hashmap::HashSet;
 
 mod line_simplify;
 
+trait Expect<T> { fn expect(self, ~str) -> T; }
+impl<T, U> Expect<T> for Result<T, U> {
+    fn expect(self, s: ~str) -> T {
+        match self {
+            Ok(a) => a,
+            Err(_) => fail!(s)
+        }
+    }
+}
+
 // these reflect the structure of mem.json exactly
 
 #[deriving(Decodable)]
@@ -61,7 +71,7 @@ fn processing_possibilities() -> HashSet<~str> {
 // doesn't work.
 fn load_summary(p: &Path) -> ~[Summary] {
     match do io::file_reader(p).map |rdr| {
-        json::from_reader(*rdr).unwrap()
+        json::from_reader(*rdr).expect(~"summary is invalid")
     } {
         Err(_) => ~[],
         Ok(json) =>  Decodable::decode(&mut json::Decoder(json))
@@ -82,12 +92,12 @@ fn simplify_memory_data(v: &[(f64, f64)]) -> ~[(f64, f64)] {
 
 /// A parser for the output of GNU time
 fn extract_time(time_str: &str) -> (f64, f64) {
-    let i = time_str.find_str("user ").expect("time is formatted wrong: missing user");
-    let j = time_str.find_str("system ").expect("time is formatted wrong: missing system");
+    let i = time_str.find_str("user ").expect(~"time is formatted wrong: missing user");
+    let j = time_str.find_str("system ").expect(~"time is formatted wrong: missing system");
     let user = FromStr::from_str(time_str.slice_to(i))
-        .expect("time is formatted wrong: user not a float");
+        .expect(~"time is formatted wrong: user not a float");
     let system = FromStr::from_str(time_str.slice(i + 5, j))
-        .expect("time is formatted wrong: system not a float");;
+        .expect(~"time is formatted wrong: system not a float");;
     (user, system)
 }
 
@@ -95,11 +105,11 @@ fn extract_time(time_str: &str) -> (f64, f64) {
 pub fn pass_timing(s: &str) -> ~[(~str, f64)] {
     do s.line_iter().transform |l| {
         let time_start = l.slice_from(6);
-        let i = time_start.find(' ').expect("invalid pass timing info");
+        let i = time_start.find(' ').expect(~"invalid pass timing info");
 
-        let time: f64 = FromStr::from_str(time_start.slice_to(i)).expect("invalid pass timing info");
+        let time: f64 = FromStr::from_str(time_start.slice_to(i)).expect(~"invalid pass timing info");
 
-        let i = time_start.find('\t').expect("invalid pass timing info");
+        let i = time_start.find('\t').expect(~"invalid pass timing info");
 
         (time_start.slice_from(i+1).to_owned(), time)
     }.collect()
@@ -131,11 +141,11 @@ fn main() {
             let time_path = hash_folder.push("time.txt");
             let ci_path = hash_folder.push("commit_info.txt");
 
-            let raw_time = io::read_whole_file_str(&time_path).unwrap();
+            let raw_time = io::read_whole_file_str(&time_path).expect(~"no time.txt");
             let (user, system) = extract_time(raw_time);
             let time = user + system;
 
-            let raw_commit_info = io::read_whole_file_str(&ci_path).unwrap();
+            let raw_commit_info = io::read_whole_file_str(&ci_path).expect(~"no commit_info.txt");
             let mut lines = raw_commit_info.line_iter();
             let (author, timestamp, summary) = match (lines.next(),
                                                  lines.next().chain(|x| FromStr::from_str(x)),
@@ -155,8 +165,8 @@ fn main() {
 
             // load the mem.json file.
             let json = do io::file_reader(&mem_path).map |rdr| {
-                json::from_reader(*rdr).unwrap()
-            }.unwrap();
+                json::from_reader(*rdr).expect(~"mem.json is not json")
+            }.expect(~"no mem.json");
 
             let d: Data = Decodable::decode(&mut json::Decoder(json));
             let simple_mem = simplify_memory_data(d.memory_data);
@@ -179,7 +189,7 @@ fn main() {
             };
 
             let fname = Path("out").push(hash + ".json");
-            let out_f = io::file_writer(&fname, [io::Create, io::Truncate]).unwrap();
+            let out_f = io::file_writer(&fname, [io::Create, io::Truncate]).expect(~"out file can't be opened");
             out.encode(&mut json::Encoder(out_f));
             cc.send(summary);
         }

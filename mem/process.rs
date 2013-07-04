@@ -79,6 +79,16 @@ fn simplify_memory_data(v: &[(f64, f64)]) -> ~[(f64, f64)] {
     line_simplify::visvalingam(v, 100000.0)
 }
 
+fn extract_time(time_str: &str) -> (f64, f64) {
+    let i = time_str.find_str("user ").expect("time is formatted wrong: missing user");
+    let j = time_str.find_str("system ").expect("time is formatted wrong: missing system");
+    let user = FromStr::from_str(time_str.slice_to(i))
+        .expect("time is formatted wrong: user not a float");
+    let system = FromStr::from_str(time_str.slice(i + 5, j))
+        .expect("time is formatted wrong: system not a float");;
+    (user, system)
+}
+
 fn main() {
     let summary_path = Path("out/summary.json");
     let mut summary = load_summary(&summary_path);
@@ -100,12 +110,18 @@ fn main() {
 
         // paralellism!
         do spawn {
-            let mem_path = Path("data").push_many([hash.as_slice(), "mem.json"]);
-            let ci_path = Path("data").push_many([hash.as_slice(), "commit_info.txt"]);
+            let hash_folder = Path("data").push(hash);
+            let mem_path = hash_folder.push("mem.json");
+            let time_path = hash_folder.push("time.txt");
+            let ci_path = hash_folder.push("commit_info.txt");
+
+            let raw_time = io::read_whole_file_str(&time_path).unwrap();
+            let (user, system) = extract_time(raw_time);
+            let time = user + system;
 
             let raw_commit_info = io::read_whole_file_str(&ci_path).unwrap();
             let mut lines = raw_commit_info.line_iter();
-            let (author, time, summary) = match (lines.next(),
+            let (author, timestamp, summary) = match (lines.next(),
                                                  lines.next().chain(|x| FromStr::from_str(x)),
                                                  lines.next()) {
                 (Some(a), Some(b), Some(c)) => (a, b, c),
@@ -129,13 +145,12 @@ fn main() {
             let d: Data = Decodable::decode(&mut json::Decoder(json));
             let simple_mem = simplify_memory_data(d.memory_data);
 
-            let usage = d.cpuacct.usage as f64 * 1e-9;
 
             // create & write the output
             let summary = Summary {
                 hash: hash.to_owned(),
-                timestamp: time,
-                cpu_time: usage,
+                timestamp: timestamp,
+                cpu_time: time,
                 max_memory: d.max_memory as f64,
                 pull_request: pull_request
             };

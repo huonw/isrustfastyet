@@ -40,6 +40,30 @@ function DrawAxis(svg, axis, text, klass, opts) {
   return g;
 }
 
+function VerticalLine(svg, x, label, opts) {
+  opts = opts || {};
+  var g = svg.append('g')
+           .attr("transform", "translate(" + x +", 0)")
+           .attr('id', opts.id || '')
+           .attr('class', opts['class'] || '')
+           .on('click', opts.click || function() {});
+
+  // the line portion
+  g.append('line')
+    .attr('class', opts['line-class'] || '')
+    .attr('x1', 0).attr('x2', 0)
+    .attr('y1', opts.height || height).attr('y2', 0);
+
+  g.append('text')
+    .attr("class", opts['text-class'] || '')
+    .attr("transform", "rotate(-90)")
+    .attr('x', -(opts.height || height))
+    .attr("dy", opts.dy || '')
+    .attr("dx", "1em")
+    .style("text-anchor", "start")
+    .text(label);
+}
+
 /// A label for a commit + (optional) associated pr
 function Label(d, linkify) {
   function wrap(link, text) {
@@ -51,6 +75,16 @@ function Label(d, linkify) {
          wrap('https://github.com/mozilla/rust/pull/' + d.pull_request,'#' + d.pull_request) + ')';
   }
   return ret;
+}
+
+function Control(text, klass, title, onclick) {
+  var e =  document.createElement('span');
+  e.classList.add(klass);
+  e.classList.add('control');
+  e.innerHTML = text;
+  e.title = title;
+  e.addEventListener('click', onclick);
+  return e;
 }
 
 /// Construct the little box on the side
@@ -72,21 +106,32 @@ function TextDetail(hash, data) {
   h2.innerHTML = Label(data.summary, true);
   text.appendChild(h2);
 
-  var clear = document.createElement('div');
-  clear.classList.add('clear-button');
-  clear.classList.add('button');
-  clear.innerHTML = '✘';
-  clear.title = 'Remove this series';
-  clear.addEventListener('click', function() { detail_toggle(hash, true) });
-  text.appendChild(clear);
+  var controls = document.createElement('div');
+  controls.classList.add('text-detail-controls');
+  text.appendChild(controls);
 
-  var keep = document.createElement('div');
-  keep.classList.add('keep-button');
-  keep.classList.add('button');
-  keep.innerHTML = '✔';
-  keep.title = 'Keep only this series';
-  keep.addEventListener('click', function() { detail_keep_only(hash) });
-  text.appendChild(keep);
+  if (data.pass_timing && data.pass_timing.length > 0) {
+    var passes = document.createElement('label');
+    passes.classList.add('passes-box');
+    passes.classList.add('control');
+    var check = document.createElement('input');
+    check.id = 'passes-check-' + hash;
+    check.type = 'checkbox';
+    check.addEventListener('change', function() {
+      var func = this.checked ? 'remove' : 'add';
+      document.getElementById('pass-' + hash).classList[func]('hidden');
+    });
+
+    passes.appendChild(check);
+    passes.appendChild(document.createTextNode(' passes'));
+    controls.appendChild(passes);
+  }
+
+  controls.appendChild(Control('✔', 'keep-button', 'Keep only this series',
+                               function() { detail_keep_only(hash) }));
+
+  controls.appendChild(Control('✘', 'clear-button', 'Remove this series',
+                              function() { detail_toggle(hash, true) }));
 
   var ul = document.createElement('ul');
   text.appendChild(ul);
@@ -147,6 +192,11 @@ function hash_to_colour(hash) {
 
   return 'rgb('+[r,g,b].join(',')+')';
 }
+function setColour(hash, colour) {
+  d3.selectAll('.marker-' + hash).style('fill', colour);
+  d3.selectAll('.line-' + hash).style('stroke', colour);
+  document.getElementById('text-' + hash).style.borderColor = colour;
+}
 
 /// Toggle whether a certain hash is displayed on the detailed plot.
 var dt = (function() {
@@ -179,8 +229,13 @@ var dt = (function() {
     var clear_all = document.getElementById('clear-all');
     clear_all.addEventListener('click', function() {
       visible_details.keys().forEach(function(hash) {
-        detail_toggle(hash, true);
+        setColour(hash, '');
       });
+      visible_details = d3.map(); // clear it
+      detail_lines.selectAll('.detail').remove();
+      d3.select(document).selectAll('.text-detail').remove();
+      window.location.replace('#');
+      detail_elem.classList.add('hidden');
     })
 
     var toggle = function(hash, adjust_hash) {
@@ -203,6 +258,7 @@ var dt = (function() {
           // already visible, so remove it
           setColour(hash, '');
           visible_details.remove(hash);
+          detail.select('.pass-marker-' + hash).remove();
           var text = document.getElementById('text-' + hash);
           text.parentNode.removeChild(text);
         } else {
@@ -225,31 +281,35 @@ var dt = (function() {
         x.domain([0, x_max]).nice();
         y.domain([0, y_max]).nice();
 
-        // colour the summary markers and the text detail border
-        visible_details.forEach(function (hash) {
-          setColour(hash, hash_to_colour(hash));
-        })
-
         detail.select(".x.axis").call(x_axis);
         detail.select(".y.axis").call(y_axis);
 
-        [['line', 'path', draw_line],
-         ['time-tick', 'line', draw_tick]].forEach(function(v) {
+        [
+          ['pass-group', 'g', draw_passes],
+          ['time-tick', 'line', draw_tick, false],
+          ['line', 'path', draw_line, false]
+        ].forEach(function(v) {
           var selection = detail_lines.selectAll('.detail.' + v[0]).data(visible_details.keys());
           // update existing lines
-          selection.call(v[2]);
+          selection.call(v[2], 1);
           // add new lines
-          selection.enter().append(v[1]).call(v[2]);
+          selection.enter().append(v[1]).call(v[2], 2);
           // remove old ones
           selection.exit().remove();
         })
 
         // hide the graph if it's empty
-        if (visible_details.keys().length == 0) {
+        var l = visible_details.keys().length;
+        if (l == 0) {
           detail_elem.classList.add('hidden');
         } else {
           detail_elem.classList.remove('hidden');
         }
+
+        // colour the markers and the text detail border
+        visible_details.forEach(function (hash) {
+          setColour(hash, hash_to_colour(hash));
+        })
 
         function draw_line(selection) {
           selection
@@ -267,11 +327,38 @@ var dt = (function() {
             .attr('y1', height - 20)
             .attr('y2', height);
         }
+        function draw_passes(selection, which) {
+          selection
+            .each(
+              function(hash) {
+                var pass_timing = detail_cache.get(hash).pass_timing,
+                    position = 0,
+                    node = d3.select(this),
+                    check = document.getElementById('passes-check-' + hash),
+                    hidden = (check && check.checked) ? '' : 'hidden';
 
-        function setColour(hash, colour) {
-          d3.select('#marker-' + hash).style('fill', colour);
-          d3.select('#marker-' + hash + ' .marker-line').style('stroke', colour);
-          document.getElementById('text-' + hash).style.borderColor = colour;
+                node.attr('class', 'detail pass-group ' + hidden)
+                    .attr('id', 'pass-' + hash);
+                node.selectAll('.pass-marker-group').remove();
+
+                pass_timing.forEach(function (elem) {
+                  var pass = elem[0], time = elem[1];
+                  var g = node.append('g').attr('class', 'pass-marker-group');
+                  VerticalLine(g, x(position), '', {
+                    'id': 'pass-' + pass.replace(' ', '-') + '-' + hash,
+                    'class': 'pass-marker marker-' + hash,
+                    'line-class': 'pass-line line-' + hash,
+                    'dy': '0.4em'
+                  });
+                  VerticalLine(g, x(position + time / 2), pass, {
+                    'id': 'pass-text-' + pass.replace(' ', '-') + '-' + hash,
+                    'class': 'pass-text-marker marker-' + hash,
+                    'text-class': 'pass',
+                    'dy': '0.4em'
+                  });
+                  position += time;
+                })
+              })
         }
       }
     };
@@ -349,32 +436,15 @@ var detail_toggle = dt[0], detail_keep_only = dt[1];
 
       // draw the vertical lines for each commit
       data.forEach(function(d) {
-        var xx = x(time(d));
-        var g = lines.append('g')
-           .attr("transform", "translate(" + xx +", 0)")
-           .attr('id', 'marker-' + d.hash)
-           .attr('class', 'marker')
-           .on('click', function () {
-                  detail_toggle(d.hash, true)
-                });
-
-        // the line portion
-        g.append('line')
-           .attr('class', 'marker-line')
-           .attr('x1', 0).attr('x2', 0)
-           .attr('y1', height).attr('y2', 0);
-
-        // the text portion
-        var label = Label(d, false);
-
-        g.append('text')
-          .attr("class", "hash")
-          .attr("transform", "rotate(-90)")
-          .attr('x', -height)
-          .attr("dy", "0.3em")
-          .attr("dx", "1em")
-          .style("text-anchor", "start")
-          .text(label);
+        VerticalLine(lines, x(time(d)), Label(d, false), {
+          'id': 'marker-' + d.hash,
+          'class': 'marker marker-' + d.hash,
+          'line-class': 'marker-line line-' + d.hash,
+          'text-class': 'hash',
+          'click': function() {detail_toggle(d.hash, true)},
+          'height': height,
+          'dy': '0.3em'
+        });
 
         short2long.set(d.hash.substr(0, 7), d.hash);
       })

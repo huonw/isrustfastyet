@@ -92,12 +92,12 @@ fn simplify_memory_data(v: &[(f64, f64)]) -> ~[(f64, f64)] {
 
 /// A parser for the output of GNU time
 fn extract_time(time_str: &str) -> (f64, f64) {
-    let i = time_str.find_str("user ").expect(~"time is formatted wrong: missing user");
-    let j = time_str.find_str("system ").expect(~"time is formatted wrong: missing system");
+    let i = time_str.find_str("user ").expect("time is formatted wrong: missing user");
+    let j = time_str.find_str("system ").expect("time is formatted wrong: missing system");
     let user = FromStr::from_str(time_str.slice_to(i))
-        .expect(~"time is formatted wrong: user not a float");
+        .expect("time is formatted wrong: user not a float");
     let system = FromStr::from_str(time_str.slice(i + 5, j))
-        .expect(~"time is formatted wrong: system not a float");;
+        .expect("time is formatted wrong: system not a float");;
     (user, system)
 }
 
@@ -108,12 +108,13 @@ pub fn pass_timing(s: &str) -> ~[(~str, f64)] {
             None
         } else {
             let time_start = l.slice_from(6);
-            let i = time_start.find(' ').expect(~"invalid pass timing info");
+            let i = time_start.find(' ').expect("invalid pass timing info (1): " + l);
 
-            let time: f64 = FromStr::from_str(time_start.slice_to(i))
-                .expect(~"invalid pass timing info");
+            // reading directly as f64 doesn't work on some computers! :(
+            let time = std::float::from_str(time_start.slice_to(i))
+                .expect("invalid pass timing info (2): " + l) as f64;
 
-            let i = time_start.find('\t').expect(~"invalid pass timing info");
+            let i = time_start.find('\t').expect("invalid pass timing info (3): " + l);
 
             Some((time_start.slice_from(i+1).to_owned(), time))
         }

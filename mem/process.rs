@@ -103,15 +103,20 @@ fn extract_time(time_str: &str) -> (f64, f64) {
 
 /// A parser for the time-passes output of rustc.
 pub fn pass_timing(s: &str) -> ~[(~str, f64)] {
-    do s.line_iter().transform |l| {
-        let time_start = l.slice_from(6);
-        let i = time_start.find(' ').expect(~"invalid pass timing info");
+    do s.line_iter().filter_map |l| {
+        if l.is_empty() {
+            None
+        } else {
+            let time_start = l.slice_from(6);
+            let i = time_start.find(' ').expect(~"invalid pass timing info");
 
-        let time: f64 = FromStr::from_str(time_start.slice_to(i)).expect(~"invalid pass timing info");
+            let time: f64 = FromStr::from_str(time_start.slice_to(i))
+                .expect(~"invalid pass timing info");
 
-        let i = time_start.find('\t').expect(~"invalid pass timing info");
+            let i = time_start.find('\t').expect(~"invalid pass timing info");
 
-        (time_start.slice_from(i+1).to_owned(), time)
+            Some((time_start.slice_from(i+1).to_owned(), time))
+        }
     }.collect()
 }
 

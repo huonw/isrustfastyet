@@ -6,12 +6,16 @@ var detail_elem = document.getElementById('detail');
 var text_details_elem = document.getElementById('text-details');
 
 /// d3 helpers.
-function Plot(elem, width, height, margin) {
-  return d3.select(elem).append("svg")
-               .attr("width", width + margin.left + margin.right)
-               .attr("height", height + margin.top + margin.bottom)
-             .append("g")
-               .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+function Plot(elem, width, height, margin, x_axis, zoom_func) {
+  var svg = d3.select(elem).append("svg");
+
+  var zoom = d3.behavior.zoom().x(x_axis).on('zoom', zoom_func);
+//  svg.call(zoom);
+
+  return svg.attr("width", width + margin.left + margin.right)
+           .attr("height", height + margin.top + margin.bottom)
+           .append("g")
+              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 }
 
 function Line(x_scale, x_access, y_scale, y_access) {
@@ -176,10 +180,12 @@ function pr_callback(json) {
   var data = json.data;
   if (data) {
     var id = 'pr-title-' + data.number;
-    var span = document.getElementById(id);
-    span.innerHTML = data.title;
     pr_title_cache.set(data.number, data.title);
-    span.classList.remove('hidden');
+    var span = document.getElementById(id);
+    if (span) {
+      span.innerHTML = data.title;
+      span.classList.remove('hidden');
+    }
   }
 }
 
@@ -195,16 +201,23 @@ function hash_to_colour(hash) {
 function setColour(hash, colour) {
   d3.selectAll('.marker-' + hash).style('fill', colour);
   d3.selectAll('.line-' + hash).style('stroke', colour);
-  document.getElementById('text-' + hash).style.borderColor = colour;
+
+  d3.select('#text-' + hash).style('border-color', colour);
 }
 
 /// Toggle whether a certain hash is displayed on the detailed plot.
-var dt = (function() {
-    var detail = Plot("#detail", width, height, margin);
-    var x = d3.scale.linear().range([0, width]);
-    var x_axis = Axis(x, "bottom");
-    var y = d3.scale.linear().range([height, 0]);
-    var y_axis = Axis(y, "left");
+var dt = (
+  function() {
+    var x = d3.scale.linear().range([0, width]),
+        x_axis = Axis(x, "bottom"),
+        y = d3.scale.linear().range([height, 0]),
+        y_axis = Axis(y, "left"),
+        detail = Plot("#detail", width, height, margin, x,
+                      function() {
+                        line.x(x);
+//                        detail_lines.selectAll('.detail')
+//                          .each(function(x) { d3.select(this).call(line) });
+                      });
 
     DrawAxis(detail, x_axis, '', 'x detail', {'translate-y': height});
     DrawAxis(detail, y_axis, 'Memory (MiB)', 'y detail', {'dy': '1.3em', 'rotate': '-90'});
@@ -242,6 +255,8 @@ var dt = (function() {
       if (detail_cache.has(hash)) {
         inner(detail_cache.get(hash));
       } else {
+        // set the colour here so it looks like something is happening
+        setColour(hash, hash_to_colour(hash));
         d3.json("out/" + hash + ".json", function(e,d) {
           if (e) {
             console.warn("Error getting details", e);
@@ -375,20 +390,18 @@ var dt = (function() {
 var detail_toggle = dt[0], detail_keep_only = dt[1];
 
 // drawing the main summary plot
-(function() {
-    var summary = Plot("#summary", width, height, margin);
+(
+  function() {
+    var x = d3.time.scale().range([0, width]),
 
-    var x = d3.time.scale()
-        .range([0, width]);
+        y_mem = d3.scale.linear().range([height, 0]),
+        y_cpu_time = d3.scale.linear().range([height, 0]),
 
-    var y_mem = d3.scale.linear().range([height, 0]);
-    var y_cpu_time = d3.scale.linear().range([height, 0]);
+        xAxis = Axis(x, "bottom"),
 
-    var xAxis = Axis(x, "bottom");
-
-    var yAxis_mem = Axis(y_mem, "left");
-    var yAxis_cpu_time = Axis(y_cpu_time, "right");
-
+        yAxis_mem = Axis(y_mem, "left"),
+        yAxis_cpu_time = Axis(y_cpu_time, "right"),
+        summary = Plot("#summary", width, height, margin, x, function() {});
     function time(d) { return d.timestamp * 1000; }
     function mem(d) { return d.max_memory / (1024 * 1024); }
     function cpu_time(d) { return d.cpu_time; }

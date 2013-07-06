@@ -6,16 +6,57 @@ var detail_elem = document.getElementById('detail');
 var text_details_elem = document.getElementById('text-details');
 
 /// d3 helpers.
-function Plot(elem, width, height, margin, x_axis, zoom_func) {
-  var svg = d3.select(elem).append("svg");
+function Plot(elem, width, height, margin, x_axis, zoom_func, reset_zoom) {
+  var e = d3.select(elem);
+  var svg = e.append("svg");
+  var reset = document.createElement('div');
+  reset.classList.add('reset-button');
+  reset.classList.add('hidden');
+  reset.textContent = 'Reset zoom';
+  reset.addEventListener('click', function() {
+    this.classList.add('hidden')
+    reset_zoom();
+  });
+  e.node().appendChild(reset);
 
-  var zoom = d3.behavior.zoom().x(x_axis).on('zoom', zoom_func);
-//  svg.call(zoom);
+  var zoom = d3.behavior.zoom().x(x_axis)
+    .scaleExtent([1.0/4000, 4000])
+    .on(
+    'zoom',
+    function() {
+      var domain = x_axis.domain();
+      if (domain[0] < 0) {
+        // stop it from underflowing
+        domain[1] -= domain[0];
+        domain[0] = 0;
+        x_axis.domain(domain);
+        zoom.x(x_axis);
+      }
 
-  return svg.attr("width", width + margin.left + margin.right)
-           .attr("height", height + margin.top + margin.bottom)
-           .append("g")
-              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      reset.classList.remove('hidden');
+      zoom_func();
+    });
+  svg.call(zoom);
+
+  var clip_id = 'clipper-' + Math.random();
+  svg.append('defs').append('clipPath').attr('id', clip_id)
+    .append('rect')
+     .attr('x', -1)
+     .attr('y', -1)
+     .attr('width', width + 1)
+     .attr('height', height + 1)
+     .attr('class', 'clipper')
+     .attr('id', clip_id);
+  var main_box = svg.attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+  var subbox = main_box.append('g').attr('clip-path', 'url(#' + clip_id + ')');
+  return {
+    zoom: zoom,
+    main: main_box,
+    clipped: subbox
+  };
 }
 
 function Line(x_scale, x_access, y_scale, y_access) {
@@ -209,17 +250,13 @@ var dt = (
         x_axis = Axis(x, "bottom"),
         y = d3.scale.linear().range([height, 0]),
         y_axis = Axis(y, "left"),
-        detail = Plot("#detail", width, height, margin, x,
-                      function() {
-                        line.x(x);
-//                        detail_lines.selectAll('.detail')
-//                          .each(function(x) { d3.select(this).call(line) });
-                      });
+        zmc = Plot("#detail", width, height, margin, x, zoom_func, reset_zoom),
+        zoom = zmc.zoom, main = zmc.main, clipped = zmc.clipped;
 
-    DrawAxis(detail, x_axis, '', 'x detail', {'translate-y': height});
-    DrawAxis(detail, y_axis, 'Memory (MiB)', 'y detail', {'dy': '1.3em', 'rotate': '-90'});
+    DrawAxis(main, x_axis, '', 'x detail', {'translate-y': height});
+    DrawAxis(main, y_axis, 'Memory (MiB)', 'y detail', {'dy': '1.3em', 'rotate': '-90'});
 
-    var detail_lines = detail.append("g");
+    var detail_lines = clipped.append("g");
     var line = Line(x, d_time, y, d_mem);
 
     function d_time(d) { return d[0]; }
@@ -248,6 +285,119 @@ var dt = (
       detail_elem.classList.add('hidden');
     })
 
+    var hand_zoomed = false;
+    function zoom_func() {
+      hand_zoomed = true;
+      draw();
+    }
+    function reset_zoom() {
+      hand_zoomed = false;
+      draw();
+    }
+
+    function draw() {
+      if (!hand_zoomed) {
+        // only update the x-axis if we're at the default view, and
+        // the person hasn't zoomed, since this resets the zoom.'
+        var x_max = d3.max(visible_details.values(), function(d) {return d.x});
+        x.domain([0, x_max]).nice();
+        zoom.x(x);
+      }
+
+      main.select(".x.axis").call(x_axis);
+      main.select(".y.axis").call(y_axis);
+
+      [
+        ['pass-group', 'g', draw_passes],
+        ['time-tick', 'line', draw_tick, false],
+        ['line', 'path', draw_line, false]
+      ].forEach(function(v) {
+        var selection = detail_lines.selectAll('.detail.' + v[0]).data(visible_details.keys());
+        // update existing lines
+        selection.call(v[2], 1);
+        // add new lines
+        selection.enter().append(v[1]).call(v[2], 2);
+        // remove old ones
+        selection.exit().remove();
+      })
+
+      // hide the graph if it's empty
+      var l = visible_details.keys().length;
+      if (l == 0) {
+        detail_elem.classList.add('hidden');
+      } else {
+        detail_elem.classList.remove('hidden');
+      }
+
+      // colour the markers and the text detail border
+      visible_details.forEach(
+        function (hash) {
+          setColour(hash, hash_to_colour(hash));
+        })
+
+      function draw_line(selection) {
+        selection
+         .style('stroke', function(hash) { return hash_to_colour(hash); })
+            .datum(function(hash) { return detail_cache.get(hash).memory_data; })
+           .attr('class', 'line detail')
+            .attr('d', line);
+      }
+      function draw_tick(selection) {
+        selection
+        .style('stroke', function(hash) { return hash_to_colour(hash); })
+        .attr('class', 'time-tick detail')
+        .attr('x1', function(hash) { return x(detail_cache.get(hash).summary.cpu_time); })
+        .attr('x2', function(hash) { return x(detail_cache.get(hash).summary.cpu_time); })
+                                                   .attr('y1', height - 20)
+                                  .attr('y2', height);
+      }
+      function draw_passes(selection, which) {
+        selection
+         .each(
+           function(hash) {
+             var pass_timing = detail_cache.get(hash).pass_timing,
+             position = 0,
+             node = d3.select(this),
+             check = document.getElementById('passes-check-' + hash),
+             hidden = (check && check.checked) ? '' : 'hidden';
+
+             node.attr('class', 'detail pass-group ' + hidden)
+              .attr('id', 'pass-' + hash);
+
+             var sel = node.selectAll('.pass-marker-group').data(pass_timing);
+             sel.each(function(elem) {
+               var time = elem[1];
+               var that = d3.select(this);
+               that.select('.pass-marker')
+                   .attr('transform', 'translate(' + x(position) + ',0)');
+               that.select('.pass-text-marker')
+                   .attr('transform', 'translate(' + x(position + time / 2) + ',0)');
+               position += time;
+             });
+
+             sel.enter()
+               .append('g').attr('class', 'pass-marker-group')
+               .each(function(elem) {
+                 var pass = elem[0], time = elem[1];
+                 var g = d3.select(this);
+                 VerticalLine(g, x(position), '', {
+                   'id': 'pass-' + pass.replace(' ', '-') + '-' + hash,
+                   'class': 'pass-marker marker-' + hash,
+                   'line-class': 'pass-line line-' + hash,
+                   'dy': '0.4em'
+                 });
+                 VerticalLine(g, x(position + time / 2), pass, {
+                   'id': 'pass-text-' + pass.replace(' ', '-') + '-' + hash,
+                   'class': 'pass-text-marker marker-' + hash,
+                   'text-class': 'pass',
+                   'dy': '0.4em'
+                 });
+                 position += time;
+               })
+           })
+      }
+    }
+
     var toggle = function(hash, adjust_hash) {
       if (detail_cache.has(hash)) {
         inner(detail_cache.get(hash));
@@ -270,7 +420,7 @@ var dt = (
           // already visible, so remove it
           setColour(hash, '');
           visible_details.remove(hash);
-          detail.select('.pass-marker-' + hash).remove();
+          clipped.select('.pass-marker-' + hash).remove();
           var text = document.getElementById('text-' + hash);
           text.parentNode.removeChild(text);
         } else {
@@ -288,90 +438,10 @@ var dt = (
           window.location.replace('#' + new_hash);
         }
 
-        var x_max = d3.max(visible_details.values(), function(d) {return d.x}),
-            y_max = d3.max(visible_details.values(), function(d) {return d.y});
-        x.domain([0, x_max]).nice();
+        var y_max = d3.max(visible_details.values(), function(d) {return d.y});
         y.domain([0, y_max]).nice();
 
-        detail.select(".x.axis").call(x_axis);
-        detail.select(".y.axis").call(y_axis);
-
-        [
-          ['pass-group', 'g', draw_passes],
-          ['time-tick', 'line', draw_tick, false],
-          ['line', 'path', draw_line, false]
-        ].forEach(function(v) {
-          var selection = detail_lines.selectAll('.detail.' + v[0]).data(visible_details.keys());
-          // update existing lines
-          selection.call(v[2], 1);
-          // add new lines
-          selection.enter().append(v[1]).call(v[2], 2);
-          // remove old ones
-          selection.exit().remove();
-        })
-
-        // hide the graph if it's empty
-        var l = visible_details.keys().length;
-        if (l == 0) {
-          detail_elem.classList.add('hidden');
-        } else {
-          detail_elem.classList.remove('hidden');
-        }
-
-        // colour the markers and the text detail border
-        visible_details.forEach(function (hash) {
-          setColour(hash, hash_to_colour(hash));
-        })
-
-        function draw_line(selection) {
-          selection
-            .style('stroke', function(hash) { return hash_to_colour(hash); })
-            .datum(function(hash) { return detail_cache.get(hash).memory_data; })
-            .attr('class', 'line detail')
-            .attr('d', line);
-        }
-        function draw_tick(selection) {
-          selection
-            .style('stroke', function(hash) { return hash_to_colour(hash); })
-            .attr('class', 'time-tick detail')
-            .attr('x1', function(hash) { return x(detail_cache.get(hash).summary.cpu_time); })
-            .attr('x2', function(hash) { return x(detail_cache.get(hash).summary.cpu_time); })
-            .attr('y1', height - 20)
-            .attr('y2', height);
-        }
-        function draw_passes(selection, which) {
-          selection
-            .each(
-              function(hash) {
-                var pass_timing = detail_cache.get(hash).pass_timing,
-                    position = 0,
-                    node = d3.select(this),
-                    check = document.getElementById('passes-check-' + hash),
-                    hidden = (check && check.checked) ? '' : 'hidden';
-
-                node.attr('class', 'detail pass-group ' + hidden)
-                    .attr('id', 'pass-' + hash);
-                node.selectAll('.pass-marker-group').remove();
-
-                pass_timing.forEach(function (elem) {
-                  var pass = elem[0], time = elem[1];
-                  var g = node.append('g').attr('class', 'pass-marker-group');
-                  VerticalLine(g, x(position), '', {
-                    'id': 'pass-' + pass.replace(' ', '-') + '-' + hash,
-                    'class': 'pass-marker marker-' + hash,
-                    'line-class': 'pass-line line-' + hash,
-                    'dy': '0.4em'
-                  });
-                  VerticalLine(g, x(position + time / 2), pass, {
-                    'id': 'pass-text-' + pass.replace(' ', '-') + '-' + hash,
-                    'class': 'pass-text-marker marker-' + hash,
-                    'text-class': 'pass',
-                    'dy': '0.4em'
-                  });
-                  position += time;
-                })
-              })
-        }
+        draw();
       }
     };
 
@@ -390,15 +460,25 @@ var detail_toggle = dt[0], detail_keep_only = dt[1];
 (
   function() {
     var x = d3.time.scale().range([0, width]),
-
         y_mem = d3.scale.linear().range([height, 0]),
         y_cpu_time = d3.scale.linear().range([height, 0]),
+        x_axis = Axis(x, "bottom"),
+        y_axis_mem = Axis(y_mem, "left"),
+        y_axis_cpu_time = Axis(y_cpu_time, "right"),
+        zmc = Plot("#summary", width, height, margin, x, draw, reset_zoom),
+        zoom = zmc.zoom, main = zmc.main, clipped = zmc.clipped;
 
-        xAxis = Axis(x, "bottom"),
+    DrawAxis(main, x_axis, '', 'x', {'translate-y': height});
+    DrawAxis(main, y_axis_mem, 'Peak Memory (MiB)', 'y mem', {
+      'rotate': '-90',
+      'dy': '1.3em'
+    });
+    DrawAxis(main, y_axis_cpu_time, 'CPU Time (s)', 'y cpu', {
+      'rotate': '-90',
+      'translate-x': width,
+      'dy': '-.9em'
+    });
 
-        yAxis_mem = Axis(y_mem, "left"),
-        yAxis_cpu_time = Axis(y_cpu_time, "right"),
-        summary = Plot("#summary", width, height, margin, x, function() {});
     function time(d) { return d.timestamp * 1000; }
     function mem(d) { return d.max_memory / (1024 * 1024); }
     function cpu_time(d) { return d.cpu_time; }
@@ -406,47 +486,39 @@ var detail_toggle = dt[0], detail_keep_only = dt[1];
     var line_mem = Line(x, time, y_mem, mem);
     var line_cpu_time = Line(x, time, y_cpu_time, cpu_time);
 
-    d3.json("out/summary.json", function(err, data) {
-      var x_low = d3.min(data, time),
-          x_high = Date.now(),
-          dx = x_high - x_low;
+    var data = [];
+    var lines = clipped.append('g');
 
-      x.domain([x_low - 0.03*dx, x_high]);
-      y_mem.domain([0, d3.max(data, mem)]);
-      y_mem.nice();
-      y_cpu_time.domain([0, d3.max(data, cpu_time)]);
-      y_cpu_time.nice();
+    function draw() {
+      main.select('.x.axis').call(x_axis);
+      main.select('.cpu.axis').call(y_axis_cpu_time);
+      main.select('.mem.axis').call(y_axis_mem);
 
-      DrawAxis(summary, xAxis, '', 'x', {'translate-y': height});
-      DrawAxis(summary, yAxis_mem, 'Peak Memory (MiB)', 'y mem', {
-        'rotate': '-90',
-        'dy': '1.3em'
+      var classes = ['cpu', 'mem'],
+          class_lines = {cpu: line_cpu_time, mem: line_mem};
+
+      var sel = clipped.selectAll('.line').data(classes);
+      function draw_line(c) {
+        // can't work out how to hold `c` over the datum call, since I
+        // need it to work out which line.
+        d3.select(this).datum(data).attr('d', class_lines[c]);
+      };
+
+      sel.each(draw_line)
+      sel.enter().append('path')
+         .attr('class', function(c) { return 'line ' + c; })
+         .each(draw_line);
+
+      sel = lines.selectAll('.commit-marker-group').data(data);
+      sel.each(function(d) {
+        // move the position of lines that already exist
+        d3.select(this).select('.marker').attr('transform', 'translate(' + x(time(d)) + ',0)');
       });
-      DrawAxis(summary, yAxis_cpu_time, 'CPU Time (s)', 'y cpu', {
-        'rotate': '-90',
-        'translate-x': width,
-        'dy': '-.9em'
-      });
-
-      // vertical lines go under the graphs
-      var lines = summary.append('g');
-
-      summary.append("path")
-          .datum(data)
-          .attr("class", "line cpu")
-          .attr("d", line_cpu_time);
-      summary.append("path")
-          .datum(data)
-          .attr("class", "line mem")
-          .attr("d", line_mem);
-
-      // a map from the first 7 letters of each commit hash to the
-      // whole thing, used for the URL #
-      var short2long = d3.map();
-
-      // draw the vertical lines for each commit
-      data.forEach(function(d) {
-        VerticalLine(lines, x(time(d)), Label(d, false), {
+      // it's annoying that I have to add a layer of indirection here.
+      sel.enter()
+        .append('g').attr('class', 'commit-marker-group')
+        .each(function(d) {
+        VerticalLine(d3.select(this), x(time(d)), Label(d, false), {
           'id': 'marker-' + d.hash,
           'class': 'marker marker-' + d.hash,
           'line-class': 'marker-line line-' + d.hash,
@@ -455,9 +527,32 @@ var detail_toggle = dt[0], detail_keep_only = dt[1];
           'height': height,
           'dy': '0.3em'
         });
+      });
+    }
+    function reset_zoom() {
+      x.domain([Date.now() - 7 * 24 * 3600 * 1000, Date.now()]);
+      zoom.x(x);
+      draw();
+    }
 
+    d3.json("out/summary.json", function(err, dat) {
+      data = dat;
+      y_mem.domain([0, d3.max(data, mem)]);
+      y_mem.nice();
+      y_cpu_time.domain([0, d3.max(data, cpu_time)]);
+      y_cpu_time.nice();
+
+      reset_zoom();
+
+      // a map from the first 7 letters of each commit hash to the
+      // whole thing, used for the URL #
+      var short2long = d3.map();
+
+      // draw the vertical lines for each commit
+      data.forEach(function(d) {
         short2long.set(d.hash.substr(0, 7), d.hash);
-      })
+      });
+
 
       // if the hash looks like #somehash,somehash,somehash, try to
       // prefill the detailed plot

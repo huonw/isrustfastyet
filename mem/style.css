@@ -70,8 +70,23 @@ ul {
   display: none;
 }
 
+.plot {
+  position: relative;
+}
+
+.reset-button {
+  cursor: pointer;
+  font-size: small;
+  position: absolute;
+  bottom: 30px;
+  right: 60px;
+}
 
 /* svg */
+
+.clipper {
+  fill: none;
+}
 
 .axis {
   font-size: 0.8em;

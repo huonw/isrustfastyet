@@ -192,12 +192,9 @@ function pr_callback(json) {
 /// Convert a hash to a colour. This gives less nice results than
 /// using one of the d3 ones, but they are stable.
 function hash_to_colour(hash) {
-  var r = parseInt(hash.substr(0, 2), 16),
-      g = parseInt(hash.substr(2, 2), 16),
-      b = parseInt(hash.substr(4, 2), 16);
-
-  return 'rgb('+[r,g,b].join(',')+')';
+  return '#' + hash.substr(0, 6);
 }
+
 function setColour(hash, colour) {
   d3.selectAll('.marker-' + hash).style('fill', colour);
   d3.selectAll('.line-' + hash).style('stroke', colour);

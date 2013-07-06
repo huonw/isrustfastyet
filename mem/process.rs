@@ -94,10 +94,11 @@ fn simplify_memory_data(v: &[(f64, f64)]) -> ~[(f64, f64)] {
 fn extract_time(time_str: &str) -> (f64, f64) {
     let i = time_str.find_str("user ").expect("time is formatted wrong: missing user");
     let j = time_str.find_str("system ").expect("time is formatted wrong: missing system");
-    let user = FromStr::from_str(time_str.slice_to(i))
-        .expect("time is formatted wrong: user not a float");
-    let system = FromStr::from_str(time_str.slice(i + 5, j))
-        .expect("time is formatted wrong: system not a float");;
+    // reading directly as f64 doesn't work on some computers! :(
+    let user = FromStr::from_str::<float>(time_str.slice_to(i))
+        .expect("time is formatted wrong: user not a float") as f64;
+    let system = FromStr::from_str::<float>(time_str.slice(i + 5, j))
+        .expect("time is formatted wrong: system not a float") as f64;
     (user, system)
 }
 

@@ -1,4 +1,4 @@
-var width = 900,
+var width = 890,
     height = 400,
     margin = {top: 10, right: 40, bottom: 20, left: 50};
 
@@ -21,21 +21,11 @@ function Plot(elem, width, height, margin, x_axis, zoom_func, reset_zoom) {
 
   var zoom = d3.behavior.zoom().x(x_axis)
     .scaleExtent([1.0/4000, 4000])
-    .on(
-    'zoom',
-    function() {
-      var domain = x_axis.domain();
-      if (domain[0] < 0) {
-        // stop it from underflowing
-        domain[1] -= domain[0];
-        domain[0] = 0;
-        x_axis.domain(domain);
-        zoom.x(x_axis);
-      }
-
-      reset.classList.remove('hidden');
-      zoom_func();
-    });
+    .on('zoom',
+        function() {
+          reset.classList.remove('hidden');
+          zoom_func();
+        });
   svg.call(zoom);
 
   var clip_id = 'clipper-' + Math.random();
@@ -243,6 +233,11 @@ function setColour(hash, colour) {
   d3.select('#text-' + hash).style('border-color', colour);
 }
 
+// the commits that currently are shown in detail. Actually maps
+// hash to (max memory usage, elapsed time), to make bounds
+// calculations faster.
+var visible_details = d3.map();
+
 /// Toggle whether a certain hash is displayed on the detailed plot.
 var dt = (
   function() {
@@ -266,13 +261,11 @@ var dt = (
     // network.
     var detail_cache = d3.map();
 
-    // the commits that currently are shown in detail. Actually maps
-    // hash to (max memory usage, elapsed time), to make bounds
-    // calculations faster.
-    var visible_details = d3.map();
+    /// Whether the user is currently in control of the zoom level.
+    var hand_zoomed = false;
 
     /// register the clear all button handler here, since the
-    /// visible_details object is only in scope here.
+    /// reset_zoom function is only in scope here.
     var clear_all = document.getElementById('clear-all');
     clear_all.addEventListener('click', function() {
       visible_details.keys().forEach(function(hash) {
@@ -283,9 +276,9 @@ var dt = (
       d3.select(document).selectAll('.text-detail').remove();
       window.location.replace('#');
       detail_elem.classList.add('hidden');
+      reset_zoom();
     })
 
-    var hand_zoomed = false;
     function zoom_func() {
       hand_zoomed = true;
       draw();
@@ -399,8 +392,14 @@ var dt = (
     }
 
     var toggle = function(hash, adjust_hash) {
+      var remove = true;
+      if (!visible_details.has(hash)) {
+        visible_details.set(hash, null)
+        remove = false;
+      }
+
       if (detail_cache.has(hash)) {
-        inner(detail_cache.get(hash));
+        inner(detail_cache.get(hash), remove);
       } else {
         // set the colour here so it looks like something is happening
         setColour(hash, hash_to_colour(hash));
@@ -411,12 +410,12 @@ var dt = (
           }
 
           detail_cache.set(hash, d);
-          inner(d)
+          inner(d, remove)
         });
       }
 
-      function inner(data) {
-        if (visible_details.has(hash)) {
+      function inner(data, remove) {
+        if (remove) {
           // already visible, so remove it
           setColour(hash, '');
           visible_details.remove(hash);
@@ -487,6 +486,7 @@ var detail_toggle = dt[0], detail_keep_only = dt[1];
     var line_cpu_time = Line(x, time, y_cpu_time, cpu_time);
 
     var data = [];
+    var hash2data = d3.map();
     var lines = clipped.append('g');
 
     function draw() {
@@ -530,19 +530,45 @@ var detail_toggle = dt[0], detail_keep_only = dt[1];
       });
     }
     function reset_zoom() {
-      x.domain([Date.now() - 7 * 24 * 3600 * 1000, Date.now()]);
+      var hashes = visible_details.keys(),
+          now = Date.now(),
+          one_week = 7 * 24 * 3600 * 1000;
+      console.log(hashes.join(' '));
+      if (hashes.length == 0) {
+        x.domain([now - one_week, now]);
+      } else {
+        var times = hashes.map(function(h) { return time(hash2data.get(h)); })
+        var all_recently = true;
+        times.forEach(function(t) { if (t < now - one_week * 0.8) all_recently = false; })
+        if (all_recently) {
+          x.domain([now - one_week, now]);
+        } else {
+          var range = d3.extent(times),
+              min = range[0], max = range[1],
+              dt = max - min,
+          // provide a buffer zone
+              adjust = dt < one_week ? ((one_week - dt) / 2 + one_week * 0.03) : (dt * 0.05);
+          min -= adjust;
+          max += adjust;
+          x.domain([min, max]);
+        }
+      }
       zoom.x(x);
       draw();
     }
 
     d3.json("out/summary.json", function(err, dat) {
       data = dat;
+      data.forEach(function(d) {
+        hash2data.set(d.hash, d);
+      });
+
+      reset_zoom();
+
       y_mem.domain([0, d3.max(data, mem)]);
       y_mem.nice();
       y_cpu_time.domain([0, d3.max(data, cpu_time)]);
       y_cpu_time.nice();
-
-      reset_zoom();
 
       // a map from the first 7 letters of each commit hash to the
       // whole thing, used for the URL #
@@ -552,7 +578,6 @@ var detail_toggle = dt[0], detail_keep_only = dt[1];
       data.forEach(function(d) {
         short2long.set(d.hash.substr(0, 7), d.hash);
       });
-
 
       // if the hash looks like #somehash,somehash,somehash, try to
       // prefill the detailed plot
@@ -564,6 +589,8 @@ var detail_toggle = dt[0], detail_keep_only = dt[1];
             console.warn("Hash prefix must to be >= 7 chars: '" + hash_prefix + "'");
           }
         })
+        console.log("resetting");
+        reset_zoom();
       } else {
         // draw the last one
         detail_toggle(data[data.length - 1].hash, false)

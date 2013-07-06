@@ -1,11 +1,11 @@
 #wrapper {
-  width: 1302px;
+  width: 1267px;
   margin: 0 auto;
   position:relative;
 }
 
 #summary, #detail {
-  width: 1000px;
+  width: 975px;
 }
 
 ul {
@@ -13,7 +13,7 @@ ul {
 }
 
 #column {
-  width: 300px;
+  width: 275px;
   position: absolute;
   top: 0;
   right: 0;

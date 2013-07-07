@@ -1,0 +1,12 @@
+<div id="header">
+  <a id="site-title" href="{{ site.root }}/">Rust Performance</a>
+  <ul id="header-links">
+    {% for info in site.header_links %}
+    {% capture no_index %}{{ page.url | remove: "/index.html" }}{% endcapture %}
+      <li id="header-{{info.id}}"
+          class="header-link {% if no_index == info.path %}active{% endif %}">
+        <a href="{{site.root}}{{info.path}}">{{info.title}}</a>
+      </li>
+    {% endfor %}
+  </ul >
+</div>

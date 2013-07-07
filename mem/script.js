@@ -2,8 +2,45 @@ var width = 890,
     height = 400,
     margin = {top: 10, right: 40, bottom: 20, left: 50};
 
+var TRANSITION_DURATION = 200;
+
+var summary_elem = document.getElementById('summary');
 var detail_elem = document.getElementById('detail');
 var text_details_elem = document.getElementById('text-details');
+
+function AxisBounds(data, lo, hi, x_access, y_access) {
+  var min = Infinity,
+      max = -Infinity,
+      hi_lo_x = -Infinity, // the largest x value smaller than lo
+      hi_lo_y = 0,
+      lo_hi_x = -Infinity, // the largest x value larger than hi
+      lo_hi_y = 0;
+
+  x_access = x_access || function(d) { return d; }
+  y_access = y_access || function(d) { return d; }
+
+  for (var i = 0, l = data.length; i < l; i++) {
+    var x = x_access(data[i]),
+        y = y_access(data[i]);
+    if (x < lo) {
+      if (x > hi_lo_x) {
+        hi_lo_x = x;
+        hi_lo_y = y;
+      }
+    } else if (x > hi) {
+      if (x < lo_hi_x) {
+        lo_hi_y = y;
+        lo_hi_x = x;
+      }
+    } else {
+      if (y < min) min = y;
+      if (y > max) max = y;
+    }
+  }
+  return [Math.min(hi_lo_y, min, lo_hi_y),
+          Math.max(hi_lo_y, max, lo_hi_y)];
+}
+
 
 /// d3 helpers.
 function Plot(elem, width, height, margin, x_axis, zoom_func, reset_zoom) {
@@ -24,6 +61,8 @@ function Plot(elem, width, height, margin, x_axis, zoom_func, reset_zoom) {
     .on('zoom',
         function() {
           reset.classList.remove('hidden');
+          d3.event.sourceEvent.stopPropagation();
+          d3.event.sourceEvent.preventDefault();
           zoom_func();
         });
   svg.call(zoom);
@@ -274,6 +313,7 @@ var dt = (
       visible_details = d3.map(); // clear it
       detail_lines.selectAll('.detail').remove();
       d3.select(document).selectAll('.text-detail').remove();
+      d3.selectAll('.detail-visible').each(function() { this.classList.remove('detail-visible'); })
       window.location.replace('#');
       detail_elem.classList.add('hidden');
       reset_zoom();
@@ -292,13 +332,21 @@ var dt = (
       if (!hand_zoomed) {
         // only update the x-axis if we're at the default view, and
         // the person hasn't zoomed, since this resets the zoom.'
-        var x_max = d3.max(visible_details.values(), function(d) {return d.x});
+        var x_max = d3.max(visible_details.values(), function(d) {return d ? d.x : 0});
         x.domain([0, x_max]).nice();
         zoom.x(x);
       }
 
-      main.select(".x.axis").call(x_axis);
-      main.select(".y.axis").call(y_axis);
+      var x_lo = x.invert(0), x_hi = x.invert(width),
+          y_max = Math.max.apply(null, visible_details.keys().map(
+            function(hash) {
+              return AxisBounds(detail_cache.get(hash).memory_data,
+                         x_lo, x_hi, d_time, d_mem)[1];
+            }));
+      y.domain([0, y_max]).nice();
+
+      main.select(".x.axis").transition().duration(TRANSITION_DURATION / 2).call(x_axis);
+      main.select(".y.axis").transition().duration(TRANSITION_DURATION).call(y_axis);
 
       [
         ['pass-group', 'g', draw_passes],
@@ -394,7 +442,6 @@ var dt = (
     var toggle = function(hash, adjust_hash) {
       var remove = true;
       if (!visible_details.has(hash)) {
-        visible_details.set(hash, null)
         remove = false;
       }
 
@@ -420,6 +467,7 @@ var dt = (
           setColour(hash, '');
           visible_details.remove(hash);
           clipped.select('.pass-marker-' + hash).remove();
+          d3.select('#marker-' + hash).node().classList.remove('detail-visible');
           var text = document.getElementById('text-' + hash);
           text.parentNode.removeChild(text);
         } else {
@@ -428,17 +476,14 @@ var dt = (
               y_max = d3.max(data.memory_data, d_mem);
           visible_details.set(hash, {y: y_max, x: x_max});
           TextDetail(hash, data)
+          d3.select('#marker-' + hash).node().classList.add('detail-visible');
         }
 
         // update the hash & plots for the above change.
-
         if (adjust_hash) {
           var new_hash = visible_details.keys().map(function(s) {return s.substr(0, 7)}).join(',');
           window.location.replace('#' + new_hash);
         }
-
-        var y_max = d3.max(visible_details.values(), function(d) {return d.y});
-        y.domain([0, y_max]).nice();
 
         draw();
       }
@@ -464,7 +509,7 @@ var detail_toggle = dt[0], detail_keep_only = dt[1];
         x_axis = Axis(x, "bottom"),
         y_axis_mem = Axis(y_mem, "left"),
         y_axis_cpu_time = Axis(y_cpu_time, "right"),
-        zmc = Plot("#summary", width, height, margin, x, draw, reset_zoom),
+        zmc = Plot(summary_elem, width, height, margin, x, draw, reset_zoom),
         zoom = zmc.zoom, main = zmc.main, clipped = zmc.clipped;
 
     DrawAxis(main, x_axis, '', 'x', {'translate-y': height});
@@ -490,9 +535,20 @@ var detail_toggle = dt[0], detail_keep_only = dt[1];
     var lines = clipped.append('g');
 
     function draw() {
-      main.select('.x.axis').call(x_axis);
-      main.select('.cpu.axis').call(y_axis_cpu_time);
-      main.select('.mem.axis').call(y_axis_mem);
+      // width of 1 hour is small
+      main.node().classList[(x(3600*1000) - x(0)) < 2 ? 'add' : 'remove']('far-zoom')
+
+      main.select('.x.axis').transition().duration(TRANSITION_DURATION / 2).call(x_axis);
+
+      var x_lo = x.invert(0), x_hi = x.invert(width),
+          y_cpu_max = AxisBounds(data, x_lo, x_hi, time, cpu_time)[1],
+          y_mem_max = AxisBounds(data, x_lo, x_hi, time, mem)[1];
+
+      y_cpu_time.domain([0, y_cpu_max]).nice();
+      y_mem.domain([0, y_mem_max]).nice();
+
+      main.select('.cpu.axis').transition().duration(TRANSITION_DURATION).call(y_axis_cpu_time);
+      main.select('.mem.axis').transition().duration(TRANSITION_DURATION).call(y_axis_mem);
 
       var classes = ['cpu', 'mem'],
           class_lines = {cpu: line_cpu_time, mem: line_mem};
@@ -509,49 +565,42 @@ var detail_toggle = dt[0], detail_keep_only = dt[1];
          .attr('class', function(c) { return 'line ' + c; })
          .each(draw_line);
 
-      sel = lines.selectAll('.commit-marker-group').data(data);
+      sel = lines.selectAll('.commit-marker-group').data(data.concat([null]));
       sel.each(function(d) {
         // move the position of lines that already exist
-        d3.select(this).select('.marker').attr('transform', 'translate(' + x(time(d)) + ',0)');
+        var t = d == null ? Date.now() : time(d);
+        d3.select(this).select('.marker').attr('transform', 'translate(' + x(t) + ',0)');
       });
       // it's annoying that I have to add a layer of indirection here.
       sel.enter()
         .append('g').attr('class', 'commit-marker-group')
         .each(function(d) {
-        VerticalLine(d3.select(this), x(time(d)), Label(d, false), {
-          'id': 'marker-' + d.hash,
-          'class': 'marker marker-' + d.hash,
-          'line-class': 'marker-line line-' + d.hash,
+        var hash, t, lab, click;
+        if (d === null) {
+          hash = 'now'; t = Date.now(); lab = 'now';
+          click = function() {}
+        } else {
+          hash = d.hash; t = time(d); lab = Label(d, false);
+          click = function() {detail_toggle(d.hash, true)};
+        }
+        VerticalLine(d3.select(this), x(t), lab, {
+          'id': 'marker-' + hash,
+          'class': 'marker marker-' + hash,
+          'line-class': 'marker-line line-' + hash,
           'text-class': 'hash',
-          'click': function() {detail_toggle(d.hash, true)},
+          'click': click,
           'height': height,
           'dy': '0.3em'
         });
       });
     }
     function reset_zoom() {
-      var hashes = visible_details.keys(),
-          now = Date.now(),
-          one_week = 7 * 24 * 3600 * 1000;
-      if (hashes.length == 0) {
-        x.domain([now - one_week, now]);
-      } else {
-        var times = hashes.map(function(h) { return time(hash2data.get(h)); })
-        var all_recently = true;
-        times.forEach(function(t) { if (t < now - one_week * 0.8) all_recently = false; })
-        if (all_recently) {
-          x.domain([now - one_week, now]);
-        } else {
-          var range = d3.extent(times),
-              min = range[0], max = range[1],
-              dt = max - min,
-          // provide a buffer zone
-              adjust = dt < one_week ? ((one_week - dt) / 2 + one_week * 0.03) : (dt * 0.05);
-          min -= adjust;
-          max += adjust;
-          x.domain([min, max]);
-        }
-      }
+      var min = d3.min(data, time),
+          max = Date.now(),
+          dt = max - min,
+      // provide a buffer zone
+          adjust = dt * 0.05;
+      x.domain([min - adjust, max + adjust]);
       zoom.x(x);
       draw();
     }
@@ -561,11 +610,6 @@ var detail_toggle = dt[0], detail_keep_only = dt[1];
       data.forEach(function(d) {
         hash2data.set(d.hash, d);
       });
-
-      y_mem.domain([0, d3.max(data, mem)]);
-      y_mem.nice();
-      y_cpu_time.domain([0, d3.max(data, cpu_time)]);
-      y_cpu_time.nice();
 
       reset_zoom();
 

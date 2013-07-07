@@ -1,1 +1,4 @@
 perf.sqlite3
+_site
+mem/process
+mem/data

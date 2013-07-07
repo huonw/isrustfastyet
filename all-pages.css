@@ -1,0 +1,70 @@
+body {
+  font-family: sans-serif;
+}
+#wrapper {
+  width: 1280px;
+  margin: 0 auto;
+  position:relative;
+}
+#content {
+  position: relative;
+  padding-top: 0.5em;
+}
+
+#header {
+  border-bottom: 1px solid black;
+}
+#header a, #header a:visited, #header a:active {
+  color: black;
+  text-decoration: none;
+}
+
+#site-title {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+#header-links {
+  list-style: none;
+  padding: 0 10px;
+  margin: 0;
+  display: inline-block;
+}
+.header-link {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  font-size: 20px;
+  padding: 0 10px;
+  border: 1px solid black;
+  background: #eeeeee;
+  border-radius: 4px 4px 0 0;
+}
+.active {
+  border-bottom-color: white;
+  background: white;
+}
+
+
+#footer {
+  margin-top: 1em;
+  padding-top: 0.2em;
+  border-top: 1px solid black;
+  width: 100%;
+  font-size: small;
+}
+.footer-item {
+  display: inline-block;
+  padding: 0 1em;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
+.script-letter {
+  font-style: italic;
+}

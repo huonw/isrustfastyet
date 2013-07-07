@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{ page.title }}</title>
+    <meta http-equiv='Content-type' content='text/html; charset=utf8'>
+    <link rel="stylesheet" type="text/css" href="{{ site.root }}/all-pages.css">
+    {% if page.text_only %}
+    <link rel="stylesheet" type="text/css" href="{{ site.root }}/text-only.css">
+    {% endif %}
+    {% for style in page.styles %}
+      <link rel="stylesheet" type="text/css" href="{{ style }}"/>
+    {% endfor %}
+  </head>
+  <body>
+    <div id="wrapper">
+      {% include header.html %}
+      <div id="content">
+        {{ page.content }}
+      </div>
+      {% include footer.html %}
+    </div>
+
+{% for script in page.scripts %}
+    <script src="{{ script }}" charset="utf-8" type="text/javascript"></script>
+{% endfor %}
+
+    {% include sc.html %}
+  </body>
+</html>

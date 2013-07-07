@@ -1,6 +1,4 @@
-#wrapper {
-  max-width: 1250px;
-  margin: auto;
+#content {
   text-align: center;
 }
 
@@ -15,18 +13,17 @@ h2 {
 
 .plot-block {
   padding: 2px 0;
-  width: 1200px;
+  width: 1280px;
 }
 
 .plot-box {
-  width: 1200px;
+  width: 1280px;
   height: 400px;
 }
 
-#footer {
+#bb-footer {
   margin-top: 10px;
   padding-top: 5px;
-  border-top: 1px solid gray;
 }
 
 /* taken from arewefastyet.com */

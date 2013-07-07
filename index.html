@@ -1,58 +1,9 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Is Rust fast yet?</title>
-    <meta http-equiv='Content-type' content='text/html; charset=utf8'>
-    <link href='style.css' type='text/css' rel='stylesheet'></link>
-  </head>
-  <body>
-    <div id='wrapper'>
-      <div class='plot-block'>
-        <h2>Compile</h2>
-        <div id='compile-plot-box' class='plot-box'></div>
-      </div>
-      <div class='plot-block'>
-        <h2>Testsuite</h2>
-        <div id='test-plot-box' class='plot-box'></div>
-      </div>
+---
+layout: default
+text_only: true
+---
 
-      <p id="footer"><a href="http://buildbot.rust-lang.org/">Buildbot</a>
-        build times for each successful merge by bors. The Windows
-        tests are much faster because it runs a stripped
-        down <a href="https://github.com/mozilla/rust/wiki/Note-testsuite#fast-check"><code>check-fast</code>
-        testsuite</a>. The information coming from the buildbots is
-        very noisy, so most spikes are purely an artifact of that, not
-        a performance regression (or improvement) due to the
-        associated pull request.</p>
-
-      <small>Made by Huon Wilson (aka dbaupp). <A href="https://github.com/huonw/isrustfastyet">Source
-        code</a>.</small>
-    </div>
-
-    <script type='text/javascript' src='jquery-2.0.0.min.js'></script>
-    <script type='text/javascript' src='flot/jquery.flot.min.js'></script>
-    <script type='text/javascript' src='flot/jquery.flot.time.min.js'></script>
-    <script type='text/javascript' src='tooltip.js'></script>
-    <script type='text/javascript' src='perf.js'></script>
-    <script type='text/javascript' src='script.js'></script>
-
-
-<!-- Start of StatCounter Code for Default Guide -->
-<script async type="text/javascript">
-var sc_project=8951652;
-var sc_invisible=1;
-var sc_security="2e95cb8f";
-var scJsHost = (("https:" == document.location.protocol) ?
-"https://secure." : "http://www.");
-document.write("<sc"+"ript async type='text/javascript' src='" +
-scJsHost+
-"statcounter.com/counter/counter.js'></"+"script>");
-</script>
-<noscript><div class="statcounter"><a title="web analytics"
-href="http://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="http://c.statcounter.com/8951652/0/2e95cb8f/1/"
-alt="web analytics"></a></div></noscript>
-<!-- End of StatCounter Code for Default Guide -->
-  </body>
-</html>
+<h1>Is Rust <span class="script-letter">x</span> Yet?</h1>
+Performance analytics
+for <a href="http://rust-lang.org/">Rust</a>. Main attraction is
+the <a href="mem">memory graphs</a>.

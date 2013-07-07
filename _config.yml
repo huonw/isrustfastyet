@@ -1,0 +1,5 @@
+root: ''
+header_links:
+  - { path: '/mem', title: 'Memory', id: 'mem' }
+  - { path: '/buildbot', title: 'Buildbot', id: 'buildbot' }
+  - { path: '/about.html', title: 'About', id: 'about'}

@@ -1,9 +1,3 @@
-#wrapper {
-  width: 1267px;
-  margin: 0 auto;
-  position:relative;
-}
-
 #summary, #detail {
   width: 975px;
 }
@@ -80,6 +74,11 @@ ul {
   position: absolute;
   bottom: 30px;
   right: 60px;
+
+  padding: 2px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 2px;
+  border: 1px solid black;
 }
 
 /* svg */
@@ -89,7 +88,7 @@ ul {
 }
 
 .axis {
-  font-size: 0.8em;
+  font-size: 0.73em;
 }
 .axis path, .axis line {
   fill: none;
@@ -124,6 +123,15 @@ ul {
   fill: none;
   stroke-width: 2px;
 }
+
+.far-zoom .detail-visible > .hash {
+  visibility: visible
+}
+
+.far-zoom  .hash {
+  visibility: collapse
+}
+
 .marker {
   pointer-events: all;
   cursor: pointer;
@@ -133,6 +141,16 @@ ul {
   stroke-width: 2.5px;
   opacity: 0.2;
   stroke: black;
+}
+
+.line-now {
+  stroke-width: 0.5px;
+}
+#marker-now {
+  cursor: default;
+}
+#marker-now > .hash {
+  visibility: visible
 }
 
 .pass-line {

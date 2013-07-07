@@ -35,22 +35,26 @@ ul {
 
 
 .text-detail-controls {
-  position: absolute;
-  top: 2px;
-  right: 3px;
+  text-align: right;
+  font-size: small;
 }
 .control {
   cursor: pointer;
   display: inline-block;
   padding: 0 2px;
-  font-size: small;
 }
 
 .keep-button {
   color: green;
 }
+.keep-button:after {
+  content: 'Remove others'
+}
 .clear-button {
   color: red;
+}
+.clear-button:after {
+  content: 'Remove'
 }
 
 .pr-title {

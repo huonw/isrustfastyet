@@ -180,6 +180,30 @@ function TextDetail(hash, data) {
   h2.innerHTML = Label(data.summary, true);
   text.appendChild(h2);
 
+  var ul = document.createElement('ul');
+  text.appendChild(ul);
+
+  if (data.summary.pull_request !== null) {
+    var pr = data.summary.pull_request;
+    var contents = pr_title_cache.has(pr) ? pr_title_cache.get(pr) : '';
+    var l = li(contents, 'pr-title');
+    if (contents == '') {
+      l.id = 'pr-title-' + pr;
+      l.classList.add('hidden');
+      var script = document.createElement('script');
+      script.src = 'https://api.github.com/repos/mozilla/rust/pulls/' + pr + '?callback=pr_callback';
+      document.body.appendChild(script);
+    }
+    ul.appendChild(l);
+  }
+
+  var date = new Date(data.summary.timestamp * 1000)
+             .toISOString().replace(/\.[0-9]{3}Z/, '').replace('T', ' ');
+  ul.appendChild(li('Date: ' + date, 'date-text'))
+  ul.appendChild(
+    li('Max memory usage: ' + (data.summary.max_memory/(1024*1024)).toFixed(0) + ' MiB', 'mem-text'))
+  ul.appendChild(li('CPU time: ' + data.summary.cpu_time.toFixed(1) + ' s', 'cpu-text'));
+
   var controls = document.createElement('div');
   controls.classList.add('text-detail-controls');
   text.appendChild(controls);
@@ -207,30 +231,6 @@ function TextDetail(hash, data) {
   controls.appendChild(Control('✘', 'clear-button', 'Remove this series',
                               function() { detail_toggle(hash, true) }));
 
-  var ul = document.createElement('ul');
-  text.appendChild(ul);
-
-  if (data.summary.pull_request !== null) {
-    var pr = data.summary.pull_request;
-    var contents = pr_title_cache.has(pr) ? pr_title_cache.get(pr) : '';
-    var l = li(contents, 'pr-title');
-    if (contents == '') {
-      l.id = 'pr-title-' + pr;
-      l.classList.add('hidden');
-      var script = document.createElement('script');
-      script.src = 'https://api.github.com/repos/mozilla/rust/pulls/' + pr + '?callback=pr_callback';
-      document.body.appendChild(script);
-    }
-    ul.appendChild(l);
-  }
-
-  var date = new Date(data.summary.timestamp * 1000)
-             .toISOString().replace(/\.[0-9]{3}Z/, '').replace('T', ' ');
-  ul.appendChild(li('Date: ' + date, 'date-text'))
-  ul.appendChild(
-    li('Max memory usage: ' + (data.summary.max_memory/(1024*1024)).toFixed(0) + ' MiB', 'mem-text'))
-  ul.appendChild(li('CPU time: ' + data.summary.cpu_time.toFixed(1) + ' s', 'cpu-text'));
-
   // insert in order of date
   for (var i = 0, l = text_details_elem.childNodes.length; i < l; i++) {
     var node = text_details_elem.childNodes[i];
@@ -239,6 +239,7 @@ function TextDetail(hash, data) {
       return;
     }
   }
+
   // no smaller element, so just append.
   text_details_elem.appendChild(text);
 }
@@ -343,7 +344,7 @@ var dt = (
               return AxisBounds(detail_cache.get(hash).memory_data,
                          x_lo, x_hi, d_time, d_mem)[1];
             }));
-      y.domain([0, y_max]).nice();
+      y.domain([0, y_max * 1.01]).nice();
 
       main.select(".x.axis").transition().duration(TRANSITION_DURATION / 2).call(x_axis);
       main.select(".y.axis").transition().duration(TRANSITION_DURATION).call(y_axis);
@@ -544,8 +545,8 @@ var detail_toggle = dt[0], detail_keep_only = dt[1];
           y_cpu_max = AxisBounds(data, x_lo, x_hi, time, cpu_time)[1],
           y_mem_max = AxisBounds(data, x_lo, x_hi, time, mem)[1];
 
-      y_cpu_time.domain([0, y_cpu_max]).nice();
-      y_mem.domain([0, y_mem_max]).nice();
+      y_cpu_time.domain([0, y_cpu_max * 1.01]).nice();
+      y_mem.domain([0, y_mem_max * 1.01]).nice();
 
       main.select('.cpu.axis').transition().duration(TRANSITION_DURATION).call(y_axis_cpu_time);
       main.select('.mem.axis').transition().duration(TRANSITION_DURATION).call(y_axis_mem);

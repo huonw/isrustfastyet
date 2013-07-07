@@ -137,6 +137,10 @@ ul {
   stroke-width: 2px;
 }
 
+.detail-visible {
+  font-weight: bold;
+}
+
 .far-zoom .detail-visible > .hash {
   visibility: visible
 }

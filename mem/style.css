@@ -33,6 +33,11 @@ ul {
   margin: 1px 0;
 }
 
+.text-detail.hovered {
+  border-width: 5px;
+  padding: 1px;
+}
+
 
 .text-detail-controls {
   text-align: right;
@@ -107,6 +112,10 @@ ul {
   fill: none;
   stroke: black;
   stroke-width: 2px;
+}
+
+.line.hovered {
+  stroke-width: 4px;
 }
 
 .axis.cpu path, .axis.cpu line, .line.cpu, .point.cpu {

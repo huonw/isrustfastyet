@@ -161,6 +161,22 @@ function Control(text, klass, title, onclick) {
   return e;
 }
 
+function HoverEmphasisers(hash) {
+  return [
+    function() {
+      var line = document.getElementById('detail-line-' + hash),
+          text = document.getElementById('text-' + hash);
+      if (line) line.classList.add('hovered');
+      if (text) text.classList.add('hovered');
+    },
+    function() {
+      var line = document.getElementById('detail-line-' + hash),
+          text = document.getElementById('text-' + hash);
+      if (line) line.classList.remove('hovered');
+      if (text) text.classList.remove('hovered');
+    }];
+}
+
 /// Construct the little box on the side
 function TextDetail(hash, data) {
   function li(contents, klass) {
@@ -175,6 +191,9 @@ function TextDetail(hash, data) {
   text.id = 'text-' + hash;
   text.dataset.hash = hash;
   text.dataset.timestamp = data.summary.timestamp;
+  var hoverers = HoverEmphasisers(hash);
+  text.addEventListener('mouseover', hoverers[0]);
+  text.addEventListener('mouseout', hoverers[1]);
 
   var h2 = document.createElement('h2');
   h2.innerHTML = Label(data.summary, true);
@@ -380,18 +399,24 @@ var dt = (
       function draw_line(selection) {
         selection
          .style('stroke', function(hash) { return hash_to_colour(hash); })
-            .datum(function(hash) { return detail_cache.get(hash).memory_data; })
-           .attr('class', 'line detail')
-            .attr('d', line);
+         .attr('id', function(hash) { return 'detail-line-' + hash; })
+         .attr('class', 'line detail')
+         .each(function(hash) {
+            var hoverers = HoverEmphasisers(hash);
+            this.addEventListener('mouseover', hoverers[0]);
+            this.addEventListener('mouseout', hoverers[1]);
+         })
+         .datum(function(hash) { return detail_cache.get(hash).memory_data; })
+         .attr('d', line);
       }
       function draw_tick(selection) {
         selection
-        .style('stroke', function(hash) { return hash_to_colour(hash); })
-        .attr('class', 'time-tick detail')
-        .attr('x1', function(hash) { return x(detail_cache.get(hash).summary.cpu_time); })
-        .attr('x2', function(hash) { return x(detail_cache.get(hash).summary.cpu_time); })
-                                                   .attr('y1', height - 20)
-                                  .attr('y2', height);
+         .style('stroke', function(hash) { return hash_to_colour(hash); })
+         .attr('class', 'time-tick detail')
+         .attr('x1', function(hash) { return x(detail_cache.get(hash).summary.cpu_time); })
+         .attr('x2', function(hash) { return x(detail_cache.get(hash).summary.cpu_time); })
+         .attr('y1', height - 20)
+         .attr('y2', height);
       }
       function draw_passes(selection, which) {
         selection

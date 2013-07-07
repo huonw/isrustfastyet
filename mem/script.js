@@ -533,7 +533,6 @@ var detail_toggle = dt[0], detail_keep_only = dt[1];
       var hashes = visible_details.keys(),
           now = Date.now(),
           one_week = 7 * 24 * 3600 * 1000;
-      console.log(hashes.join(' '));
       if (hashes.length == 0) {
         x.domain([now - one_week, now]);
       } else {
@@ -563,12 +562,12 @@ var detail_toggle = dt[0], detail_keep_only = dt[1];
         hash2data.set(d.hash, d);
       });
 
-      reset_zoom();
-
       y_mem.domain([0, d3.max(data, mem)]);
       y_mem.nice();
       y_cpu_time.domain([0, d3.max(data, cpu_time)]);
       y_cpu_time.nice();
+
+      reset_zoom();
 
       // a map from the first 7 letters of each commit hash to the
       // whole thing, used for the URL #
@@ -589,7 +588,6 @@ var detail_toggle = dt[0], detail_keep_only = dt[1];
             console.warn("Hash prefix must to be >= 7 chars: '" + hash_prefix + "'");
           }
         })
-        console.log("resetting");
         reset_zoom();
       } else {
         // draw the last one

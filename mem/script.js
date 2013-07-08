@@ -1,4 +1,4 @@
-var width = 890,
+var width = 870,
     height = 400,
     margin = {top: 10, right: 40, bottom: 20, left: 50};
 

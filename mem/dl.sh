@@ -22,7 +22,10 @@ for hash in $(grep -v -f <(ls) history.txt); do
         for f in $MEM_FILE $TIME_FILE $CI_FILE; do
             curl -s ${BASE_URL}${hash}/$f -o $f
         done
-        gunzip $MEM_FILE
+
+        # sometimes we get a 404 error, so just kill the directory and
+        # wait till next time
+        gunzip $MEM_FILE || { cd ..; rm -rf $hash; }
     ) &
 done
 

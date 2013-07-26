@@ -46,7 +46,7 @@ for plat in PLATFORMS:
             print('%i: error: %s' % (i, build['error']))
             continue
 
-        changeset = build['sourceStamp']['revision']
+        changeset = build['sourceStamps'][0]['revision']
 
         try:
             assert build['text'] == ['build', 'successful']
@@ -70,7 +70,7 @@ for chst, bs in builds.items():
         print(chst, 'already done')
         continue # already done
 
-    changes = bs[PLATFORMS[0]]['sourceStamp']['changes']
+    changes = bs[PLATFORMS[0]]['sourceStamps'][0]['changes']
     if changes:
         changes = changes[0]
         comment = changes['comments']

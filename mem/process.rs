@@ -137,7 +137,7 @@ fn main() {
 
     let num = to_process.len();
 
-    do to_process.consume |hash| {
+    for to_process.consume().advance |hash| {
         let cc = c.clone();
         println(hash);
 

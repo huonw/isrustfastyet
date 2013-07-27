@@ -148,17 +148,19 @@ fn main() {
             let time_path = hash_folder.push("time.txt");
             let ci_path = hash_folder.push("commit_info.txt");
 
-            let raw_time = io::read_whole_file_str(&time_path).expect(~"no time.txt");
+            let raw_time = io::read_whole_file_str(&time_path)
+                .expect(fmt!("no %s/time.txt", hash));
             let (user, system) = extract_time(raw_time);
             let time = user + system;
 
-            let raw_commit_info = io::read_whole_file_str(&ci_path).expect(~"no commit_info.txt");
+            let raw_commit_info = io::read_whole_file_str(&ci_path)
+                .expect(fmt!("no %s/commit_info.txt", hash));
             let mut lines = raw_commit_info.line_iter();
             let (author, timestamp, summary) = match (lines.next(),
                                                  lines.next().chain(|x| FromStr::from_str(x)),
                                                  lines.next()) {
                 (Some(a), Some(b), Some(c)) => (a, b, c),
-                _ => fail!("invalid commit_info format")
+                _ => fail!("invalid %s/commit_info.txt", hash)
             };
 
             let pull_request = if author == "bors bors@rust-lang.org" {
@@ -172,8 +174,8 @@ fn main() {
 
             // load the mem.json file.
             let json = do io::file_reader(&mem_path).map |rdr| {
-                json::from_reader(*rdr).expect(~"mem.json is not json")
-            }.expect(~"no mem.json");
+                json::from_reader(*rdr).expect(fmt!("%s/mem.json is not json", hash))
+            }.expect(fmt!("no %s/mem.json", hash));
 
             let d: Data = Decodable::decode(&mut json::Decoder(json));
             let simple_mem = simplify_memory_data(d.memory_data);
@@ -196,7 +198,8 @@ fn main() {
             };
 
             let fname = Path("out").push(hash + ".json");
-            let out_f = io::file_writer(&fname, [io::Create, io::Truncate]).expect(~"out file can't be opened");
+            let out_f = io::file_writer(&fname, [io::Create, io::Truncate])
+                .expect(fmt!("%s can't be opened", fname.to_str()));
             out.encode(&mut json::Encoder(out_f));
             cc.send(summary);
         }

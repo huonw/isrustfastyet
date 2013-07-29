@@ -144,64 +144,68 @@ fn main() {
         // paralellism!
         do spawn {
             let hash_folder = Path("data").push(hash);
-            let mem_path = hash_folder.push("mem.json");
-            let time_path = hash_folder.push("time.txt");
-            let ci_path = hash_folder.push("commit_info.txt");
-
-            let raw_time = io::read_whole_file_str(&time_path)
-                .expect(fmt!("no %s/time.txt", hash));
-            let (user, system) = extract_time(raw_time);
-            let time = user + system;
-
-            let raw_commit_info = io::read_whole_file_str(&ci_path)
-                .expect(fmt!("no %s/commit_info.txt", hash));
-            let mut lines = raw_commit_info.line_iter();
-            let (author, timestamp, summary) = match (lines.next(),
-                                                 lines.next().chain(|x| FromStr::from_str(x)),
-                                                 lines.next()) {
-                (Some(a), Some(b), Some(c)) => (a, b, c),
-                _ => fail!("invalid %s/commit_info.txt", hash)
-            };
-
-            let pull_request = if author == "bors bors@rust-lang.org" {
-                // a bors commit, so extract the pull request
-                let leading_num = summary.slice_from("auto merge of #".len());
-                let non_num = leading_num.find(|c: char| !c.is_digit()).get_or_zero();
-                FromStr::from_str(leading_num.slice_to(non_num))
+            if !os::path_is_dir(&hash_folder) {
+                println(fmt!("%s doesn't exist; skipping.", hash));
             } else {
-                None
-            };
+                let mem_path = hash_folder.push("mem.json");
+                let time_path = hash_folder.push("time.txt");
+                let ci_path = hash_folder.push("commit_info.txt");
 
-            // load the mem.json file.
-            let json = do io::file_reader(&mem_path).map |rdr| {
-                json::from_reader(*rdr).expect(fmt!("%s/mem.json is not json", hash))
-            }.expect(fmt!("no %s/mem.json", hash));
+                let raw_time = io::read_whole_file_str(&time_path)
+                    .expect(fmt!("no %s/time.txt", hash));
+                let (user, system) = extract_time(raw_time);
+                let time = user + system;
 
-            let d: Data = Decodable::decode(&mut json::Decoder(json));
-            let simple_mem = simplify_memory_data(d.memory_data);
+                let raw_commit_info = io::read_whole_file_str(&ci_path)
+                    .expect(fmt!("no %s/commit_info.txt", hash));
+                let mut lines = raw_commit_info.line_iter();
+                let (author, timestamp, summary) = match (lines.next(),
+                                                          lines.next().chain(|x| FromStr::from_str(x)),
+                                                          lines.next()) {
+                    (Some(a), Some(b), Some(c)) => (a, b, c),
+                    _ => fail!("invalid %s/commit_info.txt", hash)
+                };
 
-            // if stdout is empty, this should just return nothing
-            let pass_timing = pass_timing(d.stdout);
+                let pull_request = if author == "bors bors@rust-lang.org" {
+                    // a bors commit, so extract the pull request
+                    let leading_num = summary.slice_from("auto merge of #".len());
+                    let non_num = leading_num.find(|c: char| !c.is_digit()).get_or_zero();
+                    FromStr::from_str(leading_num.slice_to(non_num))
+                } else {
+                    None
+                };
 
-            // create & write the output
-            let summary = Summary {
-                hash: hash.to_owned(),
-                timestamp: timestamp,
-                cpu_time: time,
-                max_memory: d.max_memory as f64,
-                pull_request: pull_request
-            };
-            let out = Output {
-                memory_data: simple_mem,
-                pass_timing: pass_timing,
-                summary: summary.clone()
-            };
+                // load the mem.json file.
+                let json = do io::file_reader(&mem_path).map |rdr| {
+                    json::from_reader(*rdr).expect(fmt!("%s/mem.json is not json", hash))
+                }.expect(fmt!("no %s/mem.json", hash));
 
-            let fname = Path("out").push(hash + ".json");
-            let out_f = io::file_writer(&fname, [io::Create, io::Truncate])
-                .expect(fmt!("%s can't be opened", fname.to_str()));
-            out.encode(&mut json::Encoder(out_f));
-            cc.send(summary);
+                let d: Data = Decodable::decode(&mut json::Decoder(json));
+                let simple_mem = simplify_memory_data(d.memory_data);
+
+                // if stdout is empty, this should just return nothing
+                let pass_timing = pass_timing(d.stdout);
+
+                // create & write the output
+                let summary = Summary {
+                    hash: hash.to_owned(),
+                    timestamp: timestamp,
+                    cpu_time: time,
+                    max_memory: d.max_memory as f64,
+                    pull_request: pull_request
+                };
+                let out = Output {
+                    memory_data: simple_mem,
+                    pass_timing: pass_timing,
+                    summary: summary.clone()
+                };
+
+                let fname = Path("out").push(hash + ".json");
+                let out_f = io::file_writer(&fname, [io::Create, io::Truncate])
+                    .expect(fmt!("%s can't be opened", fname.to_str()));
+                out.encode(&mut json::Encoder(out_f));
+                cc.send(summary);
+            }
         }
     }
 

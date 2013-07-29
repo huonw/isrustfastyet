@@ -118,6 +118,9 @@ ul {
   stroke-width: 4px;
 }
 
+.line.cpu {
+  stroke-width: 1px;
+}
 .axis.cpu path, .axis.cpu line, .line.cpu, .point.cpu {
   stroke: red;
   stroke-dasharray: 3, 3;

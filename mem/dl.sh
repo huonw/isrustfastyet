@@ -26,9 +26,10 @@ for hash in $(grep -v -f <(ls) history.txt); do
         # sometimes we get a 404 error, so just kill the directory and
         # wait till next time
         if ! (
-                gunzip $MEM_FILE &&
+                gunzip -f $MEM_FILE &&
                 python -c 'import sys, json; json.load(sys.stdin)' < ${MEM_FILE%.gz}
             ); then
+            echo $hash failed
             cd ..
             rm -rf $hash
         fi

@@ -7,18 +7,7 @@ A fairly quick hack: doesn't do anything fancy, just hits the buildbot
 JSON api and puts it into a database, and then (separately) constructs
 a JSON file (`perf.js`, which sets the `PERF_DATA` global variable).
 
-To initialise:
-
-   sqlite3 perf.sqlite3 < perf.sql
-   ./build-perf.py
-   ./make-perf-json.py
-
-This should make the `perf.js` file, and you're good to go, just open
-`index.html` in your favourite browser. (The other option is to just
-use the prebuilt version hosted by GitHub pages from this repo:
-http://huonw.github.io/isrustfastyet/)
+It also collects data from some benchmarkers to disable detailed 
+memory vs time profiles as well as accurate build speeds.
 
 Requires Python 3 and the requests library.
-
-(To build historical data, change the HISTORY variable in
-`build-perf.py`.)

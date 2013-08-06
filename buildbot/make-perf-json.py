@@ -2,7 +2,7 @@
 
 import sqlite3, json, sys
 
-db = sqlite3.connect('perf.sqlite3')
+db = sqlite3.connect('../backend/pr.sqlite3')
 
 cur = db.cursor()
 

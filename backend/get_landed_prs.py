@@ -31,7 +31,7 @@ PLATFORMS = ['%s-%s-%s' % (os, arch, opt)
 HISTORY = range(-10,-1 + 1)
 URL = 'http://buildbot.rust-lang.org/json/builders/auto-%s/builds?' + '&'.join('select=%d' % i
                                                                                for i in HISTORY)
-db = sqlite3.connect('perf.sqlite3')
+db = sqlite3.connect('pr.sqlite3')
 cur = db.cursor()
 
 builds = defaultdict(dict)

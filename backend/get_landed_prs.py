@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import requests, sqlite3, json, re
+import requests, sqlite3, json, re, os
 from collections import defaultdict
 
 ONLY_OPT = ['opt']
@@ -31,6 +31,9 @@ PLATFORMS = ['%s-%s-%s' % (os, arch, opt)
 HISTORY = range(-10,-1 + 1)
 URL = 'http://buildbot.rust-lang.org/json/builders/auto-%s/builds?' + '&'.join('select=%d' % i
                                                                                for i in HISTORY)
+GH_URL = 'https://api.github.com/repos/mozilla/rust/pulls/%d'
+PR_INFO_DIR = '../pull_requests/'
+
 db = sqlite3.connect('pr.sqlite3')
 cur = db.cursor()
 
@@ -84,6 +87,20 @@ for chst, bs in builds.items():
         pull_request = None
         time = build['steps'][0]['times'][0] # approximate the time with the time the build started
 
+    if pull_request:
+        print("Retrieving info for %d from GitHub." % pull_request)
+        dir = PR_INFO_DIR + '%02d/%d' % (pull_request // 100, pull_request)
+        try:
+            os.makedirs(dir)
+        except OSError:
+            pass # already done
+        else:
+            github_info = requests.get(GH_URL % pull_request).json()
+            with open('%s/title.txt' % dir, 'w') as f:
+                f.write(github_info['title'])
+            with open('%s/merge_commit.txt' % dir, 'w') as f:
+                to_write = github_info.get('merge_commit_sha')
+                f.write(to_write if to_write is not None else '')
 
     cur.execute('INSERT INTO change (changeset, pull_request, time) VALUES (?,?,?)',
                 (chst, pull_request, time))

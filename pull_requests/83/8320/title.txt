@@ -1,0 +1,1 @@
+ Add frequency count to extra::stat. #8281

@@ -2,14 +2,20 @@
 git pull --rebase
 
 (
-    cd buildbot
+    cd backend
 
-    ./build-perf.py &&
-      ./make-perf-json.py &&
-      ./make-perf-json.py all &&
-      git add {perf,all}.js &&
-      git commit -m 'Update buildbot.'
+    ./get_landed_prs.py &&
+    git add ../pull_requests &&
+    git commit -m 'Fetch new pull requests.'
+
+    cd ../buildbot
+    ./make-perf-json.py &&
+    ./make-perf-json.py all &&
+    git add {perf,all}.js &&
+    git commit -m 'Update buildbot.'
+
 )
+
 (
     cd mem
     rustc -O process.rs &&

@@ -1,0 +1,1 @@
+Add option.map_move and result.map_move

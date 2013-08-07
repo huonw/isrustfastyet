@@ -1,0 +1,1 @@
+Support assignability for struct fields

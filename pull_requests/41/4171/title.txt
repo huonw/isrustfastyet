@@ -1,0 +1,1 @@
+Document pub use foo::* in the reference manual

@@ -1,0 +1,1 @@
+Implement core::str::from_cstr_len with a test, close issue #1666

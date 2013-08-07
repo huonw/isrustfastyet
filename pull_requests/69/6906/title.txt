@@ -1,0 +1,1 @@
+docs: Mention recently-added rustpkg features in the rustpkg manual

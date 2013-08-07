@@ -1,0 +1,1 @@
+core: Remove a call to `breakpoint` from a test

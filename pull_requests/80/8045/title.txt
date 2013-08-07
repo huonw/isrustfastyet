@@ -1,0 +1,1 @@
+debuginfo: Support for destructured locals and function arguments.

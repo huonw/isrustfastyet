@@ -1,0 +1,1 @@
+vec::with_capacity: do one alloc for non-managed + ptr module improvements

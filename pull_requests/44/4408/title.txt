@@ -1,0 +1,1 @@
+librustc: Allow the type parameter version of `Self` to be spelled with a capital S

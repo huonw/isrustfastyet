@@ -1,0 +1,1 @@
+(cargo) fixed a package installation bug, cleaned up usage

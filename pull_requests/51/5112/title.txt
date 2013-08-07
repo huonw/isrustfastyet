@@ -1,0 +1,1 @@
+Allow constant expressions in [Type * n].

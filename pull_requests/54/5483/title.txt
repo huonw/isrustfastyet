@@ -1,0 +1,1 @@
+librustc: Replace the `&static` bound with `'static`

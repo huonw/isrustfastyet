@@ -1,0 +1,1 @@
+Add comma after "For example" in tutorial

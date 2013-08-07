@@ -1,0 +1,1 @@
+vec: Fix size_hint() of reverse iterators

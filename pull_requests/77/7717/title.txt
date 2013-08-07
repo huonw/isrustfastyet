@@ -1,0 +1,1 @@
+transmute: Avoid double copy for immediate values

@@ -1,0 +1,1 @@
+Avoid excessive allocations and copies in iter::to_vec

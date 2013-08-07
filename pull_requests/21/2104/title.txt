@@ -1,0 +1,1 @@
+Add global rust_get_current_task

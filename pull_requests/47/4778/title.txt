@@ -1,0 +1,1 @@
+auto: Add an OwnedIter trait to share a consume fn

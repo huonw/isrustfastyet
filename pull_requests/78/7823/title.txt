@@ -1,0 +1,1 @@
+Add doc and examples for attributes allow/warn/deny/forbid.

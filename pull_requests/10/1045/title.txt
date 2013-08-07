@@ -1,0 +1,1 @@
+Fix syntax errors in "alt" documentation

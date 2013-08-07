@@ -1,0 +1,1 @@
+Update documentation with examples for various int, vec methods.

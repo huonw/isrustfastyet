@@ -1,0 +1,1 @@
+Always eat up mut when parsing general args, fixes #7483

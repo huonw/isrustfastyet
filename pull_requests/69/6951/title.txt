@@ -1,0 +1,1 @@
+Makefile.in: simplify logic for CFG_VER_HASH

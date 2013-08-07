@@ -1,0 +1,1 @@
+Deny overlong encodings in UTF-8

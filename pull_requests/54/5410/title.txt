@@ -1,0 +1,1 @@
+librustc: adjust logic for cfg attribute and add not predicate.

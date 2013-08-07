@@ -1,0 +1,1 @@
+Fix run-pass/match-borrowed_str.rs Fixes #7306

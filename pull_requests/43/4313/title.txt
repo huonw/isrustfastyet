@@ -1,0 +1,1 @@
+libcore: Add range_step and range_rev functions.

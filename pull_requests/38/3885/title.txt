@@ -1,0 +1,1 @@
+rustc: Implement typechecking for automatically-derived enums

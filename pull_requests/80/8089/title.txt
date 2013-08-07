@@ -1,0 +1,1 @@
+Add .write_str() to std::rt::io, and port to rt::io for libstd Repr and ToStr

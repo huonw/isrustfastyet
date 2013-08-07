@@ -1,0 +1,1 @@
+Add a `consume` method to SmallIntMap

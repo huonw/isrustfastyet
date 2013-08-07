@@ -1,0 +1,1 @@
+librustc: Implement (and require) explicit self for derivable traits 

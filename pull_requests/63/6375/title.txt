@@ -1,0 +1,1 @@
+libsyntax: Remove `extern mod foo { ... }` from the language.

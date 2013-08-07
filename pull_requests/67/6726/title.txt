@@ -1,0 +1,1 @@
+Actually filter view_items in blocks

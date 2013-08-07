@@ -1,0 +1,1 @@
+revert bad gpgv options patch

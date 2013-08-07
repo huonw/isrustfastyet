@@ -1,0 +1,1 @@
+Allow `macro_rules!` to also define item and stmt macros

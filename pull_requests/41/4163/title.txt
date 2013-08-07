@@ -1,0 +1,1 @@
+Relate the module hierarchy to directory paths in the parser

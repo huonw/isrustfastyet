@@ -1,0 +1,1 @@
+Omit discriminant from nullary univariant enums.

@@ -1,0 +1,1 @@
+Issue 4715 better errors for bindings

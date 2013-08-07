@@ -1,0 +1,1 @@
+Add Inno Setup installer script rather than NSIS

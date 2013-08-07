@@ -1,0 +1,1 @@
+Updated test to use 'check' rather than just logging results.

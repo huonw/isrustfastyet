@@ -1,0 +1,1 @@
+Issue6009 condition pub priv variants

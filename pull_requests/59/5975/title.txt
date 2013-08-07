@@ -1,0 +1,1 @@
+Allow intrinsics to use #[fixed_stack_segment], and use it for numeric intrinsics

@@ -1,0 +1,1 @@
+std: Change str::from_bytes to raise a condition on invalid input

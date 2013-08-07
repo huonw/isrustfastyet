@@ -1,0 +1,1 @@
+Mark some more core and std functions as pure

@@ -1,0 +1,1 @@
+Remove @ types from Sha1 implementation, create Digest trait, and implement most of the SHA-2 functions

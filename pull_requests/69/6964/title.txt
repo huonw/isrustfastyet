@@ -1,0 +1,1 @@
+std: add an external iterator for mutating vec elements

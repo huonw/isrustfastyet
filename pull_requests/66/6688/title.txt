@@ -1,0 +1,1 @@
+revert no-longer-required workaround for mystery bug, close #3396

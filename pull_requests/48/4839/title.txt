@@ -1,0 +1,1 @@
+auto: Remove most remaining structural records in libcore, plus transitional code

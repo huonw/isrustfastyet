@@ -1,0 +1,1 @@
+Refactoring methods, trait references

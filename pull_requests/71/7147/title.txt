@@ -1,0 +1,1 @@
+std: rename .connect/.concat in VectorVector to avoid conflicting with StrVector.

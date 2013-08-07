@@ -1,0 +1,1 @@
+iterator: Add `IteratorUtil::peek_` method

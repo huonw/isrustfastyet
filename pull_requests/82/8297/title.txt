@@ -1,0 +1,1 @@
+extra: Don't recurse in DList drop glue. #8295

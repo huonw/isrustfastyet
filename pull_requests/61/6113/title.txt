@@ -1,0 +1,1 @@
+core: Replace uses of 'drop' in task module with 'finally'. #5379

@@ -1,0 +1,1 @@
+Provide a condition in string-based IO routines

@@ -1,0 +1,1 @@
+add -O2 when compiling rt, fix warnings triggered by optimizer

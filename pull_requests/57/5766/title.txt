@@ -1,0 +1,1 @@
+make the Ordering type a bit more flexible

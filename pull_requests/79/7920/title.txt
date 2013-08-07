@@ -1,0 +1,1 @@
+Added a new method to extra::future (unwrap) + a test

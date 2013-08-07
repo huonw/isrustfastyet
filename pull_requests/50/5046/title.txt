@@ -1,0 +1,1 @@
+Check type when struct is matched against enum-like pattern

@@ -1,0 +1,1 @@
+std: Rename Iterator adaptor types to drop the -Iterator suffix

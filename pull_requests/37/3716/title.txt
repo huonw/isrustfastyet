@@ -1,0 +1,1 @@
+rustc: fix size computation of structs for the FFI

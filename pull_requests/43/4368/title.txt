@@ -1,0 +1,1 @@
+librustc: Encode language items into a special lookup table. 9% improvement in hello world compile time.

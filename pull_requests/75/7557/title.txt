@@ -1,0 +1,1 @@
+Added support for struct-like enum variants in middle::ty::enum_variants()

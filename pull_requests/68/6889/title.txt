@@ -1,0 +1,1 @@
+librustc: Have destructor run for unit-like structs.

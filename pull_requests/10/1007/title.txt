@@ -1,0 +1,1 @@
+remove call to pthread_exit()

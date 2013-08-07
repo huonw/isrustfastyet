@@ -1,0 +1,1 @@
+Add a module to getopts for verbose option group declaration (and use it in rustc)

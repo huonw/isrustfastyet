@@ -1,0 +1,1 @@
+libcore: rand: Use a pure Rust implementation of ISAAC RNG

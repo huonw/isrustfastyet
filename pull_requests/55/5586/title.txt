@@ -1,0 +1,1 @@
+librustc: Allow expr_repeat to be used with any vstore

@@ -1,0 +1,1 @@
+Added overloaded Add and Sub traits for pointer arithmetic as per Issue #2122

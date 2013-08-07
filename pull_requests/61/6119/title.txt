@@ -1,0 +1,1 @@
+Only look for `main` at the crate level

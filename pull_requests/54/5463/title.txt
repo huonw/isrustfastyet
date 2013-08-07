@@ -1,0 +1,1 @@
+Speed up fmt! by 20%

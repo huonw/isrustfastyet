@@ -1,0 +1,1 @@
+rustc: Strict enforcement of glue function types.

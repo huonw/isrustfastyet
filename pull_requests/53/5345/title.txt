@@ -1,0 +1,1 @@
+librustc: Don't accept `as Trait` anymore; fix all occurrences of it. 

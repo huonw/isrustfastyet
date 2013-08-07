@@ -1,0 +1,1 @@
+Use assert_eq! rather than assert! where possible

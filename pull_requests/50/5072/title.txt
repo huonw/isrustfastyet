@@ -1,0 +1,1 @@
+Report error for non constant vector repeat count

@@ -1,0 +1,1 @@
+Added --format to rustc

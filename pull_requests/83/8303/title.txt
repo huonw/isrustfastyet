@@ -1,0 +1,1 @@
+std::rt: Use magic to make TLS work from annihilated boxes. #8302

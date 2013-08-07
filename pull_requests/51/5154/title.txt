@@ -1,0 +1,1 @@
+Fix code of tutorials now that mutable fields are deprecated 

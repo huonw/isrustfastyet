@@ -1,0 +1,1 @@
+ToStr for HashMap does not need value to implement Eq or Hash

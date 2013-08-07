@@ -1,0 +1,1 @@
+Fix ICE after incorrect number of args in calls

@@ -1,0 +1,1 @@
+librustc: Forbid `pub` or `priv` before trait implementations

@@ -1,0 +1,1 @@
+Rename #[non_sendable] to #[no_send], #[mutable] to #[no_freeze]

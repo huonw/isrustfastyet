@@ -1,0 +1,1 @@
+rustc: Eliminate extra failing case in metadata::loader::crate_from_metas

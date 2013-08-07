@@ -1,0 +1,1 @@
+Document std::libc::c_void.

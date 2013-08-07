@@ -1,0 +1,1 @@
+Small typo in ## Creating a task with a bi-directional communication path

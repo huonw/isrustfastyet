@@ -1,0 +1,1 @@
+mk: target triple rename arm-unknown-android->arm-linux-androideabi

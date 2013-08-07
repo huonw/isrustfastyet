@@ -1,0 +1,1 @@
+Make bench/noise.rs more idiomatic and 20x faster

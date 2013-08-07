@@ -1,0 +1,1 @@
+Add CONTRIBUTING.md and RELEASES.txt to release tarball

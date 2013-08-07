@@ -1,0 +1,1 @@
+auto: Fix behavior of file!, line! and col!

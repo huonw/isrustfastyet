@@ -1,0 +1,1 @@
+Add support for bitcount intrinsics Issue #2777

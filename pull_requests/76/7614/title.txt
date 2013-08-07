@@ -1,0 +1,1 @@
+SmallIntMap and SmallIntSet now have external iterators as per Issue #7366

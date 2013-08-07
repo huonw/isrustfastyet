@@ -1,0 +1,1 @@
+fix the ptr::set_memory docstring

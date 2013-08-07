@@ -1,0 +1,1 @@
+Add NO_BENCH variable to makefiles for turning off --bench

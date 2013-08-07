@@ -1,0 +1,1 @@
+renamed str/vec::from_slice to str/vec::to_owned. #3356

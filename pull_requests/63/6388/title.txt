@@ -1,0 +1,1 @@
+vec.rs: add new feature ( each2_mut function )

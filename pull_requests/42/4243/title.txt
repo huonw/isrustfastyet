@@ -1,0 +1,1 @@
+Fix a bug in Result::unwrap_err (and minor cleanup)

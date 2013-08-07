@@ -1,0 +1,1 @@
+librustc: Correct #[always_inline] -> #[inline(always)]

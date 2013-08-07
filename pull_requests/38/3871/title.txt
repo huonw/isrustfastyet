@@ -1,0 +1,1 @@
+ 	rustc: Translate monomorphic intra-crate automatically-derived method… 

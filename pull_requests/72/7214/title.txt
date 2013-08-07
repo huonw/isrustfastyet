@@ -1,0 +1,1 @@
+Fix take glue of owned trait objects

@@ -1,0 +1,1 @@
+'Type' renamed to 'type definition'.

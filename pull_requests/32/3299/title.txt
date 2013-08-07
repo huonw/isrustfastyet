@@ -1,0 +1,1 @@
+Fix MZ_FORCEINLINE define to work with GCC 4.7.1.

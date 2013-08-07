@@ -1,0 +1,1 @@
+librustc/readme.txt: main() is probably the one in ./../librust/rust.rc

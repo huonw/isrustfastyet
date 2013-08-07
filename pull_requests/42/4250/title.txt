@@ -1,0 +1,1 @@
+update after/syntax/rust.vim for removal of <-

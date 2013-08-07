@@ -1,0 +1,1 @@
+Make Bitv::eq_vec take &[bool] rather than ~[uint]

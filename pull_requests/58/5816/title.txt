@@ -1,0 +1,1 @@
+Add #[packed] attribute to create packed structs

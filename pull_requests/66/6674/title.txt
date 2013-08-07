@@ -1,0 +1,1 @@
+Issue #4715: Give a better error message when move results from a binding..

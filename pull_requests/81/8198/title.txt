@@ -1,0 +1,1 @@
+Explicitly impl Clone for RWArc

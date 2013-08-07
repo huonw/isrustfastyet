@@ -1,0 +1,1 @@
+Add a 'start' lang item and use it instead of rust_start

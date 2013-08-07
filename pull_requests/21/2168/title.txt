@@ -1,0 +1,1 @@
+Issue 2167 trans: declare as function

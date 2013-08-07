@@ -1,0 +1,1 @@
+Speed up the lookup of traits implementing a given method

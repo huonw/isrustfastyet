@@ -1,0 +1,1 @@
+Support printf formats in terminfo strings

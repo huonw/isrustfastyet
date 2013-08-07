@@ -1,0 +1,1 @@
+std::rt: Remove an obsolete FIXME. #7757

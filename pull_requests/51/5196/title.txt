@@ -1,0 +1,1 @@
+add a TotalOrd trait and reimplement TreeMap with it

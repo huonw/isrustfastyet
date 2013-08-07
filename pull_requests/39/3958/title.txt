@@ -1,0 +1,1 @@
+rustc: Allow constants to be used in patterns

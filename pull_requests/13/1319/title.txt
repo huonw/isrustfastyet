@@ -1,0 +1,1 @@
+cargo: support distributed package indexes

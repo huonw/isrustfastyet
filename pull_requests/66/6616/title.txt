@@ -1,0 +1,1 @@
+rustc: Add inline(maybe), which only writes the AST to crate metadata.

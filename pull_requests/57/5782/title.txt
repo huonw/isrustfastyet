@@ -1,0 +1,1 @@
+Proposed update to documentation to reflect 1-tuples being legal (as of 0.6)

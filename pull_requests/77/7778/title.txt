@@ -1,0 +1,1 @@
+remove new man pages on make uninstall

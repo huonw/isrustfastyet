@@ -1,0 +1,1 @@
+Add ARC::get method and a simple example

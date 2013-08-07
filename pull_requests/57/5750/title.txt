@@ -1,0 +1,1 @@
+Add Clone implementations for managed and managed mutable types.

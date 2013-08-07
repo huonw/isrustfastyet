@@ -1,0 +1,1 @@
+removal of fail keyword Issue #4524

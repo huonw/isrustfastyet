@@ -1,0 +1,1 @@
+Allow impls and traits having static and instance methods with the same name

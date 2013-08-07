@@ -1,0 +1,1 @@
+rustc: fix linkage of internal static nodes.

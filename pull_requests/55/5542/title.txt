@@ -1,0 +1,1 @@
+core: Fix doc comment error, as per #4983

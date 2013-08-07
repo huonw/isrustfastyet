@@ -1,0 +1,1 @@
+Avoid needless creation of unique strings in fmt!()

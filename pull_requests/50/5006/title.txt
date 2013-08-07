@@ -1,0 +1,1 @@
+move shootout-mandelbrot to LinearMap, add depth argument

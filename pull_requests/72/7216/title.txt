@@ -1,0 +1,1 @@
+Make task_rng() return @mut R instead of @@mut R

@@ -1,0 +1,1 @@
+mk: fix clean-llvm for cross-compile

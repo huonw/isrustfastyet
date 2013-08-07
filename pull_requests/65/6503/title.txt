@@ -1,0 +1,1 @@
+Rename `at_vec::from_owned` and `at_vec::from_slice`

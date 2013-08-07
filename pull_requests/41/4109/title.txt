@@ -1,0 +1,1 @@
+librustc: Implement moves based on type

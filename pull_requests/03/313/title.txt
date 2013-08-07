@@ -1,0 +1,1 @@
+Continued sketching out code for checking states against preconditions.

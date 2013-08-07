@@ -1,0 +1,1 @@
+Copy libsyntax from local Rust to stage0.

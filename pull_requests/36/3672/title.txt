@@ -1,0 +1,1 @@
+library-ifying of tools - turning cargo, rustdoc, fuzzer, into libraries, as per #3543

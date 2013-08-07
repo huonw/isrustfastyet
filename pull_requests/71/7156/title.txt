@@ -1,0 +1,1 @@
+Add IterBytes impls for float/f32/f64. This allows creating HashMaps with floats as keys.

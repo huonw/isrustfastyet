@@ -1,0 +1,1 @@
+Remove mention of Windows installer from tutorial

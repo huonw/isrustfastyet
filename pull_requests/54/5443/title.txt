@@ -1,0 +1,1 @@
+Less bad copy throughout libsyntax/librustc

@@ -1,0 +1,1 @@
+libcore: handle trailing newlines more like other languages.

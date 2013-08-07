@@ -1,0 +1,1 @@
+Use different syntax for checks that matter to typestate

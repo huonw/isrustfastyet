@@ -1,0 +1,1 @@
+Remove needless FIXME. Fixes #2811.

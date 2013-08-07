@@ -1,0 +1,1 @@
+Mention `for` in the section on loops

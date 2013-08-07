@@ -1,0 +1,1 @@
+librusti: only use std::rl if stdin is connected to a tty.

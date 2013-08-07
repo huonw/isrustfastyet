@@ -1,0 +1,1 @@
+auto: Make ~fn non-copyable, make &fn copyable, split barefn/closure types

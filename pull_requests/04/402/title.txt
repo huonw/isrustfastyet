@@ -1,0 +1,1 @@
+Add quick_sort3 function based on 'QuicksortIsOptimal.pdf' (see comments 

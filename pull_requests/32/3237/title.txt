@@ -1,0 +1,1 @@
+core: adding os::tmpdir() that returns a system temporary directory if it can find one

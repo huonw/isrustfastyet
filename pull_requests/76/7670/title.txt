@@ -1,0 +1,1 @@
+ptr: optimize {swap,replace,read}_ptr

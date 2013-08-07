@@ -1,0 +1,1 @@
+Initial po4a setup for translatable markdown documentation

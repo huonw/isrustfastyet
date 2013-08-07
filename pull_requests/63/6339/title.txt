@@ -1,0 +1,1 @@
+Mark c_vec functions as unsafe again

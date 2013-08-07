@@ -1,0 +1,1 @@
+rustc: relax limits on (u)int type limit lint. Fixes #6130.

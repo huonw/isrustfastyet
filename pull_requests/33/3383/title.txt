@@ -1,0 +1,1 @@
+use native log2 function and enable freebsd tests in uv_ll

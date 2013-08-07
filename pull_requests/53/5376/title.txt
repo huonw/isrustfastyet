@@ -1,0 +1,1 @@
+Begin refactoring deriving code and implement #[deriving(TotalOrd)]

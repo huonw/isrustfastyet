@@ -1,0 +1,1 @@
+Update manpage based on current usage message

@@ -1,0 +1,1 @@
+RFC: rustc: Allow any integral types on rhs of shift ops

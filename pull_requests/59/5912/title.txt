@@ -1,0 +1,1 @@
+Fix issue #2626 by un-ignoring the mysterious test_leaks, 

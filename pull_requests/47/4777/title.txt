@@ -1,0 +1,1 @@
+auto: oldmap: use &K instead of K in find and get

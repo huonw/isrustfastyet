@@ -1,0 +1,1 @@
+write out "inf"/"-inf" in float::to_str_common

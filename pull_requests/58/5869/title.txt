@@ -1,0 +1,1 @@
+Restore Num trait and use macros to implement and test NumCast

@@ -1,0 +1,1 @@
+Allow any string expression to be used with fail.

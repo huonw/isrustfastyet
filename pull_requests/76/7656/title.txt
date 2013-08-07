@@ -1,0 +1,1 @@
+std: Implement `Iterator::size_hint` method for `Option` iterators

@@ -1,0 +1,1 @@
+core::rand - adding rand::random(), a shortcut to generate a uint

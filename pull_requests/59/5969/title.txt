@@ -1,0 +1,1 @@
+libcore: Add a smattering of POSIX error codes to the libc module.

@@ -1,0 +1,1 @@
+librustc: Make `&const [T]` mean the same thing as `&[const T]`

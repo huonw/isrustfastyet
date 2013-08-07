@@ -1,0 +1,1 @@
+llvm.expect as intrinsics and use it in assert!-like macros

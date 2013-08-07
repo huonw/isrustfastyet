@@ -1,0 +1,1 @@
+core: add a str iterator

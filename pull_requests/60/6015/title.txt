@@ -1,0 +1,1 @@
+Rustpkg docs (with implicit paths added)

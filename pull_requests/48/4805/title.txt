@@ -1,0 +1,1 @@
+auto: Code for new snapshot, adding/removing transitional stuff for de-recording

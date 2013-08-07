@@ -1,0 +1,1 @@
+libsyntax: Accept `static` instead of `const` for globals

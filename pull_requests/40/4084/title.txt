@@ -1,0 +1,1 @@
+Disallow dereferencing enum types when the variant is private

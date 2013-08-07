@@ -1,0 +1,1 @@
+librustc: Remove common fields and nested enums from the language

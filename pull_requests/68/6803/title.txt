@@ -1,0 +1,1 @@
+Replaced calls to external fmin/fmax by a Rust implementation.

@@ -1,0 +1,1 @@
+Swap return value of pipes::init Fixes #4501

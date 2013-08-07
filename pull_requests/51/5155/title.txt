@@ -1,0 +1,1 @@
+Turn old `drop` blocks into `Drop` traits

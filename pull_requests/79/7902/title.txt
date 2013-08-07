@@ -1,0 +1,1 @@
+syntax: modernise attribute handling in syntax::attr.

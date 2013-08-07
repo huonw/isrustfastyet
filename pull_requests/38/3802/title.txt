@@ -1,0 +1,1 @@
+Check pandoc's version correctly for >=1.10.

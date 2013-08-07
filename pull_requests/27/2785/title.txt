@@ -1,0 +1,1 @@
+Provide a better error message for a common error of a missing do keyword

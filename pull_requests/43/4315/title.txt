@@ -1,0 +1,1 @@
+doc: Update pointer terminology w.r.t. plain strings

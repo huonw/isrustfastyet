@@ -1,0 +1,1 @@
+Rebase Tommy McGuire's each_permutation patch

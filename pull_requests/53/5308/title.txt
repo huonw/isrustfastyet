@@ -1,0 +1,1 @@
+Fix formatting and errors in std::getopts example.

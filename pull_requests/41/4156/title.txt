@@ -1,0 +1,1 @@
+Allow pattern-matching on any strings, not just unique strings

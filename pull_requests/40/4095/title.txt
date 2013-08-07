@@ -1,0 +1,1 @@
+Fix tuple instances for IterBytes to avoid ICE, fixes #4092

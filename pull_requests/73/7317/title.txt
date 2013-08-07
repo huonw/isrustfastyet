@@ -1,0 +1,1 @@
+Add #[no_drop_flag] attribute

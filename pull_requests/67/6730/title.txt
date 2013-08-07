@@ -1,0 +1,1 @@
+Make rust {test, run} exit with appropriate code.

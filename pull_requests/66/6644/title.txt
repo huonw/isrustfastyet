@@ -1,0 +1,1 @@
+Remove two warnings about unneccesary safe blocks.

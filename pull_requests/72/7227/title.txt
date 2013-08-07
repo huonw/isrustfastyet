@@ -1,0 +1,1 @@
+Fix compiling empty fmt! strings

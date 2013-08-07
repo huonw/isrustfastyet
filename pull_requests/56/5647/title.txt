@@ -1,0 +1,1 @@
+mark the assembly object stacks as non-executable

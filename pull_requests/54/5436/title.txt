@@ -1,0 +1,1 @@
+Allow custom messages on assert statements

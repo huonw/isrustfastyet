@@ -1,0 +1,1 @@
+Add insert and remove methods to vecs - as proposed in issue #4028.

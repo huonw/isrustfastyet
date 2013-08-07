@@ -1,0 +1,1 @@
+librustc: Forbid access to cross-crate private static methods

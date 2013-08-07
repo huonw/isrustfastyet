@@ -1,0 +1,1 @@
+Issue 4920 autoref index operator

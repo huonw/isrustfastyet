@@ -1,0 +1,1 @@
+libsyntax: refactor the parser to consider foreign items as items

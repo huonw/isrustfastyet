@@ -1,0 +1,1 @@
+librustc/readme.txt: main() is in ./rustc.rc. use "./../" pattern some more

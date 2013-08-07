@@ -1,0 +1,1 @@
+rt: Add RUST_DEBUG_MEM to rust_env to avoid races

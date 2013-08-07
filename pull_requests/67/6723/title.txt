@@ -1,0 +1,1 @@
+Remove the functions get and clone from ARC, replace them with the corresponding methods

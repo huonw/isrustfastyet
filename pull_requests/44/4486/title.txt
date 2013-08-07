@@ -1,0 +1,1 @@
+spelling fixes for iter module docstrings

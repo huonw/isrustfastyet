@@ -1,0 +1,1 @@
+#7484 Create man pages for all tools

@@ -1,0 +1,1 @@
+Remove semicolons at the end of macro_rules! definitions that cause compile failure

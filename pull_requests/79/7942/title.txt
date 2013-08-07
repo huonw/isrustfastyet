@@ -1,0 +1,1 @@
+Remove what appears to be redundant indirection from os::list_dir_path.

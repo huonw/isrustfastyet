@@ -1,0 +1,1 @@
+copyless io::BytesWriter and rewriting str::raw::from_buf_len_nocopy

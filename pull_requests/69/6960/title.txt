@@ -1,0 +1,1 @@
+Fix stat.rs to not pollute the build directory. Closes #6959.

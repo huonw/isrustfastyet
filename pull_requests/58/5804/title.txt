@@ -1,0 +1,1 @@
+Allow lint modes to be used on unused variables and dead assignments

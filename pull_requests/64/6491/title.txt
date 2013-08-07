@@ -1,0 +1,1 @@
+librustc: Make extern functions no longer of `*u8` type.

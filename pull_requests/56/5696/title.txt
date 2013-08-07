@@ -1,0 +1,1 @@
+core::hashmap::linear::Linear{Map,Set} -> core::hashmap::Hash{Map,Set}

@@ -1,0 +1,1 @@
+implement Ord, TotalEq and TotalOrd for char

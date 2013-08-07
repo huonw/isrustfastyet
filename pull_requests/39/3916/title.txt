@@ -1,0 +1,1 @@
+More methods/docs/tests for core::io

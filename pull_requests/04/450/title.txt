@@ -1,0 +1,1 @@
+Flatten functions and objects in trans::simplify_type.

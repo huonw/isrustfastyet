@@ -1,0 +1,1 @@
+Remove horizontal trimming from libsyntax::parse::comments::strip_doc_comment_decoration

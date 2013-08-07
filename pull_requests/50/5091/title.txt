@@ -1,0 +1,1 @@
+Remove some legacy modes from tests

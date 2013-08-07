@@ -1,0 +1,1 @@
+When an impl references an unknown trait, mention what the trait is called in the error message.

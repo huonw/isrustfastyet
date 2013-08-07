@@ -1,0 +1,1 @@
+Talk about ends, rather than means, in macro tutorial introduction. 

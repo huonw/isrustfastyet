@@ -1,0 +1,1 @@
+librustc: Pass through extra parameters in automatically-derived methods

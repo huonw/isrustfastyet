@@ -1,0 +1,1 @@
+clone: managed boxes need to clone by shallow copy

@@ -1,0 +1,1 @@
+Alter rust.css to make the documentation look more appealing

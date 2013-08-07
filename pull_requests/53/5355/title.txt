@@ -1,0 +1,1 @@
+mk: rt.mk ar desinated by target-triples

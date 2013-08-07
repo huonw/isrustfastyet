@@ -1,0 +1,1 @@
+Lint off the old "drop" notation

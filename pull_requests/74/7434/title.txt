@@ -1,0 +1,1 @@
+docs: Mention rustpkg in release notes

@@ -1,0 +1,1 @@
+adding vec::iter_between and fns to make a hash from vecs

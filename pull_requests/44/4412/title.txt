@@ -1,0 +1,1 @@
+librustc: Implement a #[no_mangle] attribute to suppress name mangling.

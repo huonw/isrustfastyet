@@ -1,0 +1,1 @@
+auto: Use x86-64 CABI for foreign function on arm target

@@ -1,0 +1,1 @@
+Add Timespec comment and assert about negative nsec

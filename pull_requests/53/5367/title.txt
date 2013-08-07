@@ -1,0 +1,1 @@
+core: Add spawn, stream and friends to prelude. #5299

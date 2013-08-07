@@ -1,0 +1,1 @@
+testsuite: Update test for #2478. Still xfailed

@@ -1,0 +1,1 @@
+Fix two minor issues in the tutorial.

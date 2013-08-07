@@ -1,0 +1,1 @@
+librustc: Implement tuple struct constants

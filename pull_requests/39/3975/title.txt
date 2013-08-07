@@ -1,0 +1,1 @@
+Add Map::insert_with_key

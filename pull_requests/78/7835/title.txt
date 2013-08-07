@@ -1,0 +1,1 @@
+Add project information to l10n templates.

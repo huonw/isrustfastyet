@@ -1,0 +1,1 @@
+Sort lint attributes to print them in a more sane way

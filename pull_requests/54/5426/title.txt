@@ -1,0 +1,1 @@
+Make &self parse explicit lifetimes, but don't really use them

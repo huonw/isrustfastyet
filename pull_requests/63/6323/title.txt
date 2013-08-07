@@ -1,0 +1,1 @@
+rt: Remove rust_call_nullary_fn

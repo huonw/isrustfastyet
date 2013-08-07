@@ -1,0 +1,1 @@
+Rename (libstd/core.rc,libextra/std.rc) to (libstd/std.rs,libextra/extra.rs)

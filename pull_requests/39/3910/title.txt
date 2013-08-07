@@ -1,0 +1,1 @@
+rustc: Implement deriving involving generic bounded traits 

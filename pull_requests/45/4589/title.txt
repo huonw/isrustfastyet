@@ -1,0 +1,1 @@
+doc: Document pattern matching on vectors

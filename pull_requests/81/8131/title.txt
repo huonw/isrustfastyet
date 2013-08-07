@@ -1,0 +1,1 @@
+Do not enforce two newlines after the options

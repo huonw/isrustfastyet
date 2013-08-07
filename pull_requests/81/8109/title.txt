@@ -1,0 +1,1 @@
+std: Implement Clone and DeepClone for extern "Rust" fn

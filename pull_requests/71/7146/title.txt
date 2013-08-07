@@ -1,0 +1,1 @@
+rustc: map node ids through a table that ensures bitset indexes in dataflow are dense

@@ -1,0 +1,1 @@
+Add constants for trait object fields, and replace "magic numbers" in GEPi() calls with them

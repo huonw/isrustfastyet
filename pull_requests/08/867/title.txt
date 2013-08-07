@@ -1,0 +1,1 @@
+update docs to reflect the current state of syntax extension and macros

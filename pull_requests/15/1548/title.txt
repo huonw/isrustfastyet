@@ -1,0 +1,1 @@
+don't leave files that will not checksum if download is interrupted

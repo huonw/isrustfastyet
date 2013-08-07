@@ -1,0 +1,1 @@
+make: change to LIB prefixed for fuzzer, carge, rustdoc, rusti uninstall

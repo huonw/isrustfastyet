@@ -1,0 +1,1 @@
+Add a finally impl for `extern "Rust" fn()`

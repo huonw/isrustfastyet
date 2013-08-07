@@ -1,0 +1,1 @@
+Make object not impl associated trait, fix cross-crate coherence inconsistency

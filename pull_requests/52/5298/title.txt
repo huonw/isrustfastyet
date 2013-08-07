@@ -1,0 +1,1 @@
+Revamp foreign code not to consider the Rust modes.  This requires

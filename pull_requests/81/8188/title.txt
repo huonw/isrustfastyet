@@ -1,0 +1,1 @@
+syntax: implement cfg!() which evaluates to true/false where #[cfg] would keep/remove.

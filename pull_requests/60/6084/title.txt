@@ -1,0 +1,1 @@
+librustc: Make labels take `'`.

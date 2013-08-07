@@ -1,0 +1,1 @@
+rustc: Don't generate code for unreachable expressions

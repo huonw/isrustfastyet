@@ -1,0 +1,1 @@
+More minor improvements to rope.rs

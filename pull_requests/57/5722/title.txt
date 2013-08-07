@@ -1,0 +1,1 @@
+Add cell#with_mut_ref for handling mutable references to the content.

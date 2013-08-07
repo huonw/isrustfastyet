@@ -1,0 +1,1 @@
+Added rust tool similar to go's go tool

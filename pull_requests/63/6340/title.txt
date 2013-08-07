@@ -1,0 +1,1 @@
+rustc: change 'use' to 'add' in error message, fix #2994

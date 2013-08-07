@@ -1,0 +1,1 @@
+ 	librustc: Automatically move non-implicitly-copyable types into unique closures

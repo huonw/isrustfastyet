@@ -1,0 +1,1 @@
+Move most iter functionality to extra, fixes #7343

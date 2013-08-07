@@ -1,0 +1,1 @@
+Issue #6419: Better clang version detection for Apple Clang

@@ -1,0 +1,1 @@
+rt: Make some runtime calls work outside of task context

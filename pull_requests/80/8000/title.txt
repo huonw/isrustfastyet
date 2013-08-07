@@ -1,0 +1,1 @@
+Allow uint discriminants. Fixes #7994.

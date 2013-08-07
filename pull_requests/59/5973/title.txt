@@ -1,0 +1,1 @@
+ScanIterator, and to_vec/foldl iterator consumers

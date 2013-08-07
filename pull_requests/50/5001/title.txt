@@ -1,0 +1,1 @@
+`pub fn main` for run-pass tests that didn't have it

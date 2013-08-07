@@ -1,0 +1,1 @@
+typestate_check can now handle expr_block, expr_if, and expr_binary

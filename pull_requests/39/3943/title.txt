@@ -1,0 +1,1 @@
+rustc: Fix cross-crate reexports. #3908

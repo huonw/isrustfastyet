@@ -1,0 +1,1 @@
+rt: Comment out an assert in rust_kernel. #4711

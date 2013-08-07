@@ -1,0 +1,1 @@
+Optimize vec::from_elem with manual inlining

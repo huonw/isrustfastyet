@@ -1,0 +1,1 @@
+Check for comparisons to NaN in patterns

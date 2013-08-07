@@ -1,0 +1,1 @@
+Add -v/--version support to rust binary

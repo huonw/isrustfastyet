@@ -1,0 +1,1 @@
+auto: getopts comments include a sample program that didn't work.  Fixed.

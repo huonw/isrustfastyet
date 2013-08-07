@@ -1,0 +1,1 @@
+n-body benchmark: read the inputs from args, as the orignal shoutout code does

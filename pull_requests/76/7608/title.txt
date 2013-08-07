@@ -1,0 +1,1 @@
+Switch json parsing to read_chars for performance

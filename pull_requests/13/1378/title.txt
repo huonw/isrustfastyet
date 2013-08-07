@@ -1,0 +1,1 @@
+Made matching machine types equal to float, int, uint (fixes #1376)

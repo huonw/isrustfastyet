@@ -1,0 +1,1 @@
+auto: libsyntax: update view_item_use/import to reflect actual usage

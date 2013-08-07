@@ -1,0 +1,1 @@
+librustc: Bump the offset when translating const structs. Closes #6352.

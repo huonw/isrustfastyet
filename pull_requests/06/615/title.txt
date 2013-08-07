@@ -1,0 +1,1 @@
+Fix assertion failure when syntax extension name is missing.

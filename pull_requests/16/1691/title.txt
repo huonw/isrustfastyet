@@ -1,0 +1,1 @@
+Change cp to install, so we can safely install on systems with restrictive umasks

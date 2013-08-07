@@ -1,0 +1,1 @@
+Add link_section attribute for static and fn items

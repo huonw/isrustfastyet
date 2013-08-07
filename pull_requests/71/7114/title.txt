@@ -1,0 +1,1 @@
+Issue3961 fix whitespace detection

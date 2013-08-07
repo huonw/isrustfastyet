@@ -1,0 +1,1 @@
+mk: If NO_REBUILD is set then don't rebuild core/std before testing

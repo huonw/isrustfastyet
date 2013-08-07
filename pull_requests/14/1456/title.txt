@@ -1,0 +1,1 @@
+This adds a new read_chars method which seems like a convenient addition, and ought to be more efficient when reading large files. It also fixes a bug in read_char.

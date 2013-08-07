@@ -1,0 +1,1 @@
+Inlining methods/functions in core.

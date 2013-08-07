@@ -1,0 +1,1 @@
+Implement IEEE 754 comparisons for floats (#1084)

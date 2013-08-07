@@ -1,0 +1,1 @@
+Show ellipsis sign when log line is truncated

@@ -1,0 +1,1 @@
+More work on typestate. Sketched out code for computing and checking pres

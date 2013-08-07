@@ -1,0 +1,1 @@
+rustc: add a lint for `for`, suggesting `foreach` or `do`.

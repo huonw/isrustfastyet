@@ -1,0 +1,1 @@
+PR to fix issue 7689 ("Documentation Hides Imports Too Aggressively")

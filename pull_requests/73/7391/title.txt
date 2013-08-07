@@ -1,0 +1,1 @@
+Make ^~~~~ colour dependent on error/warning/note level.

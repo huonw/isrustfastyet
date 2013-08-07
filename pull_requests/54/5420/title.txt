@@ -1,0 +1,1 @@
+Refactored sudoku benchmark to use traits and added some tests

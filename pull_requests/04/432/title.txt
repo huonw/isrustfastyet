@@ -1,0 +1,1 @@
+Enabling valgrind on OSX. It appears to work now.

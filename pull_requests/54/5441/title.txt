@@ -1,0 +1,1 @@
+Tutorial: make struct section more coherent

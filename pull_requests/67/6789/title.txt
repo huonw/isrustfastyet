@@ -1,0 +1,1 @@
+compiletest: Add #[no_core] to fix check-stage1.

@@ -1,0 +1,1 @@
+Enhance auto_encode to take number of struct fields

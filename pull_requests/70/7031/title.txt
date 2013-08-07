@@ -1,0 +1,1 @@
+Deny common lints by default for lib{std,extra}

@@ -1,0 +1,1 @@
+Update documentation to use paren-free syntax

@@ -1,0 +1,1 @@
+Move the implementation of vec_append from llvm assembly to a regular upcall 

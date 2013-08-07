@@ -1,0 +1,1 @@
+std: remove the invalid NullTerminatedStr instance for &'static str.

@@ -1,0 +1,1 @@
+#5270: Change int/uint range_rev to use (hi,lo] instead of [hi,lo).

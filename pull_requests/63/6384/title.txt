@@ -1,0 +1,1 @@
+Include static methods on traits in reexports.

@@ -1,0 +1,1 @@
+Issue 5656 change meaning of borrowed self

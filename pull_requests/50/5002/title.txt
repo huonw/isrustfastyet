@@ -1,0 +1,1 @@
+syntax: Allow 1-tuple expressions

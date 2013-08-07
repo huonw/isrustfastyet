@@ -1,0 +1,1 @@
+Rename copy_overlapping_memory() to copy_memory()

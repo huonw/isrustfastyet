@@ -1,0 +1,1 @@
+Rewrite the coercion code to be more readable, more sound, and to reborrow when needed.

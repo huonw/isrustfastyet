@@ -1,0 +1,1 @@
+Don't allow duplicate definitions of structs and enum struct variants.

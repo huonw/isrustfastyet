@@ -1,0 +1,1 @@
+declare that "///" is still a doc comment, just not "////+" (fixes #5838)

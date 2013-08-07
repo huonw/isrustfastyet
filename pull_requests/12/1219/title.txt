@@ -1,0 +1,1 @@
+rustc: Fix position of diagnostic highlight lines

@@ -1,0 +1,1 @@
+Pull some of the parts of trans_foreach into seperate functions

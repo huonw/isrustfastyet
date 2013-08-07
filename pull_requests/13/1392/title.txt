@@ -1,0 +1,1 @@
+list: add "is_not_empty" requirement to "head" and "tail" (analogous to "vec")

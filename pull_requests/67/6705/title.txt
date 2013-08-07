@@ -1,0 +1,1 @@
+rustc: Check for null before dropping ~objects. #5192

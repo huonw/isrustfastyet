@@ -1,0 +1,1 @@
+libcore: Fix assertion failure in vec::windowe.

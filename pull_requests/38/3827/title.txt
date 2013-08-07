@@ -1,0 +1,1 @@
+Replace rust_atomic_increment/decrement and rust_compare_and_swap_ptr with intrinsics.

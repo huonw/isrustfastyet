@@ -1,0 +1,1 @@
+rustc::metadata::decoder: cleanup and slightly speed up each_path

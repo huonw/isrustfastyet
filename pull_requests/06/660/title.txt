@@ -1,0 +1,1 @@
+Print error lines and highlight error span

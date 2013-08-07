@@ -1,0 +1,1 @@
+auto: librustc: Stop loading enum variant discriminants from memory

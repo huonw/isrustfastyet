@@ -1,0 +1,1 @@
+Revert atomicrmw {max, min, umax, umin}

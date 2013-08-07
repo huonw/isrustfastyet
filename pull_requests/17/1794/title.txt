@@ -1,0 +1,1 @@
+fixed memmove. were using memcpy due to copy paste error

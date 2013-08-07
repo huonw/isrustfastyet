@@ -1,0 +1,1 @@
+update syntax/rust.vim for keyword changes

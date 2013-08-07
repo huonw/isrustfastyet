@@ -1,0 +1,1 @@
+rustpkg: Factor out tests; use a condition instead of returning an option

@@ -1,0 +1,1 @@
+rustc: add manifest so we can install with cargo

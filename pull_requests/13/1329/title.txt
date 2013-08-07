@@ -1,0 +1,1 @@
+std: getopts now uses result::t (fixes #1289)

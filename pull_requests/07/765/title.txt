@@ -1,0 +1,1 @@
+:: is allowed to start an expression. Close #762.

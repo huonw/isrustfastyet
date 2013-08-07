@@ -1,0 +1,1 @@
+cargo: support installing, git://, github:<user>/<repo>

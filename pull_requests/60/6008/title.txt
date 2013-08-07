@@ -1,0 +1,1 @@
+docs: Sketch out rustpkg manual

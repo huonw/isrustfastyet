@@ -1,0 +1,1 @@
+Assorted changes to numerics, including the addition of floating-point encoding/decoding methods

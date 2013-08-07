@@ -1,0 +1,1 @@
+Push scheduler lock acquisition into rust_chan::send from its upcall

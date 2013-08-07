@@ -1,0 +1,1 @@
+Work around #8256, do not fail the task, just return None

@@ -1,0 +1,1 @@
+Fix Clang option in configure script 

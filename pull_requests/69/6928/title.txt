@@ -1,0 +1,1 @@
+libstd: Modernize some constructors

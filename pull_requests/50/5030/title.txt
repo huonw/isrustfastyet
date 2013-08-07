@@ -1,0 +1,1 @@
+librustc: Get rid of structural records save for front/test.rs.

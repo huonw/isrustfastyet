@@ -1,0 +1,1 @@
+Remove the last bits of structural records from tests/rustc/rusti/rustpkg.

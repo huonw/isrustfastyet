@@ -1,0 +1,1 @@
+Implement .cycle() for clonable iterators and impl Clone for some iterators

@@ -1,0 +1,1 @@
+Fix by-value self with immediates.

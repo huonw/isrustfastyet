@@ -1,0 +1,1 @@
+Made fns in the impls for the Atomic structs pub

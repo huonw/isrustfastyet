@@ -1,0 +1,1 @@
+Highlight rustc's warning/errors in bright-white, similar to Clang

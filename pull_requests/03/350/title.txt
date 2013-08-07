@@ -1,0 +1,1 @@
+Mark valgrind's _qzz_res as unused to silence warnings on gcc 4.6.

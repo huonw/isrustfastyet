@@ -1,0 +1,1 @@
+core: Fail with a better error message when list_dir gets an empty path

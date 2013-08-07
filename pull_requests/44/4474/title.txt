@@ -1,0 +1,1 @@
+core: Use libc::readlink function properly

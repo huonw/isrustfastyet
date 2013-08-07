@@ -1,0 +1,1 @@
+core: Extract comm from pipes. #4742

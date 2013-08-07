@@ -1,0 +1,1 @@
+Properly suppress derived type error messages

@@ -1,0 +1,1 @@
+add android dummy functions for mman related

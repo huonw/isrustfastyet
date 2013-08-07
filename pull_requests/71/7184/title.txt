@@ -1,0 +1,1 @@
+doc: Remove h[123] border and increase their padding to better readability

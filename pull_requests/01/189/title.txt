@@ -1,0 +1,1 @@
+Add support for looking up a name introduced by an 'use'

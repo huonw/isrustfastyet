@@ -1,0 +1,1 @@
+librustc: Stop trying to make invalid slice with vec in statics.

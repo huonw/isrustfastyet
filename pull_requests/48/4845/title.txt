@@ -1,0 +1,1 @@
+Simple typo in the tutorial on macros

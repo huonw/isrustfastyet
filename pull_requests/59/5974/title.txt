@@ -1,0 +1,1 @@
+librustc: Allow rvalues to be borrowed as &mut.

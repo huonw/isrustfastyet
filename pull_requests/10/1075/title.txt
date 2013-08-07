@@ -1,0 +1,1 @@
+rustc.1: Fix man page formatting and correctness.

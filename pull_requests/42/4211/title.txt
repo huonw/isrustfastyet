@@ -1,0 +1,1 @@
+core: remove old repr system, enable newer one. Close #3109.

@@ -1,0 +1,1 @@
+Add traits for concat and connect methods

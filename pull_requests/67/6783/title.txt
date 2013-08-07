@@ -1,0 +1,1 @@
+Remove colorcolumn setting from Vim runtime files

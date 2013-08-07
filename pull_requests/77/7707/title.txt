@@ -1,0 +1,1 @@
+iterator: add DoubleEndedIterator concept + other small commits

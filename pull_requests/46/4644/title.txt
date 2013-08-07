@@ -1,0 +1,1 @@
+Update more uses of Option, Some and None to camel case

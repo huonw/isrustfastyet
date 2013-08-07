@@ -1,0 +1,1 @@
+rustc: improve -Z trans-stats to report per-fn LLVM instruction counts and translation timing

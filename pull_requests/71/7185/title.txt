@@ -1,0 +1,1 @@
+Implement setting all lints to a given level

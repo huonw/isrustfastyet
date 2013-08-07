@@ -1,0 +1,1 @@
+librustc: Add a lint mode for unnecessary `copy` and remove a bunch of them

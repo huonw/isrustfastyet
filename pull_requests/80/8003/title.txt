@@ -1,0 +1,1 @@
+Compare file:line prefix case-insensitively on win32

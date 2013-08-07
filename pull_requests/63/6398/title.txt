@@ -1,0 +1,1 @@
+Replace io::println by println in the tutorial

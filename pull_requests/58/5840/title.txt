@@ -1,0 +1,1 @@
+Change result::map to consume the result

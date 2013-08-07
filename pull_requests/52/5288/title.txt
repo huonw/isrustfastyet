@@ -1,0 +1,1 @@
+Remove newtype enums and bare functions

@@ -1,0 +1,1 @@
+Sha1 and Sha2 cleanups & optimizations, take 2

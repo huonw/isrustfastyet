@@ -1,0 +1,1 @@
+Use deriving_eq for tokens

@@ -1,0 +1,1 @@
+Trivial cleanup: use enum_is_univariant; no functional change intended.

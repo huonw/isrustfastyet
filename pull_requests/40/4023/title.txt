@@ -1,0 +1,1 @@
+libstd: refactor future, remove get_ref, remove ~ indirection.

@@ -1,0 +1,1 @@
+De-abstract std::sort:qsort3, which uses only the trait-based lt/eq.

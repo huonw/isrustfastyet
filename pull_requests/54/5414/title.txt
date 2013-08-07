@@ -1,0 +1,1 @@
+option: rm functions that duplicate methods

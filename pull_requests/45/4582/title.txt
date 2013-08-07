@@ -1,0 +1,1 @@
+libsyntax: Implement `assert` as a macro (called `fail_unless!` on a transitionary basis to avoid conflicting with the keyword right now)

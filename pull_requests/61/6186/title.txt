@@ -1,0 +1,1 @@
+switch to using #[cfg(not(stage0))] consistently

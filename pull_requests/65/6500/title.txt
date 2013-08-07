@@ -1,0 +1,1 @@
+Remove `deriving_eq`, `deriving_iter_bytes`, `deriving_clone` (deprecated since 0.6)

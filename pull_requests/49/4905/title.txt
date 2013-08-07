@@ -1,0 +1,1 @@
+auto: Remove die!, raplace invocations with fail! Issue #4524 pt 3

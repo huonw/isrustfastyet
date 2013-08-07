@@ -1,0 +1,1 @@
+rustc: Handle struct patterns where the expected type is an enum

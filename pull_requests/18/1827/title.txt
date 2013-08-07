@@ -1,0 +1,1 @@
+Avoid extra memory allocations in core::str::from_cstr{,_len}

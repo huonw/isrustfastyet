@@ -1,0 +1,1 @@
+rt: glob, globfree dummy function for android

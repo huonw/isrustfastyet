@@ -1,0 +1,1 @@
+Cargo revamp: root in home, automatic init & sync, uninstallation, improved installation syntax and more

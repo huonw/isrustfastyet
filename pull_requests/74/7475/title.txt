@@ -1,0 +1,1 @@
+Optimize str::each_split_within when it is called with large limits

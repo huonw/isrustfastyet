@@ -1,0 +1,1 @@
+rewrite uint::to_str_bytes to avoid raw pointers

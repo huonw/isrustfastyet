@@ -1,0 +1,1 @@
+(RFC for isue #4869) libcore: remove default to_str implementations for pointer types

@@ -1,0 +1,1 @@
+std: file_is_dir -> path_is_dir, add path_exists

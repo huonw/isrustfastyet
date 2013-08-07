@@ -1,0 +1,1 @@
+Add x64 windows to platform.mk and mingw64 header fixes.

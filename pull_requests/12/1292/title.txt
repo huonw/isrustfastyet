@@ -1,0 +1,1 @@
+Changes to configure (Fix for #1291)

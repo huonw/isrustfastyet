@@ -1,0 +1,1 @@
+core: Fix a typo in str::levdistance

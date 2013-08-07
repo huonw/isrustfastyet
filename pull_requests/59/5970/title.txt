@@ -1,0 +1,1 @@
+libcore: wrappers for size/align_of to act on values without needing explicit ::<type> annotations

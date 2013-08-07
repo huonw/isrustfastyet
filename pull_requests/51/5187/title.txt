@@ -1,0 +1,1 @@
+docs/rust.md: Mention unit-like structs along with other struct types

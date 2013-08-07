@@ -1,0 +1,1 @@
+Convert the test suite to use the Drop trait

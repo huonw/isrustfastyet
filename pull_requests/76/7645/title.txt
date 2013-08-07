@@ -1,0 +1,1 @@
+Improve IR for calls with immediate return values

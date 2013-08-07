@@ -1,0 +1,1 @@
+Handle nested items correctly in typestate_check

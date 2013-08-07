@@ -1,0 +1,1 @@
+Provide more useful messages when tests are given -h or --help

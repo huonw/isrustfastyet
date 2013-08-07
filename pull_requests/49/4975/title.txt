@@ -1,0 +1,1 @@
+rm unused reserve_vec from rt (done in libcore)

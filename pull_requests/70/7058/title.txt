@@ -1,0 +1,1 @@
+Partially fix #7048 plus some minor fixes

@@ -1,0 +1,1 @@
+Fix #3961 : use char range methods (not byte offsets) to detect whitespace

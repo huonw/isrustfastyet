@@ -1,0 +1,1 @@
+Remove FIXME #2699---I believe the calculation is correct. Fixes #2699.

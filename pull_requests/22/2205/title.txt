@@ -1,0 +1,1 @@
+add inf/-inf/NaN parsing to float::from_str

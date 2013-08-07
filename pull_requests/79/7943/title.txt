@@ -1,0 +1,1 @@
+Add slice_from and slice_to methods for vec, like the methods of the same names that already exist for strs.

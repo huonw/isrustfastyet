@@ -1,0 +1,1 @@
+auto: testsuite: Add test for #4523

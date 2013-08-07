@@ -1,0 +1,1 @@
+Use #[allow(warnings)] in rusti instead of explicitly listing warnings

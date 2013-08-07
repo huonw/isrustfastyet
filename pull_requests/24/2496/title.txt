@@ -1,0 +1,1 @@
+Moved log method into logger class better than scheduler

@@ -1,0 +1,1 @@
+rustc: have run_compiler bubble up compilation results

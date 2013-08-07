@@ -1,0 +1,1 @@
+Add vec::truncate, for efficiently shortening a vector.

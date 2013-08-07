@@ -1,0 +1,1 @@
+testsuite: Add passing test for #4107

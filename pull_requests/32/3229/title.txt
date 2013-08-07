@@ -1,0 +1,1 @@
+add syntax highlighting file for kate editor

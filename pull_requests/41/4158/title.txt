@@ -1,0 +1,1 @@
+core: add Eq impl to LinearMap.

@@ -1,0 +1,1 @@
+mv the raw pointer {swap,replace}_ptr to std::ptr + some cleanup

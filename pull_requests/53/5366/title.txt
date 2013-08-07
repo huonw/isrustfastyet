@@ -1,0 +1,1 @@
+reinstate test/bench/shootout-threadring.rs

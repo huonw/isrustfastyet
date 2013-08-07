@@ -1,0 +1,1 @@
+auto: bool is not an integral type

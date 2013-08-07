@@ -1,0 +1,1 @@
+Relax the need for "u" suffixes on uints under certain conditions.

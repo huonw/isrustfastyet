@@ -1,0 +1,1 @@
+Make sure $CFG_LLVM_CONFIG is set to $CFG_LLVM_ROOT/bin/llvm-config

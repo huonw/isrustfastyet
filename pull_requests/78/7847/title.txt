@@ -1,0 +1,1 @@
+Remove --quiet from git submodule operations

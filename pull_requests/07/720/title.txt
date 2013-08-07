@@ -1,0 +1,1 @@
+Build stage0/lib/libstd.so using the stage0 compiler.

@@ -1,0 +1,1 @@
+Enable test for #3707

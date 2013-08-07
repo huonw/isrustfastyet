@@ -1,0 +1,1 @@
+drop is_not_empty from TreeSet/TreeMap

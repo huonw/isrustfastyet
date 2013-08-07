@@ -1,0 +1,1 @@
+Remove the last use of rustrt::rust_compare_and_swap_ptr

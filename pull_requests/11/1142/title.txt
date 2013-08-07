@@ -1,0 +1,1 @@
+llvm::mk_object_file to option type (fixes OS X crash)

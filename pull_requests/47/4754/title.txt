@@ -1,0 +1,1 @@
+auto: README.md, mention curl not wget.

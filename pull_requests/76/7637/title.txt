@@ -1,0 +1,1 @@
+Fix #3225: Check for old Rust libraries when building and installing.

@@ -1,0 +1,1 @@
+Fix consts of nullary univariant enum type.

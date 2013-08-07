@@ -1,0 +1,1 @@
+Make either::{partition, flip, to_result} take their arguments by-value

@@ -1,0 +1,1 @@
+ Avoid double indirection for the "self" arg in methods 

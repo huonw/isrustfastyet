@@ -1,0 +1,1 @@
+docs: Don't mention obsolete move operator, as per #5700

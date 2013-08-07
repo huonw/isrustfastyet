@@ -1,0 +1,1 @@
+Remove spurious semicolons at the end of macro_rules! definitions.

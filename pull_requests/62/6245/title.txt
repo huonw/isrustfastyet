@@ -1,0 +1,1 @@
+Allow non-literal static range pattern for match arms

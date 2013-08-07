@@ -1,0 +1,1 @@
+Allow all warnings in stage0 to account for bugs

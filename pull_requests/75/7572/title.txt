@@ -1,0 +1,1 @@
+Make the error messages that result from referencing nonexistent traits consistent, and add a test.

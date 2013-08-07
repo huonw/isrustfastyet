@@ -1,0 +1,1 @@
+Assign correct types to struct-like enum variant constructors

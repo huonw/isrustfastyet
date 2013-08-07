@@ -1,0 +1,1 @@
+libcore: update bytes/str reader to work with regions.

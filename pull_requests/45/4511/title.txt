@@ -1,0 +1,1 @@
+libcore: Use LLVM intrinsics for floor; add a new Perlin noise benchmark

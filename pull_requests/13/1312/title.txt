@@ -1,0 +1,1 @@
+getopts #1289 + cleanup after the std/core split

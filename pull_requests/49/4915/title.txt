@@ -1,0 +1,1 @@
+rt: get rid of rust_fn and replace with fn_env_pair plus a little cleanup.

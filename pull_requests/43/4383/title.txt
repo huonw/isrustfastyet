@@ -1,0 +1,1 @@
+Remove ret_style and instead check whether fn return type is bot

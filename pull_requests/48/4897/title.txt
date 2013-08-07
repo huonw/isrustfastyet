@@ -1,0 +1,1 @@
+Explicit self in diagnostic

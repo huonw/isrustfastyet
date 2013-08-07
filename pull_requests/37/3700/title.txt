@@ -1,0 +1,1 @@
+allow interner cache to be shared across parsers (#3699)

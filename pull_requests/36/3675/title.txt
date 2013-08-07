@@ -1,0 +1,1 @@
+update Kate syntax file with latest keywords and types

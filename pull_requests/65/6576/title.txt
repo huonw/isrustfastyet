@@ -1,0 +1,1 @@
+Distinguish tuple elements by index in mem_categorization. Fixes #5362.

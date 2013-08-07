@@ -1,0 +1,1 @@
+remove is_not_empty method from PriorityQueue

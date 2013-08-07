@@ -1,0 +1,1 @@
+configure: accept clang 3.3 when passed --enable-clang

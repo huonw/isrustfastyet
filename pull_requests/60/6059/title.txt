@@ -1,0 +1,1 @@
+Made fail! and assert! accept both &'static str and ~str, as well as a fmt! like format list.

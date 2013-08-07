@@ -1,0 +1,1 @@
+Making str allocate less #2: trim and substr

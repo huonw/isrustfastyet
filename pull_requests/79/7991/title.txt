@@ -1,0 +1,1 @@
+Fix a crash when transmuting non-immediate to immediate types

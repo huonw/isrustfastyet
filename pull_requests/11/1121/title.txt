@@ -1,0 +1,1 @@
+Add vec::permute to the standard library

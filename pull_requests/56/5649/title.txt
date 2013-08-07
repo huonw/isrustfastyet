@@ -1,0 +1,1 @@
+install.mk: use INSTALL_LIB for all libraries

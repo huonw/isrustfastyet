@@ -1,0 +1,1 @@
+Remove `tps` from `trans_enum_def` and `trans_struct_def`

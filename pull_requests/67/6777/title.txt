@@ -1,0 +1,1 @@
+Prevent refcount cycles during linting

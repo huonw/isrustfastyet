@@ -1,0 +1,1 @@
+Change bare functions so that they are represented by a single pointer.

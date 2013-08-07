@@ -1,0 +1,1 @@
+Provide naive implementations of Eq and IterBytes for net::Url

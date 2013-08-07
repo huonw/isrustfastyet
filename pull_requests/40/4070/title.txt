@@ -1,0 +1,1 @@
+Trait inheritance for bounded type parameters

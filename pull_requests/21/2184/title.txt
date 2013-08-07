@@ -1,0 +1,1 @@
+add the configure option --enable-local-rust to pull rust from your environment

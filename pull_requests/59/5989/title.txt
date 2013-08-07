@@ -1,0 +1,1 @@
+Fix for shootout-fasta-redux.rs

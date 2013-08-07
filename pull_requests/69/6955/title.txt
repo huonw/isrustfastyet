@@ -1,0 +1,1 @@
+.mailmap: tolerate different names, emails in shortlog

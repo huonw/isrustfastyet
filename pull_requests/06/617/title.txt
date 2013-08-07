@@ -1,0 +1,1 @@
+Ensure fail expression is walked, and make fail with a non-string expression fail typechecking.

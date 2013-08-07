@@ -1,0 +1,1 @@
+Make univariant enums act like structs in type_of, so that they're aligned correctly.

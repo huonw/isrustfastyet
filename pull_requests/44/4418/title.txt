@@ -1,0 +1,1 @@
+librustc: Make the default sigil for block lambdas `&` instead of `@`.

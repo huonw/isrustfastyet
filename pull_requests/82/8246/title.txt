@@ -1,0 +1,1 @@
+Add default implementation of Map::contains_key function

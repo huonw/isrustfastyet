@@ -1,0 +1,1 @@
+Use a specialized string interner to reduce the need for owned strings

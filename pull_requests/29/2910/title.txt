@@ -1,0 +1,1 @@
+Better error when rustc fails to write output.

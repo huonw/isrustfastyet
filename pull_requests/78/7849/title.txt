@@ -1,0 +1,1 @@
+Issue #7444 - Borrowck permits moved values to be captured

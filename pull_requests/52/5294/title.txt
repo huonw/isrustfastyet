@@ -1,0 +1,1 @@
+core: implement Clone for primitive types

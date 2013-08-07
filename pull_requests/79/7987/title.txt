@@ -1,0 +1,1 @@
+Add tests for a few issues which can now be closed

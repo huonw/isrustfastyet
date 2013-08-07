@@ -1,0 +1,1 @@
+Added support for options that take no arguments and may be repeated.

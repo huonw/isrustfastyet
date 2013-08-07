@@ -1,0 +1,1 @@
+Change how the input from rusti is formatted to allow duplicate definitions

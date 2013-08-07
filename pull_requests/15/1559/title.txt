@@ -1,0 +1,1 @@
+fix #1352: change param order on vec::init_fn (and vec::init_fn_mut), putting block in final position.

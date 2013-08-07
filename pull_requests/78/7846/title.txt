@@ -1,0 +1,1 @@
+Add documentation about mutable statics to rust.md

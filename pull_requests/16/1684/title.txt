@@ -1,0 +1,1 @@
+rustdocs for f32.rs and f64.rs

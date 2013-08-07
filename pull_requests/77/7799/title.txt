@@ -1,0 +1,1 @@
+cmp: Use default methods in trait Eq, require only Eq::eq

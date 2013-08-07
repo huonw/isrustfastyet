@@ -1,0 +1,1 @@
+auto: Fix assorted issues with enums in constants.

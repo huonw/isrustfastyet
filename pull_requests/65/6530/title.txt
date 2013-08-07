@@ -1,0 +1,1 @@
+syntax: implement #[deriving(DeepClone)]. Fixes #6514.

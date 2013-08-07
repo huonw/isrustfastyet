@@ -1,0 +1,1 @@
+Allow region pointer to unsafe pointer casts in const expressions.

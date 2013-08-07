@@ -1,0 +1,1 @@
+(core::str) various fixes

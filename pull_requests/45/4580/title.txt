@@ -1,0 +1,1 @@
+Add more constructors for managed vectors (as proposed in issue #4553)

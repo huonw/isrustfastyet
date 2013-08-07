@@ -1,0 +1,1 @@
+syntax: correct the Rand::rand call to select enum variants in #[deriving(Rand)].

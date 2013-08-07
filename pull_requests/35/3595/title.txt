@@ -1,0 +1,1 @@
+fix issue #3535 and add colon between mode and type when dumping function

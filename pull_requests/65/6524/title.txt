@@ -1,0 +1,1 @@
+librustc: Make `~Trait` two words by storing the type descriptor in the vtable.

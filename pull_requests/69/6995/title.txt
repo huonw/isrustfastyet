@@ -1,0 +1,1 @@
+Replacing redundant internal iterators with external ones, part 1

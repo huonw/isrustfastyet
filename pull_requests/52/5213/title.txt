@@ -1,0 +1,1 @@
+Change vec::{head,tail,init,last} to return references

@@ -1,0 +1,1 @@
+Various alterations and additions to numeric methods

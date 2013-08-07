@@ -1,0 +1,1 @@
+rustdoc: add syntax highlighting to item signatures.

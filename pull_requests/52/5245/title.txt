@@ -1,0 +1,1 @@
+trie: remove the Copy requirement

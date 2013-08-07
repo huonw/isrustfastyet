@@ -1,0 +1,1 @@
+librustc: Fold rt items into lang items. Shaves another 10% or so off hello world compile time.

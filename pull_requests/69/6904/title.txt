@@ -1,0 +1,1 @@
+Teaching rustpkg to get versions from a git repository

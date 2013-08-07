@@ -1,0 +1,1 @@
+Fix deriving for single-variant enums

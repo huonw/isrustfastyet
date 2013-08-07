@@ -1,0 +1,1 @@
+Issue 5739 reborrowed slices

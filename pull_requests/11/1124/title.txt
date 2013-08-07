@@ -1,0 +1,1 @@
+configure: support --target-triples and --only-gcc.

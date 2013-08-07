@@ -1,0 +1,1 @@
+trans::glue: don't generate struct destructors in the free glue

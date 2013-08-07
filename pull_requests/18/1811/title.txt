@@ -1,0 +1,1 @@
+(core::char) Add is_ascii and is_digit functions

@@ -1,0 +1,1 @@
+Use two module templates to implement mods for all 10 integer types

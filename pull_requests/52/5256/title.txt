@@ -1,0 +1,1 @@
+bool: make the from_str function a FromStr impl

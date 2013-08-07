@@ -1,0 +1,1 @@
+build: Stop building stage3 on normal test cycles

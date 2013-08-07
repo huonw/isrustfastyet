@@ -1,0 +1,1 @@
+missing semicolon at the end of struct declaration

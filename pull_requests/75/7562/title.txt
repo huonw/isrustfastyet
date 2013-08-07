@@ -1,0 +1,1 @@
+Deque: fix an assertion, speed up and big cleanup

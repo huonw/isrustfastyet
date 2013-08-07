@@ -1,0 +1,1 @@
+Make Float::classify matching more clear for f64 and f32

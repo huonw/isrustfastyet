@@ -1,0 +1,1 @@
+Construct const fns based on the type, not the definition.

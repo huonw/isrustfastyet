@@ -1,0 +1,1 @@
+Found a tiny typo in the texi docs relating to tuples.

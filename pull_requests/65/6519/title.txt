@@ -1,0 +1,1 @@
+Rustpkg: ignoring tests on i686, reorganizing test files

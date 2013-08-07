@@ -1,0 +1,1 @@
+Issue 1403: Warn if int or uint is used in native fn declarations

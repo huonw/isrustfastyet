@@ -1,0 +1,1 @@
+libsyntax: Separate multiple inherited traits with `+` 

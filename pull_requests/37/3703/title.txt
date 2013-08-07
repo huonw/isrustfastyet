@@ -1,0 +1,1 @@
+doc: Remove duplicate word typo in the tutorial.

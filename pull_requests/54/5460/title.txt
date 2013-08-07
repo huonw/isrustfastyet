@@ -1,0 +1,1 @@
+librustc: Forbid destructors from accessing non-Owned fields.

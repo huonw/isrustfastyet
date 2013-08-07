@@ -1,0 +1,1 @@
+Implement recursive sorting of meta items and hashing of list meta items

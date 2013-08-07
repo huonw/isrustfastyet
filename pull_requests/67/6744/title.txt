@@ -1,0 +1,1 @@
+librustc: Only emit visitor glue if it's necessary.

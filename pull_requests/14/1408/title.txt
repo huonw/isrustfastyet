@@ -1,0 +1,1 @@
+"str": extract to_upper/lower_case() into "char"

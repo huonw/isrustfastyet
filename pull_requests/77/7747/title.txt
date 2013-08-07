@@ -1,0 +1,1 @@
+rustc compiler config for Vim

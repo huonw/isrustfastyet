@@ -1,0 +1,1 @@
+Remove some stray texinfo syntax from a footnote

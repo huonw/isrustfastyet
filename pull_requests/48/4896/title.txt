@@ -1,0 +1,1 @@
+auto: librustc: Speed up move computation by 28X

@@ -1,0 +1,1 @@
+Tests select when to use --cfg debug, regardless of configure settings.

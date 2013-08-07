@@ -1,0 +1,1 @@
+A small section of futures in the tutorial on tasks and correction to the doc in future.rs

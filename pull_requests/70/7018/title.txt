@@ -1,0 +1,1 @@
+Fix #7017, add test

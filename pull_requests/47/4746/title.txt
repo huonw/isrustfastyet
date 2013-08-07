@@ -1,0 +1,1 @@
+auto: rm std::map::StdMap trait, rename std::map to std::oldmap and start transition to the core::container::Map API

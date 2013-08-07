@@ -1,0 +1,1 @@
+Reuse of common object code from multiple clones in different dirs.

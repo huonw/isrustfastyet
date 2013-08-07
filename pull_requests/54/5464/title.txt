@@ -1,0 +1,1 @@
+Fix path-qualified and cross-crate constants in match patterns.

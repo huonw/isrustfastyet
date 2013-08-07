@@ -1,0 +1,1 @@
+Unify the take glue functions for unique pointer types

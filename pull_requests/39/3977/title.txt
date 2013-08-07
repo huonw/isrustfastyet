@@ -1,0 +1,1 @@
+Check for duplicate supertraits and forbid them

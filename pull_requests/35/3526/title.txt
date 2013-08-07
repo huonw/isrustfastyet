@@ -1,0 +1,1 @@
+Make vec::view a method too.

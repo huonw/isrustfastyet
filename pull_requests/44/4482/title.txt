@@ -1,0 +1,1 @@
+allowing the entry point name to be something other than main

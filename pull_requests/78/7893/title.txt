@@ -1,0 +1,1 @@
+Reorganize README to make it more clear.

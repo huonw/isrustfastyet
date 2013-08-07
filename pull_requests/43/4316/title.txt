@@ -1,0 +1,1 @@
+reset LinearMap.size when expanding buckets

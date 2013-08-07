@@ -1,0 +1,1 @@
+Change Iterator.size_hint()

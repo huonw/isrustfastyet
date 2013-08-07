@@ -1,0 +1,1 @@
+replace `range` with an external iterator

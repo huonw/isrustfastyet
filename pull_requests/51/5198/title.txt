@@ -1,0 +1,1 @@
+Better highlight for repeat count error

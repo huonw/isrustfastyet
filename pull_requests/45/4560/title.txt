@@ -1,0 +1,1 @@
+add default Clone impl for all copyable types

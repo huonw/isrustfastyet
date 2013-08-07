@@ -1,0 +1,1 @@
+fix simple-qsort to not run at stage0 test

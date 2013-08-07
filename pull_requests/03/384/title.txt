@@ -1,0 +1,1 @@
+Checking to make sure we know what 'self' is in nested objects.

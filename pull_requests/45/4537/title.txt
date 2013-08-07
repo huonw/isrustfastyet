@@ -1,0 +1,1 @@
+Handle supertrait calls in default methods

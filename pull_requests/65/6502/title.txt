@@ -1,0 +1,1 @@
+syntax: deprecate #[auto_{en,de}code] in favour of #[deriving({En,De}codable)].

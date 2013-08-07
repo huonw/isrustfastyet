@@ -1,0 +1,1 @@
+librustc: Remove all uses of `static` from functions. rs=destatic

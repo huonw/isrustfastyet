@@ -1,0 +1,1 @@
+Step one for 'proper' pub condition: support pub keyword in form.

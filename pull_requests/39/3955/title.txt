@@ -1,0 +1,1 @@
+librustc: Implement deriving with a unit return type

@@ -1,0 +1,1 @@
+Remove dummy type parameters from iterator adaptors

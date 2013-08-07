@@ -1,0 +1,1 @@
+mk: Add core/std tests back to check-fast

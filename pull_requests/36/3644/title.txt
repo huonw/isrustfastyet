@@ -1,0 +1,1 @@
+Use both DESTDIR and prefix

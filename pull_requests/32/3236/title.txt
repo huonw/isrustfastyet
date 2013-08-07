@@ -1,0 +1,1 @@
+core: adding option::or(a,b) that returns the leftmost some() or none otherwise

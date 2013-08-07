@@ -1,0 +1,1 @@
+tutorial: Fix typo in the test section

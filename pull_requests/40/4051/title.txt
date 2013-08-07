@@ -1,0 +1,1 @@
+librustc: Allow &T to be assigned to *T

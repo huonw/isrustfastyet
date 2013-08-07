@@ -1,0 +1,1 @@
+testsuite: Update #3601 test (it's still xfailed) rs=xfailed-test

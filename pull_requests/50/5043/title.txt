@@ -1,0 +1,1 @@
+Don't perform swap when src == dst. #5041

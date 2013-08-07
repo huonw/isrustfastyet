@@ -1,0 +1,1 @@
+remove vecs_implicitly_copyable from libstd

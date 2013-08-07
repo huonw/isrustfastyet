@@ -1,0 +1,1 @@
+add a zsh completion file for rustc

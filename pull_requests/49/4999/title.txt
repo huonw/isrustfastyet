@@ -1,0 +1,1 @@
+Partial work making libsyntax free of vecs_implicitly_copyable

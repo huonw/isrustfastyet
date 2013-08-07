@@ -1,0 +1,1 @@
+core: io: the read_until function checks bytes not chars, so type should reflect that.

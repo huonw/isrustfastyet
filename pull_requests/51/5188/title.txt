@@ -1,0 +1,1 @@
+doc/rust.md: Demonstrate the `f::<T>()` syntax more often

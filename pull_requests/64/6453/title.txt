@@ -1,0 +1,1 @@
+Add simple terminfo detection to std::term

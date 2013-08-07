@@ -1,0 +1,1 @@
+Perform expansion before stripping/building a test harness.

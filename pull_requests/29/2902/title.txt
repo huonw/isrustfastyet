@@ -1,0 +1,1 @@
+Get rustdoc working with std::par instead of its own par library

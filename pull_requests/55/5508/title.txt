@@ -1,0 +1,1 @@
+libsyntax: Stop parsing `[const T]`.

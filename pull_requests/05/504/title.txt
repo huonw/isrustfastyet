@@ -1,0 +1,1 @@
+Add xterm to the term lib's list of supported terms.

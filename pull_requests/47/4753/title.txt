@@ -1,0 +1,1 @@
+auto: Add clang 4.2 to supported versions (that what Apple calls 3.2svn) r=graydon

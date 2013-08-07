@@ -1,0 +1,1 @@
+Account for possible 0-sized elements in vector iterators

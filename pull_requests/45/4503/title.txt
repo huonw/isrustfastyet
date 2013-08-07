@@ -1,0 +1,1 @@
+Swap return value order in pipes::oneshot Issue #4496

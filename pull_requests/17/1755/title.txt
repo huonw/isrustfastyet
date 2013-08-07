@@ -1,0 +1,1 @@
+Making vec::reserve exact (not nearest power of two), and adding str::reserve

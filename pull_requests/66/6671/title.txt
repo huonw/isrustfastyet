@@ -1,0 +1,1 @@
+rusti: add the information "Type :help for help", similar to ghci

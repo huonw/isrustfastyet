@@ -1,0 +1,1 @@
+Propagate expected type through blocks

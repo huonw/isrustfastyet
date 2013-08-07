@@ -1,0 +1,1 @@
+disable deprecated_self in libsyntax

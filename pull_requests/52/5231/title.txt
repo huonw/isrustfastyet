@@ -1,0 +1,1 @@
+Better macro error message

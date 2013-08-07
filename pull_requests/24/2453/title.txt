@@ -1,0 +1,1 @@
+New compiler flags: -W all -W no-all -W err-all

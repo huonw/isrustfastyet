@@ -1,0 +1,1 @@
+syntax: Fix #6416 by aborting on errors after test parse.

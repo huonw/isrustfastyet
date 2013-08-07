@@ -1,0 +1,1 @@
+std::net::url - adding encoding/decoding of components and forms (from erickt/rust-uri) and more compliant parsing

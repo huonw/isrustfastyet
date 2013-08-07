@@ -1,0 +1,1 @@
+Don't create subprocesses for the `rust` command

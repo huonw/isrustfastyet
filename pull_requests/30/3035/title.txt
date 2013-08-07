@@ -1,0 +1,1 @@
+Only print colored error messages if the output is going to the screen

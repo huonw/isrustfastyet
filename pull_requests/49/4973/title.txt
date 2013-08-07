@@ -1,0 +1,1 @@
+rm unused hash table from the runtime

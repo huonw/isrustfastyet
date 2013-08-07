@@ -1,0 +1,1 @@
+syntax: Remove an unnecessary allocation.

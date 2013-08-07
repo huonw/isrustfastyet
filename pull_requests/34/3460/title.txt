@@ -1,0 +1,1 @@
+Improve unexpected error scanner for compile-fail tests (Closes #1476)

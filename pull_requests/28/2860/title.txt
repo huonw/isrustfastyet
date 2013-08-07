@@ -1,0 +1,1 @@
+Add a task::set_sched_mode function

@@ -1,0 +1,1 @@
+adjust run.rs test for android

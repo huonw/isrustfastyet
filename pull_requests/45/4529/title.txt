@@ -1,0 +1,1 @@
+Add a license check to tidy. #4018

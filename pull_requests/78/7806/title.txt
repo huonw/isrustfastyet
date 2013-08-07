@@ -1,0 +1,1 @@
+std: add consuming iterators for `HashMap` and `HashSet`

@@ -1,0 +1,1 @@
+Fix a warning when generating tests

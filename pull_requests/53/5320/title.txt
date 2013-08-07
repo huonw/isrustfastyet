@@ -1,0 +1,1 @@
+Implement `#[deriving]` meta-attribute

@@ -1,0 +1,1 @@
+Ignore LD_PRELOAD for inherited environment test

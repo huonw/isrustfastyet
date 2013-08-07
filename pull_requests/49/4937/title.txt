@@ -1,0 +1,1 @@
+libcore: Remove ptr::mut_addr_of since &mut is coerced to *mut

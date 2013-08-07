@@ -1,0 +1,1 @@
+remove stray mode on callback, seems to not change anything

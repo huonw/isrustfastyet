@@ -1,0 +1,1 @@
+(still broken) str: stop encoding invalid code points

@@ -1,0 +1,1 @@
+Fix unique pointers occuring in unreachable blocks

@@ -1,0 +1,1 @@
+New naming convention for ast::{node_id, local_crate, crate_node_id, blk_check_mode, ty_field, ty_method}

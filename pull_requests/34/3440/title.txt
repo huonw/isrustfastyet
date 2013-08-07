@@ -1,0 +1,1 @@
+Add vec::dedup for in-place consecutive duplicate element removal.

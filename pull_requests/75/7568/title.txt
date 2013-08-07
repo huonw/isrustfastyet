@@ -1,0 +1,1 @@
+Add rusti/rustpkg to check-lite

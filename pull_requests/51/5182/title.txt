@@ -1,0 +1,1 @@
+Allow constant c-like enum to integral/float cast

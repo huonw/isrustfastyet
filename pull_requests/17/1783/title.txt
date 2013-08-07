@@ -1,0 +1,1 @@
+Adding a str::as_bytes<T>(str, fn([u8] -> T) -> T function

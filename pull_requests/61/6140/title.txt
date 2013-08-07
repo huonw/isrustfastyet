@@ -1,0 +1,1 @@
+Convert most of rust_run_program.cpp to rust (issue #2674).

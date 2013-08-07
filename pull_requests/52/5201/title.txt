@@ -1,0 +1,1 @@
+remove some oldmap::Hashmap from librustc

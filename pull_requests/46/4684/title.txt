@@ -1,0 +1,1 @@
+core: convert ToStr::to_str to take explicit &self

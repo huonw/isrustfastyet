@@ -1,0 +1,1 @@
+core: Add vec::raw::mut_buf_as_slice

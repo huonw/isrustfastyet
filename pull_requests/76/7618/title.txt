@@ -1,0 +1,1 @@
+Faster check for ascii-space

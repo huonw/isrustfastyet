@@ -1,0 +1,1 @@
+Convert all uses of vec::slice to vec::view Issue #3869

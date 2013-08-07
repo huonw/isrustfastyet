@@ -1,0 +1,1 @@
+rustpkg: Make rustpkg commands work without a package ID

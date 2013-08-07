@@ -1,0 +1,1 @@
+Added string functions: split_func, split_char, lines, lines_any, words

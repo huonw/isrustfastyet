@@ -1,0 +1,1 @@
+rewrite rust-mode to use font-lock-mode and emacs builtin syntax analysis

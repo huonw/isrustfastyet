@@ -1,0 +1,1 @@
+Rename dec/inc_weak_task_count to inc/dec_live_count, remove register/unregister_task

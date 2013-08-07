@@ -1,0 +1,1 @@
+rustdoc: properly nest markup within enum variant lists (fixes #6605)

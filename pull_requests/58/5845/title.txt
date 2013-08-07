@@ -1,0 +1,1 @@
+bool: implement Ord and TotalOrd

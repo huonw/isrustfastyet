@@ -1,0 +1,1 @@
+Change Decoder::read_option to allow returning arbitrary types; inline some malloc wrapper fns

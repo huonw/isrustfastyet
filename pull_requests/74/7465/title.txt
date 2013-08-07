@@ -1,0 +1,1 @@
+Overhaul `to_str_common` and `char::escape_*`

@@ -1,0 +1,1 @@
+Bump FD limit for scheduler tests on OS X

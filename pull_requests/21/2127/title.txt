@@ -1,0 +1,1 @@
+Logfile output from tests; summarise in make check

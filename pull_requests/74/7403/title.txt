@@ -1,0 +1,1 @@
+rustpkg: Begin allowing package scripts to call the default build logic

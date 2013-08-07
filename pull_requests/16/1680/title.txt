@@ -1,0 +1,1 @@
+Use cc instead of gcc

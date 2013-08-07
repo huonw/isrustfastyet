@@ -1,0 +1,1 @@
+auto: Rustdoc and oldcomm get divorced

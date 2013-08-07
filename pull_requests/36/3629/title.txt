@@ -1,0 +1,1 @@
+When a vec/str bounds check fails, include the bad index and the length of the str/vec in the fail message.

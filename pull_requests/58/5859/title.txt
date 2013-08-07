@@ -1,0 +1,1 @@
+Add some more generated files to the .gitignore file

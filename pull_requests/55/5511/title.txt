@@ -1,0 +1,1 @@
+librustc: Stop parsing `[T * N]`.

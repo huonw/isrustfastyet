@@ -1,0 +1,1 @@
+Allow io::reader to use preallocated buffers, plus other misc changes

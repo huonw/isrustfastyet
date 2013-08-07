@@ -1,0 +1,1 @@
+rustc: Less copy in trans, rs=removing copies

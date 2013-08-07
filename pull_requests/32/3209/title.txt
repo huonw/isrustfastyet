@@ -1,0 +1,1 @@
+emacs rust-mode melpa readme update + improved autoloads

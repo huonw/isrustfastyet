@@ -1,0 +1,1 @@
+extra: Add a testcase for #7256.

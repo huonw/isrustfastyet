@@ -1,0 +1,1 @@
+Fix and test for issue #3780.

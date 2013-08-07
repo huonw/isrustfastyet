@@ -1,0 +1,1 @@
+Clean up and modernise core::char and add Char trait

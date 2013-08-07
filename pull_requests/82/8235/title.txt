@@ -1,0 +1,1 @@
+librustc: Disallow "unsafe" for external functions

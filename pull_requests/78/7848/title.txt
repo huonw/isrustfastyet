@@ -1,0 +1,1 @@
+Adapted `trans::common::{block, fn_ctxt, scope_info}` to new naming convention.

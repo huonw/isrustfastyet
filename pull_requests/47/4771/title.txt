@@ -1,0 +1,1 @@
+auto: Convert a couple vec functions to return references and slices

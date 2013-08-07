@@ -1,0 +1,1 @@
+Add --enable-unicode configure option.

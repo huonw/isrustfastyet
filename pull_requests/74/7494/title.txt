@@ -1,0 +1,1 @@
+Fixed CFLAGS and CXXFLAGS propagation for platform.mk to use

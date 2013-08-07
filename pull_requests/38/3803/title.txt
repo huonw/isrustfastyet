@@ -1,0 +1,1 @@
+Make some string operations UTF-8 safe

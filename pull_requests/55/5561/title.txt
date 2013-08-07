@@ -1,0 +1,1 @@
+configure: Accept llvm-3.2

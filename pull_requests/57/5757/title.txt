@@ -1,0 +1,1 @@
+librustc: use new `[ty, .. len]` syntax for fixed vector errors.

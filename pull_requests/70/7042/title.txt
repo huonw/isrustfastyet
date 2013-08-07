@@ -1,0 +1,1 @@
+Terminfo searcher paths

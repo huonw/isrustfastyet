@@ -1,0 +1,1 @@
+Fleshing out result methods

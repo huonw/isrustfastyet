@@ -1,0 +1,1 @@
+Switch some std::oldmap to core::hashmap

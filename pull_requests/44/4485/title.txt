@@ -1,0 +1,1 @@
+Use vec::truncate for vec::retain

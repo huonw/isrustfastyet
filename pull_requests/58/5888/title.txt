@@ -1,0 +1,1 @@
+Modified submodules to use https instead of git for git URL

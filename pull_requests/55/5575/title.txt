@@ -1,0 +1,1 @@
+derive Eq and Clone impls where applicable

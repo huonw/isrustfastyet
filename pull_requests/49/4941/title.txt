@@ -1,0 +1,1 @@
+remove die definition and use in doc tests

@@ -1,0 +1,1 @@
+Fix some errors and adjustment for rpass on android

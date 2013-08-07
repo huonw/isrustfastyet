@@ -1,0 +1,1 @@
+cargo: complain if rustc fails

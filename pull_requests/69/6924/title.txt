@@ -1,0 +1,1 @@
+Make type_is_pod handle structs correctly. Closes #6868.

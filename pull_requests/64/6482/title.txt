@@ -1,0 +1,1 @@
+testsuite: Update and un-xfail unsafe-fn-autoderef

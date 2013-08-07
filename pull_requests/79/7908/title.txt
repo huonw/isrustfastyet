@@ -1,0 +1,1 @@
+UDP and TCP methods should take &mut self to reflect that libuv may change the underlying handle.

@@ -1,0 +1,1 @@
+libcore: add an EnumerateIterator, like Python's `enumerate`.

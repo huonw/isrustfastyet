@@ -1,0 +1,1 @@
+rustc: -L also indicates the location of native libraries

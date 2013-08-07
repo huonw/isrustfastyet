@@ -1,0 +1,1 @@
+libsyntax: Remove `pub impl` from the language

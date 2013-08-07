@@ -1,0 +1,1 @@
+testsuite: Add compile-fail test for #5883

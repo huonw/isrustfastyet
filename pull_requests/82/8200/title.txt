@@ -1,0 +1,1 @@
+option: mutate() and mutate_default() should return bool

@@ -1,0 +1,1 @@
+Move FuzzyEq into core::cmp and rename it to ApproxEq

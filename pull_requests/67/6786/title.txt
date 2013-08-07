@@ -1,0 +1,1 @@
+`noalias` on all `&mut` parameters is too coarse

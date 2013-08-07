@@ -1,0 +1,1 @@
+libsyntax: add some more explicit copies for vecs_implicitly_copyable)

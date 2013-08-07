@@ -1,0 +1,1 @@
+Fix rusti basic usage

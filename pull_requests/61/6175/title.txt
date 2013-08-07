@@ -1,0 +1,1 @@
+Add error if RED_ZONE_SIZE doesn't get defined

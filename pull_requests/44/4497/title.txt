@@ -1,0 +1,1 @@
+When building a test runner, don't remove the main function

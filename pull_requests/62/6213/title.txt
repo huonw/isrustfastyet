@@ -1,0 +1,1 @@
+ Add a brief description to show up in http://static.rust-lang.org/doc/core/index.html

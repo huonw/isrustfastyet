@@ -1,0 +1,1 @@
+core: Add to_bytes method to StrSlice trait

@@ -1,0 +1,1 @@
+Remove outdated function transmute_for_stage0

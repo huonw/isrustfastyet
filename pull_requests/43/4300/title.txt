@@ -1,0 +1,1 @@
+Replace much of the REPL run code with a call to compile_upto 

@@ -1,0 +1,1 @@
+Fix autoderef of function calls when the function is not an lval.

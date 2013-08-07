@@ -1,0 +1,1 @@
+Don't emit invoke instructions inside landing pads.

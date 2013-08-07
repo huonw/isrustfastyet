@@ -1,0 +1,1 @@
+CFG_LIBDIR specified by target triples in platform.mk

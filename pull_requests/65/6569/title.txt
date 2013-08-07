@@ -1,0 +1,1 @@
+Made bytes!() accept a list of string, integer and char literals.

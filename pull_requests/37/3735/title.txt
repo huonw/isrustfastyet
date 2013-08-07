@@ -1,0 +1,1 @@
+Remove old fixed-length vector syntax

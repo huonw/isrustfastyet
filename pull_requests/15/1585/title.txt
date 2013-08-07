@@ -1,0 +1,1 @@
+Update the keyword lists in rust.md and syntax.vim

@@ -1,0 +1,1 @@
+librustc: Make the Drop trait use explicit self

@@ -1,0 +1,1 @@
+add new read_chars method, incidentally fix bug in old read_char method

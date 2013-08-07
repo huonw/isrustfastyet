@@ -1,0 +1,1 @@
+Assorted fixes and cleanups to rt::comm and rt::kill.

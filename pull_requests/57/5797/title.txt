@@ -1,0 +1,1 @@
+Add a lint mode for unused unsafe blocks/functions

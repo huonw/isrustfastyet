@@ -1,0 +1,1 @@
+Allow adding static fn's in multiple impl's.

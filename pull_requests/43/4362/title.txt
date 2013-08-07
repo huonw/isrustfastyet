@@ -1,0 +1,1 @@
+librustc: Make vectors no longer implicitly copyable in rustc.

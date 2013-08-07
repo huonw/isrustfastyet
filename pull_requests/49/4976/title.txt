@@ -1,0 +1,1 @@
+vim: move keyword is gone

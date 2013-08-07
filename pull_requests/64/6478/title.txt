@@ -1,0 +1,1 @@
+Add inlining for iter_bytes for types used as hashmap keys

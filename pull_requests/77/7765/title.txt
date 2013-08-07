@@ -1,0 +1,1 @@
+cmp: Use default methods in trait Ord, only require Ord::lt

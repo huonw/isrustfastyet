@@ -1,0 +1,1 @@
+Define _RUST_STAGEN when building rustrt.

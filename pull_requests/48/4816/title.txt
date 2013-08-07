@@ -1,0 +1,1 @@
+auto: Error handling of binary/hexadecimal floating literals

@@ -1,0 +1,1 @@
+Use an enum for keywords and intern them to improve parser performance

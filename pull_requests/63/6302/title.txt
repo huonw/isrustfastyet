@@ -1,0 +1,1 @@
+Fix issue #6141: leaking ~fn

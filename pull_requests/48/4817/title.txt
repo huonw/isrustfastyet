@@ -1,0 +1,1 @@
+auto: Changes in Rust 0.6: `core::send_map` renamed to `core::hashmap`

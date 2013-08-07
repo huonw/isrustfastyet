@@ -1,0 +1,1 @@
+librustc: Don't allow newtype or unit-like structs to shadow other names in the value namespace.

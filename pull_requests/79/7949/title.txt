@@ -1,0 +1,1 @@
+Fix cross-crate tests on Windows #5286

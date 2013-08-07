@@ -1,0 +1,1 @@
+Use attributes for native module and functions

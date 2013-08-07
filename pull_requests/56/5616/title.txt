@@ -1,0 +1,1 @@
+libsyntax: Don't allow `impl (Trait) for Type` (with the parentheses).

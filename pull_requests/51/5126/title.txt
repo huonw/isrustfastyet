@@ -1,0 +1,1 @@
+Reimplement type_needs_drop on top of TypeContents

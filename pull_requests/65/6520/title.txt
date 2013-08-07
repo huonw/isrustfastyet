@@ -1,0 +1,1 @@
+allow constructing Rc/RcMut from Const types too

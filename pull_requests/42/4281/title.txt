@@ -1,0 +1,1 @@
+Convert core::io to use explicit self (for issue #4118 and issue #2004)

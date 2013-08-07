@@ -1,0 +1,1 @@
+switch "make all" to build stage2 versions of fuzzer, cargo, and rustdoc

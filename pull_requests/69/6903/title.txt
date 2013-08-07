@@ -1,0 +1,1 @@
+Fix passing self by value for types passed by value

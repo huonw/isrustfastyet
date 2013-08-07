@@ -1,0 +1,1 @@
+Remove all final references to die! Issue 4524

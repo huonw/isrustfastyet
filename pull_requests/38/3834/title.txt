@@ -1,0 +1,1 @@
+./configure didn't work (at least with latest git), fix that

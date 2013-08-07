@@ -1,0 +1,1 @@
+call task::yield in comm::peek fixes #2841

@@ -1,0 +1,1 @@
+install the librust{doc,pkg} host libraries

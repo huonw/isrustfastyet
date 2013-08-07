@@ -1,0 +1,1 @@
+syntax/rustc: Eliminate some bad copies

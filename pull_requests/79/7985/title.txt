@@ -1,0 +1,1 @@
+rustc: Remove some dead code from method resolution

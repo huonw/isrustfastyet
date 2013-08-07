@@ -1,0 +1,1 @@
+ 	librustc: Strdup unique strings instead of copying in byte by byte. Shaves 2MB off librustc at -O0.

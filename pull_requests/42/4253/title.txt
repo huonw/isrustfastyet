@@ -1,0 +1,1 @@
+Fix options passed to gpg in cargo init

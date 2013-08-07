@@ -1,0 +1,1 @@
+Update version number to 0.7-pre.

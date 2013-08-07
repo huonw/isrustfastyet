@@ -1,0 +1,1 @@
+std: Remove ThreadPerCore spawn mode. Unused

@@ -1,0 +1,1 @@
+Completely disable rusti tests on 32-bit hosts

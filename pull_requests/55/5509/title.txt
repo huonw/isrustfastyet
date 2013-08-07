@@ -1,0 +1,1 @@
+turn std::oldmap into a wrapper around LinearMap

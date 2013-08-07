@@ -1,0 +1,1 @@
+librustc: Don't require `pub extern` to make extern functions visible

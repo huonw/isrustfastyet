@@ -1,0 +1,1 @@
+librustc: Allow intra-crate start functions, for runtimeless operation.

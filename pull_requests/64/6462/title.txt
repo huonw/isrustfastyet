@@ -1,0 +1,1 @@
+librustc: Disallow `use` from reaching into impls or traits.

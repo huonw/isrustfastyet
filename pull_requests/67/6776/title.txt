@@ -1,0 +1,1 @@
+rustc: Switch ty::node_type_table to smallintmap, cut 400mb memory use off a librustc build.

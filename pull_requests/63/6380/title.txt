@@ -1,0 +1,1 @@
+librustc: Fix ICE in core-text resulting from dynamic borrowing. rs=blocking-servo

@@ -1,0 +1,1 @@
+Don't loop infinitely on 0-size structs in repr

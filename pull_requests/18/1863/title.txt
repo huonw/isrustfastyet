@@ -1,0 +1,1 @@
+std: Fix env() assert when an environment variable's value contains a '=' char

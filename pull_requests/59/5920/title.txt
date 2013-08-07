@@ -1,0 +1,1 @@
+Rustpkg: tests, and doing inference properly

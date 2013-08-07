@@ -1,0 +1,1 @@
+librustc: Fastisel dislikes memmove, switch to memcpy, 1% compile-time win.

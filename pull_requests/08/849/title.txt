@@ -1,0 +1,1 @@
+Pass struct types by pointer, drop arguments in the caller

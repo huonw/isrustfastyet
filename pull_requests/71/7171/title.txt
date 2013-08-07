@@ -1,0 +1,1 @@
+Delete some binary files from the test suite

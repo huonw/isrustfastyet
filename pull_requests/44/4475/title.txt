@@ -1,0 +1,1 @@
+Updating syntax/ast.rs types to structs

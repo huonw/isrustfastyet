@@ -1,0 +1,1 @@
+Add check for 'file' command which is necessary for 32-bit userspace detection.

@@ -1,0 +1,1 @@
+Fix accidental enum bloat in the AST

@@ -1,0 +1,1 @@
+rt: remove unused 'rust_compare_and_swap_ptr'

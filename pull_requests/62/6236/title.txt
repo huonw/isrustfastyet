@@ -1,0 +1,1 @@
+Add pop() and swap() to the Map trait

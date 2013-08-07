@@ -1,0 +1,1 @@
+Added `src/etc/vim/ftdetect/rust.vim` for vim filetype detection.

@@ -1,0 +1,1 @@
+rt: Remove dead code from schedule_task()

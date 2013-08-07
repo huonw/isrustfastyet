@@ -1,0 +1,1 @@
+Get rid of structural records in libsyntax and the last bit in librustc.

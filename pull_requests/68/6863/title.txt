@@ -1,0 +1,1 @@
+rustc: adjust span for error message to not trim last letter

@@ -1,0 +1,1 @@
+Make staticness mismatch a fatal error

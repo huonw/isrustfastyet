@@ -1,0 +1,1 @@
+Change `#[inline(always)]` to `#[inline(force)]`

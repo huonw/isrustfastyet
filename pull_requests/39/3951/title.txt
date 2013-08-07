@@ -1,0 +1,1 @@
+rustc: Make static methods not leak out of traits

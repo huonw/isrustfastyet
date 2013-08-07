@@ -1,0 +1,1 @@
+Remove legacy object creation mode, and convert remaining uses of it

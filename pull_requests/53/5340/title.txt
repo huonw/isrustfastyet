@@ -1,0 +1,1 @@
+Increase tidy column limit to 100

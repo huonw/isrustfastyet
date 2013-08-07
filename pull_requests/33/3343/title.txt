@@ -1,0 +1,1 @@
+More deprecated mode removal (sort.rs, fun_treemap.rs)

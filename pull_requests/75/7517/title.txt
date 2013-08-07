@@ -1,0 +1,1 @@
+Bump version number to 0.7, add more relnotes

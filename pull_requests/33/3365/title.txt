@@ -1,0 +1,1 @@
+fix str::eq_slice off-by-one error

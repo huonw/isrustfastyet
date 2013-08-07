@@ -1,0 +1,1 @@
+Move appropriate methods out of Real and into new traits

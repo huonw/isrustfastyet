@@ -1,0 +1,1 @@
+Lexer: Fix offset handling in get_str_from()

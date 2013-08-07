@@ -1,0 +1,1 @@
+mk: Remove CFG_INSTALL_SNAP logic. #2664

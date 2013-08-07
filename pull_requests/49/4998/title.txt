@@ -1,0 +1,1 @@
+vec: grow_fn doesn't require Copy

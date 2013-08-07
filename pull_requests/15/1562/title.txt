@@ -1,0 +1,1 @@
+[cargo] add --test flag to install

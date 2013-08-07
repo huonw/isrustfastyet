@@ -1,0 +1,1 @@
+Produce a useful error message in trans when attempting to log an unsuppo

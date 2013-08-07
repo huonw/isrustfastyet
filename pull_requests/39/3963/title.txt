@@ -1,0 +1,1 @@
+librustc: Require the #[derivable] attribute

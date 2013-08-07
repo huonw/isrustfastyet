@@ -1,0 +1,1 @@
+Use task local random when initializing LinearMap

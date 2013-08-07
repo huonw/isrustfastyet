@@ -1,0 +1,1 @@
+librustc: drop AST before running LLVM, frees 400mb on a librustc build

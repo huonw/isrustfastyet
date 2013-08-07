@@ -1,0 +1,1 @@
+rustc: Implement parsing and typechecking for "once fn"

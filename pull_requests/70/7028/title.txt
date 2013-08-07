@@ -1,0 +1,1 @@
+cmp: remove duplicate free functions

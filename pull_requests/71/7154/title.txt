@@ -1,0 +1,1 @@
+Fix inlining of glue code

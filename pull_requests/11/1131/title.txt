@@ -1,0 +1,1 @@
+install.mk: make man1 directory

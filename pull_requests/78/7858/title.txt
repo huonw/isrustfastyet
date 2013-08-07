@@ -1,0 +1,1 @@
+Task killing, linked failure, and exit code propagation in the new runtime.

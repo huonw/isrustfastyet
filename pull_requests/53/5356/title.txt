@@ -1,0 +1,1 @@
+Represent enums with regular structs; no more alignment-breaking casts.

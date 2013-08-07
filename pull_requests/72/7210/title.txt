@@ -1,0 +1,1 @@
+Add some more methods to vec and vec::bytes

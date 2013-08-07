@@ -1,0 +1,1 @@
+Add vec::unique for in-place consecutive duplicate element removal.

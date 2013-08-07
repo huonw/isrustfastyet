@@ -1,0 +1,1 @@
+auto: Add support for clang 4.2 (as reported by apple clang) r=graydon

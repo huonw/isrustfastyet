@@ -1,0 +1,1 @@
+Remove unused implicit argument for functions that return immediate values

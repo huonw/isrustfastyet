@@ -1,0 +1,1 @@
+Simplify serialize::{En,De}coder, add support for serializing maps, and other misc fns

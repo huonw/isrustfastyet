@@ -1,0 +1,1 @@
+Rename vec::mod2 to vec::mod_zip

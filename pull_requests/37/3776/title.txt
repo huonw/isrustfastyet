@@ -1,0 +1,1 @@
+Implement intra-crate static methods on anonymous trait implementations (e.g. Foo::new())

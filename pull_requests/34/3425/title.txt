@@ -1,0 +1,1 @@
+(partially fix incoming) More hash function simplification

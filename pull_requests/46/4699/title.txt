@@ -1,0 +1,1 @@
+librustc: Change `self` as a type to `Self` everywhere.

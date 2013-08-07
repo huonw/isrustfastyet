@@ -1,0 +1,1 @@
+tutorial: rework nolink description to remove mention of "empty string"

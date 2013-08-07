@@ -1,0 +1,1 @@
+Implement read_managed_str for the JSON deserialiser.

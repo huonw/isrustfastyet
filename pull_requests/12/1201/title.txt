@@ -1,0 +1,1 @@
+Added logarithm functions for floats to std::math

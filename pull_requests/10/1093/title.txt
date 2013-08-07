@@ -1,0 +1,1 @@
+Remove 'iter' and 'for each' from the documentation

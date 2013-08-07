@@ -1,0 +1,1 @@
+Avoid unnecessary basic blocks for allocas, return and else

@@ -1,0 +1,1 @@
+libcore: Change `each_val` to follow new for-loop protocol

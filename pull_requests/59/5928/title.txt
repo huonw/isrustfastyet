@@ -1,0 +1,1 @@
+libcore: make spawn_supervised documentation reflect its behaviour.

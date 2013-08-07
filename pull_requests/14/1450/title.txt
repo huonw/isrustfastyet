@@ -1,0 +1,1 @@
+adding some misc functions and some functions just for [u8]

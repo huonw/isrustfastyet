@@ -1,0 +1,1 @@
+Allow linking against crates with #[no_std]

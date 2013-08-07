@@ -1,0 +1,1 @@
+doc: Fold information from the memory model interlude in the tutorial elsewhere

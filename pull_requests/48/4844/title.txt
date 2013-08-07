@@ -1,0 +1,1 @@
+Fix array indexing in consts (broken by earlier const enum fixes)

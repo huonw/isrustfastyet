@@ -1,0 +1,1 @@
+Avoid calling to_vec() unnecessarily in parser.

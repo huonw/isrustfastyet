@@ -1,0 +1,1 @@
+(core::str) mark push/pop/shift byte functions unsafe, rename len functions, and fix replace

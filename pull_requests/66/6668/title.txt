@@ -1,0 +1,1 @@
+Rename libcore to libstd and libstd to libextra

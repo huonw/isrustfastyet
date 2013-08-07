@@ -1,0 +1,1 @@
+Permit C-style enums in vector repeat length expressions (N.B. values only, not type signatures)

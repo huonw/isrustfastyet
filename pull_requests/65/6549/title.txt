@@ -1,0 +1,1 @@
+Implement sin_cos method for float, f64 and f32

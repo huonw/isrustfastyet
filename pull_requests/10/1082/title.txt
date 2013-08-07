@@ -1,0 +1,1 @@
+Add function aliases for float operators, and clean up other numeric functions

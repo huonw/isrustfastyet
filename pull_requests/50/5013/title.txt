@@ -1,0 +1,1 @@
+core: a few core::os fns ported to rust + ptr::array_each

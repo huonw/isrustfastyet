@@ -1,0 +1,1 @@
+rustc: Allow trailing comma in record fields

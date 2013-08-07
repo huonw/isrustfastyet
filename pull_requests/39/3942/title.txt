@@ -1,0 +1,1 @@
+Change option::expect to not require a Copy bound, and move instead.

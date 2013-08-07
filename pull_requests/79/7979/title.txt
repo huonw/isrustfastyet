@@ -1,0 +1,1 @@
+Change libaux directory to fix aux crate tests on Windows

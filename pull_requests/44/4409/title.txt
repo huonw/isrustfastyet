@@ -1,0 +1,1 @@
+librustc: Implement `&static` as the replacement for `Durable`

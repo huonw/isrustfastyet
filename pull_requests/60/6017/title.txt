@@ -1,0 +1,1 @@
+Revert "Errors with the same span print the span once"

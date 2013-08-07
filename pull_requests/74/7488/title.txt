@@ -1,0 +1,1 @@
+librustc: back::link::sanitize support escape_utf8

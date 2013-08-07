@@ -1,0 +1,1 @@
+libcore: add pop/swap/consume to SendMap

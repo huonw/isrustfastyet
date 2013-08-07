@@ -1,0 +1,1 @@
+Add quick sort function to the std lib.

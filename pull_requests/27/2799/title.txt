@@ -1,0 +1,1 @@
+Fix getopts parsing of -L/usr/local/lib

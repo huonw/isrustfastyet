@@ -1,0 +1,1 @@
+libsyntax: error on struct Foo {}.

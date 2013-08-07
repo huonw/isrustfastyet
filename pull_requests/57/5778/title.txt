@@ -1,0 +1,1 @@
+Remove enum layout assumptions from type visitor

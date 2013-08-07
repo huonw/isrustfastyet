@@ -1,0 +1,1 @@
+Cargo: install-by-name and install-by-uuid

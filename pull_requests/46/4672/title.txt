@@ -1,0 +1,1 @@
+Fix the len() method on LinearMap during popping

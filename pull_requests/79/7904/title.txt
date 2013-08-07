@@ -1,0 +1,1 @@
+str: Implement trait Mutable for ~str with the method .clear()

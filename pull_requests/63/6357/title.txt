@@ -1,0 +1,1 @@
+Use static string with fail!() and remove fail!(fmt!())

@@ -1,0 +1,1 @@
+test: fix for missing ARM support

@@ -1,0 +1,1 @@
+Implement Clone for @ and @mut types.

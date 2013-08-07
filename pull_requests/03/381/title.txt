@@ -1,0 +1,1 @@
+Parser fix: 'fail' was eating the next token that came after it.

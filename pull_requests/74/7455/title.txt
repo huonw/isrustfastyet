@@ -1,0 +1,1 @@
+Constrain maximum lifetime of stack closures

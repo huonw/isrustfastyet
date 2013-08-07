@@ -1,0 +1,1 @@
+No longer treat \ as a path separator on posix systems.

@@ -1,0 +1,1 @@
+rt: dummy function pthread_atfork for android

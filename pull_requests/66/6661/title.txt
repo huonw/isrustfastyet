@@ -1,0 +1,1 @@
+Issue #3678: Remove wrappers and call foreign functions directly

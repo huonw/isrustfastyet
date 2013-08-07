@@ -1,0 +1,1 @@
+Better suggestions for report_use_of_moved_value.

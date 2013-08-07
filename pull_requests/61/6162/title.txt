@@ -1,0 +1,1 @@
+libcore: add N(0,1) and Exp(1) distributions to core::rand.

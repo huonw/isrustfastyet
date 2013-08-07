@@ -1,0 +1,1 @@
+Fix leaks/undefined behavour in core::run on windows, and remove os::waitpid

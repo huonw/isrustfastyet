@@ -1,0 +1,1 @@
+Install librustllvm.so to target lib directory

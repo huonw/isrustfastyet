@@ -1,0 +1,1 @@
+Fix i686 struct returning in some scenarios

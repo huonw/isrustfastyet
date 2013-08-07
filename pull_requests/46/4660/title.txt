@@ -1,0 +1,1 @@
+librustc: Disallow trait bounds in types, enumerations, and structure definitions

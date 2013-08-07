@@ -1,0 +1,1 @@
+Fix comparisons of the nil type to do something sensible.

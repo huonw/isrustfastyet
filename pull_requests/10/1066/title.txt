@@ -1,0 +1,1 @@
+Make sure librustrt.so is linked with a non-executable stack.

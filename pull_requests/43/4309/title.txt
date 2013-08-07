@@ -1,0 +1,1 @@
+Inject std when --test. #1127, #3241

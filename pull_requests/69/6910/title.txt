@@ -1,0 +1,1 @@
+Don't resolve paths to non-static methods

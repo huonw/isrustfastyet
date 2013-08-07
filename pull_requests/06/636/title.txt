@@ -1,0 +1,1 @@
+Fix #438 by copying rustrt and rustllvm into the stage dirs

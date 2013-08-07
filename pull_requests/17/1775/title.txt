@@ -1,0 +1,1 @@
+made leak an intrinsic to avoid a c-call. added memmove and memcpy intrinsics

@@ -1,0 +1,1 @@
+Allow consts to be initialized by non-nullary enum constructors

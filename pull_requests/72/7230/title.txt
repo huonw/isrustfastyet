@@ -1,0 +1,1 @@
+syntax::diagnostics: Color the ^~~~ in green for better visibility

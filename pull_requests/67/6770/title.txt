@@ -1,0 +1,1 @@
+Add xfail'd test for #6762.

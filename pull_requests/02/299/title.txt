@@ -1,0 +1,1 @@
+Beginnings of support for magical self prefix; nothing profound happening

@@ -1,0 +1,1 @@
+Convert vector functions to methods, part 3 (and internal iterators to external)

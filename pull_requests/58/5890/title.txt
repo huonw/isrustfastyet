@@ -1,0 +1,1 @@
+Prevent expr_cast hides prior error.

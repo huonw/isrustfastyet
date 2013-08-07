@@ -1,0 +1,1 @@
+Merge type_span and type_def, and ditto with value_span and value_def

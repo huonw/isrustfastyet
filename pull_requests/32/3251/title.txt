@@ -1,0 +1,1 @@
+libcore: fix doc for char::to_digit

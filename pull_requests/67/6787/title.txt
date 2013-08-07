@@ -1,0 +1,1 @@
+mark glue functions with unnamed_addr

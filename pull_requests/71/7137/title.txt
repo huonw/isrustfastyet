@@ -1,0 +1,1 @@
+std: add a fixme to note performance issues in vec::from_elem.

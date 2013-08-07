@@ -1,0 +1,1 @@
+libcore: add a str::with_capacity to match the fn in vec

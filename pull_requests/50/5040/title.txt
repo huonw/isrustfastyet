@@ -1,0 +1,1 @@
+Doc: Mention new rust tool in the tutorial

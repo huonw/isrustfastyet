@@ -1,0 +1,1 @@
+Don't warn about unsafe functions which don't need to be unsafe

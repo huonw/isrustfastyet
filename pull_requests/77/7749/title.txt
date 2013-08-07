@@ -1,0 +1,1 @@
+rustpkg: Implement `uninstall` and `list` commands

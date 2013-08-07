@@ -1,0 +1,1 @@
+librustc: Enforce privacy for static methods.

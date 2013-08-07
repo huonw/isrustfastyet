@@ -1,0 +1,1 @@
+rust-mode.el uses the 'cl macros, so it should actually require them

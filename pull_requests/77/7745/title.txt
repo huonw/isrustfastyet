@@ -1,0 +1,1 @@
+This pull request activates hygiene for 'let' bindings. argument bindings come soon

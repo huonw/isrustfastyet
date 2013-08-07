@@ -1,0 +1,1 @@
+librustc: Limit the typo suggestions to reasonable suggests.

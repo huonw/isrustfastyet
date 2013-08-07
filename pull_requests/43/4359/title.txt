@@ -1,0 +1,1 @@
+bug 4189 adding bound checks for vec::raw::memcpy and memmove

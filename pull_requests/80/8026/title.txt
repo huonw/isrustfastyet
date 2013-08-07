@@ -1,0 +1,1 @@
+Implement std::num::Zero for bool

@@ -35,7 +35,7 @@ def draw_row(pr, time, changeset, title):
     return tr(cols, 'pr', 'pr-%d' % pr)
 
 cur.execute('''
-SELECT STRFTIME('%%Y-%%m-%%d %%H:%%M', time, 'unixepoch', 'utc'), changeset, pull_request
+SELECT STRFTIME('%%Y-%%m-%%d %%H:%%M', time, 'unixepoch'), changeset, pull_request
 FROM change
 WHERE datetime(time, 'unixepoch', 'utc') >= datetime('now', 'utc', '-%d day') AND
       pull_request IS NOT NULL

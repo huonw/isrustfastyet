@@ -1,0 +1,13 @@
+table {
+  width: 100%;
+}
+thead {
+  font-weight: bold;
+}
+
+.pr-title {
+  font-style: italic;
+}
+.pr-hash {
+  font-size: 80%;
+}

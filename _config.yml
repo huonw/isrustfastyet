@@ -2,4 +2,5 @@ root: '/isrustfastyet'
 header_links:
   - { path: '/mem', title: 'Memory', id: 'mem' }
   - { path: '/buildbot', title: 'Buildbot', id: 'buildbot' }
+  - { path: '/pull_requests', title: 'Pull Requests', 'id': 'prs'}
   - { path: '/about.html', title: 'About', id: 'about'}

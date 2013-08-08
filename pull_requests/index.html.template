@@ -1,0 +1,23 @@
+---
+title: Recent landings
+styles: [style.css]
+scripts: []
+layout: default
+---
+
+<h1>Recently landed pull requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>Number</td>
+      <td>Title</td>
+      <td>Landing time (UTC)</td>
+      <td>Merge commit</td>
+      <td>Graphs</td>
+    </tr>
+  </thead>
+  <tbody>
+  {{DATA_HERE}}
+  </tbody>
+</table>

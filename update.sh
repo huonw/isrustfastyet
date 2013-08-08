@@ -8,12 +8,21 @@ git pull --rebase
     git add ../pull_requests &&
     git commit -m 'Fetch new pull requests.'
 
-    cd ../buildbot
-    ./make-perf-json.py &&
-    ./make-perf-json.py all &&
-    git add {perf,all}.js &&
-    git commit -m 'Update buildbot.'
+    cd ..
+    (
+        cd buildbot
+        ./make-perf-json.py &&
+        ./make-perf-json.py all &&
+        git add {perf,all}.js &&
+        git commit -m 'Update buildbot.'
+    )
 
+    (
+        cd pull_requests
+        ./pr_list.py &&
+        git add index.html &&
+        git commit -m 'Update pull_requests.'
+    )
 )
 
 (

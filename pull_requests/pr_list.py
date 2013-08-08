@@ -55,4 +55,4 @@ for time, changeset, pr in cur:
 
 template = open('index.html.template').read()
 with open('index.html', 'w') as f:
-    f.write(template.replace('{{DATA_HERE}}', ''.join(formatted)))
+    f.write(template.replace('{{DATA_HERE}}', '\n'.join(formatted)))

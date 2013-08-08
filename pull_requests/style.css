@@ -1,13 +1,27 @@
 table {
   width: 100%;
+  border-collapse: collapse;
 }
+
 thead {
   font-weight: bold;
+  border-bottom: 1px solid gray;
+}
+
+td {
+  padding: 0.05em 0.3em;
+  white-space: nowrap;
 }
 
 .pr-title {
   font-style: italic;
+  width: 100%;
 }
 .pr-hash {
   font-size: 80%;
+  font-family: monospace;
+}
+
+.pr:nth-child(even) {
+  background: #dddddd;
 }

@@ -6,6 +6,7 @@ table {
 thead {
   font-weight: bold;
   border-bottom: 1px solid gray;
+  text-align: center;
 }
 
 td {
@@ -14,14 +15,23 @@ td {
 }
 
 .pr-title {
-  font-style: italic;
   width: 100%;
 }
-.pr-hash {
-  font-size: 80%;
+tbody .pr-title {
+  font-style: italic;
+}
+thead .pr-title {
+  text-align: left;
+}
+
+.pr-time {
+  text-align: center;
+}
+
+tbody .pr-hash {
   font-family: monospace;
 }
 
 .pr:nth-child(even) {
-  background: #dddddd;
+  background: #eeeeee;
 }

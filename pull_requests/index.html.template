@@ -10,11 +10,11 @@ layout: default
 <table>
   <thead>
     <tr>
-      <td>Number</td>
-      <td>Title</td>
-      <td>Landing time (UTC)</td>
-      <td>Merge commit</td>
-      <td>Graphs</td>
+      <td class="pr-number">#</td>
+      <td class="pr-title">Title</td>
+      <td class="pr-time">Landing time (UTC)</td>
+      <td class="pr-hash">Merge</td>
+      <td class="pr-graphs">Graphs</td>
     </tr>
   </thead>
   <tbody>

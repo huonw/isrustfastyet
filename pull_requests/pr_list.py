@@ -25,13 +25,12 @@ def tr(texts, k=None, i=None):
 def td(text, k=None, i=None):
     return elem('td', text, {'class': k, 'id': i})
 def draw_row(pr, time, changeset, title):
-    cols = [
-        td(a(str(pr), PR_URL % pr), 'pr-number'),
-        td(title, 'pr-title'),
-        td(str(time), 'pr-time'),
-        td(a(changeset, HASH_URL % changeset), 'pr-hash'),
-        td(a('mem', '../mem/#%s' % changeset) + ' ' + a('buildbot', '../buildbot/#%s' % changeset))
-    ]
+    cols = [td(a(str(pr), PR_URL % pr), 'pr-number'),
+            td(title, 'pr-title'),
+            td(str(time), 'pr-time'),
+            td(a(changeset[:8], HASH_URL % changeset), 'pr-hash'),
+            td(a('mem', '../mem/#%s' % changeset) + ' ' +
+               a('buildbot', '../buildbot/#%s' % changeset), 'pr-graphs')]
     return tr(cols, 'pr', 'pr-%d' % pr)
 
 cur.execute('''

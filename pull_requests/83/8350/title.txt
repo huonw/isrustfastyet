@@ -1,0 +1,1 @@
+Fix bug in `match`ing struct patterns

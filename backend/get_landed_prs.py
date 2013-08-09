@@ -14,7 +14,7 @@ OS = {
         'all': ONLY_OPT
     },
     'mac': {
-        '64': ALL_OPTS,
+        '64': NO_VG,
         '32': ONLY_OPT,
         'all': ONLY_OPT
     },
@@ -41,7 +41,7 @@ builds = defaultdict(dict)
 
 for plat in PLATFORMS:
     print('Downloading', plat)
-    resp = json.loads(requests.get(URL % plat).text)
+    resp = requests.get(URL % plat).json()
     print('Done')
     for i in HISTORY:
         build = resp[str(i)]

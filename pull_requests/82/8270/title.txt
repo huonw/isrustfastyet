@@ -1,0 +1,1 @@
+Elide unnecessary ret slot allocas

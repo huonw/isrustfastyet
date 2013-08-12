@@ -1,0 +1,1 @@
+Add #[inline] to impl Zero for ()

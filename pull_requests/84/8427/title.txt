@@ -1,0 +1,1 @@
+rustc: Obey RUST_MIN_STACK env var

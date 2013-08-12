@@ -1,0 +1,1 @@
+Add parse-error recovery for erroneous `struct_id { }` form.

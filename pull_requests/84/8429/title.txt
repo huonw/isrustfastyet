@@ -1,0 +1,1 @@
+docs: In rustpkg manual, note future plans about versions

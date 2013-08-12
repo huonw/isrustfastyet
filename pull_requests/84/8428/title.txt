@@ -1,0 +1,1 @@
+Add a "peekable" iterator adaptor, with a peek() method that returns the next element.

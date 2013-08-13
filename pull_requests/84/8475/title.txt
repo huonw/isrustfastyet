@@ -1,0 +1,1 @@
+rt::task: Make current_stack_segment public

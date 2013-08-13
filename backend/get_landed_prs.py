@@ -4,8 +4,8 @@ import requests, sqlite3, json, re, os
 from collections import defaultdict
 
 ONLY_OPT = ['opt']
-NO_VG = ['opt', 'nopt']
-ALL_OPTS = ['opt', 'nopt', 'opt-vg']
+NO_VG = ['opt', 'nopt-c', 'nopt-t']
+ALL_OPTS = ['opt', 'nopt-c', 'nopt-t', 'opt-vg']
 
 OS = {
     'linux': {

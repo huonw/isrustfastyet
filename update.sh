@@ -25,13 +25,13 @@ git pull --rebase
     )
 )
 
-#(
-#    cd mem
-#    rustc -O process.rs &&
-#      ./dl.sh &&
-#      ./process &&
-#      git add out/*.json &&
-#      git commit -m 'Update mem. '
-#)
+(
+    cd mem
+    rustc -O process.rs &&
+      ./dl.sh &&
+      ./process &&
+      git add out/*.json &&
+      git commit -m 'Update mem. '
+)
 
 git push

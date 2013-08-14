@@ -27,7 +27,8 @@ for hash in $(grep -v -f <(ls) history.txt | sort | uniq); do
         # wait till next time
         if ! (
                 gunzip -f $MEM_FILE &&
-                python -c 'import sys, json; json.load(sys.stdin)' < ${MEM_FILE%.gz}
+                python -c 'import sys, json; json.load(sys.stdin)' < ${MEM_FILE%.gz} &&
+                [[ -f $TIME_FILE ]]
             ); then
             echo $hash failed
             cd ..

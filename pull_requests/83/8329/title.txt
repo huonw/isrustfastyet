@@ -1,0 +1,1 @@
+debuginfo: Proper handling of lexical scopes and variable shadowing.

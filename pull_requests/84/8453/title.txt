@@ -1,0 +1,1 @@
+Fixed #8451 - extra::stats::write_boxplot() applied to negative or zero sample values

@@ -1,0 +1,1 @@
+std: Move the iterator param on FromIterator and Extendable to the method.

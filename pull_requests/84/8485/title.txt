@@ -1,0 +1,1 @@
+Add a bunch of tests for closed issues

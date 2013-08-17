@@ -1,0 +1,1 @@
+syntax: add a local_data_key macro that creates a key for access to the TLS.

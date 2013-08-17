@@ -1,0 +1,1 @@
+Deny warnings in stage1+ libsyntax/librustc/librustdoc/librusti/librust

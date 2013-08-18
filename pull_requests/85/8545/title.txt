@@ -1,0 +1,1 @@
+IterBytes: Delimit sequences &[A] and ~str when hashing 

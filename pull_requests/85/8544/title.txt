@@ -1,0 +1,1 @@
+Pointers to bound variables are stored after all patterns are matched.

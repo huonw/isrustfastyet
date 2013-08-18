@@ -1,0 +1,1 @@
+debuginfo: Support for generic functions and self arguments

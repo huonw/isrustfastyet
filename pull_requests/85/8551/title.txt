@@ -1,0 +1,1 @@
+doc: correct spelling in documentation, convert remaining uses of `core` to `std`

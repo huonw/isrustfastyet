@@ -1,0 +1,1 @@
+Give XorShiftRng::new() a random seed

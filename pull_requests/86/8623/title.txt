@@ -1,0 +1,1 @@
+visitor trait rewrite step 4 (of 5).

@@ -1,0 +1,1 @@
+Add/modify iterator size_hint()s

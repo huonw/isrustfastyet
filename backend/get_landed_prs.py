@@ -3,36 +3,8 @@
 import requests, sqlite3, json, re, os
 from collections import defaultdict
 
-ONLY_OPT = ['opt']
-NO_VG = ['opt', 'nopt-c', 'nopt-t']
-ALL_OPTS = ['opt', 'nopt-c', 'nopt-t', 'opt-vg']
-X_ANDROID = ['x-android']
-
-OS = {
-    'linux': {
-        '64': NO_VG + X_ANDROID, # ALL_OPTS,
-        '32': NO_VG,
-        # 'all': ONLY_OPT
-    },
-    'mac': {
-        '64': NO_VG,
-        '32': ONLY_OPT,
-        # 'all': ONLY_OPT
-    },
-    'win': {
-        '32': NO_VG
-    },
-    'bsd': {
-        '64': ONLY_OPT
-    }
-}
-
-PLATFORMS = ['%s-%s-%s' % (os, arch, opt)
-             for os, archs in OS.items()
-             for arch, opts in archs.items()
-             for opt in opts]
-
 HISTORY = range(-10,-1 + 1)
+BUILDERS_URL = 'http://buildbot.rust-lang.org/json/builders/'
 URL = 'http://buildbot.rust-lang.org/json/builders/auto-%s/builds?' + '&'.join('select=%d' % i
                                                                                for i in HISTORY)
 GH_URL = 'https://api.github.com/repos/mozilla/rust/pulls/%d'
@@ -40,6 +12,8 @@ PR_INFO_DIR = '../pull_requests/'
 
 db = sqlite3.connect('pr.sqlite3')
 cur = db.cursor()
+
+PLATFORMS = [p[5:] for p in requests.get(BUILDERS_URL).json() if p.startswith('auto-')]
 
 builds = defaultdict(dict)
 

@@ -1,0 +1,1 @@
+Fix segfault when calling tuple struct constructor as extern fn

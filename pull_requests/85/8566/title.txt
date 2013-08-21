@@ -1,0 +1,1 @@
+An optimization of idle callbacks such that there is now a single toggleable idle callback per scheduler.

@@ -1,0 +1,1 @@
+Make supertrait methods callable on object types

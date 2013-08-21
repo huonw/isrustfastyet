@@ -6,20 +6,24 @@ from collections import defaultdict
 ONLY_OPT = ['opt']
 NO_VG = ['opt', 'nopt-c', 'nopt-t']
 ALL_OPTS = ['opt', 'nopt-c', 'nopt-t', 'opt-vg']
+X_ANDROID = ['x-android']
 
 OS = {
     'linux': {
-        '64': ALL_OPTS,
+        '64': NO_VG + X_ANDROID, # ALL_OPTS,
         '32': NO_VG,
-        'all': ONLY_OPT
+        # 'all': ONLY_OPT
     },
     'mac': {
         '64': NO_VG,
         '32': ONLY_OPT,
-        'all': ONLY_OPT
+        # 'all': ONLY_OPT
     },
     'win': {
         '32': NO_VG
+    },
+    'bsd': {
+        '64': ONLY_OPT
     }
 }
 

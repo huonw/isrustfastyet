@@ -14,7 +14,8 @@ CREATE TABLE build (
        build_num INTEGER,
        plat TEXT,
        compile_time INTEGER,
-       test_time INTEGER
+       test_time INTEGER,
+       build_slave TEXT
 );
 
 CREATE INDEX build_plat ON build (plat);

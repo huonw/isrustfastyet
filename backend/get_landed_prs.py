@@ -88,14 +88,27 @@ for chst, bs in builds.items():
     for plat, build in bs.items():
         build_num = build['number']
 
-        compile_ts = build['steps'][6]['times']
+        compile_ts = None
+        test_ts = None
+        for x in build['steps']:
+            if x['name'] == 'compile':
+                compile_ts = x['times']
+            if x['name'] == 'test':
+                test_ts = x['times']
+
+        if compile_ts is None or test_ts is None:
+            err = 'compile' if compile_ts is None else 'test'
+            print('No "%s" phase found' % err)
+
         compile_time = int(compile_ts[1] - compile_ts[0])
-
-        test_ts = build['steps'][7]['times']
         test_time = int(test_ts[1] - test_ts[0])
+        build_slave = build['slave']
 
-        cur.execute('INSERT INTO build (change_id, build_num, plat, compile_time, test_time) VALUES (?,?,?,?,?)',
-                    (change_row_id, build_num, plat, compile_time, test_time))
+        cur.execute('''
+        INSERT INTO build
+        (change_id, build_num, plat, compile_time, test_time, build_slave)
+        VALUES (?,?,?,?,?,?)''',
+                    (change_row_id, build_num, plat, compile_time, test_time, build_slave))
     print(chst, 'added ok')
 
 db.commit()

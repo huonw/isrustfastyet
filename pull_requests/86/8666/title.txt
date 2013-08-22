@@ -1,0 +1,1 @@
+Change the type of crust fns to `extern "C"`

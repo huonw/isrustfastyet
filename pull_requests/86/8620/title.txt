@@ -1,0 +1,1 @@
+test: Add test for #7563. Closes #7563

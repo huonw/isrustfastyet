@@ -1,0 +1,1 @@
+Fixed -Z print-link-args and functional-struct-update test on windows

@@ -1,0 +1,1 @@
+Don't skip token after @'static

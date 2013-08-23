@@ -1,0 +1,1 @@
+Stack unwinding for 32 bit Windows builds

@@ -1,0 +1,1 @@
+Clarify use_decl module resolution docs.

@@ -1,0 +1,1 @@
+Fix a handful of minor default method bugs

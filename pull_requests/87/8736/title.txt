@@ -1,0 +1,1 @@
+rustllvm: Specify hard floats for gnueabihf.

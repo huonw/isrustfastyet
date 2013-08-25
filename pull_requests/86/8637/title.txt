@@ -1,0 +1,1 @@
+Remove hacks from ifmt and introduce fprintf

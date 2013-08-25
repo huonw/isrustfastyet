@@ -1,0 +1,1 @@
+Fix some vector function failure tests. Closes #8698

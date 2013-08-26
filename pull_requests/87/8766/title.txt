@@ -1,0 +1,1 @@
+std: Make vec::from_fn failure-safe

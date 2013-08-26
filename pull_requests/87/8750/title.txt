@@ -1,0 +1,1 @@
+Add _opt variants to str byte-conversion functions

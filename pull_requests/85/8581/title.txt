@@ -1,0 +1,1 @@
+Make rekillable consistent with unkillable

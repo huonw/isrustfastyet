@@ -1,0 +1,1 @@
+Naming & minor type adjustments to std::unstable::sync::UnsafeAtomicRcBox

@@ -1,0 +1,1 @@
+Handle `rustpkg build`, etc. when given no args properly

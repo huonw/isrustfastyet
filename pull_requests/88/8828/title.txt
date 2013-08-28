@@ -1,0 +1,1 @@
+doc: Remove statement about scheduling randomness

@@ -1,0 +1,1 @@
+Consolidate local_data implementations, and cleanup

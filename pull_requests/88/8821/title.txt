@@ -1,0 +1,1 @@
+Run gyp_uv with CFG_PYTHON instead of directly

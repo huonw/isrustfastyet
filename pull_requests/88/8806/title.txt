@@ -1,0 +1,1 @@
+rustc: Use "main" entry point on Windows

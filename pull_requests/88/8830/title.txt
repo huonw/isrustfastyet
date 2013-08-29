@@ -1,0 +1,1 @@
+rust-mode: Default rust-indent-offset to 4, not default-tab-width

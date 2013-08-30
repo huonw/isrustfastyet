@@ -1,0 +1,1 @@
+Fix a bug with statics inside blocks in generic fns

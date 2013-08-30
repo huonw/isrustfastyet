@@ -1,0 +1,1 @@
+std::str: Remove functions count_chars, count_bytes

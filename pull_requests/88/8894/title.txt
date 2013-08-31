@@ -1,0 +1,1 @@
+Tweak pass management and add some more options

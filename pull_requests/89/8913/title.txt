@@ -1,0 +1,1 @@
+Fix incorrect strftime error handling in rust_localtime

@@ -1,0 +1,1 @@
+librustc: Add export_name attribute to specify symbol name.

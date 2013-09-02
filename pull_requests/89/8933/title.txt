@@ -1,0 +1,1 @@
+Don't ICE on empty name or vers crate link meta.

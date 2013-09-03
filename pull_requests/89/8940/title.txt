@@ -1,0 +1,1 @@
+Fsk 8468 allow underscore paramname in trait default method

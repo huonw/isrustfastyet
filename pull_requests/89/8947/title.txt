@@ -1,0 +1,1 @@
+add type name to tydesc + minor repr improvement

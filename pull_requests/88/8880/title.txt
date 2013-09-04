@@ -1,0 +1,1 @@
+Convert rust_log.cpp to Rust, closes #8703

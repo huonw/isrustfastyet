@@ -1,0 +1,1 @@
+Test eof is reached when parsing format strings

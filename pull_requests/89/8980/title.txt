@@ -1,0 +1,1 @@
+forbid cast as bool + forbid surrogate chars in strings

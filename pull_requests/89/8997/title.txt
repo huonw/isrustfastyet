@@ -1,0 +1,1 @@
+Rename str::from_bytes to str::from_utf8, closes #8985

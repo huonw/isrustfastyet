@@ -1,0 +1,1 @@
+str: rm `map_chars`, replaced by iterators

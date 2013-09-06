@@ -1,0 +1,1 @@
+Don't run lint over gyp files (they just fail anyway)

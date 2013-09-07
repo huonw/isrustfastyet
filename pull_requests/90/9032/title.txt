@@ -1,0 +1,1 @@
+Flag the Repr::repr function with #[inline]

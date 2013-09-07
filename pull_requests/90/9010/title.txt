@@ -1,0 +1,1 @@
+Fix for issue #7588, "Overflow handling of from_str methods is broken"

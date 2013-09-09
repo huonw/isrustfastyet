@@ -1,0 +1,1 @@
+Remove the __log function for __log_level

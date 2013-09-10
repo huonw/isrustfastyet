@@ -1,0 +1,1 @@
+Delay assignment of node ids until after expansion

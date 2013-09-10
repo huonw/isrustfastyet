@@ -1,0 +1,1 @@
+Add test for issue #8587, about calling nested functions of the same name

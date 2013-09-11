@@ -1,0 +1,1 @@
+Remove oldvisit.rs (yay!); part of #7081 refactoring.

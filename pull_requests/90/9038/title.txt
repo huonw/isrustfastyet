@@ -1,0 +1,1 @@
+Add with_mem_writer to std::rt::io::mem.

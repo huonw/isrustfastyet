@@ -1,0 +1,1 @@
+librust: Remove unnecessary workaround. Closes #7617

@@ -1,0 +1,1 @@
+rustc: Fix cstack lint for default methods. Closes #8753

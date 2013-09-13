@@ -1,0 +1,1 @@
+Rewrite fileinput tests to use std::rt::io

@@ -1,0 +1,1 @@
+Recursively create the target directory before renaming a cloned git repository in rustpkg install

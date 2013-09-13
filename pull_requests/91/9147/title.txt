@@ -1,0 +1,1 @@
+rustpkg: Install to RUST_PATH

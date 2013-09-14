@@ -1,0 +1,1 @@
+ptr: fix offset intrinsic

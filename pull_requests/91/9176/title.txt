@@ -1,0 +1,1 @@
+Work around a compiler crash folding labeled break. #9129

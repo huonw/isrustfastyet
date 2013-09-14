@@ -1,0 +1,1 @@
+make ! support the equality/ordering operators

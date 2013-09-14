@@ -1,0 +1,1 @@
+Remove all usage of change_dir_locked

@@ -1,0 +1,1 @@
+Refactor libsyntax Visitor impls to use default methods.

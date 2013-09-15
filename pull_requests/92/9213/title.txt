@@ -1,0 +1,1 @@
+rust test: pass the remaining arguments through

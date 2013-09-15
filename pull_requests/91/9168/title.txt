@@ -1,0 +1,1 @@
+debuginfo: Recursive types and some trait object pointer support

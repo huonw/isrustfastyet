@@ -1,0 +1,1 @@
+Simplify format and document related macros

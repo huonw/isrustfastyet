@@ -1,0 +1,1 @@
+Guarantee that statics have unique names

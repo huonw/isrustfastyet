@@ -1,0 +1,1 @@
+When declaring extern fns from external crates, use the correct abi

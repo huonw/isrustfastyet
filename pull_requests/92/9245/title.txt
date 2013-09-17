@@ -1,0 +1,1 @@
+Limit spans in bytes!() error messages to the argument in question

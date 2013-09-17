@@ -1,0 +1,1 @@
+Prevent a rare linkage issue with an xcrate static

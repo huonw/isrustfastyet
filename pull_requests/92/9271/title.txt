@@ -1,0 +1,1 @@
+Add an extra line before the "Additional Help" in rustc's --help output

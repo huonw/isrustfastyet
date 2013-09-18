@@ -1,0 +1,1 @@
+Fix Rust build on mingw v4.0

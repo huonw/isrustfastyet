@@ -1,0 +1,1 @@
+librustc: Respect #[link_name] on extern statics. Fixes #9270

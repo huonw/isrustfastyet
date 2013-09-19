@@ -1,0 +1,1 @@
+Remove unused Option.or_{default,zero} and a minor cleanup

@@ -1,0 +1,1 @@
+rustpkg: Register correct dependencies for built and installed files

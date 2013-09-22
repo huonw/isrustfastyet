@@ -1,0 +1,1 @@
+Pass --disable-terminfo to LLVM's configure script. Closes #9334

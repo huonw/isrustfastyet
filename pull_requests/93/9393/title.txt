@@ -1,0 +1,1 @@
+Fix the dependencies of rustdoc_ng doc generation

@@ -1,0 +1,1 @@
+restore auto-detection of text files

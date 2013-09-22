@@ -1,0 +1,1 @@
+Fsk issue 4691 catch bad fsu during compute moves

@@ -1,0 +1,1 @@
+Update rustpkg manpage to add init.

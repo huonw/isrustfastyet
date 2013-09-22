@@ -1,0 +1,1 @@
+Document a few undocumented methos in Vector

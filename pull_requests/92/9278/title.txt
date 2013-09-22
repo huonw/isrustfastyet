@@ -1,0 +1,1 @@
+Invert --cfg debug to --cfg ndebug

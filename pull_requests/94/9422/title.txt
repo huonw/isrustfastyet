@@ -1,0 +1,1 @@
+Place *all* rustdoc output in doc/{crate}

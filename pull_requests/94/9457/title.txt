@@ -1,0 +1,1 @@
+std::local_data: Fix document code

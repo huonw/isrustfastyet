@@ -1,0 +1,1 @@
+Fix signature of Result in tasks tutorial. Closes #8343

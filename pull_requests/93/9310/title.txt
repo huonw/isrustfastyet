@@ -1,0 +1,1 @@
+Remove `@fn` from the language

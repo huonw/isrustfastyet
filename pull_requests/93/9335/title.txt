@@ -1,0 +1,1 @@
+Disallow char literals which should be escaped

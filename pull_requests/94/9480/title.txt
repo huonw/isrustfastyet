@@ -1,0 +1,1 @@
+Don't use libc::exit. #9473

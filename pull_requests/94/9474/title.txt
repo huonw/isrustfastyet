@@ -1,0 +1,1 @@
+mark functions internal if not building a library

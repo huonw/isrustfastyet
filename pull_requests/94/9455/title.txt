@@ -1,0 +1,1 @@
+Added is_control() function, method, tests, and documentation.

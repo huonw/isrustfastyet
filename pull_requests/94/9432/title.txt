@@ -1,0 +1,1 @@
+Correctly encode item visibility in metadata

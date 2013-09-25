@@ -1,0 +1,1 @@
+std: Replace CloneableTuple with Tuple, which takes self by-val.

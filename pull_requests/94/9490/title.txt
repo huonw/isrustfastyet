@@ -1,0 +1,1 @@
+Don't die in try_unsafe_borrow if tls isn't ready

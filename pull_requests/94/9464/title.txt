@@ -1,0 +1,1 @@
+fix for https://github.com/mozilla/rust/issues/9394

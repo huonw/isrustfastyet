@@ -1,0 +1,1 @@
+Micro-optimize vec.with_c_str for short vectors

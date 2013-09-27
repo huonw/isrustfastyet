@@ -1,0 +1,1 @@
+Refactor the logging system for fewer allocations

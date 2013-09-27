@@ -1,0 +1,1 @@
+mark globals as internal when not building a library

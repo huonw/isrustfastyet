@@ -1,0 +1,1 @@
+Add 'continue' as a synonym for 'loop'

@@ -20,7 +20,7 @@ for hash in $(grep -v -f <(ls) history.txt | sort | uniq); do
         mkdir -p $hash
         cd $hash
         for f in $MEM_FILE $TIME_FILE $CI_FILE; do
-            curl -s ${BASE_URL}${hash}/$f -o $f
+            curl -f -s ${BASE_URL}${hash}/$f -o $f
         done
 
         # sometimes we get a 404 error, so just kill the directory and
@@ -28,7 +28,7 @@ for hash in $(grep -v -f <(ls) history.txt | sort | uniq); do
         if ! (
                 gunzip -f $MEM_FILE &&
                 python -c 'import sys, json; json.load(sys.stdin)' < ${MEM_FILE%.gz} &&
-                [[ -f $TIME_FILE ]]
+                # [[ -f $TIME_FILE ]] time.txt isn't compulsory
             ); then
             echo $hash failed
             cd ..

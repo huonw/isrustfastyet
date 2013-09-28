@@ -33,7 +33,7 @@ pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
 
     // compute the initial triangles, i.e. take all consecutive groups
     // of 3 points and make that traingle.
-    for xs.window_iter(3).enumerate().advance |(i, win)| {
+    for (i, win) in xs.window_iter(3).enumerate() {
         let area = match win {
             [(a_x, a_y), (t_x, t_y), (b_x, b_y)] => {
                 area(a_x, a_y, b_x, b_y, t_x, t_y)
@@ -65,7 +65,7 @@ pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
 
         // Now recompute the triangles involving left and right
         let choices = [(ll, left, right), (left, right, rr)];
-        for choices.iter().advance |&(ai, ti, bi)| {
+        for &(ai, ti, bi) in choices.iter() {
             if ai >= max || bi >= max { loop; } // outta bounds, i.e. we're on one edge
             let (a_x, a_y) = xs[ai];
             let (t_x, t_y) = xs[ti];
@@ -106,7 +106,7 @@ pub fn rdp(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
 
         // calculate the point furthest from the line between the two
         // ends points.
-        for other_points.iter().enumerate().advance |(i, &(t_x, t_y))| {
+        for (i, &(t_x, t_y)) in other_points.iter().enumerate() {
             let d = p_dist(l_x, l_y, r_x, r_y, t_x, t_y);
             if d > d_max {
                 idx = i + 1; // account for slicing

@@ -5,6 +5,7 @@ use extra::{json};
 use extra::serialize::{Decodable, Encodable};
 use std::{os, io, comm};
 use std::hashmap::HashSet;
+use std::option::IntoOption;
 
 mod line_simplify;
 
@@ -52,26 +53,20 @@ struct Summary {
     timestamp: uint,
     hash: ~str,
     max_memory: f64,
-    cpu_time: f64,
+    cpu_time: Option<f64>,
     pull_request: Option<uint>
 }
 
 // The list of all hashes that we know about.
 fn processing_possibilities() -> HashSet<~str> {
-    let mut set = HashSet::new();
-    for os::list_dir(&Path("data")).consume_iter().advance |hash| {
-        if "history.txt" != hash {
-            set.insert(hash);
-        }
-    }
-    set
+    os::list_dir(&Path("data")).move_iter().filter(|hash| "history.txt" != *hash).collect()
 }
 
 // Read the current summary json file, or "make" a new one if it
 // doesn't work.
 fn load_summary(p: &Path) -> ~[Summary] {
     match do io::file_reader(p).map |rdr| {
-        json::from_reader(*rdr).expect(~"summary is invalid")
+        json::from_reader(*rdr).expect("summary is invalid")
     } {
         Err(_) => ~[],
         Ok(json) =>  Decodable::decode(&mut json::Decoder(json))
@@ -80,7 +75,7 @@ fn load_summary(p: &Path) -> ~[Summary] {
 
 /// A list of commits we've already seen
 fn already_processed(summary: &[Summary]) -> ~[~str] {
-    summary.iter().transform(|x| x.hash.to_owned()).collect()
+    summary.iter().map(|x| x.hash.to_owned()).collect()
 }
 
 /// Reduce the number of points, while (hopefully) maintaining a
@@ -92,12 +87,14 @@ fn simplify_memory_data(v: &[(f64, f64)]) -> ~[(f64, f64)] {
 
 /// A parser for the output of GNU time
 fn extract_time(time_str: &str) -> (f64, f64) {
+    // we fail here because we assume that time.txt existing => it
+    // should be valid. Ignoring time.txt requires removing it.
     let i = time_str.find_str("user ").expect("time is formatted wrong: missing user");
     let j = time_str.find_str("system ").expect("time is formatted wrong: missing system");
     // reading directly as f64 doesn't work on some computers! :(
-    let user = FromStr::from_str::<float>(time_str.slice_to(i))
+    let user = from_str::<float>(time_str.slice_to(i))
         .expect("time is formatted wrong: user not a float") as f64;
-    let system = FromStr::from_str::<float>(time_str.slice(i + 5, j))
+    let system = from_str::<float>(time_str.slice(i + 5, j))
         .expect("time is formatted wrong: system not a float") as f64;
     (user, system)
 }
@@ -112,7 +109,7 @@ pub fn pass_timing(s: &str) -> ~[(~str, f64)] {
             let i = time_start.find(' ').expect("invalid pass timing info (1): " + l);
 
             // reading directly as f64 doesn't work on some computers! :(
-            let time = std::float::from_str(time_start.slice_to(i))
+            let time = from_str::<float>(time_start.slice_to(i))
                 .expect("invalid pass timing info (2): " + l) as f64;
 
             let i = time_start.find('\t').expect("invalid pass timing info (3): " + l);
@@ -128,7 +125,7 @@ fn main() {
 
     // work out what we're going to process
     let mut to_process = processing_possibilities();
-    for already_processed(summary).consume_iter().advance |hash| {
+    for hash in already_processed(summary).move_iter() {
         to_process.remove(&hash);
     }
 
@@ -137,11 +134,11 @@ fn main() {
 
     let num = to_process.len();
 
-    for to_process.consume().advance |hash| {
+    for hash in to_process.move_iter() {
         let cc = c.clone();
         println(hash);
 
-        // paralellism!
+        // parallelism!
         do spawn {
             let hash_folder = Path("data").push(hash);
             if !os::path_is_dir(&hash_folder) {
@@ -151,16 +148,16 @@ fn main() {
                 let time_path = hash_folder.push("time.txt");
                 let ci_path = hash_folder.push("commit_info.txt");
 
-                let raw_time = io::read_whole_file_str(&time_path)
-                    .expect(fmt!("no %s/time.txt", hash));
-                let (user, system) = extract_time(raw_time);
-                let time = user + system;
+                let time = do io::read_whole_file_str(&time_path).map_move |raw_time| {
+                    let (user, system) = extract_time(raw_time);
+                    user + system
+                }.into_option();
 
                 let raw_commit_info = io::read_whole_file_str(&ci_path)
                     .expect(fmt!("no %s/commit_info.txt", hash));
                 let mut lines = raw_commit_info.line_iter();
                 let (author, timestamp, summary) = match (lines.next(),
-                                                          lines.next().chain(|x| FromStr::from_str(x)),
+                                                          lines.next().and_then(from_str),
                                                           lines.next()) {
                     (Some(a), Some(b), Some(c)) => (a, b, c),
                     _ => fail!("invalid %s/commit_info.txt", hash)
@@ -169,7 +166,7 @@ fn main() {
                 let pull_request = if author == "bors bors@rust-lang.org" {
                     // a bors commit, so extract the pull request
                     let leading_num = summary.slice_from("auto merge of #".len());
-                    let non_num = leading_num.find(|c: char| !c.is_digit()).get_or_zero();
+                    let non_num = leading_num.find(|c: char| !c.is_digit()).unwrap_or_zero();
                     FromStr::from_str(leading_num.slice_to(non_num))
                 } else {
                     None
@@ -210,7 +207,7 @@ fn main() {
     }
 
     // collect the summaries
-    for num.times {
+    do num.times {
         summary.push(p.recv());
     }
     extra::sort::tim_sort(summary);

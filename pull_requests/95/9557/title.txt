@@ -1,0 +1,1 @@
+std::vec: Use a valid value as lifetime dummy in iterator

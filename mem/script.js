@@ -221,7 +221,8 @@ function TextDetail(hash, data) {
   ul.appendChild(li('Date: ' + date, 'date-text'))
   ul.appendChild(
     li('Max memory usage: ' + (data.summary.max_memory/(1024*1024)).toFixed(0) + ' MiB', 'mem-text'))
-  ul.appendChild(li('CPU time: ' + data.summary.cpu_time.toFixed(1) + ' s', 'cpu-text'));
+  var cpu_text = data.summary.cpu_time ? (data.summary.cpu_time.toFixed(1) + ' s') : 'not measured';
+  ul.appendChild(li('CPU time: ' + cpu_text, 'cpu-text'));
 
   var controls = document.createElement('div');
   controls.classList.add('text-detail-controls');
@@ -411,6 +412,7 @@ var dt = (
       }
       function draw_tick(selection) {
         selection
+         .filter(function(hash) { return detail_cache.get(hash).summary.cpu_time; })
          .style('stroke', function(hash) { return hash_to_colour(hash); })
          .attr('class', 'time-tick detail')
          .attr('x1', function(hash) { return x(detail_cache.get(hash).summary.cpu_time); })

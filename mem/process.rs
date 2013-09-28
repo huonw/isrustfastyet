@@ -211,6 +211,11 @@ fn main() {
         summary.push(p.recv());
     }
     extra::sort::tim_sort(summary);
+    let text = do io::with_str_writer |write| {
+        summary.encode(&mut json::Encoder(write))
+    };
+
     let summary_f = io::file_writer(&summary_path, [io::Create, io::Truncate]).unwrap();
-    summary.encode(&mut json::Encoder(summary_f));
+    // put one commit a line, so the diffs are smaller.
+    summary_f.write_str(text.replace("{", "\n{").replace("]", "\n]"));
 }

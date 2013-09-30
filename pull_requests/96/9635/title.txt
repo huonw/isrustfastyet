@@ -1,0 +1,1 @@
+testsuite: Un-xfail unit-like-struct-drop-run on Windows

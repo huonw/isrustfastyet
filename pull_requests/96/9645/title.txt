@@ -1,0 +1,1 @@
+clarify that rust_pkg is a place-holder

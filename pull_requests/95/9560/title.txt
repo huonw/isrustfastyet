@@ -1,0 +1,1 @@
+librustc: Inline cross-crate tuple struct constructors

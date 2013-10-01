@@ -1,0 +1,1 @@
+rustpkg: Make test_rustpkg_test_output more permissive

@@ -1,0 +1,1 @@
+make small (<= size_of::<int>()) enums immediate

@@ -1,0 +1,1 @@
+[emacs] Fix single-line-style paragraph fills with code immediately before or after

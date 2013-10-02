@@ -1,0 +1,1 @@
+Issue7526 attempt to catch non uppercase statics in match patterns

@@ -1,0 +1,1 @@
+syntax: indicate an error when a macro ignores trailing tokens.

@@ -1,0 +1,1 @@
+Ignore tests on Android correctly

@@ -1,3 +1,7 @@
+#footer {
+  clear: both;
+}
+
 #summary, #detail {
   width: 960px;
 }
@@ -8,9 +12,7 @@ ul {
 
 #column {
   width: 275px;
-  position: absolute;
-  top: 0;
-  right: 0;
+  float: right;
   font-size: 1em;
 
   hyphens: auto;
@@ -74,7 +76,7 @@ ul {
 }
 
 .plot {
-  position: relative;
+  float: left;
 }
 
 .reset-button {

@@ -1,0 +1,1 @@
+extra: %W and %+ support in time::strftime

@@ -1,0 +1,1 @@
+rustc: Use static strings in a few literals

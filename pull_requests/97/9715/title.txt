@@ -1,0 +1,1 @@
+Fix some examples in std::rand::Rng

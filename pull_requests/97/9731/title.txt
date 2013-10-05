@@ -1,0 +1,1 @@
+Make a task name use a `SendStr`, allowing for either static or owned strings.

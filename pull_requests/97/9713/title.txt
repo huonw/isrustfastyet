@@ -1,0 +1,1 @@
+Hackily fix thread safety issues in dynamic_lib

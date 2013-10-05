@@ -1,0 +1,1 @@
+Avoid cloning the stack on every `push_ctxt` call in trans

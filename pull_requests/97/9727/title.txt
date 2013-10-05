@@ -1,0 +1,1 @@
+Fixed another minor typo in std::str docs

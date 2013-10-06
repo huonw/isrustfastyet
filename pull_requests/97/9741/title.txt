@@ -1,0 +1,1 @@
+rustpkg: Fix fetching remote packages

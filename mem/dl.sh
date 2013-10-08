@@ -14,7 +14,7 @@ curl -s ${BASE_URL}${HIST_FILE} -o ${HIST_FILE}
 
 # Check for any hashes that haven't been downloaded (i.e. there is no
 # directory with the same name)
-for hash in $(grep -v -f <(ls) history.txt | sort | uniq); do
+for hash in $(grep -v -f <(ls data) history.txt | sort | uniq); do
     (
         echo $hash
         mkdir -p data/$hash

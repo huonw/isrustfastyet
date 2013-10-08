@@ -1,0 +1,1 @@
+rm special case for ty_struct from take glue

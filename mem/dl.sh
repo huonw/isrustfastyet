@@ -17,8 +17,8 @@ curl -s ${BASE_URL}${HIST_FILE} -o ${HIST_FILE}
 for hash in $(grep -v -f <(ls) history.txt | sort | uniq); do
     (
         echo $hash
-        mkdir -p $hash
-        cd $hash
+        mkdir -p data/$hash
+        cd data/$hash
         for f in $MEM_FILE $TIME_FILE $CI_FILE; do
             curl -f -s ${BASE_URL}data/${hash}/$f -o $f
         done

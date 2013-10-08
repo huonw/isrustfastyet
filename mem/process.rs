@@ -140,7 +140,7 @@ fn main() {
 
         // parallelism!
         do spawn {
-            let hash_folder = Path("data").push(hash);
+            let hash_folder = Path("data/data").push(hash);
             if !os::path_is_dir(&hash_folder) {
                 println(fmt!("%s doesn't exist; skipping.", hash));
             } else {

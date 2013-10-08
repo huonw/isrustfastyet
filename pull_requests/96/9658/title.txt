@@ -1,0 +1,1 @@
+debuginfo: Unified namespace generation approach for crate-local and external items.

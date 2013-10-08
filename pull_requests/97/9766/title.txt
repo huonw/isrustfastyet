@@ -1,0 +1,1 @@
+rm useless fast_ffi attributes

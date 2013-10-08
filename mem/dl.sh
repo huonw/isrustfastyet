@@ -20,7 +20,7 @@ for hash in $(grep -v -f <(ls) history.txt | sort | uniq); do
         mkdir -p $hash
         cd $hash
         for f in $MEM_FILE $TIME_FILE $CI_FILE; do
-            curl -f -s ${BASE_URL}${hash}/$f -o $f
+            curl -f -s ${BASE_URL}data/${hash}/$f -o $f
         done
 
         # sometimes we get a 404 error, so just kill the directory and

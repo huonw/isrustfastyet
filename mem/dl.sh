@@ -14,7 +14,15 @@ curl -s ${BASE_URL}${HIST_FILE} -o ${HIST_FILE}
 
 # Check for any hashes that haven't been downloaded (i.e. there is no
 # directory with the same name)
-for hash in $(grep -v -f <(ls data) history.txt | sort | uniq); do
+hashes=$(python <<EOF
+import os
+history = open('history.txt').read().split()
+already = os.listdir('data')
+print('\n'.join(sorted(set(history) - set(already))))
+EOF
+)
+
+for hash in $hashes; do
     (
         echo $hash
         mkdir -p data/$hash

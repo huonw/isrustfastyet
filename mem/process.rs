@@ -59,7 +59,7 @@ struct Summary {
 
 // The list of all hashes that we know about.
 fn processing_possibilities() -> HashSet<~str> {
-    os::list_dir(&Path("data")).move_iter().filter(|hash| "history.txt" != *hash).collect()
+    os::list_dir(&Path("data/data")).move_iter().filter(|hash| "history.txt" != *hash).collect()
 }
 
 // Read the current summary json file, or "make" a new one if it

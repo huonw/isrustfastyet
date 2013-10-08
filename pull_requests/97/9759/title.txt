@@ -1,0 +1,1 @@
+make small ty_struct immediate

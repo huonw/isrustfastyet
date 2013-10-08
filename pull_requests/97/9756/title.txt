@@ -1,0 +1,1 @@
+syntax: Display spans for open delimiters when a file ends prematurely

@@ -1,0 +1,1 @@
+Change default lint output format

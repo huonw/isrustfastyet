@@ -1,0 +1,1 @@
+Makefile: Get git revision correctly on Windows

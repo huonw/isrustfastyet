@@ -1,0 +1,1 @@
+More improvements to std::rand

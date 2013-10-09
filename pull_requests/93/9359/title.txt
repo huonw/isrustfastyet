@@ -1,0 +1,1 @@
+(RFC) option: rewrite the API to use composition

@@ -1,0 +1,1 @@
+syntax: allow macros to expand to items with attributes.

@@ -1,0 +1,1 @@
+Remove support for older CrateMap versions

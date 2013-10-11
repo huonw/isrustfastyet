@@ -1,0 +1,1 @@
+rustpkg: Make checked-out source files read-only, and overhaul where temporary files are stored

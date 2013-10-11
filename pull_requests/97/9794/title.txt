@@ -1,0 +1,1 @@
+clean up the `Rc` type and move it to libstd

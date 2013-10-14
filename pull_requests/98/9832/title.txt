@@ -1,0 +1,1 @@
+Don't ICE on packed structs in a static.

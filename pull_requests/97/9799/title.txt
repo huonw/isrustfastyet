@@ -1,0 +1,1 @@
+rustpkg: Set exit codes properly and make tests take advantage of that

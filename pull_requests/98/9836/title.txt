@@ -1,0 +1,1 @@
+fix typos in doc/tutorial.md

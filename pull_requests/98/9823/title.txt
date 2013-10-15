@@ -1,0 +1,1 @@
+Issue 7655: align the bench printouts so numbers tend to be aligned

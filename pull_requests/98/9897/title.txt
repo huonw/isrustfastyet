@@ -1,0 +1,1 @@
+remove the rusti command and the linenoise library

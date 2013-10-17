@@ -1,0 +1,1 @@
+Added comments to public functions in num.rs.

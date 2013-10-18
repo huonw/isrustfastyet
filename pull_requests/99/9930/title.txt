@@ -1,0 +1,1 @@
+Fix an off-by-one in managed::refcount

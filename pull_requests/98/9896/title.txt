@@ -1,0 +1,1 @@
+std: Move size/align functions to std::mem. #2240

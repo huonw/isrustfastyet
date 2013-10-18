@@ -1,0 +1,1 @@
+Fix starts_with() and ends_with().

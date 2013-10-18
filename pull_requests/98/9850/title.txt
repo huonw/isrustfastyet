@@ -1,0 +1,1 @@
+Handle GCC's write-only inline asm constraint in liveness, borrowck and trans.

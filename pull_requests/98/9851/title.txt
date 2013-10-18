@@ -1,0 +1,1 @@
+Optimize include_bin! for large inputs

@@ -1,0 +1,1 @@
+Made `std::task::TaskBuilder::future_result()` easier to use

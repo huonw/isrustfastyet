@@ -1,0 +1,1 @@
+Make fields in std::comm private

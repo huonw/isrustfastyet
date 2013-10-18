@@ -1,0 +1,1 @@
+rm rusti from `Makefile.in`

@@ -1,0 +1,1 @@
+Document traits and Default about format! better

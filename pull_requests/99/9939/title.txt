@@ -1,0 +1,1 @@
+doc (en & ja): remove mentions of type float, rust and rusti tools

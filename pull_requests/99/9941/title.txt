@@ -1,0 +1,1 @@
+rustdoc: Strip methods correctly based on privacy

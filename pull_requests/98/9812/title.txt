@@ -1,0 +1,1 @@
+Fix some UTF-8 issues on Windows.

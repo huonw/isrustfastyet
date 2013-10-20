@@ -1,0 +1,1 @@
+testsuite: test for fixed issue. Closes #7580.

@@ -1,0 +1,1 @@
+rustpkg: Search for crates in the current directory

@@ -1,0 +1,1 @@
+std: Move sys::log_str to repr::repr_to_str. Further work on #2240.

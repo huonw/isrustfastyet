@@ -1,0 +1,1 @@
+syntax: Add the Bug Report HOWTO URL to the ICE message

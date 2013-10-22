@@ -1,0 +1,1 @@
+Activate checking code for ASM feature gate. Fix tests

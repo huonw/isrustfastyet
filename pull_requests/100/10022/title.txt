@@ -1,0 +1,1 @@
+Remove thread-blocking call to `libc::stat` in `Path::stat`

@@ -1,0 +1,1 @@
+Re-make time struct fields public

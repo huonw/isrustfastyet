@@ -1,0 +1,1 @@
+rustpkg: Support arbitrary dependencies in the install API

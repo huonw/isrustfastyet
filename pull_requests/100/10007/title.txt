@@ -1,0 +1,1 @@
+Cleaned up, documented, wrote tests for `std::bool`

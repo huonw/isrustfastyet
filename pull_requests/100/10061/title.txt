@@ -1,0 +1,1 @@
+remove some dead trans code

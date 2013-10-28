@@ -1,0 +1,1 @@
+Fix a typo in a rt::io::signal test

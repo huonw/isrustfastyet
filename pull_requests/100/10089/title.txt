@@ -1,0 +1,1 @@
+Make addl_lib_search_paths a HashSet (Closes #7718).

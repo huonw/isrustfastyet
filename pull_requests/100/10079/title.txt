@@ -1,0 +1,1 @@
+Remove the extension traits for Readers/Writers

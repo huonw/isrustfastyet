@@ -1,0 +1,1 @@
+Allow fail messages to be caught, introduce Any trait

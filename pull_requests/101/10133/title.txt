@@ -1,0 +1,1 @@
+Handle another possible error in a unix pipe test

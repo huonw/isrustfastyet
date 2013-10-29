@@ -1,0 +1,1 @@
+librustc: Implement the `proc` type as sugar for `~once fn`, and disable

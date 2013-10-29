@@ -1,0 +1,1 @@
+Capitalize statics in f32 and f64 mods

@@ -1,0 +1,1 @@
+mark bounds check failures as the cold path

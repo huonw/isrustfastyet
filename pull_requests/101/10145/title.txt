@@ -1,0 +1,1 @@
+rewrite shootout-binarytrees.rs to match shootout directives

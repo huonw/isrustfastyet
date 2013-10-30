@@ -1,0 +1,1 @@
+Special-casing iter_vec_raw to use a counter for zero-size types (Closes #9890).

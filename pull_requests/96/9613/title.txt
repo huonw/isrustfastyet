@@ -1,0 +1,1 @@
+Allow enum discriminants to not be uint, and use smallest possible size by default.

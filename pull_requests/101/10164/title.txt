@@ -1,0 +1,1 @@
+Change configure flags for target triples to match GNU

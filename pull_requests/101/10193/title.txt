@@ -1,0 +1,1 @@
+Add missing parentheses on install script

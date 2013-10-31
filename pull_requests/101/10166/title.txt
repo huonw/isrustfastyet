@@ -1,0 +1,1 @@
+syntax: Forbid non-string literals in meta items. #623

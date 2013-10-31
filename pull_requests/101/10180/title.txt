@@ -1,0 +1,1 @@
+Make Writer::flush a no-op default method

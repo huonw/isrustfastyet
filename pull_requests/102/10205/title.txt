@@ -1,0 +1,1 @@
+Declare all Rust functions as unnamed_addr. Closes #8957

@@ -1,0 +1,1 @@
+Make managed_boxes feature gate error less opinionated

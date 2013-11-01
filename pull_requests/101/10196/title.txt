@@ -1,0 +1,1 @@
+std::rand: correct an off-by-one in the Ziggurat code.

@@ -1,0 +1,1 @@
+Bump required pandoc version to 1.9.

@@ -1,0 +1,1 @@
+Made `std::option`and `std::result` more similar

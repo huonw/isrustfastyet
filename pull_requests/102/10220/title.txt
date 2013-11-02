@@ -1,0 +1,1 @@
+configure: Fix passing multiple target and host triples.

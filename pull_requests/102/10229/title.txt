@@ -1,0 +1,1 @@
+Use consistent capitalization in makefile errors

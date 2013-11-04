@@ -1,0 +1,1 @@
+Drop struct fields if the user destructor fails

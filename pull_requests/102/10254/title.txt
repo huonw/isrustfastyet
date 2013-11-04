@@ -1,0 +1,1 @@
+Ensure rustpkg test fails if tests failed

@@ -634,7 +634,9 @@ var detail_toggle = dt[0], detail_keep_only = dt[1];
     }
 
     d3.json("out/summary.json", function(err, dat) {
-      data = dat;
+      // only show the last 400 commits, because my code makes
+      // browsers cry (and run slowly).
+      data = dat.slice(-400);
       data.forEach(function(d) {
         hash2data.set(d.hash, d);
       });

@@ -1,0 +1,1 @@
+libsyntax/librustc: Allow calling variadic foreign functions.

@@ -1,0 +1,1 @@
+Relax the constraints on a debuginfo test

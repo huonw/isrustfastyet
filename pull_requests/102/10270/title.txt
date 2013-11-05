@@ -1,0 +1,1 @@
+Stop extra buffering when stdout isn't a tty

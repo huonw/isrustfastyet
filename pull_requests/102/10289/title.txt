@@ -1,0 +1,1 @@
+Issue 10157 type contents refactor

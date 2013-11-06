@@ -1,0 +1,1 @@
+Use loader_path instead of executable_path for osx

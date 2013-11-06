@@ -1,0 +1,1 @@
+fix alignment of pthread_attr_t

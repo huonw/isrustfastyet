@@ -1,0 +1,1 @@
+Makecheck debuginfo arm linux androideabi

@@ -1,0 +1,1 @@
+add `from_send` to Rc, since #9509 is fixed

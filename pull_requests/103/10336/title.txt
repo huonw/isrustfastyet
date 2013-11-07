@@ -1,0 +1,1 @@
+fix rpass core-run-destroy for android

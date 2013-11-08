@@ -1,0 +1,1 @@
+std::ascii: Provide a copyless [Ascii] -> str method.

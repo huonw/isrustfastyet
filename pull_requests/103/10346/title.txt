@@ -1,0 +1,1 @@
+Define WSAPOLLFD only on mingw 4.x

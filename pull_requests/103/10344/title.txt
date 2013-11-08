@@ -1,0 +1,1 @@
+std: Make atomic types non-copyable. Closes #8380

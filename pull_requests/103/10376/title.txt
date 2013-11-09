@@ -1,0 +1,1 @@
+add `clone_from` and `deep_clone_from`

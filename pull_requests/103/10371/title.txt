@@ -1,0 +1,1 @@
+rustpkg: Add a test that `rustpkg install` doesn't copy a non-changed file

@@ -1,0 +1,1 @@
+Add a default value for the 'package_id' meta attribute for library crates

@@ -1,0 +1,1 @@
+extra::getopts: update docs for minor renaming.

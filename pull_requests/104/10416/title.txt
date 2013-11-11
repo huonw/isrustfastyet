@@ -1,0 +1,1 @@
+Implement `size_hint` for Range

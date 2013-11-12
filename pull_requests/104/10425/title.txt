@@ -1,0 +1,1 @@
+Removed test issue-912.rs

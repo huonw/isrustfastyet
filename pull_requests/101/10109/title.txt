@@ -1,0 +1,1 @@
+Make process exit status more flexible to allow for handling when a child is terminated by signal

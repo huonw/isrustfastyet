@@ -1,0 +1,1 @@
+rustpkg: Fix an assertion failure

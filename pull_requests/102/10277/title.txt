@@ -1,0 +1,1 @@
+make missing_doc respect the visibility rules

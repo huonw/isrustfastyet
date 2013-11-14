@@ -1,0 +1,1 @@
+docs: Change "workspace" to "package directory"

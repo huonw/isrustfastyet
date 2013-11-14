@@ -1,0 +1,1 @@
+Check inferred integer literals for overflows, closes #4220

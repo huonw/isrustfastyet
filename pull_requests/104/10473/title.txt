@@ -1,0 +1,1 @@
+Add Window build directory to .gitignore

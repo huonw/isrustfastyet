@@ -1,0 +1,1 @@
+Typeck: Disallow scalar casts to bare_fn.

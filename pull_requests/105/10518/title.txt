@@ -1,0 +1,1 @@
+lint: _-prefixed variables don't get an unused-mut warning.

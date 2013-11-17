@@ -1,0 +1,1 @@
+Fix the `num_lit` grammar in the reference manual.

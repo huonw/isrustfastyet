@@ -1,0 +1,1 @@
+Add build_lib_with_cfgs, build_bin_with_cfgs to rustpkg API

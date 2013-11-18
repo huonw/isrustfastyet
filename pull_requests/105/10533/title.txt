@@ -1,0 +1,1 @@
+Fix a number of documentation bugs in libstd/iter.rs

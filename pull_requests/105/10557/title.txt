@@ -1,0 +1,1 @@
+Mark some derived methods as #[inline].

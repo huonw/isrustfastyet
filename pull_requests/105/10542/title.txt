@@ -1,0 +1,1 @@
+std::rand: wrappers for floats from [0,1] and (0,1).

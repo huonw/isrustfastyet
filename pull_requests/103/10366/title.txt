@@ -1,0 +1,1 @@
+Use `..` consistently for ignoring multiple elements in patterns

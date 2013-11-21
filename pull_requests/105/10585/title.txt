@@ -1,0 +1,1 @@
+update manual to reflect &'lifetime syntax

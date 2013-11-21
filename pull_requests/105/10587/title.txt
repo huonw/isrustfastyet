@@ -1,0 +1,1 @@
+remove segmented stacks from the manual

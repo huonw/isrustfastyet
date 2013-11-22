@@ -1,0 +1,1 @@
+Process ffi generics in rustdoc

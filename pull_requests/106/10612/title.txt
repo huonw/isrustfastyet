@@ -1,0 +1,1 @@
+The original fixme #2699 was removed back in PR #6053.

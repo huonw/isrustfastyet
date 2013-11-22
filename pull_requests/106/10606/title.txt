@@ -1,0 +1,1 @@
+test: test that the `unsafe_block` lint picks up `unsafe` blocks in macros.

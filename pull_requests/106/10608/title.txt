@@ -1,0 +1,1 @@
+mention `Gc` in the managed box feature gate

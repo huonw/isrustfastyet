@@ -1,0 +1,1 @@
+Use -O1 for non-GNU linkers

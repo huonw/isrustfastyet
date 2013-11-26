@@ -1,0 +1,1 @@
+Correctly handle libuv errors in addrinfo calls

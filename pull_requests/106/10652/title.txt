@@ -1,0 +1,1 @@
+Represent C-like enums with a plain LLVM integer, not a struct.

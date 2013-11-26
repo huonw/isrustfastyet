@@ -1,0 +1,1 @@
+Use hexadecimal digits in the colon separated hexadecimal represetation of an IPv6 address

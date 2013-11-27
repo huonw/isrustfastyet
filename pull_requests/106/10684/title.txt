@@ -1,0 +1,1 @@
+Remove enum struct return workaround from LLVM bindings.

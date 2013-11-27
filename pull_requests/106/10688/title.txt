@@ -1,0 +1,1 @@
+Add an iterator for receiving messages from GenericPorts

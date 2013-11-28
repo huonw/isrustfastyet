@@ -1,0 +1,1 @@
+Be more strict about doc comments

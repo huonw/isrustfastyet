@@ -1,0 +1,1 @@
+Fix initial debug statements printing twice

@@ -1,0 +1,1 @@
+Wrap the return value of the type_id intrinsic in an opaque box

@@ -1,0 +1,1 @@
+Don't run cleanups twice in "if true" blocks

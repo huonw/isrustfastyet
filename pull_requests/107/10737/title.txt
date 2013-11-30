@@ -1,0 +1,1 @@
+std::io::mem: add a with_capacity constructor to MemWriter.

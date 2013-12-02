@@ -1,0 +1,1 @@
+Document static linking and support OSX frameworks

@@ -1,0 +1,1 @@
+Propagate native dynamic libraries/frameworks (plus a few assorted fixes)

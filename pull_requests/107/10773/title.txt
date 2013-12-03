@@ -1,0 +1,1 @@
+Add section on closure types to manual

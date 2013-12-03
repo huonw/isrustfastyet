@@ -1,0 +1,1 @@
+Declare librustrt a static dependency of libextra

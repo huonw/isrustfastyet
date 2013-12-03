@@ -1,0 +1,1 @@
+Add test for #3053. Fixes #3053.

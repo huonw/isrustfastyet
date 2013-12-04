@@ -1,0 +1,1 @@
+Search for libfoo.a on windows as well as foo.lib

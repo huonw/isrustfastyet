@@ -1,0 +1,1 @@
+Fix documentation typo (divison operator is not backslash)

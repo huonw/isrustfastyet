@@ -1,0 +1,1 @@
+Make trait lifetime parameters early bound in static fn type. 

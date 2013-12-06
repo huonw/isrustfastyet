@@ -1,0 +1,1 @@
+Check crate root for docs in missing_doc lint.

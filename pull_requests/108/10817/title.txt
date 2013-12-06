@@ -1,0 +1,1 @@
+Solve some nasty descheduling races with a lock

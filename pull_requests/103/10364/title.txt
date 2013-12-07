@@ -1,0 +1,1 @@
+Made Results API more composable

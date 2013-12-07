@@ -1,0 +1,1 @@
+librustc: Pass the correct type when adding cleanups.

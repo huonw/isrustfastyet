@@ -1,0 +1,1 @@
+Make error messages from deriving(Foo) point to the deriving declaration as well as the field

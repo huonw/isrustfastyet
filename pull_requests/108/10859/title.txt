@@ -1,0 +1,1 @@
+Add 4 random distributions trivially derivable from the currently implemented ones.

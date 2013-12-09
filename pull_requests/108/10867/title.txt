@@ -1,0 +1,1 @@
+Accept unsugared docs in missing-doc lint

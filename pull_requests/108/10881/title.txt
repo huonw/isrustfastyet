@@ -1,0 +1,1 @@
+Extend allocation lint for boxing expressions

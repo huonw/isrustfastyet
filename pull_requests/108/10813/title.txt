@@ -1,0 +1,1 @@
+encode trait lifetime params in metadata to allow cross-crate usage

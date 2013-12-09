@@ -1,0 +1,1 @@
+Fix comment on ast::DefStruct

@@ -19,10 +19,10 @@ pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
     // the adjacent non-removed points. simulating the points in a
     // linked list with indices into `xs`. Big number (larger than
     // `max`) for no next element, and (0, 0) for deleted.
-    let mut adjacent = do vec::from_fn(xs.len()) |i| {
+    let mut adjacent = vec::from_fn(xs.len(), |i| {
         if i == 0 { (-1, 1) }
         else { (i - 1, i + 1) }
-    };
+    });
 
     // stores all the triangles, with the ones with the smallest area
     // first. It *doesn't* get cleared of invalid ones if/when points
@@ -33,7 +33,7 @@ pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
 
     // compute the initial triangles, i.e. take all consecutive groups
     // of 3 points and make that traingle.
-    for (i, win) in xs.window_iter(3).enumerate() {
+    for (i, win) in xs.windows(3).enumerate() {
         let area = match win {
             [(a_x, a_y), (t_x, t_y), (b_x, b_y)] => {
                 area(a_x, a_y, b_x, b_y, t_x, t_y)
@@ -52,7 +52,7 @@ pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
         // A point in this triangle has been removed since this VScore
         // was created, so just skip it.
         if left != smallest.left || right != smallest.right {
-            loop;
+            continue
         }
 
         // Now we've got a valid triangle, and it's area is small, so
@@ -66,7 +66,7 @@ pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
         // Now recompute the triangles involving left and right
         let choices = [(ll, left, right), (left, right, rr)];
         for &(ai, ti, bi) in choices.iter() {
-            if ai >= max || bi >= max { loop; } // outta bounds, i.e. we're on one edge
+            if ai >= max || bi >= max { continue } // outta bounds, i.e. we're on one edge
             let (a_x, a_y) = xs[ai];
             let (t_x, t_y) = xs[ti];
             let (b_x, b_y) = xs[bi];
@@ -76,9 +76,9 @@ pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
     }
 
     // filter out the points that have been deleted
-    return do xs.iter().zip(adjacent.iter()).filter_map |(tup, adj)| {
+    return xs.iter().zip(adjacent.iter()).filter_map(|(tup, adj)| {
         if *adj != (0, 0) {Some(*tup)} else {None}
-    }.collect();
+    }).collect();
 
     // area of the triangle between the 3 points
     fn area(a_x: f64, a_y: f64,
@@ -88,6 +88,7 @@ pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
     }
 }
 
+#[allow(dead_code)]
 /// Simplify a line using the Ramer–Douglas–Peucker algorithm.
 pub fn rdp(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
     return if xs.len() < 2 {

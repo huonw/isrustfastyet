@@ -3,7 +3,8 @@
 extern mod extra;
 use extra::{json};
 use extra::serialize::{Decodable, Encodable};
-use std::{os, io, comm};
+use std::{io, comm, str};
+use std::io::{fs, File};
 use std::hashmap::HashSet;
 use std::option::IntoOption;
 
@@ -59,17 +60,19 @@ struct Summary {
 
 // The list of all hashes that we know about.
 fn processing_possibilities() -> HashSet<~str> {
-    os::list_dir(&Path("data/data")).move_iter().filter(|hash| "history.txt" != *hash).collect()
+    fs::readdir(&Path::new("data/data")).move_iter()
+        .filter(|hash| Some("history.txt") != hash.as_str())
+        .filter_map(|hash| hash.as_str().map(|s| s.to_owned())).collect()
 }
 
 // Read the current summary json file, or "make" a new one if it
 // doesn't work.
 fn load_summary(p: &Path) -> ~[Summary] {
-    match do io::file_reader(p).map |rdr| {
-        json::from_reader(*rdr).expect("summary is invalid")
-    } {
-        Err(_) => ~[],
-        Ok(json) =>  Decodable::decode(&mut json::Decoder(json))
+    match io::result(|| File::open(p).map(|mut rdr| {
+        json::from_reader(&mut rdr as &mut Reader).expect(~"summary is invalid")
+    })) {
+        Err(_) | Ok(None) => ~[],
+        Ok(Some(json)) =>  Decodable::decode(&mut json::Decoder::new(json))
     }
 }
 
@@ -92,16 +95,16 @@ fn extract_time(time_str: &str) -> (f64, f64) {
     let i = time_str.find_str("user ").expect("time is formatted wrong: missing user");
     let j = time_str.find_str("system ").expect("time is formatted wrong: missing system");
     // reading directly as f64 doesn't work on some computers! :(
-    let user = from_str::<float>(time_str.slice_to(i))
-        .expect("time is formatted wrong: user not a float") as f64;
-    let system = from_str::<float>(time_str.slice(i + 5, j))
-        .expect("time is formatted wrong: system not a float") as f64;
+    let user = from_str::<f64>(time_str.slice_to(i))
+        .expect("time is formatted wrong: user not a f64") as f64;
+    let system = from_str::<f64>(time_str.slice(i + 5, j))
+        .expect("time is formatted wrong: system not a f64") as f64;
     (user, system)
 }
 
 /// A parser for the time-passes output of rustc.
 pub fn pass_timing(s: &str) -> ~[(~str, f64)] {
-    do s.line_iter().filter_map |l| {
+    s.lines().filter_map(|l| {
         if l.is_empty() {
             None
         } else {
@@ -109,18 +112,18 @@ pub fn pass_timing(s: &str) -> ~[(~str, f64)] {
             let i = time_start.find(' ').expect("invalid pass timing info (1): " + l);
 
             // reading directly as f64 doesn't work on some computers! :(
-            let time = from_str::<float>(time_start.slice_to(i))
+            let time = from_str::<f64>(time_start.slice_to(i))
                 .expect("invalid pass timing info (2): " + l) as f64;
 
             let i = time_start.find('\t').expect("invalid pass timing info (3): " + l);
 
             Some((time_start.slice_from(i+1).to_owned(), time))
         }
-    }.collect()
+    }).collect()
 }
 
 fn main() {
-    let summary_path = Path("out/summary.json");
+    let summary_path = Path::new("out/summary.json");
     let mut summary = load_summary(&summary_path);
 
     // work out what we're going to process
@@ -140,44 +143,48 @@ fn main() {
 
         // parallelism!
         do spawn {
-            let hash_folder = Path("data/data").push(hash);
-            if !os::path_is_dir(&hash_folder) {
-                println(fmt!("%s doesn't exist; skipping.", hash));
+            let hash_folder = Path::new("data/data").join(hash);
+            if !hash_folder.is_dir() {
+                println!("{} doesn't exist; skipping.", hash);
             } else {
-                let mem_path = hash_folder.push("mem.json");
-                let time_path = hash_folder.push("time.txt");
-                let ci_path = hash_folder.push("commit_info.txt");
+                let mem_path = hash_folder.join("mem.json");
+                let time_path = hash_folder.join("time.txt");
+                let ci_path = hash_folder.join("commit_info.txt");
 
-                let time = do io::read_whole_file_str(&time_path).map_move |raw_time| {
+                let time_file = io::result(|| File::open(&time_path));
+                let time = time_file.map(|mut file| {
+                    let raw_time = str::from_utf8_owned(file.read_to_end());
                     let (user, system) = extract_time(raw_time);
                     user + system
-                }.into_option();
+                }).into_option();
 
-                let raw_commit_info = io::read_whole_file_str(&ci_path)
-                    .expect(fmt!("no %s/commit_info.txt", hash));
-                let mut lines = raw_commit_info.line_iter();
+                let mut ci_file = File::open(&ci_path)
+                    .expect(format!("no {}/commit_info.txt", hash));
+                let raw_commit_info = str::from_utf8_owned(ci_file.read_to_end());
+                let mut lines = raw_commit_info.lines();
                 let (author, timestamp, summary) = match (lines.next(),
                                                           lines.next().and_then(from_str),
                                                           lines.next()) {
                     (Some(a), Some(b), Some(c)) => (a, b, c),
-                    _ => fail!("invalid %s/commit_info.txt", hash)
+                    _ => fail!("invalid {}/commit_info.txt", hash)
                 };
 
                 let pull_request = if author == "bors bors@rust-lang.org" {
                     // a bors commit, so extract the pull request
                     let leading_num = summary.slice_from("auto merge of #".len());
-                    let non_num = leading_num.find(|c: char| !c.is_digit()).unwrap_or_zero();
+                    let non_num = leading_num.find(|c: char| !c.is_digit()).unwrap_or(0);
                     FromStr::from_str(leading_num.slice_to(non_num))
                 } else {
                     None
                 };
 
                 // load the mem.json file.
-                let json = do io::file_reader(&mem_path).map |rdr| {
-                    json::from_reader(*rdr).expect(fmt!("%s/mem.json is not json", hash))
-                }.expect(fmt!("no %s/mem.json", hash));
+                let json = File::open(&mem_path).map(|mut rdr| {
+                    json::from_reader(&mut rdr as &mut Reader)
+                            .expect(format!("{}/mem.json is not json", hash))
+                }).expect(format!("no {}/mem.json", hash));
 
-                let d: Data = Decodable::decode(&mut json::Decoder(json));
+                let d: Data = Decodable::decode(&mut json::Decoder::new(json));
                 let simple_mem = simplify_memory_data(d.memory_data);
 
                 // if stdout is empty, this should just return nothing
@@ -197,25 +204,25 @@ fn main() {
                     summary: summary.clone()
                 };
 
-                let fname = Path("out").push(hash + ".json");
-                let out_f = io::file_writer(&fname, [io::Create, io::Truncate])
-                    .expect(fmt!("%s can't be opened", fname.to_str()));
-                out.encode(&mut json::Encoder(out_f));
+                let fname = Path::new("out").join(hash + ".json");
+                let mut out_f = File::create(&fname)
+                    .expect(format!("{} can't be opened", fname.display()));
+                out.encode(&mut json::Encoder::new(&mut out_f as &mut Writer));
                 cc.send(summary);
             }
         }
     }
 
     // collect the summaries
-    do num.times {
+    for _ in range(0, num) {
         summary.push(p.recv());
     }
     extra::sort::tim_sort(summary);
-    let text = do io::with_str_writer |write| {
-        summary.encode(&mut json::Encoder(write))
-    };
+    let mem = io::mem::with_mem_writer(
+        |w| summary.encode(&mut json::Encoder::new(w as &mut Writer)));
+    let text = str::from_utf8_owned(mem);
 
-    let summary_f = io::file_writer(&summary_path, [io::Create, io::Truncate]).unwrap();
+    let mut summary_f = File::create(&summary_path).expect(~"can't write to summary");
     // put one commit a line, so the diffs are smaller.
-    summary_f.write_str(text.replace("{", "\n{").replace("]", "\n]"));
+    summary_f.write(text.replace("{", "\n{").replace("]", "\n]").into_bytes());
 }

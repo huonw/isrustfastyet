@@ -1,0 +1,1 @@
+Make crate hash stable and externally computable.

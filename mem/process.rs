@@ -3,7 +3,7 @@
 extern mod extra;
 use extra::{json};
 use extra::serialize::{Decodable, Encodable};
-use std::{io, comm, str};
+use std::{io, comm, str, vec, task};
 use std::io::{fs, File};
 use std::hashmap::HashSet;
 use std::option::IntoOption;
@@ -132,17 +132,19 @@ fn main() {
         to_process.remove(&hash);
     }
 
-    let (p, c) = comm::stream();
-    let c = comm::SharedChan::new(c);
-
-    let num = to_process.len();
+    // necessary in case the subtask fails
+    let mut results = vec::with_capacity(to_process.len());
 
     for hash in to_process.move_iter() {
-        let cc = c.clone();
+        let (p, c) = comm::stream();
+
         println(hash);
 
+        let mut tsk = task::task();
+        results.push((p, tsk.future_result()));
+
         // parallelism!
-        do spawn {
+        do tsk.spawn {
             let hash_folder = Path::new("data/data").join(hash);
             if !hash_folder.is_dir() {
                 println!("{} doesn't exist; skipping.", hash);
@@ -208,15 +210,21 @@ fn main() {
                 let mut out_f = File::create(&fname)
                     .expect(format!("{} can't be opened", fname.display()));
                 out.encode(&mut json::Encoder::new(&mut out_f as &mut Writer));
-                cc.send(summary);
+                c.send(summary);
             }
         }
     }
 
     // collect the summaries
-    for _ in range(0, num) {
-        summary.push(p.recv());
+    for &(ref mut p, ref mut r) in results.mut_iter() {
+        match r.recv() {
+            Err(_) => {} // it failed
+            Ok(_) => {
+                summary.push(p.recv());
+            }
+        }
     }
+
     extra::sort::tim_sort(summary);
     let mem = io::mem::with_mem_writer(
         |w| summary.encode(&mut json::Encoder::new(w as &mut Writer)));

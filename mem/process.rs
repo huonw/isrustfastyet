@@ -104,19 +104,32 @@ fn extract_time(time_str: &str) -> (f64, f64) {
 
 /// A parser for the time-passes output of rustc.
 pub fn pass_timing(s: &str) -> ~[(~str, f64)] {
+    let mut last_indent = 0u;
+    let mut subindent_count = 0u;
     s.lines().filter_map(|l| {
         if l.is_empty() {
             None
         } else {
-            let time_start = l.slice_from(6);
+            let indent = l.find(|c: char| c != ' ').expect("a line that's all ' '?");
+            let time_start = l.slice_from(indent + 6);
             let i = time_start.find(' ').expect("invalid pass timing info (1): " + l);
 
-            // reading directly as f64 doesn't work on some computers! :(
-            let time = from_str::<f64>(time_start.slice_to(i))
-                .expect("invalid pass timing info (2): " + l) as f64;
+            let raw_time = from_str::<f64>(time_start.slice_to(i))
+                    .expect("invalid pass timing info (2): " + l);
 
             let i = time_start.find('\t').expect("invalid pass timing info (3): " + l);
-
+            let time = if indent < last_indent {
+                // we just came out of a subsection so mark this as
+                // such with a tiny negative time(!) the "total"
+                // heading. FIXME: read and display this properly.
+                let t = -1e-10 * (subindent_count as f64);
+                subindent_count = 1;
+                t
+            } else {
+                subindent_count += 1;
+                raw_time
+            };
+            last_indent = indent;
             Some((time_start.slice_from(i+1).to_owned(), time))
         }
     }).collect()

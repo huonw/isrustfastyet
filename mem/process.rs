@@ -61,8 +61,9 @@ struct Summary {
 // The list of all hashes that we know about.
 fn processing_possibilities() -> HashSet<~str> {
     fs::readdir(&Path::new("data/data")).move_iter()
-        .filter(|hash| Some("history.txt") != hash.as_str())
-        .filter_map(|hash| hash.as_str().map(|s| s.to_owned())).collect()
+        .filter_map(|hash| hash.filename_str().map(|s| s.to_owned()))
+        .filter(|hash| "history.txt" != *hash)
+        .collect()
 }
 
 // Read the current summary json file, or "make" a new one if it
@@ -158,7 +159,9 @@ fn main() {
 
         // parallelism!
         do tsk.spawn {
-            let hash_folder = Path::new("data/data").join(hash);
+            // as_slice, to avoid moving out of it because a proc bug
+            // allows that.
+            let hash_folder = Path::new("data/data").join(hash.as_slice());
             if !hash_folder.is_dir() {
                 println!("{} doesn't exist; skipping.", hash);
             } else {

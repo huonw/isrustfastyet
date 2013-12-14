@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import requests, sqlite3, json, re, os
+import requests, sqlite3, json, re, os, subprocess, urllib, sys
 from collections import defaultdict
 
 HISTORY = range(-10,-1 + 1)
@@ -10,17 +10,20 @@ URL = 'http://buildbot.rust-lang.org/json/builders/auto-%s/builds?' + '&'.join('
 GH_URL = 'https://api.github.com/repos/mozilla/rust/pulls/%d'
 PR_INFO_DIR = '../pull_requests/'
 
+BENCH_URL = 'http://static.rust-lang.org/build-metrics/{sha}/auto-{plat}/{slave}/bench.tar.gz'
+BENCH_INFO_DIR = '../build-metrics/'
+
 db = sqlite3.connect('pr.sqlite3')
 cur = db.cursor()
 
 PLATFORMS = [p[5:] for p in requests.get(BUILDERS_URL).json() if p.startswith('auto-')]
-
 builds = defaultdict(dict)
 
 for plat in PLATFORMS:
-    print('Downloading', plat)
+    print('Downloading %s... ' % plat,  end='')
+    sys.stdout.flush()
     resp = requests.get(URL % plat).json()
-    print('Done')
+    print('done.')
     for i in HISTORY:
         build = resp[str(i)]
         if 'error' in build:
@@ -33,10 +36,10 @@ for plat in PLATFORMS:
             assert build['text'] == ['build', 'successful']
             assert changeset is not None
         except (KeyError, AssertionError):
-            print(i, changeset, 'not successful (yet)')
+            # print(i, changeset, 'not successful (yet)')
             continue
 
-        print(i, changeset, 'successful')
+        # print(i, changeset, 'successful')
         builds[changeset][plat] = build
 
 
@@ -52,6 +55,7 @@ for chst, bs in builds.items():
         print(chst, 'already done')
         continue # already done
 
+    print('Handling', chst)
     changes = bs[NO_ANDROID_T_PLATFORMS[0]]['sourceStamps'][0]['changes']
     if changes:
         changes = changes[0]
@@ -67,7 +71,7 @@ for chst, bs in builds.items():
         time = build['steps'][0]['times'][0] # approximate the time with the time the build started
 
     if pull_request:
-        print("Retrieving info for %d from GitHub." % pull_request)
+        print("\tRetrieving info for #%d from GitHub." % pull_request)
         dir = PR_INFO_DIR + '%02d/%d' % (pull_request // 100, pull_request)
         try:
             os.makedirs(dir)
@@ -104,6 +108,29 @@ for chst, bs in builds.items():
         compile_time = int(compile_ts[1] - compile_ts[0])
         test_time = int(test_ts[1] - test_ts[0])
         build_slave = build['slave']
+
+        sys.stdout.flush()
+        bench_url = BENCH_URL.format(sha=chst, plat=plat, slave=build_slave)
+        bench_dir = BENCH_INFO_DIR + '%s/%s/%s/' % (chst[:2], chst, plat)
+        bench_name = bench_dir + 'bench.tar.gz'
+
+        print("\tRetrieving bench info for %s... " % plat, end='')
+        try:
+            os.makedirs(bench_dir)
+        except OSError:
+            print('Already done.')
+        else:
+            try:
+                urllib.request.urlretrieve(bench_url, filename=bench_name)
+            except urllib.error.HTTPError as e:
+                if e.code == 403:
+                    print('failed with 403.')
+                else:
+                    raise
+            else:
+                print('success. Inflating bench info.')
+                subprocess.check_call(['tar', 'xf', 'bench.tar.gz'],
+                                      cwd=bench_dir)
 
         cur.execute('''
         INSERT INTO build

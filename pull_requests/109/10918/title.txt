@@ -1,0 +1,1 @@
+Inline Finallyalizer::drop, allowing LLVM to optimize `finally`.

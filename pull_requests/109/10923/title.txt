@@ -1,0 +1,1 @@
+Make priv members of extra::stats::Summary public.

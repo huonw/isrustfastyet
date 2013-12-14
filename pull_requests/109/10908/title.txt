@@ -1,0 +1,1 @@
+Don't always modify the symbol table in rlibs

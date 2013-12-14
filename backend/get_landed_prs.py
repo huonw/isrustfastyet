@@ -40,9 +40,10 @@ for plat in PLATFORMS:
         builds[changeset][plat] = build
 
 
-
+NO_ANDROID_T_PLATFORMS = [p for p in PLATFORMS if 'android-t' not in p]
 for chst, bs in builds.items():
-    if len(bs) != len(PLATFORMS):
+    # FIXME: ignore android failures for now.
+    if len(bs) < len(NO_ANDROID_T_PLATFORMS):
         print(chst,'missing platforms')
         continue # doesn't have all platforms
 
@@ -51,7 +52,7 @@ for chst, bs in builds.items():
         print(chst, 'already done')
         continue # already done
 
-    changes = bs[PLATFORMS[0]]['sourceStamps'][0]['changes']
+    changes = bs[NO_ANDROID_T_PLATFORMS[0]]['sourceStamps'][0]['changes']
     if changes:
         changes = changes[0]
         comment = changes['comments']

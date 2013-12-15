@@ -1,0 +1,1 @@
+Fix #10754 - `std::run` functions fail after io_error

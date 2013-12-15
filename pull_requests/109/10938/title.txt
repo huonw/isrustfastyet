@@ -1,0 +1,1 @@
+Use libdir() instead of hard coded string. Fixes #10903

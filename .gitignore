@@ -2,4 +2,6 @@
 _site
 mem/process
 mem/data
+mem/old/data
+backend/jsons
 build-metrics

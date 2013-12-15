@@ -1,0 +1,1 @@
+Add "proc" as keyword to emacs mode

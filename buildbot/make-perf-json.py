@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import sqlite3, json, sys
+# maintain a fixed order, so that the diffs are smaller
+from collections import OrderedDict
 
 db = sqlite3.connect('../backend/pr.sqlite3')
 
@@ -19,7 +21,7 @@ else:
 cur.execute('SELECT DISTINCT plat FROM build %s' % FILTER)
 PLATFORMS = [r[0] for r in cur]
 
-out = {}
+out = OrderedDict()
 for plat in PLATFORMS:
     # * 1000 to match javascript, and -11 days to give a buffer to make
     # * the plot look nicer
@@ -37,9 +39,12 @@ LIMIT 500
     for time, changeset, pull_request, build_num, compile_time, test_time in cur:
         compile.append((time,compile_time))
         test.append((time, test_time))
-        info.append({'changeset': changeset, 'pull_request': pull_request, 'build_num': build_num})
+        info.append(OrderedDict([('changeset', changeset),
+                                 ('pull_request', pull_request),
+                                 ('build_num', build_num)]))
 
-    out[plat] = {'plat': plat, 'compile': compile, 'info': info, 'test': test}
+        out[plat] = OrderedDict([('plat', plat), ('compile', compile),
+                                 ('info', info), ('test', test)])
 
 
 with open(FILE_NAME, 'w') as f:

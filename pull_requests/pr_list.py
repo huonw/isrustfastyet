@@ -12,7 +12,7 @@ def elem(name, text, attrs={}):
     return '<{name} {attrs}>{text}</{name}>'.format(
         name=name,
         text=text,
-        attrs=' '.join('%s="%s"' % (k,v) for k, v in attrs.items() if v is not None)
+        attrs=' '.join('%s="%s"' % (k,v) for k, v in sorted(attrs.items()) if v is not None)
     )
 def a(text, href=None, attrs=None):
     if attrs is None:

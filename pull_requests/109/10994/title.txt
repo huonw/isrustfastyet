@@ -1,0 +1,1 @@
+Mark live codes in struct/enum for dead-code pass

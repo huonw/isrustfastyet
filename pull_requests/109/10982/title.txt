@@ -1,0 +1,1 @@
+Correct definition of lvalues, fixes #10890

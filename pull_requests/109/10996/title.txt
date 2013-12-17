@@ -1,0 +1,1 @@
+Convert std::vec::raw::{init_elem, copy_memory} to methods, and remove aliasing &[] and &mut[]

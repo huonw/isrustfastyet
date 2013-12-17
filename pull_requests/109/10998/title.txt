@@ -1,0 +1,1 @@
+vec: avoid some unsafe code in MoveIterator's dtor

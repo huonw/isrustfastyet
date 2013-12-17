@@ -1,0 +1,1 @@
+provide a warning at  at configure time if cc, gcc, and g++ point to a mixture of clang and gcc. Fixes issue #10959

@@ -1,0 +1,1 @@
+librustc: Implement a `Pod` kind for types that can be `memcpy`'d.

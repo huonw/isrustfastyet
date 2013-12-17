@@ -1,0 +1,1 @@
+Support explicit names in pkgid attributes

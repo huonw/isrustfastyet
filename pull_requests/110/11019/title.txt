@@ -1,0 +1,1 @@
+Don't allow impls to force public types

@@ -1,0 +1,1 @@
+Fix rustdoc output of enums with private variants

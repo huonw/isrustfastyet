@@ -1,0 +1,1 @@
+rustc: Allow `return` to return from a closure.

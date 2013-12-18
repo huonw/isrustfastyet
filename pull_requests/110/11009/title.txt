@@ -1,0 +1,1 @@
+Check even more live Path nodes in dead-code pass

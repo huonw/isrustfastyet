@@ -1,0 +1,1 @@
+Generalize item_span into node_span, which works on more types.

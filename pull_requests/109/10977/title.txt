@@ -1,0 +1,1 @@
+Make Android tests fail if no device is available

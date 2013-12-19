@@ -1,0 +1,1 @@
+De-closure-ify/remove vec & str .as_{imm,mut}_buf

@@ -1,0 +1,1 @@
+rustc: Optimize reading metadata by 4x

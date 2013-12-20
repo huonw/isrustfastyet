@@ -1,0 +1,1 @@
+Purge @-boxes from the reading half of EBML

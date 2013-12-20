@@ -1,0 +1,1 @@
+Accept trailing commas in struct patterns

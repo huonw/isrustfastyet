@@ -1,0 +1,1 @@
+Get comm_adapters building again

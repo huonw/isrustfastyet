@@ -1,0 +1,1 @@
+Fix two ctags regressions introduced by #11072.

@@ -1,0 +1,1 @@
+Make BufferedReader propagate 0-byte long reads.

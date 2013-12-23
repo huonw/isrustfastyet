@@ -1,0 +1,1 @@
+Allow optional filename argument for --dep-info

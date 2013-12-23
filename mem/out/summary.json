@@ -1922,5 +1922,6 @@
 {"timestamp":1387507899,"hash":"415e55a02c0aeb3b091155c3e801335d80b99ae4","max_memory":1359351808,"cpu_time":213.52,"pull_request":11071},
 {"timestamp":1387512396,"hash":"bb02d147fe4140061c7cd01c4aa062146eb749db","max_memory":1380954112,"cpu_time":216.22,"pull_request":11073},
 {"timestamp":1387533994,"hash":"6023350082333b9d785ea79810e1d90277c04106","max_memory":1225723904,"cpu_time":213.36,"pull_request":11017},
-{"timestamp":1387542992,"hash":"5399c82d56bcd276a026d6fdd2e2b14523c6e01f","max_memory":1282609152,"cpu_time":213.61,"pull_request":11081}
+{"timestamp":1387542992,"hash":"5399c82d56bcd276a026d6fdd2e2b14523c6e01f","max_memory":1282609152,"cpu_time":213.61,"pull_request":11081},
+{"timestamp":1387683995,"hash":"256f6976ad2545c4a1bcd6a6d616e4379d9c34e7","max_memory":1224499200,"cpu_time":217.13,"pull_request":11095}
 ]

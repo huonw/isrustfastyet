@@ -1,0 +1,1 @@
+extra: impl IterBytes for uuid::Uuid

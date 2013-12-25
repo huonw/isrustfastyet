@@ -1,0 +1,1 @@
+mk: Fix doc tests for multiple targets

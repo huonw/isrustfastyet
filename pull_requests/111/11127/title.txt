@@ -1,0 +1,1 @@
+std::vec: correct .sort()'s doc-string and add some examples/clarification to others.

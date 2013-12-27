@@ -1,0 +1,1 @@
+Remove green scheduler bootstrap tasks

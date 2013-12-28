@@ -1,0 +1,1 @@
+change result::collect to take an iterator, and adds option::collect

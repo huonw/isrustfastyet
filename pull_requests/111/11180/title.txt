@@ -1,0 +1,1 @@
+Guard a maybe_yield in Chan with can_resched

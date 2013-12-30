@@ -1,0 +1,1 @@
+rustdoc: only filter lines starting with '# ' from the shown code.

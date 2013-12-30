@@ -1,0 +1,1 @@
+Add method .as_mut_slice() to MutableVector

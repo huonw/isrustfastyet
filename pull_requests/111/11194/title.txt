@@ -1,0 +1,1 @@
+Add /doc/{green,native} to .gitignore

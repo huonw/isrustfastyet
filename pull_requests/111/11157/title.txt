@@ -1,0 +1,1 @@
+Disallow LTO with a preference to dynamic linking

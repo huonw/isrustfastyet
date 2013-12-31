@@ -1,0 +1,1 @@
+Generate --dep-info earlier in the compillation

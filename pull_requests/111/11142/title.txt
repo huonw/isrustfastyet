@@ -1,0 +1,1 @@
+Avoid compiler error about glob imports in getopts example

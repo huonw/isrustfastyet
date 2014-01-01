@@ -1,0 +1,1 @@
+syntax: expand impl_pretty_name to handle more cases.

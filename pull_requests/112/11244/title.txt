@@ -1,0 +1,1 @@
+Fix rust-align-to-expr-after-brace, closes #11239.

@@ -1,0 +1,1 @@
+Add metadata from a tempdir instead of a build dir

@@ -1,0 +1,1 @@
+Shorten symbols by truncating the hash.

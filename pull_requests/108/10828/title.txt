@@ -1,0 +1,1 @@
+[std::ascii] Add .to_ascii_opt() and .into_ascii_opt() that return Option

@@ -1,0 +1,1 @@
+Trait exportation modifications plus a small doctest fix

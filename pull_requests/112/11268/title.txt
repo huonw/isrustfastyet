@@ -1,0 +1,1 @@
+Fix comment that's been wrong since ancient times (thanks, @jvns).

@@ -1,0 +1,1 @@
+Remove `extern mod foo (name="bar")` syntax, closes #9543

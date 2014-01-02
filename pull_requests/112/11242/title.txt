@@ -1,0 +1,1 @@
+Fix issue #11216 - Replace std::hashmap::{each_key, each_value} with iterators

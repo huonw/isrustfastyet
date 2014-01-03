@@ -1,0 +1,1 @@
+Update references to rustc.rc in README.

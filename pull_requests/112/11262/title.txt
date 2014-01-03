@@ -1,0 +1,1 @@
+Fix usage of rustc --ls on invalid files

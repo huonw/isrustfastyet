@@ -1,0 +1,1 @@
+Add read_to_str and write_{str, line}

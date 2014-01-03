@@ -1,0 +1,1 @@
+Add linting for `crate_type` attribute values.

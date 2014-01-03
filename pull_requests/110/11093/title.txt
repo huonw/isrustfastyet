@@ -1,0 +1,1 @@
+rustc: Strip struct fields and enum variants

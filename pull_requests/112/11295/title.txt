@@ -1,0 +1,1 @@
+Remove a hacky buffer extraction from metadata

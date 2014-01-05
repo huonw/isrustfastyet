@@ -1,0 +1,1 @@
+Condition EH ABI on target_arch, not target_os.

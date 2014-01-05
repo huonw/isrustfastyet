@@ -1,0 +1,1 @@
+Restore Writer.write_char, see #10861.

@@ -1,0 +1,1 @@
+Change rmake and doc-test to support TESTNAME

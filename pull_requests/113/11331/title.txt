@@ -1,0 +1,1 @@
+Revert "std: adjust requested stack size for thread-local storage."

@@ -1,0 +1,1 @@
+Use ~-objects instead of @-objects for syntax exts

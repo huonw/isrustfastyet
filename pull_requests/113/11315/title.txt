@@ -1,0 +1,1 @@
+Guarantee that native tasks wait for children

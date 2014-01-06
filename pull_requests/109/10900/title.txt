@@ -1,0 +1,1 @@
+fix to support android cross compile on mac

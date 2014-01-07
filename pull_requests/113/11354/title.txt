@@ -1,0 +1,1 @@
+Use the full version string for the windows installer exe

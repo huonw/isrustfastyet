@@ -1,0 +1,1 @@
+Revised again: Added TotalEq/TotalOrd/Clone functionality and related tests to B-tree

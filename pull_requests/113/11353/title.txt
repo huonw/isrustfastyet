@@ -1,0 +1,1 @@
+Support arbitrary stdout/stderr/logger handles

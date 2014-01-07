@@ -1,0 +1,1 @@
+Make CFG_LIBDIR configurable. Fixes #5223

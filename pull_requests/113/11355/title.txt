@@ -1,0 +1,1 @@
+Fix parallel builds and libnative reads from stdin

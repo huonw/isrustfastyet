@@ -1,0 +1,1 @@
+Removed wrong usage of `default` from the Option API

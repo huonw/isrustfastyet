@@ -1,0 +1,1 @@
+Remove unnecessary substitution of type params when generating vtable methods.

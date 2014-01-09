@@ -1,0 +1,1 @@
+Fixed Gc::clone, implemented Gc::ptr_eq

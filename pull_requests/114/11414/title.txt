@@ -1,0 +1,1 @@
+Start the span for a path in a view_path at the correct place.

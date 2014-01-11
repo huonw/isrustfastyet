@@ -1,0 +1,1 @@
+Fix ICE on const of nullable enum with fields in null case.

@@ -1,0 +1,1 @@
+Remove eof() from io::Reader

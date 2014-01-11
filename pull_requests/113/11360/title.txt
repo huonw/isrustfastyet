@@ -1,0 +1,1 @@
+std::rt: require known stack bounds for all tasks.

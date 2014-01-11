@@ -1,0 +1,1 @@
+libsyntax: Renamed types, traits and enum variants to CamelCase.

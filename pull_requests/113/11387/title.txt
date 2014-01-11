@@ -1,0 +1,1 @@
+librustc: Move block contexts into per-function arenas and stack-allocate function contexts

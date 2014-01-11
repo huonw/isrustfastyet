@@ -1,0 +1,1 @@
+Add eof to MemReader and BufReader

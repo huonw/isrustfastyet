@@ -1,0 +1,1 @@
+Typo in container guide: "As long an iterator" => "As long as an iterator"

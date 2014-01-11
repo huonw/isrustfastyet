@@ -1,0 +1,1 @@
+Improve invalid operator assignment handling.

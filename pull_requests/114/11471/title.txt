@@ -1,0 +1,1 @@
+Mark allowed dead code and lang items as live

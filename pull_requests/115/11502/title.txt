@@ -1,0 +1,1 @@
+Don't overwrite the options.output value from build_session_options

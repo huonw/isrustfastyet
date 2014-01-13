@@ -1,0 +1,1 @@
+Remove RealExt and clean up some of stc::num::cmath

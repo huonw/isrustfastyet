@@ -1,0 +1,1 @@
+xfail two tests that hang on Android (#11419)

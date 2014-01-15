@@ -1,0 +1,1 @@
+Mark LineIterator as public so its docs get generated.

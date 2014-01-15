@@ -1,0 +1,1 @@
+libstd: Added more #[inline] annotations and replaced uses of `libc::abort` with the intrinsic.

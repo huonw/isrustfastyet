@@ -1,0 +1,1 @@
+Allow more "error" values in try_recv()

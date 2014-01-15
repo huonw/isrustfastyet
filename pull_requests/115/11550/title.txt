@@ -1,0 +1,1 @@
+Flag failure functions as inline(never)

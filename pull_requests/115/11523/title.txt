@@ -1,0 +1,1 @@
+Inject a libstd version, but not for stage3

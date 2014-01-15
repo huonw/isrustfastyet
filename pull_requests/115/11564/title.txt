@@ -1,0 +1,1 @@
+Fix formatting in rust-guide document.

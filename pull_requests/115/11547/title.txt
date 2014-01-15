@@ -1,0 +1,1 @@
+Removed redundant code, improve performance

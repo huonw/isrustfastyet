@@ -1,0 +1,1 @@
+libsyntax: Remove the obsolete ability to parse from substrings.

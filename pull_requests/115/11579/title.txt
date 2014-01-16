@@ -1,0 +1,1 @@
+path: Fix joining Windows path when the receiver is "C:"

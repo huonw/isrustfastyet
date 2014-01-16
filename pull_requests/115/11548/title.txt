@@ -1,0 +1,1 @@
+Merge Bitwise and BitCount traits and remove them from the prelude, (along with Bounded)

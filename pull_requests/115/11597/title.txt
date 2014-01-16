@@ -1,0 +1,1 @@
+Stop returning error strings in From{Base64,Hex}

@@ -1,0 +1,1 @@
+Use the least significant beat to determine if int/uint is even

@@ -2166,5 +2166,7 @@
 {"timestamp":1389891709,"hash":"9434e7c6cb658367d91eb8aae5fac6a5c8b5f769","max_memory":1201393664,"cpu_time":201.35,"pull_request":11599},
 {"timestamp":1389900400,"hash":"61416626acb53143f1b6856cbc0fcbfd9f9b59a8","max_memory":1199525888,"cpu_time":200.9,"pull_request":11571},
 {"timestamp":1389919013,"hash":"80a3f453db387d02dcb596745731031e7a8c9048","max_memory":1200750592,"cpu_time":199.52,"pull_request":11151},
-{"timestamp":1389934605,"hash":"5fdc81262a5d44f10e335384b5d69b938d6d729c","max_memory":1214644224,"cpu_time":200.15,"pull_request":11553}
+{"timestamp":1389928905,"hash":"58a15f3d5a2213d37bbf653e4562c36a130f14ee","max_memory":1213034496,"cpu_time":199.8,"pull_request":11584},
+{"timestamp":1389934605,"hash":"5fdc81262a5d44f10e335384b5d69b938d6d729c","max_memory":1214644224,"cpu_time":200.15,"pull_request":11553},
+{"timestamp":1389945716,"hash":"93fb12e3d0644f6a8ddfa2ac1d6b0a1d8341e287","max_memory":1214803968,"cpu_time":198.77,"pull_request":11498}
 ]

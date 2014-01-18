@@ -1,0 +1,1 @@
+Forbid unnecessary visibility on view items

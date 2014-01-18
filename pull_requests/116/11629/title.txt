@@ -1,0 +1,1 @@
+Move macro-crate to run-pass-fulldeps and xfail on android

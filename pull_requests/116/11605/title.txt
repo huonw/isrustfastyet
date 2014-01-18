@@ -1,0 +1,1 @@
+Forbid coercing unsafe functions to closures

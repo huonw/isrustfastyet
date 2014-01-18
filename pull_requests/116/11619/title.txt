@@ -1,0 +1,1 @@
+doc: a few rust.md fixes

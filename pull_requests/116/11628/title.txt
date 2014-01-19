@@ -1,0 +1,1 @@
+Disallow implementation of cross-crate priv traits

@@ -1,0 +1,1 @@
+rustc: Feature gate `log_syntax!`. Closes #11602

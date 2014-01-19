@@ -1,0 +1,1 @@
+doc: Boxes diagram shows enum value inside box.

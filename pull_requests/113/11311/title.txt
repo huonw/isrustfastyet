@@ -1,0 +1,1 @@
+Add @Spell clusters to Vim syntax file

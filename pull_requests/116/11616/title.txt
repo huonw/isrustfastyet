@@ -1,0 +1,1 @@
+syntax: convert ast_map to use a SmallIntMap.

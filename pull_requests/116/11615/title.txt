@@ -1,0 +1,1 @@
+Fixed bug when initialising bitv from init=true

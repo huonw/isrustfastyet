@@ -1,0 +1,1 @@
+handle zero-size allocations correctly

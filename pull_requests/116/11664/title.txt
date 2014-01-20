@@ -1,0 +1,1 @@
+Restrict std::num::{Zero, One} implementors and improve std::num::pow implementation

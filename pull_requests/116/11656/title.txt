@@ -1,0 +1,1 @@
+xfail more external syntax extension tests on android

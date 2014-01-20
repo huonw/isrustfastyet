@@ -1,0 +1,1 @@
+rustc: check instantiability of fixed length vectors properly.

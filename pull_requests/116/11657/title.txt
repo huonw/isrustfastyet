@@ -1,0 +1,1 @@
+rustc: remove the explicit count from the lang_item macro.

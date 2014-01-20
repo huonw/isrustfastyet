@@ -1,0 +1,1 @@
+Make WindowsPath::new("C:foo").root_path() return Some("C:")

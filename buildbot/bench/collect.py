@@ -67,13 +67,15 @@ WHERE change_id = ?
 
 
 for platform, crate_benches in per_plat_benches.items():
-    try:
-        os.makedirs(platform)
-    except OSError:
-        pass
-    for crate, benches in crate_benches.items():
-        with open('%s/%s.json' % (platform, crate), 'w') as f:
-            json.dump(benches, f, indent=0)
+    for crate, module_benches in crate_benches.items():
+        dir = '%s/%s' % (platform, crate)
+        try:
+            os.makedirs(dir)
+        except OSError:
+            pass
+        for module, benches in module_benches.items():
+            with open('%s/%s.json' % (dir, module), 'w') as f:
+                json.dump(benches, f, indent=0, separators=(',',':'))
 
 with open('changesets.json', 'w') as f:
-    json.dump(changesets, f, indent=0)
+    json.dump(changesets, f, indent=0, separators=(',',':'))

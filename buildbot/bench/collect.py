@@ -42,6 +42,9 @@ def insert_bench(path, data):
     d.append(data)
 
 changesets = {}
+all_benches = set()
+all_platforms = set()
+
 
 for changeset_index, time, changeset, pr in changeset_data:
     cur.execute('''
@@ -52,19 +55,25 @@ WHERE change_id = ?
     changesets[changeset_index] = {'time': int(time) * 1000, 'changeset': changeset, 'pr': pr}
 
     for platform, build_slave in cur:
+        all_platforms.add(platform)
         for platform_metrics in glob.iglob('../../build-metrics/%s/%s/%s/*-metrics.json' %
                                            (changeset[:2], changeset, platform)):
             metrics = platform_metrics.split('/')[-1]
             crate = metrics.split('-')[-2]
             if crate not in ('std', 'extra'):
                 continue
+            name_base = crate + '::'
             path_base = [platform, crate]
             benches = json.load(open(platform_metrics))
             #print changeset, time, platform, crate, len(benches)
             for name, benches in benches.items():
                 path = path_base + name.split('::')
+                all_benches.add(name_base + name)
                 insert_bench(path, (changeset_index, benches['value']))
 
+def write_json(file, data):
+    with open(file, 'w') as f:
+        json.dump(data, f, indent=0, separators=(',', ':'))
 
 for platform, crate_benches in per_plat_benches.items():
     for crate, module_benches in crate_benches.items():
@@ -74,8 +83,8 @@ for platform, crate_benches in per_plat_benches.items():
         except OSError:
             pass
         for module, benches in module_benches.items():
-            with open('%s/%s.json' % (dir, module), 'w') as f:
-                json.dump(benches, f, indent=0, separators=(',',':'))
+            write_json('%s/%s.json' % (dir, module), benches)
 
-with open('changesets.json', 'w') as f:
-    json.dump(changesets, f, indent=0, separators=(',',':'))
+write_json('changesets.json', changesets)
+write_json('bench_names.json', list(sorted(all_benches)))
+write_json('platforms.json', list(sorted(all_platforms)))

@@ -18,7 +18,7 @@ git pull --rebase
         (
             cd bench
             ./collect.py &&
-            git add changesets.json */*/*.json  &&
+            git add *.json */*/*.json  &&
             git commit -m 'Update buildbot benches.'
         )
     )

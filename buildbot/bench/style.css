@@ -1,0 +1,66 @@
+#plot { width: 1200px; height: 650px; margin: 0.5em auto; }
+
+
+rect.pane {
+  cursor: move;
+  fill: none;
+  pointer-events: all;
+}
+path.line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+path.line.hover {
+  stroke-width: 3px;
+}
+
+.axis {
+  font-size: 0.73em;
+}
+.axis path, .axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+#bench-tree, #legend {
+  font-family: monospace;
+}
+
+#legend-heading, #legend, #legend li {
+  display: inline-block;
+  margin: 0 0.2em;
+}
+
+ul {
+  list-style: none;
+  margin-left: 1em;
+  padding: 0
+}
+
+.active {
+  font-weight: bold;
+}
+
+.bench-module-title:before {
+  content: '▾ ';
+}
+.bench-module-title.collapsed:before {
+  content: '▸ ';
+}
+
+.bench-module-title, .bench-function {
+  cursor: pointer;
+}
+.bench-module.collapsed > li {
+  display: none;
+}
+.bench-function {
+  margin-left: 1em;
+}
+
+.hover {
+  font-weight: bold;
+  stroke-width: 4px;
+}

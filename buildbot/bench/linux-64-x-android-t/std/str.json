@@ -1,6 +1,5 @@
 {
-"bench":{
-"bench_connect":[
+"bench::bench_connect":[
 [
 2211,
 4508.5
@@ -46,7 +45,7 @@
 135
 ]
 ],
-"bench_push_str":[
+"bench::bench_push_str":[
 [
 2211,
 2068.5
@@ -92,7 +91,7 @@
 112
 ]
 ],
-"bench_with_capacity":[
+"bench::bench_with_capacity":[
 [
 2211,
 29
@@ -138,7 +137,7 @@
 59
 ]
 ],
-"char_indicesator":[
+"bench::char_indicesator":[
 [
 2211,
 5208.5
@@ -184,7 +183,7 @@
 76
 ]
 ],
-"char_indicesator_rev":[
+"bench::char_indicesator_rev":[
 [
 2211,
 5573.5
@@ -230,7 +229,7 @@
 111
 ]
 ],
-"char_iterator":[
+"bench::char_iterator":[
 [
 2211,
 5249.5
@@ -276,7 +275,7 @@
 101
 ]
 ],
-"char_iterator_ascii":[
+"bench::char_iterator_ascii":[
 [
 2211,
 2530.5
@@ -322,7 +321,7 @@
 270
 ]
 ],
-"char_iterator_rev":[
+"bench::char_iterator_rev":[
 [
 2211,
 5545
@@ -368,7 +367,7 @@
 111
 ]
 ],
-"is_utf8_100_ascii":[
+"bench::is_utf8_100_ascii":[
 [
 2211,
 29
@@ -414,7 +413,7 @@
 64
 ]
 ],
-"is_utf8_100_multibyte":[
+"bench::is_utf8_100_multibyte":[
 [
 2211,
 30
@@ -460,7 +459,7 @@
 96
 ]
 ],
-"split_ascii":[
+"bench::split_ascii":[
 [
 2211,
 1133.5
@@ -506,7 +505,7 @@
 58
 ]
 ],
-"split_closure":[
+"bench::split_closure":[
 [
 2211,
 701
@@ -552,7 +551,7 @@
 73
 ]
 ],
-"split_extern_fn":[
+"bench::split_extern_fn":[
 [
 2211,
 783
@@ -598,7 +597,7 @@
 73
 ]
 ],
-"split_not_ascii":[
+"bench::split_not_ascii":[
 [
 2211,
 776
@@ -644,7 +643,7 @@
 73
 ]
 ],
-"split_slice":[
+"bench::split_slice":[
 [
 2211,
 729
@@ -690,7 +689,7 @@
 77
 ]
 ],
-"split_unicode_ascii":[
+"bench::split_unicode_ascii":[
 [
 2211,
 1058.5
@@ -736,7 +735,7 @@
 59
 ]
 ],
-"split_unicode_not_ascii":[
+"bench::split_unicode_not_ascii":[
 [
 2211,
 2062
@@ -782,5 +781,4 @@
 160
 ]
 ]
-}
 }

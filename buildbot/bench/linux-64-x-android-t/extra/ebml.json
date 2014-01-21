@@ -1,6 +1,5 @@
 {
-"bench":{
-"vuint_at_A_aligned":[
+"bench::vuint_at_A_aligned":[
 [
 2211,
 2545.5
@@ -10,7 +9,7 @@
 2540
 ]
 ],
-"vuint_at_A_unaligned":[
+"bench::vuint_at_A_unaligned":[
 [
 2211,
 1749
@@ -20,7 +19,7 @@
 1754
 ]
 ],
-"vuint_at_D_aligned":[
+"bench::vuint_at_D_aligned":[
 [
 2211,
 1612.5
@@ -30,7 +29,7 @@
 1611.5
 ]
 ],
-"vuint_at_D_unaligned":[
+"bench::vuint_at_D_unaligned":[
 [
 2211,
 1749.5
@@ -40,5 +39,4 @@
 1751
 ]
 ]
-}
 }

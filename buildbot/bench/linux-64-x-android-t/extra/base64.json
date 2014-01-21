@@ -1,6 +1,5 @@
 {
-"test":{
-"bench_from_base64":[
+"test::bench_from_base64":[
 [
 2211,
 8099
@@ -46,7 +45,7 @@
 883
 ]
 ],
-"bench_to_base64":[
+"test::bench_to_base64":[
 [
 2211,
 8113
@@ -92,5 +91,4 @@
 623
 ]
 ]
-}
 }

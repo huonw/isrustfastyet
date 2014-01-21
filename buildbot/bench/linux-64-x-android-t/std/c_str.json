@@ -1,6 +1,5 @@
 {
-"bench":{
-"bench_to_c_str_long":[
+"bench::bench_to_c_str_long":[
 [
 2211,
 7172
@@ -46,7 +45,7 @@
 315
 ]
 ],
-"bench_to_c_str_medium":[
+"bench::bench_to_c_str_medium":[
 [
 2211,
 1459.5
@@ -92,7 +91,7 @@
 70
 ]
 ],
-"bench_to_c_str_short":[
+"bench::bench_to_c_str_short":[
 [
 2211,
 988
@@ -138,7 +137,7 @@
 48
 ]
 ],
-"bench_to_c_str_unchecked_long":[
+"bench::bench_to_c_str_unchecked_long":[
 [
 2211,
 2802.5
@@ -184,7 +183,7 @@
 180
 ]
 ],
-"bench_to_c_str_unchecked_medium":[
+"bench::bench_to_c_str_unchecked_medium":[
 [
 2211,
 849.5
@@ -230,7 +229,7 @@
 51
 ]
 ],
-"bench_to_c_str_unchecked_short":[
+"bench::bench_to_c_str_unchecked_short":[
 [
 2211,
 692
@@ -276,7 +275,7 @@
 42
 ]
 ],
-"bench_with_c_str_long":[
+"bench::bench_with_c_str_long":[
 [
 2211,
 7272
@@ -322,7 +321,7 @@
 325
 ]
 ],
-"bench_with_c_str_medium":[
+"bench::bench_with_c_str_medium":[
 [
 2211,
 875
@@ -368,7 +367,7 @@
 38
 ]
 ],
-"bench_with_c_str_short":[
+"bench::bench_with_c_str_short":[
 [
 2211,
 426
@@ -414,7 +413,7 @@
 14
 ]
 ],
-"bench_with_c_str_unchecked_long":[
+"bench::bench_with_c_str_unchecked_long":[
 [
 2211,
 2949
@@ -460,7 +459,7 @@
 184
 ]
 ],
-"bench_with_c_str_unchecked_medium":[
+"bench::bench_with_c_str_unchecked_medium":[
 [
 2211,
 422
@@ -506,7 +505,7 @@
 27
 ]
 ],
-"bench_with_c_str_unchecked_short":[
+"bench::bench_with_c_str_unchecked_short":[
 [
 2211,
 268
@@ -552,5 +551,4 @@
 13
 ]
 ]
-}
 }

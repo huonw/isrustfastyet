@@ -1,7 +1,5 @@
 {
-"buffered":{
-"test":{
-"bench_buffered_reader":[
+"buffered::test::bench_buffered_reader":[
 [
 2211,
 30
@@ -47,7 +45,7 @@
 53
 ]
 ],
-"bench_buffered_stream":[
+"buffered::test::bench_buffered_stream":[
 [
 2211,
 29
@@ -93,7 +91,7 @@
 88
 ]
 ],
-"bench_buffered_writer":[
+"buffered::test::bench_buffered_writer":[
 [
 2211,
 29
@@ -138,12 +136,8 @@
 1865,
 53
 ]
-]
-}
-},
-"extensions":{
-"bench":{
-"u64_from_be_bytes_4_aligned":[
+],
+"extensions::bench::u64_from_be_bytes_4_aligned":[
 [
 2211,
 2119
@@ -153,7 +147,7 @@
 2151
 ]
 ],
-"u64_from_be_bytes_4_unaligned":[
+"extensions::bench::u64_from_be_bytes_4_unaligned":[
 [
 2211,
 2128.5
@@ -163,7 +157,7 @@
 2151.5
 ]
 ],
-"u64_from_be_bytes_7_aligned":[
+"extensions::bench::u64_from_be_bytes_7_aligned":[
 [
 2211,
 2662.5
@@ -173,7 +167,7 @@
 2683.5
 ]
 ],
-"u64_from_be_bytes_7_unaligned":[
+"extensions::bench::u64_from_be_bytes_7_unaligned":[
 [
 2211,
 2652
@@ -183,7 +177,7 @@
 2634
 ]
 ],
-"u64_from_be_bytes_8_aligned":[
+"extensions::bench::u64_from_be_bytes_8_aligned":[
 [
 2211,
 3441.5
@@ -193,7 +187,7 @@
 3451
 ]
 ],
-"u64_from_be_bytes_8_unaligned":[
+"extensions::bench::u64_from_be_bytes_8_unaligned":[
 [
 2211,
 4299
@@ -203,6 +197,4 @@
 4261.5
 ]
 ]
-}
-}
 }

@@ -1,6 +1,5 @@
 {
-"bench":{
-"create_uuids":[
+"bench::create_uuids":[
 [
 2211,
 4520
@@ -46,7 +45,7 @@
 2205
 ]
 ],
-"parse_str":[
+"bench::parse_str":[
 [
 2211,
 13186
@@ -92,7 +91,7 @@
 855
 ]
 ],
-"uuid_to_str":[
+"bench::uuid_to_str":[
 [
 2211,
 41177
@@ -138,5 +137,4 @@
 2209.5
 ]
 ]
-}
 }

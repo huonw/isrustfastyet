@@ -1,7 +1,5 @@
 {
-"global_heap":{
-"bench":{
-"alloc_owned_big":[
+"global_heap::bench::alloc_owned_big":[
 [
 2211,
 29
@@ -47,7 +45,7 @@
 192
 ]
 ],
-"alloc_owned_small":[
+"global_heap::bench::alloc_owned_small":[
 [
 2211,
 30
@@ -92,12 +90,8 @@
 1865,
 39
 ]
-]
-}
-},
-"local_heap":{
-"bench":{
-"alloc_managed_big":[
+],
+"local_heap::bench::alloc_managed_big":[
 [
 2211,
 4280.5
@@ -143,7 +137,7 @@
 204
 ]
 ],
-"alloc_managed_small":[
+"local_heap::bench::alloc_managed_small":[
 [
 2211,
 986
@@ -189,6 +183,4 @@
 45
 ]
 ]
-}
-}
 }

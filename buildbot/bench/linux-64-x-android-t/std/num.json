@@ -1,6 +1,5 @@
 {
-"bench":{
-"bench_pow_function":[
+"bench::bench_pow_function":[
 [
 2211,
 28117.5
@@ -9,11 +8,8 @@
 2210,
 28064.5
 ]
-]
-},
-"strconv":{
-"bench":{
-"float_to_str_rand":[
+],
+"strconv::bench::float_to_str_rand":[
 [
 2211,
 24729
@@ -59,7 +55,7 @@
 645
 ]
 ],
-"uint_to_str_rand":[
+"strconv::bench::uint_to_str_rand":[
 [
 2211,
 5081
@@ -105,6 +101,4 @@
 462
 ]
 ]
-}
-}
 }

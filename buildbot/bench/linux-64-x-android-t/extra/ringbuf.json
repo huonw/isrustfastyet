@@ -1,6 +1,5 @@
 {
-"tests":{
-"bench_grow":[
+"tests::bench_grow":[
 [
 2211,
 5787
@@ -46,7 +45,7 @@
 925
 ]
 ],
-"bench_new":[
+"tests::bench_new":[
 [
 2211,
 866
@@ -92,7 +91,7 @@
 86
 ]
 ],
-"bench_push_back":[
+"tests::bench_push_back":[
 [
 2211,
 67
@@ -138,7 +137,7 @@
 13
 ]
 ],
-"bench_push_front":[
+"tests::bench_push_front":[
 [
 2211,
 78
@@ -184,5 +183,4 @@
 10
 ]
 ]
-}
 }

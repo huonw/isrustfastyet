@@ -1,6 +1,5 @@
 {
-"bench":{
-"add":[
+"bench::add":[
 [
 2211,
 992.5
@@ -46,7 +45,7 @@
 88
 ]
 ],
-"concat":[
+"bench::concat":[
 [
 2211,
 67725
@@ -92,7 +91,7 @@
 7924.5
 ]
 ],
-"connect":[
+"bench::connect":[
 [
 2211,
 68835.5
@@ -138,7 +137,7 @@
 8058.5
 ]
 ],
-"contains_last_element":[
+"bench::contains_last_element":[
 [
 2211,
 30
@@ -184,7 +183,7 @@
 1
 ]
 ],
-"ends_with_diff_one_element_at_beginning":[
+"bench::ends_with_diff_one_element_at_beginning":[
 [
 2211,
 114
@@ -230,7 +229,7 @@
 6
 ]
 ],
-"ends_with_same_vector":[
+"bench::ends_with_same_vector":[
 [
 2211,
 110
@@ -276,7 +275,7 @@
 170
 ]
 ],
-"ends_with_single_element":[
+"bench::ends_with_single_element":[
 [
 2211,
 124
@@ -322,7 +321,7 @@
 7
 ]
 ],
-"iterator":[
+"bench::iterator":[
 [
 2211,
 377
@@ -368,7 +367,7 @@
 16
 ]
 ],
-"mut_iterator":[
+"bench::mut_iterator":[
 [
 2211,
 382
@@ -414,7 +413,7 @@
 22
 ]
 ],
-"push":[
+"bench::push":[
 [
 2211,
 68
@@ -460,7 +459,7 @@
 6
 ]
 ],
-"random_inserts":[
+"bench::random_inserts":[
 [
 2211,
 71339
@@ -470,7 +469,7 @@
 70834.5
 ]
 ],
-"random_removes":[
+"bench::random_removes":[
 [
 2211,
 76575.5
@@ -480,7 +479,7 @@
 76090
 ]
 ],
-"sort_random_large":[
+"bench::sort_random_large":[
 [
 2211,
 5348244
@@ -490,7 +489,7 @@
 5463391
 ]
 ],
-"sort_random_medium":[
+"bench::sort_random_medium":[
 [
 2211,
 36973
@@ -500,7 +499,7 @@
 37732
 ]
 ],
-"sort_random_small":[
+"bench::sort_random_small":[
 [
 2211,
 2403.5
@@ -510,7 +509,7 @@
 2383.5
 ]
 ],
-"sort_sorted":[
+"bench::sort_sorted":[
 [
 2211,
 3940123.5
@@ -520,7 +519,7 @@
 3953114.5
 ]
 ],
-"starts_with_diff_one_element_at_end":[
+"bench::starts_with_diff_one_element_at_end":[
 [
 2211,
 114.5
@@ -566,7 +565,7 @@
 170
 ]
 ],
-"starts_with_same_vector":[
+"bench::starts_with_same_vector":[
 [
 2211,
 112
@@ -612,7 +611,7 @@
 179
 ]
 ],
-"starts_with_single_element":[
+"bench::starts_with_single_element":[
 [
 2211,
 108
@@ -658,7 +657,7 @@
 7
 ]
 ],
-"zero_1kb_fixed_repeat":[
+"bench::zero_1kb_fixed_repeat":[
 [
 2211,
 29
@@ -704,7 +703,7 @@
 77
 ]
 ],
-"zero_1kb_from_elem":[
+"bench::zero_1kb_from_elem":[
 [
 2211,
 30
@@ -750,7 +749,7 @@
 75
 ]
 ],
-"zero_1kb_loop_set":[
+"bench::zero_1kb_loop_set":[
 [
 2211,
 7108
@@ -796,7 +795,7 @@
 533
 ]
 ],
-"zero_1kb_mut_iter":[
+"bench::zero_1kb_mut_iter":[
 [
 2211,
 30
@@ -842,7 +841,7 @@
 76
 ]
 ],
-"zero_1kb_set_memory":[
+"bench::zero_1kb_set_memory":[
 [
 2211,
 29
@@ -888,5 +887,4 @@
 75
 ]
 ]
-}
 }

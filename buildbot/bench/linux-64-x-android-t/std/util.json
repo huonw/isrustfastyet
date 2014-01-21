@@ -1,6 +1,5 @@
 {
-"bench":{
-"match_option_some":[
+"bench::match_option_some":[
 [
 2211,
 30
@@ -46,7 +45,7 @@
 1
 ]
 ],
-"match_vec_pattern":[
+"bench::match_vec_pattern":[
 [
 2211,
 30
@@ -92,7 +91,7 @@
 1
 ]
 ],
-"trait_static_method_call":[
+"bench::trait_static_method_call":[
 [
 2211,
 29.5
@@ -138,7 +137,7 @@
 1
 ]
 ],
-"trait_vtable_method_call":[
+"bench::trait_vtable_method_call":[
 [
 2211,
 64
@@ -184,5 +183,4 @@
 2
 ]
 ]
-}
 }

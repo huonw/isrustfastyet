@@ -1,6 +1,5 @@
 {
-"bench":{
-"rand_isaac":[
+"bench::rand_isaac":[
 [
 2211,
 4782.5
@@ -46,7 +45,7 @@
 743.5
 ]
 ],
-"rand_isaac64":[
+"bench::rand_isaac64":[
 [
 2211,
 4401
@@ -92,7 +91,7 @@
 347
 ]
 ],
-"rand_shuffle_100":[
+"bench::rand_shuffle_100":[
 [
 2211,
 36766
@@ -138,7 +137,7 @@
 1879
 ]
 ],
-"rand_std":[
+"bench::rand_std":[
 [
 2211,
 4841.5
@@ -184,7 +183,7 @@
 347
 ]
 ],
-"rand_xorshift":[
+"bench::rand_xorshift":[
 [
 2211,
 945.5
@@ -229,12 +228,8 @@
 1865,
 172
 ]
-]
-},
-"distributions":{
-"exponential":{
-"bench":{
-"rand_exp":[
+],
+"distributions::exponential::bench::rand_exp":[
 [
 2211,
 28885
@@ -279,12 +274,8 @@
 1865,
 470
 ]
-]
-}
-},
-"gamma":{
-"bench":{
-"bench_gamma_large_shape":[
+],
+"distributions::gamma::bench::bench_gamma_large_shape":[
 [
 2211,
 177323
@@ -330,7 +321,7 @@
 2427
 ]
 ],
-"bench_gamma_small_shape":[
+"distributions::gamma::bench::bench_gamma_small_shape":[
 [
 2211,
 189780
@@ -375,12 +366,8 @@
 1865,
 2787.5
 ]
-]
-}
-},
-"normal":{
-"bench":{
-"rand_normal":[
+],
+"distributions::normal::bench::rand_normal":[
 [
 2211,
 41669
@@ -426,7 +413,4 @@
 557
 ]
 ]
-}
-}
-}
 }

@@ -1,6 +1,5 @@
 {
-"test":{
-"bench_append":[
+"test::bench_append":[
 [
 2211,
 41027
@@ -46,7 +45,7 @@
 2005
 ]
 ],
-"bench_build":[
+"test::bench_build":[
 [
 2211,
 115451
@@ -92,7 +91,7 @@
 5202
 ]
 ],
-"bench_build_sized":[
+"test::bench_build_sized":[
 [
 2211,
 106334.5
@@ -138,7 +137,7 @@
 5360
 ]
 ],
-"bench_capacity":[
+"test::bench_capacity":[
 [
 2211,
 47
@@ -184,7 +183,7 @@
 1
 ]
 ],
-"bench_clone":[
+"test::bench_clone":[
 [
 2211,
 47
@@ -230,7 +229,7 @@
 1
 ]
 ],
-"bench_from_elem":[
+"test::bench_from_elem":[
 [
 2211,
 82824
@@ -276,7 +275,7 @@
 3628.5
 ]
 ],
-"bench_from_fn":[
+"test::bench_from_fn":[
 [
 2211,
 107064
@@ -322,7 +321,7 @@
 5532
 ]
 ],
-"bench_map":[
+"test::bench_map":[
 [
 2211,
 36083
@@ -368,7 +367,7 @@
 1616
 ]
 ],
-"bench_to_managed":[
+"test::bench_to_managed":[
 [
 2211,
 155990.5
@@ -414,7 +413,7 @@
 6406
 ]
 ],
-"bench_to_managed_move":[
+"test::bench_to_managed_move":[
 [
 2211,
 86403
@@ -460,5 +459,4 @@
 7213.5
 ]
 ]
-}
 }

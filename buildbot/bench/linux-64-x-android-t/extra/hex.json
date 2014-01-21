@@ -1,6 +1,5 @@
 {
-"tests":{
-"bench_from_hex":[
+"tests::bench_from_hex":[
 [
 2211,
 7929.5
@@ -46,7 +45,7 @@
 785
 ]
 ],
-"bench_to_hex":[
+"tests::bench_to_hex":[
 [
 2211,
 4384
@@ -92,5 +91,4 @@
 501
 ]
 ]
-}
 }

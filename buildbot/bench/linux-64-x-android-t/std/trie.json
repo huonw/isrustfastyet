@@ -1,6 +1,5 @@
 {
-"bench_map":{
-"bench_insert_large":[
+"bench_map::bench_insert_large":[
 [
 2211,
 2684409.5
@@ -10,7 +9,7 @@
 3048466.5
 ]
 ],
-"bench_insert_large_low_bits":[
+"bench_map::bench_insert_large_low_bits":[
 [
 2211,
 2435439
@@ -20,7 +19,7 @@
 2583195
 ]
 ],
-"bench_insert_small":[
+"bench_map::bench_insert_small":[
 [
 2211,
 799609
@@ -30,7 +29,7 @@
 470718.5
 ]
 ],
-"bench_insert_small_low_bits":[
+"bench_map::bench_insert_small_low_bits":[
 [
 2211,
 535950
@@ -40,7 +39,7 @@
 532999.5
 ]
 ],
-"bench_iter_large":[
+"bench_map::bench_iter_large":[
 [
 2211,
 97177
@@ -50,7 +49,7 @@
 94698
 ]
 ],
-"bench_iter_small":[
+"bench_map::bench_iter_small":[
 [
 2211,
 2080
@@ -60,7 +59,7 @@
 2091
 ]
 ],
-"bench_lower_bound":[
+"bench_map::bench_lower_bound":[
 [
 2211,
 4359
@@ -70,7 +69,7 @@
 4413.5
 ]
 ],
-"bench_upper_bound":[
+"bench_map::bench_upper_bound":[
 [
 2211,
 4522.5
@@ -80,5 +79,4 @@
 4610.5
 ]
 ]
-}
 }

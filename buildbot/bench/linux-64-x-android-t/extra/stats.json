@@ -1,6 +1,5 @@
 {
-"bench":{
-"sum_many_f64":[
+"bench::sum_many_f64":[
 [
 2211,
 318524
@@ -10,7 +9,7 @@
 321226
 ]
 ],
-"sum_three_items":[
+"bench::sum_three_items":[
 [
 2211,
 1703
@@ -20,5 +19,4 @@
 1694
 ]
 ]
-}
 }

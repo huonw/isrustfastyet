@@ -1,6 +1,5 @@
 {
-"tests":{
-"bench_big_bitv_big":[
+"tests::bench_big_bitv_big":[
 [
 2211,
 46.5
@@ -46,7 +45,7 @@
 4
 ]
 ],
-"bench_big_bitv_small":[
+"tests::bench_big_bitv_small":[
 [
 2211,
 35
@@ -92,7 +91,7 @@
 4
 ]
 ],
-"bench_bitv_big":[
+"tests::bench_bitv_big":[
 [
 2211,
 92
@@ -138,7 +137,7 @@
 6
 ]
 ],
-"bench_bitv_big_iter":[
+"tests::bench_bitv_big_iter":[
 [
 2211,
 867845.5
@@ -184,7 +183,7 @@
 42141
 ]
 ],
-"bench_bitv_big_union":[
+"tests::bench_bitv_big_union":[
 [
 2211,
 21727
@@ -230,7 +229,7 @@
 849
 ]
 ],
-"bench_bitv_set_big":[
+"tests::bench_bitv_set_big":[
 [
 2211,
 100
@@ -276,7 +275,7 @@
 6
 ]
 ],
-"bench_bitv_set_small":[
+"tests::bench_bitv_set_small":[
 [
 2211,
 87
@@ -322,7 +321,7 @@
 6
 ]
 ],
-"bench_bitv_small":[
+"tests::bench_bitv_small":[
 [
 2211,
 83
@@ -368,7 +367,7 @@
 5
 ]
 ],
-"bench_bitvset_iter":[
+"tests::bench_bitvset_iter":[
 [
 2211,
 157052.5
@@ -414,7 +413,7 @@
 6354
 ]
 ],
-"bench_btv_small_iter":[
+"tests::bench_btv_small_iter":[
 [
 2211,
 1571.5
@@ -460,7 +459,7 @@
 142.5
 ]
 ],
-"bench_small_bitv_small":[
+"tests::bench_small_bitv_small":[
 [
 2211,
 35
@@ -506,7 +505,7 @@
 3
 ]
 ],
-"bench_uint_small":[
+"tests::bench_uint_small":[
 [
 2211,
 34
@@ -552,5 +551,4 @@
 3
 ]
 ]
-}
 }

@@ -15,6 +15,12 @@ git pull --rebase
         ./make-perf-json.py all &&
         git add {perf,all}.js &&
         git commit -m 'Update buildbot.'
+        (
+            cd bench
+            ./collect.py &&
+            git add changesets.json */*.json  &&
+            git commit -m 'Update buildbot benches.'
+        )
     )
 
     (
@@ -31,7 +37,7 @@ git pull --rebase
       ./dl.sh &&
       ./process &&
       git add out/*.json &&
-      git commit -m 'Update mem. '
+      git commit -m 'Update mem.'
 )
 
 git push

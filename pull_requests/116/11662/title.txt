@@ -1,0 +1,1 @@
+Fix a pathological const checking case

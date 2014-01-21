@@ -1,5 +1,5 @@
 function run(changesets, names, plats) {
-  var plot = new CommitPlot('plot', 1150, 600, changesets,
+  var plot = new CommitPlot('plot', 1100, 600, changesets,
                             function(xy) { return xy[0] },
                             function(xy) { return xy[1] });
   plot.draw();
@@ -147,7 +147,9 @@ function run(changesets, names, plats) {
 
   function update_target() {
     var benches =
-      Array.map(legend.childNodes, function(n) { return n.id.replace(/^legend-/, '') });
+      Array.prototype.map.call(legend.childNodes, function(n) {
+        return n.id.replace(/^legend-/, '')
+      });
     window.location.replace('#benches=' + benches.join(','))
   }
 
@@ -207,12 +209,12 @@ function run(changesets, names, plats) {
     var ids = ['legend-' + dom_name,  'bench-tree-list-' + dom_name, 'plot-line-' + dom_name];
 
     elem.onmouseover = function() {
-      Array.forEach(document.getElementsByClassName(dom_name),
-                    function(e) { e.classList.add('hover'); });
+      Array.prototype.forEach.call(document.getElementsByClassName(dom_name),
+                                   function(e) { e.classList.add('hover'); });
     }
     elem.onmouseout = function() {
-      Array.forEach(document.getElementsByClassName(dom_name),
-                    function(e) { e.classList.remove('hover'); });
+      Array.prototype.forEach.call(document.getElementsByClassName(dom_name),
+                                   function(e) { e.classList.remove('hover'); });
     }
   }
 }

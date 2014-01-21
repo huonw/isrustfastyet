@@ -73,7 +73,7 @@ WHERE change_id = ?
 
 def write_json(file, data):
     with open(file, 'w') as f:
-        json.dump(data, f, indent=0, separators=(',', ':'))
+        json.dump(data, f, indent=0, separators=(',', ':'), sort_keys=True)
 
 for platform, crate_benches in per_plat_benches.items():
     for crate, module_benches in crate_benches.items():

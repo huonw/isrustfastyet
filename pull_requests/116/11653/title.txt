@@ -1,0 +1,1 @@
+Don't emit landing pads with -Z no-landing-pads

@@ -67,7 +67,8 @@ WHERE change_id = ?
             benches = json.load(open(platform_metrics))
             #print changeset, time, platform, crate, len(benches)
             for name, benches in benches.items():
-                path = path_base + name.split('::')
+                # we want [<platform>, <crate>, <module>, <everything::else::...>]
+                path = path_base + name.split('::', 1)
                 all_benches.add(name_base + name)
                 insert_bench(path, (changeset_index, benches['value']))
 

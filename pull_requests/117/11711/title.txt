@@ -1,0 +1,1 @@
+Flag all TLS functions as inline(never)

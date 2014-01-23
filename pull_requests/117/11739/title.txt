@@ -1,0 +1,1 @@
+remove old rc extension from detection files

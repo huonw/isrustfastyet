@@ -1,0 +1,1 @@
+Handle EINTR in epoll for native timers

@@ -1,0 +1,1 @@
+Follow symlinks in sysroot

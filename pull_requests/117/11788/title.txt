@@ -1,0 +1,1 @@
+Fixed iter's is_empty to use is_none() and added relevant test flag

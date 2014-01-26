@@ -1,0 +1,1 @@
+Stop allocating so much in arena tests

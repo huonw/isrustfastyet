@@ -1,0 +1,1 @@
+Demote self to an (almost) regular argument and remove the env param.

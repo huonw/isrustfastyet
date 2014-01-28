@@ -43,10 +43,8 @@ for plat in PLATFORMS:
         builds[changeset][plat] = build
 
 
-NO_ANDROID_T_PLATFORMS = [p for p in PLATFORMS if 'android-t' not in p]
 for chst, bs in builds.items():
-    # FIXME: ignore android failures for now.
-    if len(bs) < len(NO_ANDROID_T_PLATFORMS):
+    if len(bs) < len(PLATFORMS):
         print(chst,'missing platforms')
         continue # doesn't have all platforms
 

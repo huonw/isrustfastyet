@@ -1,0 +1,1 @@
+Make deriving errors slightly less cryptic

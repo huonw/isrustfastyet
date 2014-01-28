@@ -1959,10 +1959,6 @@
 [
 1788,
 76
-],
-[
-1787,
-56
 ]
 ],
 "buffered::test::bench_buffered_stream":[
@@ -3925,10 +3921,6 @@
 [
 1788,
 189
-],
-[
-1787,
-156.5
 ]
 ],
 "buffered::test::bench_buffered_writer":[
@@ -5891,10 +5883,6 @@
 [
 1788,
 77
-],
-[
-1787,
-58
 ]
 ],
 "extensions::bench::u64_from_be_bytes_4_aligned":[

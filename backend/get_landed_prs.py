@@ -54,7 +54,7 @@ for chst, bs in builds.items():
         continue # already done
 
     print('Handling', chst)
-    changes = bs[NO_ANDROID_T_PLATFORMS[0]]['sourceStamps'][0]['changes']
+    changes = bs[PLATFORMS[0]]['sourceStamps'][0]['changes']
     if changes:
         changes = changes[0]
         comment = changes['comments']

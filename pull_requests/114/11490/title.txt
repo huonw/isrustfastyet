@@ -1,0 +1,1 @@
+Update extract-tests.py to use same test directives as rustdoc.

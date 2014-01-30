@@ -1,0 +1,1 @@
+Document vector destructuring with wildcard '..'

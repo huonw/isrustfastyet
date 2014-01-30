@@ -1,0 +1,1 @@
+Avoid stack overflow when checking struct/enum representability

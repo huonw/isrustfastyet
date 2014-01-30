@@ -1,0 +1,1 @@
+Don't treat struct and variants as static_items

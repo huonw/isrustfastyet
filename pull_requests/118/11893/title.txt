@@ -1,0 +1,1 @@
+Rename Copyable to Cloneable to ensure consistency with the Clone trait

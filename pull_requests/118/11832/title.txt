@@ -1,0 +1,1 @@
+Avoid 'no type for expr' error in CastExpr - Closes #5900

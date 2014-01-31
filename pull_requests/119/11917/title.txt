@@ -1,0 +1,1 @@
+remove a layer of indirection from most intrinsics

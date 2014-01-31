@@ -1,0 +1,1 @@
+Use an absolute path in test_process_output_fail_to_start

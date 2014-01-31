@@ -1,0 +1,1 @@
+Make size_of, align_of, and element_offset functions return u64 instead of uint in trans::machine

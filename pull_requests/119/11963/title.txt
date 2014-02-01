@@ -1,0 +1,1 @@
+Fix rustpkg tests with --disable-inject-std-version

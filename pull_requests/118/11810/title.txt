@@ -1,0 +1,1 @@
+Unhide lines in rustdoc's doc -- Closes #11645

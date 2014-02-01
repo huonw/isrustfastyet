@@ -1,0 +1,1 @@
+Return Option rather than fail for shift_ref, mut_shift_ref, pop_ref, mut_pop_ref, and mut_last

@@ -117,8 +117,6 @@
 "std::rand::bench::rand_shuffle_100",
 "std::rand::bench::rand_std",
 "std::rand::bench::rand_xorshift",
-"std::rand::distributions::bench::rand_exp",
-"std::rand::distributions::bench::rand_normal",
 "std::rand::distributions::exponential::bench::rand_exp",
 "std::rand::distributions::gamma::bench::bench_gamma_large_shape",
 "std::rand::distributions::gamma::bench::bench_gamma_small_shape",

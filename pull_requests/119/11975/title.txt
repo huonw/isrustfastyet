@@ -1,0 +1,1 @@
+un-xfail test for #8498 and replace prints w/ asserts

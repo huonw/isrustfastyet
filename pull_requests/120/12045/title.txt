@@ -1,0 +1,1 @@
+stop calling `exchange_free` on 0-size types

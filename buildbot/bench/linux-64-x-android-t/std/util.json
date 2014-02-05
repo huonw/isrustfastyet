@@ -1,6 +1,10 @@
 {
 "bench::match_option_some":[
 [
+2366,
+31
+],
+[
 2365,
 31
 ],
@@ -474,6 +478,10 @@
 ]
 ],
 "bench::match_vec_pattern":[
+[
+2366,
+37
+],
 [
 2365,
 31
@@ -949,6 +957,10 @@
 ],
 "bench::trait_static_method_call":[
 [
+2366,
+31
+],
+[
 2365,
 31
 ],
@@ -1422,6 +1434,10 @@
 ]
 ],
 "bench::trait_vtable_method_call":[
+[
+2366,
+73
+],
 [
 2365,
 68

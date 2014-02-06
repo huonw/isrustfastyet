@@ -1,0 +1,1 @@
+Remove reference to @str in comment

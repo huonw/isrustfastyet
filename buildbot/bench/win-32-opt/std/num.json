@@ -1,6 +1,10 @@
 {
 "bench::bench_pow_function":[
 [
+2373,
+5654
+],
+[
 2372,
 6495
 ],
@@ -666,6 +670,10 @@
 ]
 ],
 "strconv::bench::float_to_str_rand":[
+[
+2373,
+1750
+],
 [
 2372,
 1777
@@ -2664,6 +2672,10 @@
 ]
 ],
 "strconv::bench::uint_to_str_rand":[
+[
+2373,
+449
+],
 [
 2372,
 447

@@ -1,0 +1,1 @@
+Ensure an Rc isn't freed while running its own destructor.

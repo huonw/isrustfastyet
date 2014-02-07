@@ -1,0 +1,1 @@
+Make semver::Version fields public and implement std::fmt::Show for types

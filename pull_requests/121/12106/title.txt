@@ -1,0 +1,1 @@
+Fix infinite loop in MemReader::read_until.

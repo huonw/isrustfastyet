@@ -1,6 +1,10 @@
 {
 "global_heap::bench::alloc_owned_big":[
 [
+2407,
+7
+],
+[
 2406,
 7
 ],
@@ -602,6 +606,10 @@
 ]
 ],
 "global_heap::bench::alloc_owned_small":[
+[
+2407,
+7
+],
 [
 2406,
 7
@@ -1205,6 +1213,10 @@
 ],
 "local_heap::bench::alloc_managed_big":[
 [
+2407,
+4189
+],
+[
 2406,
 4106
 ],
@@ -1806,6 +1818,10 @@
 ]
 ],
 "local_heap::bench::alloc_managed_small":[
+[
+2407,
+950.5
+],
 [
 2406,
 944.5

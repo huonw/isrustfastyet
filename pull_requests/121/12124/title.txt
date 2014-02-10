@@ -1,0 +1,1 @@
+Surface some common intrinsics in std::mem

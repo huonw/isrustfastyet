@@ -1,0 +1,1 @@
+Rearranged enum section of tutorial for clarity.

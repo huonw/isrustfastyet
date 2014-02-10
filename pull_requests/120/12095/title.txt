@@ -1,0 +1,1 @@
+Remove assertion on reachable blocks w/o results

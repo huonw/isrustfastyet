@@ -1,0 +1,1 @@
+Change `xfail` directives in compiletests to `ignore`, closes #11363

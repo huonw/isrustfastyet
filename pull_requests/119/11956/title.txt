@@ -1,0 +1,1 @@
+Move replace and swap to std::mem. Get rid of std::util

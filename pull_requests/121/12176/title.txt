@@ -1,0 +1,1 @@
+Output the correct library filename with --dep-info

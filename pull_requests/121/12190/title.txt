@@ -1,0 +1,1 @@
+Add ignore-cross-compile directive for compiletest

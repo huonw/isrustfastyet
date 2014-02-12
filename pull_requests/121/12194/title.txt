@@ -1,0 +1,1 @@
+Added Vector of Bytes to String example to the cheatsheet

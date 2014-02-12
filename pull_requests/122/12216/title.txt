@@ -1,0 +1,1 @@
+Ignore another fourcc test on cross compiles

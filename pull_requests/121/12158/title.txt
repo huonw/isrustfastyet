@@ -1,0 +1,1 @@
+Issue 6801 borrowck closures

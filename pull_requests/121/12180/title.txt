@@ -1,0 +1,1 @@
+Removed ty_type (previously used to represent *tydesc).

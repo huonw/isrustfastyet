@@ -1,0 +1,1 @@
+rustdoc: strip trait impls of stripped types

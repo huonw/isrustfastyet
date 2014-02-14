@@ -1,0 +1,1 @@
+green: Don't fall back to epoll() if possible

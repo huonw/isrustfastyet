@@ -1,0 +1,1 @@
+mk: Fix non-android cross builds.

@@ -1,0 +1,1 @@
+Change rustdoc to test code blocks by default

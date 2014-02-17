@@ -1,0 +1,1 @@
+Rename Bitwise::population_count to Bitwise::count_ones

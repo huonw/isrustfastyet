@@ -1,0 +1,1 @@
+Forbid use of generics with foreign functions. Closes #10353.

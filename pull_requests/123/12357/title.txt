@@ -1,0 +1,1 @@
+Made fail_bounds_check more careful with strings.

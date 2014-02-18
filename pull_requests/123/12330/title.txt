@@ -1,0 +1,1 @@
+Test ordering of glue_drop and glue_takew in self-re-assignment.

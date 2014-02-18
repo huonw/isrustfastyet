@@ -1995,10 +1995,6 @@
 [
 2000,
 65
-],
-[
-1999,
-53
 ]
 ],
 "buffered::test::bench_buffered_stream":[
@@ -3997,10 +3993,6 @@
 [
 2000,
 133
-],
-[
-1999,
-107
 ]
 ],
 "buffered::test::bench_buffered_writer":[
@@ -5999,10 +5991,6 @@
 [
 2000,
 66
-],
-[
-1999,
-53
 ]
 ],
 "extensions::bench::u64_from_be_bytes_4_aligned":[

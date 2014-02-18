@@ -1,0 +1,1 @@
+Use iterators for std::str::is_utf8 & part of from_utf8_lossy.

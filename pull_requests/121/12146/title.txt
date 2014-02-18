@@ -1,0 +1,1 @@
+Updated metadata::creader::resolve_crate_deps to use the correct span

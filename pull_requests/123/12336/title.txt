@@ -1,0 +1,1 @@
+Remove Freeze bounds from sync::MutexArc

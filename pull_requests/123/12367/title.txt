@@ -1,0 +1,1 @@
+Removing '15.3 Do syntax' in tutorial since it is deprecated.

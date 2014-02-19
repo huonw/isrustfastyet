@@ -1,0 +1,1 @@
+Make privacy checking aware that a `use` directive can point to two defintions (namespaces) with different privacy.

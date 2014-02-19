@@ -1,0 +1,1 @@
+Avoid returning original macro if expansion fails.

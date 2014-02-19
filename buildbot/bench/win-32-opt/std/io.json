@@ -1995,10 +1995,6 @@
 [
 2013,
 277
-],
-[
-2012,
-267
 ]
 ],
 "buffered::test::bench_buffered_stream":[
@@ -3997,10 +3993,6 @@
 [
 2013,
 565
-],
-[
-2012,
-524
 ]
 ],
 "buffered::test::bench_buffered_writer":[
@@ -5999,10 +5991,6 @@
 [
 2013,
 277
-],
-[
-2012,
-267
 ]
 ],
 "extensions::bench::u64_from_be_bytes_4_aligned":[

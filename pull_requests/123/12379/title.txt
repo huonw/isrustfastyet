@@ -1,0 +1,1 @@
+Fix staticlib outputs linking to blank archives

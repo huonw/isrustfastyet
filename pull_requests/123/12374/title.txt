@@ -1,0 +1,1 @@
+Clarify unit of size in docs for size_of functions.

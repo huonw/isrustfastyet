@@ -1,0 +1,1 @@
+Handle filemaps with length 0 in codemap lookups

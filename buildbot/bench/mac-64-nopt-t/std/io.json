@@ -1991,10 +1991,6 @@
 [
 2030,
 55
-],
-[
-2029,
-55
 ]
 ],
 "buffered::test::bench_buffered_stream":[
@@ -3989,10 +3985,6 @@
 [
 2030,
 162
-],
-[
-2029,
-159
 ]
 ],
 "buffered::test::bench_buffered_writer":[
@@ -5987,10 +5979,6 @@
 [
 2030,
 55
-],
-[
-2029,
-58
 ]
 ],
 "extensions::bench::u64_from_be_bytes_4_aligned":[

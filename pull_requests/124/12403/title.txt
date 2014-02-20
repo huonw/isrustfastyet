@@ -1,0 +1,1 @@
+Fix generic Drop impls with trait bounds.

@@ -1,0 +1,1 @@
+Fix typo in test metric ratchet stdout output

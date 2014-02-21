@@ -1,0 +1,1 @@
+rustc: avoid compiler generated `unsafe` blocks leaking.

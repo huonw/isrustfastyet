@@ -1,0 +1,1 @@
+libstd: Implement some convenience methods on new vectors

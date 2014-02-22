@@ -1,0 +1,1 @@
+Force all lang items to be reachable

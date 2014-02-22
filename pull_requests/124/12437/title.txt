@@ -1,0 +1,1 @@
+Add a Travis-CI configuration for the repo

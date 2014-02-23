@@ -96,6 +96,8 @@
 "std::fmt::num::bench::uint::format_dec",
 "std::fmt::num::bench::uint::format_hex",
 "std::fmt::num::bench::uint::format_oct",
+"std::hash::sip::tests::bench_compound_1",
+"std::hash::sip::tests::bench_str",
 "std::io::buffered::test::bench_buffered_reader",
 "std::io::buffered::test::bench_buffered_stream",
 "std::io::buffered::test::bench_buffered_writer",

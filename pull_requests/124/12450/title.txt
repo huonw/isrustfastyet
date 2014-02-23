@@ -1,0 +1,1 @@
+Test nested `proc` can access outer owned data

@@ -1,0 +1,1 @@
+All uses of `extern fn` should mean `extern "C" fn`

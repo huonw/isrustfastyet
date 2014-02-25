@@ -1,0 +1,1 @@
+Remove std::bool::{Bool, all_values}

@@ -1,0 +1,1 @@
+mk: Get "make check" passing with --disable-rpath

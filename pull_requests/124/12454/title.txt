@@ -1,0 +1,1 @@
+Exclude build metadata from equality checking

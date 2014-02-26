@@ -1,0 +1,1 @@
+rustc: Explicitly mention type params with missing `'static` bounds

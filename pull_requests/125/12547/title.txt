@@ -1,0 +1,1 @@
+tutorial: clearer explanation of freezing.

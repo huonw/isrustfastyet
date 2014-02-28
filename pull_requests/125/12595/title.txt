@@ -1,0 +1,1 @@
+Implement a lint for the use of private types in exported type signatures

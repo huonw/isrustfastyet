@@ -1,0 +1,1 @@
+Add `time` crate to index, expand docs of `test`.

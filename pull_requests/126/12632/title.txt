@@ -1,0 +1,1 @@
+Mark top level module as a crate in rustdoc

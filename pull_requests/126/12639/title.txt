@@ -1,0 +1,1 @@
+librustc: Pass the node id so we don't fail on destructing struct variants

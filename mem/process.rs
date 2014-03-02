@@ -1,12 +1,11 @@
 //! Converts the raw mem.json (etc) to a more useable form.
 
-extern mod extra;
-use extra::{json};
-use extra::serialize::{Decodable, Encodable};
-use std::{io, comm, str, vec, task};
+extern crate serialize;
+extern crate collections;
+use serialize::{json, Decodable, Encodable};
+use std::{io, str, vec, task};
 use std::io::{fs, File};
-use std::hashmap::HashSet;
-use std::option::IntoOption;
+use collections::HashSet;
 
 mod line_simplify;
 
@@ -49,7 +48,7 @@ struct Output {
     pass_timing: ~[(~str, f64)]
 }
 
-#[deriving(Encodable, Decodable, Clone, Ord)]
+#[deriving(Encodable, Decodable, Clone, Ord, Eq)]
 struct Summary {
     timestamp: uint,
     hash: ~str,
@@ -60,7 +59,9 @@ struct Summary {
 
 // The list of all hashes that we know about.
 fn processing_possibilities() -> HashSet<~str> {
-    fs::readdir(&Path::new("data/data")).move_iter()
+    fs::readdir(&Path::new("data/data"))
+        .expect(~"couldn't read data/data")
+        .move_iter()
         .filter_map(|hash| hash.filename_str().map(|s| s.to_owned()))
         .filter(|hash| "history.txt" != *hash)
         .collect()
@@ -69,11 +70,11 @@ fn processing_possibilities() -> HashSet<~str> {
 // Read the current summary json file, or "make" a new one if it
 // doesn't work.
 fn load_summary(p: &Path) -> ~[Summary] {
-    match io::result(|| File::open(p).map(|mut rdr| {
+    match File::open(p).map(|mut rdr| {
         json::from_reader(&mut rdr as &mut Reader).expect(~"summary is invalid")
-    })) {
-        Err(_) | Ok(None) => ~[],
-        Ok(Some(json)) =>  Decodable::decode(&mut json::Decoder::new(json))
+    }) {
+        Err(_) => ~[],
+        Ok(json) =>  Decodable::decode(&mut json::Decoder::new(json))
     }
 }
 
@@ -150,15 +151,15 @@ fn main() {
     let mut results = vec::with_capacity(to_process.len());
 
     for hash in to_process.move_iter() {
-        let (p, c) = comm::stream();
+        let (p, c) = Chan::new();
 
-        println(hash);
+        println!("{}", hash);
 
         let mut tsk = task::task();
         results.push((p, tsk.future_result()));
 
         // parallelism!
-        do tsk.spawn {
+        tsk.spawn(proc() {
             // as_slice, to avoid moving out of it because a proc bug
             // allows that.
             let hash_folder = Path::new("data/data").join(hash.as_slice());
@@ -169,16 +170,21 @@ fn main() {
                 let time_path = hash_folder.join("time.txt");
                 let ci_path = hash_folder.join("commit_info.txt");
 
-                let time_file = io::result(|| File::open(&time_path));
+                let time_file = File::open(&time_path);
                 let time = time_file.map(|mut file| {
-                    let raw_time = str::from_utf8_owned(file.read_to_end());
-                    let (user, system) = extract_time(raw_time);
+                    let raw_time =
+                        str::from_utf8_owned(file.read_to_end().expect(~"Couldn't read time.txt"));
+                    let (user, system) = extract_time(raw_time.expect("Non-utf8 time.txt"));
                     user + system
-                }).into_option();
+                });
+                let time = match time { Ok(o) => Some(o), Err(_) => None };
 
                 let mut ci_file = File::open(&ci_path)
                     .expect(format!("no {}/commit_info.txt", hash));
-                let raw_commit_info = str::from_utf8_owned(ci_file.read_to_end());
+                let raw_commit_info =
+                    str::from_utf8_owned(ci_file.read_to_end()
+                                             .expect(~"couldn't read commit_info.txt"))
+                        .expect("Non-utf8 commit_info.txt");
                 let mut lines = raw_commit_info.lines();
                 let (author, timestamp, summary) = match (lines.next(),
                                                           lines.next().and_then(from_str),
@@ -192,7 +198,7 @@ fn main() {
                     // a bors commit, so extract the pull request
                     let leading_num = summary.slice_from(i);
                     let non_num = leading_num.find(|c: char| !c.is_digit()).unwrap_or(0);
-                    FromStr::from_str(leading_num.slice_to(non_num))
+                    from_str(leading_num.slice_to(non_num))
                 } else {
                     None
                 };
@@ -229,7 +235,7 @@ fn main() {
                 out.encode(&mut json::Encoder::new(&mut out_f as &mut Writer));
                 c.send(summary);
             }
-        }
+        })
     }
 
     // collect the summaries
@@ -242,12 +248,13 @@ fn main() {
         }
     }
 
-    extra::sort::tim_sort(summary);
-    let mem = io::mem::with_mem_writer(
-        |w| summary.encode(&mut json::Encoder::new(w as &mut Writer)));
-    let text = str::from_utf8_owned(mem);
+    summary.sort_by(|x, y| if *x < *y {Less} else if *x == *y {Equal} else {Greater});
+
+    let mut w = io::MemWriter::new();
+    summary.encode(&mut json::Encoder::new(&mut w as &mut Writer));
+    let text = str::from_utf8_owned(w.unwrap()).expect("Non-utf8 JSON written");
 
     let mut summary_f = File::create(&summary_path).expect(~"can't write to summary");
     // put one commit a line, so the diffs are smaller.
-    summary_f.write(text.replace("{", "\n{").replace("]", "\n]").into_bytes());
+    summary_f.write(text.replace("{", "\n{").replace("]", "\n]").into_bytes()).unwrap();
 }

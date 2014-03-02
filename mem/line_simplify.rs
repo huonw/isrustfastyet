@@ -1,6 +1,5 @@
 use std::vec;
-use std::num::Zero;
-use extra::priority_queue::PriorityQueue;
+use collections::PriorityQueue;
 
 /// A helper struct for `visvalingam`, defined out here because
 /// #[deriving] doesn't work in fns.
@@ -99,7 +98,7 @@ pub fn rdp(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
 
     fn inner(xs: &[(f64, f64)], eps: f64, include_end: bool) -> ~[(f64, f64)] {
         let mut idx = 0;
-        let mut d_max = Zero::zero();
+        let mut d_max = 0.0;
         let (l_x, l_y, other_points, r_x, r_y) = match xs {
             [(a,b), .. o, (c,d)] => (a,b,o,c,d),
             _ => fail!("impossible!") // already filtered short lists

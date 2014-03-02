@@ -1,0 +1,1 @@
+rustc: Better error when loading invalid libraries

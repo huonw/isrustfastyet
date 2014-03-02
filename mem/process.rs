@@ -188,8 +188,9 @@ fn main() {
                 };
 
                 let pull_request = if author == "bors bors@rust-lang.org" {
+                    let i = summary.find('#').expect("Bors merge without a number?") + 1;
                     // a bors commit, so extract the pull request
-                    let leading_num = summary.slice_from("auto merge of #".len());
+                    let leading_num = summary.slice_from(i);
                     let non_num = leading_num.find(|c: char| !c.is_digit()).unwrap_or(0);
                     FromStr::from_str(leading_num.slice_to(non_num))
                 } else {

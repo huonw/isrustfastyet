@@ -1,0 +1,1 @@
+Emacs: Remove README warning of old whitespace bug

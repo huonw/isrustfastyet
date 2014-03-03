@@ -1,0 +1,1 @@
+std: add reserve_additional and an Extendable impl to Vec.

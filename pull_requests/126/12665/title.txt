@@ -1,0 +1,1 @@
+test: Ignore some more syntax extension tests

@@ -2,6 +2,13 @@
 import os, glob, json, sqlite3
 from collections import defaultdict
 
+CRATES = ['arena', 'collections', 'extra',
+          'flate', 'getopts', 'glob',
+          'green', 'native',
+          'num', 'semver', 'serialize',
+          'std', 'sync', 'term',
+          'test', 'time', 'uuid']
+
 db = sqlite3.connect('../../backend/pr.sqlite3')
 cur = db.cursor()
 
@@ -60,7 +67,7 @@ WHERE change_id = ?
                                            (changeset[:2], changeset, platform)):
             metrics = platform_metrics.split('/')[-1]
             crate = metrics.split('-')[-2]
-            if crate not in ('std', 'extra'):
+            if crate not in CRATES:
                 continue
             name_base = crate + '::'
             path_base = [platform, crate]

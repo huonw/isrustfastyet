@@ -141,6 +141,7 @@
 "serialize::ebml::bench::vuint_at_D_unaligned",
 "serialize::hex::tests::bench_from_hex",
 "serialize::hex::tests::bench_to_hex",
+"std::any::bench::bench_as_ref",
 "std::at_vec::test::bench_append",
 "std::at_vec::test::bench_build",
 "std::at_vec::test::bench_build_sized",

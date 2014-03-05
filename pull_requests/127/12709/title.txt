@@ -1,0 +1,1 @@
+Update version and date info in man pages

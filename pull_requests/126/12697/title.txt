@@ -1,0 +1,1 @@
+mark allocation-happy Vec<T> methods as deprecated

@@ -1,0 +1,1 @@
+Expand nested items within a backtrace.

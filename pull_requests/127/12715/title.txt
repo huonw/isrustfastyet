@@ -1,0 +1,1 @@
+Disallowed patterns in extern fn declarations.

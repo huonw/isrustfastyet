@@ -1,0 +1,1 @@
+Str::slice_chars() is O(end), not O(end - begin)

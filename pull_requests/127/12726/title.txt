@@ -1,0 +1,1 @@
+travis: Use LLVM 3.4 instead of LLVM 3.3

@@ -1,0 +1,1 @@
+rustdoc: Don't escape contents of headers

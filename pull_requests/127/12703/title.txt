@@ -1,0 +1,1 @@
+Fix ICE on statics with fancy nullable enums.

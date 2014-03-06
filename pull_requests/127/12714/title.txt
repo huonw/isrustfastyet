@@ -1,0 +1,1 @@
+debuginfo: Add option for cheap, line-table-only debuginfo (fixes #12280)

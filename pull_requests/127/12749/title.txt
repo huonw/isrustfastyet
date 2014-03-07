@@ -1,0 +1,1 @@
+change FVN hash function to the FVN-1a variant

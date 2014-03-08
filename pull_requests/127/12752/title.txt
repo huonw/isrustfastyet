@@ -1,0 +1,1 @@
+Index cross-mod type definition and implementation properly in rustdoc

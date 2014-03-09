@@ -1,0 +1,1 @@
+(#6615) Fixed --ls error messages by refactoring get_metadata_section

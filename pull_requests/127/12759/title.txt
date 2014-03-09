@@ -1,0 +1,1 @@
+Improve std::char doc

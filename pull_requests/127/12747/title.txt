@@ -1,0 +1,1 @@
+rustdoc: run on plain Markdown files & replace the use of pandoc for guides/tutorial/manual etc.

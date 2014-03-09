@@ -1,0 +1,1 @@
+Add an option to not run rustdoc blocks

@@ -1,0 +1,1 @@
+syntax: fixed ICEs and incorrect line nums when reporting Spans at the end of the file.

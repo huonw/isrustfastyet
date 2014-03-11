@@ -1,0 +1,1 @@
+fix a bug in shootout-reverse-complement, official tests should pass with it

@@ -1,6 +1,10 @@
 {
 "bench_map::bench_insert_large":[
 [
+2673,
+283912
+],
+[
 2672,
 187607.5
 ],
@@ -454,6 +458,10 @@
 ]
 ],
 "bench_map::bench_insert_large_low_bits":[
+[
+2673,
+167681
+],
 [
 2672,
 168742
@@ -909,6 +917,10 @@
 ],
 "bench_map::bench_insert_small":[
 [
+2673,
+120673
+],
+[
 2672,
 72545
 ],
@@ -1362,6 +1374,10 @@
 ]
 ],
 "bench_map::bench_insert_small_low_bits":[
+[
+2673,
+46595
+],
 [
 2672,
 48134
@@ -1817,6 +1833,10 @@
 ],
 "bench_map::bench_iter_large":[
 [
+2673,
+13237
+],
+[
 2672,
 13145
 ],
@@ -2270,6 +2290,10 @@
 ]
 ],
 "bench_map::bench_iter_small":[
+[
+2673,
+238
+],
 [
 2672,
 223
@@ -2725,6 +2749,10 @@
 ],
 "bench_map::bench_lower_bound":[
 [
+2673,
+525
+],
+[
 2672,
 526
 ],
@@ -3178,6 +3206,10 @@
 ]
 ],
 "bench_map::bench_upper_bound":[
+[
+2673,
+523
+],
 [
 2672,
 524

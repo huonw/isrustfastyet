@@ -1,0 +1,1 @@
+Return Option rather than fail for `slice_shift_char` and {shift,pop}_{char,byte} 

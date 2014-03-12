@@ -1,0 +1,1 @@
+Fix issue #5121: Add proper support for early/late distinction for lifetime bindings

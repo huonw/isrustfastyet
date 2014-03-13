@@ -1,0 +1,1 @@
+enable mutex lowering and hardware floating point on gnueabihf. closes #10482

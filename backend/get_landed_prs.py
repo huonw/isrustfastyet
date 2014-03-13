@@ -17,6 +17,7 @@ db = sqlite3.connect('pr.sqlite3')
 cur = db.cursor()
 
 PLATFORMS = [p[5:] for p in requests.get(BUILDERS_URL).json() if p.startswith('auto-')]
+PLATFORMS = [p for p in PLATFORMS if 'android' not in p and 'mac-' not in p]
 builds = defaultdict(dict)
 
 for plat in PLATFORMS:

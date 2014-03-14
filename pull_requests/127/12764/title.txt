@@ -1,0 +1,1 @@
+Added support for partial type hints (`Foo<_>`).

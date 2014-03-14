@@ -1,0 +1,1 @@
+Refactored while_some (libstd/option.rs)

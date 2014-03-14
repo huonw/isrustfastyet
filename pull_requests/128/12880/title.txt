@@ -1,0 +1,1 @@
+fix a test that was missed in the chan/port renaming (PR #12815)

@@ -1,0 +1,1 @@
+lint: add lint for use of a `~[T]`.

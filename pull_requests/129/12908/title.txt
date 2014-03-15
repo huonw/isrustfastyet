@@ -1,0 +1,1 @@
+green: Don't return the red zone in stack_bounds()

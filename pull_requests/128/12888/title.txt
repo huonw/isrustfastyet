@@ -1,0 +1,1 @@
+Fixed comment and refactored functions (libstd/option.rs)

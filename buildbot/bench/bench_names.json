@@ -296,6 +296,8 @@
 "std::vec::bench::zero_1kb_loop_set",
 "std::vec::bench::zero_1kb_mut_iter",
 "std::vec::bench::zero_1kb_set_memory",
+"test::stats::bench::sum_many_f64",
+"test::stats::bench::sum_three_items",
 "uuid::bench::create_uuids",
 "uuid::bench::parse_str",
 "uuid::bench::uuid_to_str"

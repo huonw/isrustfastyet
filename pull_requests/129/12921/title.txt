@@ -1,0 +1,1 @@
+doc: Remove reference to the 'extra' library

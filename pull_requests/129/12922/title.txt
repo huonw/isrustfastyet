@@ -1,0 +1,1 @@
+libstd: Fix a typo. s/target_os/target_arch/

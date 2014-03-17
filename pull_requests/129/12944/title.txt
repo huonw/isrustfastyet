@@ -1,0 +1,1 @@
+Document endian conversion functions for ints

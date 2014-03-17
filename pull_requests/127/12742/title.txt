@@ -1,0 +1,1 @@
+Allow mutable slices in mutable static items

@@ -1,0 +1,1 @@
+Remind the programmer to use () for method calls

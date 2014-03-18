@@ -1,0 +1,14 @@
+{
+"bench::sum_many_f64":[
+[
+2734,
+8767
+]
+],
+"bench::sum_three_items":[
+[
+2734,
+94
+]
+]
+}

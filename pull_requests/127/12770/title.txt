@@ -1,0 +1,1 @@
+Discard MTWT & interner tables from TLD after they stop being useful.

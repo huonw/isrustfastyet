@@ -1,0 +1,1 @@
+rustc: put ty_trait and ty_closure behind some indirection, nearly halving the size of ty::sty

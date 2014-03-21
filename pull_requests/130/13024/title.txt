@@ -1,0 +1,1 @@
+mk: Simplify how prepare.mk, install.mk, and dist.mk deal with stages

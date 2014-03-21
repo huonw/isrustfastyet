@@ -1,9 +1,8 @@
-use std::vec;
 use collections::PriorityQueue;
 
 /// A helper struct for `visvalingam`, defined out here because
 /// #[deriving] doesn't work in fns.
-#[deriving(Ord)]
+#[deriving(Ord, Eq)]
 struct VScore {
     neg_area: f64,
     current: uint,
@@ -18,7 +17,7 @@ pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
     // the adjacent non-removed points. simulating the points in a
     // linked list with indices into `xs`. Big number (larger than
     // `max`) for no next element, and (0, 0) for deleted.
-    let mut adjacent = vec::from_fn(xs.len(), |i| {
+    let mut adjacent = Vec::from_fn(xs.len(), |i| {
         if i == 0 { (-1, 1) }
         else { (i - 1, i + 1) }
     });
@@ -46,7 +45,7 @@ pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
     // has a small area
     while !pq.is_empty() && pq.top().neg_area > -eps {
         let smallest = pq.pop();
-        let (left, right) = adjacent[smallest.current];
+        let (left, right) = *adjacent.get(smallest.current);
 
         // A point in this triangle has been removed since this VScore
         // was created, so just skip it.
@@ -54,13 +53,13 @@ pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
             continue
         }
 
-        // Now we've got a valid triangle, and it's area is small, so
+        // Now we've got a valid triangle, and its area is small, so
         // remove it from the "linked list"
-        let (ll, _) = adjacent[left];
-        let (_, rr) = adjacent[right];
-        adjacent[left] = (ll, right);
-        adjacent[right] = (left, rr);
-        adjacent[smallest.current] = (0, 0);
+        let (ll, _) = *adjacent.get(left);
+        let (_, rr) = *adjacent.get(right);
+        *adjacent.get_mut(left) = (ll, right);
+        *adjacent.get_mut(right) = (left, rr);
+        *adjacent.get_mut(smallest.current) = (0, 0);
 
         // Now recompute the triangles involving left and right
         let choices = [(ll, left, right), (left, right, rr)];

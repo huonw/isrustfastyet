@@ -3,7 +3,7 @@
 extern crate serialize;
 extern crate collections;
 use serialize::{json, Decodable, Encodable};
-use std::{io, str, vec, task};
+use std::{io, str, task};
 use std::io::{fs, File};
 use collections::HashSet;
 
@@ -148,10 +148,10 @@ fn main() {
     }
 
     // necessary in case the subtask fails
-    let mut results = vec::with_capacity(to_process.len());
+    let mut results = Vec::with_capacity(to_process.len());
 
     for hash in to_process.move_iter() {
-        let (p, c) = Chan::new();
+        let (c, p) = channel();
 
         println!("{}", hash);
 

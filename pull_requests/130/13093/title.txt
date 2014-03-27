@@ -1,0 +1,1 @@
+Change types T,U to R (recv), S (sender) in libsync/comm.rs

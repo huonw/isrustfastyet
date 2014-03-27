@@ -1,0 +1,1 @@
+native: Fix a possible deadlock in spawn

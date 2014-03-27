@@ -1,0 +1,1 @@
+std: expand the `Share` docs to make them more precise.

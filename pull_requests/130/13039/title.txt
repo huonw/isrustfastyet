@@ -1,0 +1,1 @@
+Changed `iter::Extendable` and `iter::FromIterator` to take a `Iterator` by value.

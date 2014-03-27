@@ -1,0 +1,1 @@
+serialize: Read/emit tuples with {read,emit}_tuple

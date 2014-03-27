@@ -1,0 +1,1 @@
+Fix rlib creation. Change the filename of compressed bitcode

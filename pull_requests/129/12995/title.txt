@@ -1,0 +1,1 @@
+Add std::vec_ng::Vec::mut_slice_from(), mut_slice_to(), and mut_split_at()

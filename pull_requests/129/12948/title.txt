@@ -1,0 +1,1 @@
+Documentation sprint: Terminfo documentation strings

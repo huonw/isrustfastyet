@@ -1,0 +1,1 @@
+Unindent stringifier() in tasks guide

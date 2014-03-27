@@ -1,0 +1,1 @@
+syntax: allow `trace_macros!` and `log_syntax!` in item position.

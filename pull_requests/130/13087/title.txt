@@ -1,0 +1,1 @@
+Implement vtable and cross-crate support for autoderef.

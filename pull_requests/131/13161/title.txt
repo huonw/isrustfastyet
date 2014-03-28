@@ -1,0 +1,1 @@
+Remove `Freeze` and add `Share` in vim's syntax

@@ -1,0 +1,1 @@
+configure: Add MINGW64 OS type

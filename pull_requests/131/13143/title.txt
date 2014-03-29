@@ -1,0 +1,1 @@
+Initial support for emitting DWARF for static variables

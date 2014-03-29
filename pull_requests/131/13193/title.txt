@@ -1,0 +1,1 @@
+configure uses `command -v` instead of `which`

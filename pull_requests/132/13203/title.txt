@@ -1,0 +1,1 @@
+Removed deprecated functions `map` and `flat_map` for vectors and slices.

@@ -1,0 +1,1 @@
+Updated references to extra in libcollections docs

@@ -1,0 +1,1 @@
+Rename `from_iterator` to `from_iter` for consistency.

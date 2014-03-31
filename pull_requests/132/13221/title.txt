@@ -1,0 +1,1 @@
+vec: convert `append` and `append_one` to methods

@@ -1,0 +1,1 @@
+Json doesn't need to depend on IoError to implement Encodable

@@ -1,0 +1,1 @@
+configure: Accept LLVM 3.4.X during configuration

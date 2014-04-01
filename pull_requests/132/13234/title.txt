@@ -1,0 +1,1 @@
+syntax: allow stmt/expr macro invocations to be delimited by [].

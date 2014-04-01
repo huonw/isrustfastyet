@@ -1,0 +1,1 @@
+Private struct fields by default

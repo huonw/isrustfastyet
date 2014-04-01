@@ -1,0 +1,1 @@
+move errno -> IoError converter into std, bubble up OSRng errors

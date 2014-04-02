@@ -1,0 +1,1 @@
+Remove ~[] from librand, rename Rng.shuffle_mut to .shuffle

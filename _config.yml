@@ -1,3 +1,5 @@
+markdown: kramdown
+
 root: '/isrustfastyet'
 header_links:
   - { path: '/mem', title: 'Memory', id: 'mem' }

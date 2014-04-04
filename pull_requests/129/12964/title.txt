@@ -1,0 +1,1 @@
+Add fetch_and, fetch_or, fetch_nand, fetch_xor to AtomicInt, AtomicUint

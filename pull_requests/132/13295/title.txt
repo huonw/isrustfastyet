@@ -1,0 +1,1 @@
+rustc: feature-gate `concat_idents!`.

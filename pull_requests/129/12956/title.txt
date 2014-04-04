@@ -1,0 +1,1 @@
+[std::cmp] add missing docs and provide an example

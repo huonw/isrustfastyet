@@ -1,0 +1,1 @@
+std: Document builtin syntax extensions

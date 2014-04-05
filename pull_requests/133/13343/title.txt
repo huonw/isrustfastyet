@@ -1,0 +1,1 @@
+Fix an unnecessary use of `cast::transmute`

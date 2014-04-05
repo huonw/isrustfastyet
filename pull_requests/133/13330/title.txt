@@ -1,0 +1,1 @@
+rustc: move the check_loop pass earlier.

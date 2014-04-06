@@ -1,0 +1,1 @@
+Point out which struct's field is private

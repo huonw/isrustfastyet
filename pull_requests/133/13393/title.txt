@@ -1,0 +1,1 @@
+native: Try hard to not malloc on a forked child

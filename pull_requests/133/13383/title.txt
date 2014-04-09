@@ -1,0 +1,1 @@
+libglob: support "."/".." in file globs and fix patterns with trailing "/"

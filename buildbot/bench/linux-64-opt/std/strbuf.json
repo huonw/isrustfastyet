@@ -1,0 +1,14 @@
+{
+"tests::bench_push_str":[
+[
+2909,
+189
+]
+],
+"tests::bench_with_capacity":[
+[
+2909,
+51
+]
+]
+}

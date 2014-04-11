@@ -224,6 +224,8 @@
 "std::str::bench::split_slice",
 "std::str::bench::split_unicode_ascii",
 "std::str::bench::split_unicode_not_ascii",
+"std::strbuf::tests::bench_push_str",
+"std::strbuf::tests::bench_with_capacity",
 "std::trie::bench_map::bench_insert_large",
 "std::trie::bench_map::bench_insert_large_low_bits",
 "std::trie::bench_map::bench_insert_small",

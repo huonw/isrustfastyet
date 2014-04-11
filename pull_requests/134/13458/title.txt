@@ -1,0 +1,1 @@
+Add more type signatures to the docs; tweak a few of them.

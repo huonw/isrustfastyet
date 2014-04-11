@@ -1,0 +1,1 @@
+libstd: Implement `StrBuf`, a new string buffer type like `Vec`, and port all code over to use it.

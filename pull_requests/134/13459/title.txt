@@ -1,0 +1,1 @@
+doc: Un-ignore lots of guide-ffi tests

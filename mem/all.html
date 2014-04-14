@@ -1,18 +1,19 @@
 ---
 layout: default
-title: Is Rust Slim Yet?
+title: Is Rust Slim Yet? (All commits)
 styles: [style.css]
 scripts: ["http://d3js.org/d3.v3.min.js", script.js]
 ---
 <div id="summary" class="plot"></div>
 <div id="column">
   <div id="info">
-    <h1>Memory profiles</h1>
+    <h1>Memory profiles (all)</h1>
     <p>Memory profiles of the stage2 <code>rustc</code> when
       building <code>librustc</code> (on Linux
       x86-64). <a href="http://octayn.net/benches/">Data</a> provided
       by <a href="https://github.com/cmr/">cmr</a>. (<a href="old">Old
-      data archived</a>). This shows the last 400 merges into master.
+      data archived</a>). This shows all known merges into master, is
+      infinitely slow and unusable.
       <a href="https://github.com/huonw/isrustfastyet/tree/gh-pages/mem">Source</a>.</p>
     <button id="clear-all">Clear all</button>
   </div>
@@ -20,5 +21,5 @@ scripts: ["http://d3js.org/d3.v3.min.js", script.js]
 </div>
 <div id="detail" class="hidden plot"></div>
 <script type="text/javascript">
-  var PLOT_TRUNCATE = 400;
+  var PLOT_TRUNCATE = false;
 </script>

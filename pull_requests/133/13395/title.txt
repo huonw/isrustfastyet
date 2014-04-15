@@ -1,0 +1,1 @@
+path: Refactor set_extension and contains_nul

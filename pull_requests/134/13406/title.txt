@@ -1,0 +1,1 @@
+Generalized the pretty-print entry points to support `-o <file>`.

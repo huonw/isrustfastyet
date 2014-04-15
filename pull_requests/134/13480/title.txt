@@ -1,0 +1,1 @@
+Check bounds when looking up type parameters

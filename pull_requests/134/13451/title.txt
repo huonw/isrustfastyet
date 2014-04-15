@@ -1,0 +1,1 @@
+Document the nullable pointer optimization in the FFI guide

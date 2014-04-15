@@ -1,0 +1,1 @@
+Removed mentions and implementation details of @fn.

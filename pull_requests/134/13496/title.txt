@@ -1,0 +1,1 @@
+rustc: Don't link in syntax extensions

@@ -1,0 +1,1 @@
+liblog doc: Fix apparent search-and-replace errors

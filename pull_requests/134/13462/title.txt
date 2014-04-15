@@ -1,0 +1,1 @@
+mk: Fix rpath on cross compile builds

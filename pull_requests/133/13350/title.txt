@@ -1,0 +1,1 @@
+collections: replace all ~[T] with Vec<T>.

@@ -1,0 +1,1 @@
+rustdoc: Fix rendering closures and trait bounds

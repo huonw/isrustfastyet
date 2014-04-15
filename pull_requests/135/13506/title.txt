@@ -1,0 +1,1 @@
+Use the unsigned integer types for bitwise intrinsics.

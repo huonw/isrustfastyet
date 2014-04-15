@@ -1,0 +1,1 @@
+librustc: Improve error message for missing feature attributes.

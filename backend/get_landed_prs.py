@@ -42,9 +42,11 @@ for plat in PLATFORMS:
         # print(i, changeset, 'successful')
         builds[changeset][plat] = build
 
+# BSD is BAD
+FILT_PLATFORMS = [p for p in PLATFORMS if 'bsd' not in p]
 
 for chst, bs in builds.items():
-    if len(bs) < len(PLATFORMS):
+    if len(bs) < len(FILT_PLATFORMS):
         print(chst,'missing platforms')
         continue # doesn't have all platforms
 

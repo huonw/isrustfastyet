@@ -1,0 +1,1 @@
+Make `--crate-file-name` obey `--crate-type`

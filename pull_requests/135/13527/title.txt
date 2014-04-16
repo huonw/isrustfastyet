@@ -1,0 +1,1 @@
+syntax: unify all MacResult's into a single trait.

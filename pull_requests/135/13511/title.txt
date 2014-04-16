@@ -1,0 +1,1 @@
+Fixed hashing of DefId for ty_enum.

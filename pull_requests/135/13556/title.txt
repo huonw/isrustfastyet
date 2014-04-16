@@ -1,0 +1,1 @@
+debuginfo: Add a test case for issue #12886.

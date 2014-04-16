@@ -1,0 +1,1 @@
+libc: Deglob reexports. #11870

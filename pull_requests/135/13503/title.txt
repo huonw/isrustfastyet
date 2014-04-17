@@ -1,0 +1,1 @@
+Combine lifetime parameters when instantiating default methods

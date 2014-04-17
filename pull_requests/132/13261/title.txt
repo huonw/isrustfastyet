@@ -1,0 +1,1 @@
+There is no variance to infer for generics that occur in non-variance contexts

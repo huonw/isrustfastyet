@@ -1,0 +1,1 @@
+std: Improve docs for mod 'result'

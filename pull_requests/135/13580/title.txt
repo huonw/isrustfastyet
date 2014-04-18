@@ -1,0 +1,1 @@
+Add #[deriving(Hash)] to Result.

@@ -1,0 +1,1 @@
+Give reduction-type tests in Bitv more natural names

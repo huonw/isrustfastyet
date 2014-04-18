@@ -1,0 +1,1 @@
+Add another case where cindent is correct

@@ -1,0 +1,1 @@
+Fix smallest-hello-world.rs interaction with `puts`

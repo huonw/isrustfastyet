@@ -1,0 +1,1 @@
+Fix a couple places in docs where try_send wasn't changed to send_opt

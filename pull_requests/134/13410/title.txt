@@ -1,0 +1,1 @@
+rustc: Remove f{32,64} % from the language

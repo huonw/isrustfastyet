@@ -1,6 +1,10 @@
 {
 "bench::match_option_some":[
 [
+3001,
+1
+],
+[
 3000,
 1
 ],
@@ -1998,6 +2002,10 @@
 ]
 ],
 "bench::match_vec_pattern":[
+[
+3001,
+1
+],
 [
 3000,
 1
@@ -3997,6 +4005,10 @@
 ],
 "bench::trait_static_method_call":[
 [
+3001,
+1
+],
+[
 3000,
 1
 ],
@@ -5994,6 +6006,10 @@
 ]
 ],
 "bench::trait_vtable_method_call":[
+[
+3001,
+1
+],
 [
 3000,
 1

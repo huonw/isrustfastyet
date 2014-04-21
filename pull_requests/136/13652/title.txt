@@ -1,0 +1,1 @@
+rustc: feature gates errors should use the new attribute syntax

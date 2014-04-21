@@ -1,0 +1,1 @@
+rustc: Improve errors on private static methods

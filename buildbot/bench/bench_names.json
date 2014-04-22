@@ -45,6 +45,8 @@
 "collections::hashmap::bench::find_pop_insert",
 "collections::hashmap::bench::hashmap_as_queue",
 "collections::hashmap::bench::insert",
+"collections::hashmap::bench::new_drop",
+"collections::hashmap::bench::new_insert_drop",
 "collections::ringbuf::tests::bench_grow",
 "collections::ringbuf::tests::bench_new",
 "collections::ringbuf::tests::bench_push_back",

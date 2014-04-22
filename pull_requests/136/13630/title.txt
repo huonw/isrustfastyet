@@ -1,0 +1,1 @@
+green: Fix missing Send bounds on procedures

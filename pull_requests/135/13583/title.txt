@@ -1,0 +1,1 @@
+Specialize kinds inference for `Unsafe<T>`

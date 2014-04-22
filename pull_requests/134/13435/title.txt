@@ -1,0 +1,1 @@
+Use more precise span when reporting semicolon hint

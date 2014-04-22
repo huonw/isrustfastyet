@@ -1,0 +1,1 @@
+Just some general cleanup in the HashMap module.

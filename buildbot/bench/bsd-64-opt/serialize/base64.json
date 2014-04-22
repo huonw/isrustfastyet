@@ -1,16 +1,4 @@
 {
-"test::bench_from_base64":[
-[
-2522,
-1677.5
-]
-],
-"test::bench_to_base64":[
-[
-2522,
-1245
-]
-],
 "tests::bench_from_base64":[
 [
 2913,

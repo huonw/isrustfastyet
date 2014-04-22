@@ -1,0 +1,1 @@
+Remove all non-AST uses of @T in librustc.

@@ -1,0 +1,1 @@
+fix O(n^2) perf bug for std::io::fs::walk_dir

@@ -1,0 +1,1 @@
+add regexp crate to Rust distribution (implements RFC 7)

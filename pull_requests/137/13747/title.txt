@@ -1,0 +1,1 @@
+Fix variable name in prose to match code it's describing

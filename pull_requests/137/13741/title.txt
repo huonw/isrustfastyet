@@ -1,0 +1,1 @@
+test: Enable extern-fn-reachable test

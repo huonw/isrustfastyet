@@ -1,0 +1,1 @@
+Tests for dynamic regexes will now run during 'check-stage2'.

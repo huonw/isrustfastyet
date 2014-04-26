@@ -1,0 +1,1 @@
+rustc: Restrict the scope of a borrow on def_map

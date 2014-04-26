@@ -1,0 +1,1 @@
+clarify docs for std:io::fs::Path::{is_dir,is_file,exists}; add lstat

@@ -1,0 +1,1 @@
+Fix link to hashmap.rs and json.rs in sample code FAQ

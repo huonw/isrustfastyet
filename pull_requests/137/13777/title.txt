@@ -1,0 +1,1 @@
+syntax: Make ViewItemUse no longer contain multiple view paths.

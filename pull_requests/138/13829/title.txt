@@ -1,0 +1,1 @@
+rustc: Pass -dead_strip on OSX

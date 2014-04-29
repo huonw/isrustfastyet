@@ -1,0 +1,1 @@
+rustdoc: Make going back in browser history work after typing a search term

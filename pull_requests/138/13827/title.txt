@@ -1,0 +1,1 @@
+rustdoc: Make strip_hidden use a dedicated hidden item if any.

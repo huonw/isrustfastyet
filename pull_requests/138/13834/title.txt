@@ -1,0 +1,1 @@
+Remove internal support for fixed length strings

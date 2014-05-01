@@ -1,0 +1,1 @@
+Add serialization support for StrBuf

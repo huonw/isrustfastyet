@@ -1,0 +1,1 @@
+rustdoc tutorial: grammar change in list comments

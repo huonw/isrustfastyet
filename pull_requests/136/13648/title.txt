@@ -1,0 +1,1 @@
+Removed rev_iter in favor of DoubleEndedIterator

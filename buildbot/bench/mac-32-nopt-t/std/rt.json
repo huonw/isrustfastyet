@@ -303,10 +303,6 @@
 [
 2608,
 433
-],
-[
-2607,
-528
 ]
 ],
 "global_heap::bench::alloc_owned_small":[
@@ -613,10 +609,6 @@
 [
 2608,
 70
-],
-[
-2607,
-72
 ]
 ],
 "local_heap::bench::alloc_managed_big":[
@@ -923,10 +915,6 @@
 [
 2608,
 465
-],
-[
-2607,
-560
 ]
 ],
 "local_heap::bench::alloc_managed_small":[
@@ -1233,10 +1221,6 @@
 [
 2608,
 97
-],
-[
-2607,
-98
 ]
 ]
 }

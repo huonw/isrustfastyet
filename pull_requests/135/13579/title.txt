@@ -1,0 +1,1 @@
+Add lint check for negating uint literals and variables.

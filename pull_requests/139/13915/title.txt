@@ -1,0 +1,1 @@
+Refactor `rslt` to `Result::new`

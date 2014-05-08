@@ -1,0 +1,1 @@
+mk: Fix make install

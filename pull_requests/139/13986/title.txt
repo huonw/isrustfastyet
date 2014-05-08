@@ -1,0 +1,1 @@
+etc: Add box as a keyword to editor configs

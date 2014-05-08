@@ -1,0 +1,1 @@
+rustc: Enable writing "unsafe extern fn() {}"

@@ -1,0 +1,1 @@
+Add missing cases to the type_limits lint

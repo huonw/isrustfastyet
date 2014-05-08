@@ -1,0 +1,1 @@
+Generalize stats from f64 to the Float trait

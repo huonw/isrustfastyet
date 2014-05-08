@@ -1,0 +1,1 @@
+rustc: Don't die on 0-length pattern idents

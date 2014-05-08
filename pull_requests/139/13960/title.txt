@@ -1,0 +1,1 @@
+docs: Update multiple file use statement example

@@ -1,0 +1,1 @@
+std: Add close_{read,write}() methods to I/O

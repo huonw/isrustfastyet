@@ -1,0 +1,1 @@
+vim: Fix indentation at global scope after non-semantic ([{/)]}

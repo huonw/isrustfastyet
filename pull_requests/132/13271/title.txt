@@ -1,0 +1,1 @@
+Append missing padding after last field of struct

@@ -1,0 +1,1 @@
+Minor std style and doc tweaks

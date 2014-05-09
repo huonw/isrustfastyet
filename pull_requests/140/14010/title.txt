@@ -1,0 +1,1 @@
+Add testcase for #11493

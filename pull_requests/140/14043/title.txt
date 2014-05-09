@@ -1,0 +1,1 @@
+Correct attribute grammar in reference manual

@@ -1,0 +1,1 @@
+Fix false lint warnings in match arms with multiple patterns

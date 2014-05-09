@@ -1,0 +1,1 @@
+rustc: Fix enum variant privacy across crates

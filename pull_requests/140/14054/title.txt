@@ -1,0 +1,1 @@
+libstd: Check TMPDIR for android as well and if not set use '/data/local/tmp' instead of '/data/tmp'.

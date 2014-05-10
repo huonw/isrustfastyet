@@ -1,0 +1,1 @@
+Remove <no-bounds> on trait objects

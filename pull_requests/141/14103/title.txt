@@ -1,0 +1,1 @@
+remove the word managed from the trait explanation

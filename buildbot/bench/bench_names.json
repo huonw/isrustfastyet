@@ -158,6 +158,8 @@
 "std::path::posix::bench::push_many_home_dir",
 "std::rt::global_heap::bench::alloc_owned_big",
 "std::rt::global_heap::bench::alloc_owned_small",
+"std::rt::heap::bench::alloc_owned_big",
+"std::rt::heap::bench::alloc_owned_small",
 "std::rt::local_heap::bench::alloc_managed_big",
 "std::rt::local_heap::bench::alloc_managed_small",
 "std::slice::bench::add",

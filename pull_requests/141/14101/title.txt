@@ -1,0 +1,1 @@
+rustdoc: Fix search links to enums/typedefs

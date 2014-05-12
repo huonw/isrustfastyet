@@ -3621,6 +3621,10 @@
 ],
 "heap::bench::alloc_owned_big":[
 [
+3199,
+236
+],
+[
 3198,
 207.5
 ],
@@ -3671,6 +3675,10 @@
 ],
 "heap::bench::alloc_owned_small":[
 [
+3199,
+45
+],
+[
 3198,
 40
 ],
@@ -3720,6 +3728,10 @@
 ]
 ],
 "local_heap::bench::alloc_managed_big":[
+[
+3199,
+284
+],
 [
 3198,
 247
@@ -5578,6 +5590,10 @@
 ]
 ],
 "local_heap::bench::alloc_managed_small":[
+[
+3199,
+92
+],
 [
 3198,
 85

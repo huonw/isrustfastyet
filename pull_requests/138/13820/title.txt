@@ -1,0 +1,1 @@
+librand: Revise crypto part of document

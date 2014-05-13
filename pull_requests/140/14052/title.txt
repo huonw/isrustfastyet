@@ -1,0 +1,1 @@
+Add functions pop_char and shift_char to StrBuf

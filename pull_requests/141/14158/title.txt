@@ -1,0 +1,1 @@
+Factor out foldable better to reduce code duplication. 

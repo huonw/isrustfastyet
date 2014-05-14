@@ -1,0 +1,1 @@
+librustc: Make sure to add argument attributes to extern fns from non-local crates.

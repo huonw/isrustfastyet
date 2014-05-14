@@ -1,0 +1,1 @@
+Removed unnecessary arguments for walk_* functions

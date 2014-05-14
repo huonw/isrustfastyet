@@ -69,8 +69,6 @@
 "collections::trie::bench_map::bench_iter_small",
 "collections::trie::bench_map::bench_lower_bound",
 "collections::trie::bench_map::bench_upper_bound",
-"extra::stats::bench::sum_many_f64",
-"extra::stats::bench::sum_three_items",
 "num::bigint::bench::factorial_100",
 "num::bigint::bench::fib_100",
 "num::bigint::bench::shr",

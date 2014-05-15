@@ -1,0 +1,1 @@
+define Eq,TotalEq,Ord,TotalOrd for &mut T

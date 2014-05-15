@@ -1,0 +1,1 @@
+Issue 11650:  Process::new and dynamic_library::open_external should take &[u8]s, not Paths or ~strs

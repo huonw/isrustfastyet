@@ -3629,6 +3629,10 @@
 ],
 "heap::bench::alloc_owned_big":[
 [
+3224,
+428.5
+],
+[
 3223,
 413
 ],
@@ -3779,6 +3783,10 @@
 ],
 "heap::bench::alloc_owned_small":[
 [
+3224,
+61
+],
+[
 3223,
 55
 ],
@@ -3928,6 +3936,10 @@
 ]
 ],
 "local_heap::bench::alloc_managed_big":[
+[
+3224,
+497
+],
 [
 3223,
 465
@@ -5890,6 +5902,10 @@
 ]
 ],
 "local_heap::bench::alloc_managed_small":[
+[
+3224,
+104
+],
 [
 3223,
 100

@@ -1,0 +1,1 @@
+Print 'rustc' and 'rustdoc' as the command name for --version

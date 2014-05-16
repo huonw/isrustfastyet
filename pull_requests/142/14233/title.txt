@@ -1,0 +1,1 @@
+Remove `~str` from compiletest, librustuv, libfmt_macros, libserialize, libgetopts, and the docs

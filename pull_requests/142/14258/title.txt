@@ -1,0 +1,1 @@
+core: Document FormatWriter and allow `write!`

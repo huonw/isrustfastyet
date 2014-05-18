@@ -1,0 +1,1 @@
+core: Clarify the documentation on core's prelude

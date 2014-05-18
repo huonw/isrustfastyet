@@ -1,0 +1,1 @@
+Make some NullablePointer enums FFI-compatible with the base pointer type.

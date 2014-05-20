@@ -1,0 +1,1 @@
+Minor doc fixes in various places

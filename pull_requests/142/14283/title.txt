@@ -1,0 +1,1 @@
+compiletest: Refactor compile-fail to regex.

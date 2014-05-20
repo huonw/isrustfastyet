@@ -1,0 +1,1 @@
+test: index shards at 1, not 0

@@ -1,0 +1,1 @@
+Corrected EBNF grammar in the manual

@@ -1,0 +1,1 @@
+Reset the terminal color before the newline for diagnostics

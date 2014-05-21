@@ -1,0 +1,1 @@
+Tiny fixes: enum style, typo and --pretty flowgraph errors

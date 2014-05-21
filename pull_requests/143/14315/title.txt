@@ -1,0 +1,1 @@
+Add .isatty() method to StdReader

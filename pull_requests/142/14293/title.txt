@@ -1,0 +1,1 @@
+rustc: Add official support for weak failure

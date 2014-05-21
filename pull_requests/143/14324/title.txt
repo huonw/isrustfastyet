@@ -1,0 +1,1 @@
+Updated doc with correct type.

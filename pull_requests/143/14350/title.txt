@@ -1,0 +1,1 @@
+Add a suggestion to use a `let` binding on some borrowck errors.

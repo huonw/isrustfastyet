@@ -1,0 +1,1 @@
+libcore: Document math intrinsics.

@@ -1,0 +1,1 @@
+make check was failing with PLEASE_BENCH=1

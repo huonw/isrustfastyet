@@ -1,0 +1,1 @@
+std: Change hash to reexport its own Writer

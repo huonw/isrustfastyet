@@ -1,0 +1,1 @@
+std: minor simplification to sync::deque.

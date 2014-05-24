@@ -1,0 +1,1 @@
+Make most lexer errors non-fatal

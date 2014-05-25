@@ -1,0 +1,1 @@
+Implement RFC#2: Unused attribute lint

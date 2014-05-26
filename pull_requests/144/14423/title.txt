@@ -1,0 +1,1 @@
+Change regex! macro to expand to a constexpr, allowing to put it in a static

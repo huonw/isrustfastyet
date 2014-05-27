@@ -1,0 +1,1 @@
+rustc: Account for typedefs in privacy

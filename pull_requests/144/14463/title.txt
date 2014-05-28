@@ -1,0 +1,1 @@
+Fixed deprecation warning text for mem::move_val_init and its associated comment.

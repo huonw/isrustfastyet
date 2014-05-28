@@ -1,0 +1,1 @@
+add `Show` impl for Tree{Map,Set} and cleanup

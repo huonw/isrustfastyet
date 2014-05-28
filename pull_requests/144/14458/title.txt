@@ -1,0 +1,1 @@
+rustdoc: cross-crate source links are one level lower.

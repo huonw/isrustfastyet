@@ -1,0 +1,1 @@
+native: Ignore stdio fds with /dev/null

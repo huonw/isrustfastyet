@@ -1,0 +1,1 @@
+rust manual: supertraits seperator is wrong

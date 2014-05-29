@@ -1,0 +1,1 @@
+rustc: clarify warning about native deps for a staticlib.

@@ -1,0 +1,1 @@
+debuginfo: Unify DWARF representation of enum types

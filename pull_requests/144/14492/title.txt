@@ -1,0 +1,1 @@
+rustc: Accept PartialOrd/PartialOrdEq for Eq/Ord

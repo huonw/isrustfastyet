@@ -1,0 +1,1 @@
+Make Arc::make_unique check weak refs; add make_unique to Rc

@@ -1,0 +1,1 @@
+Rename PatUniq to PatBox. Fixes part of #13910.

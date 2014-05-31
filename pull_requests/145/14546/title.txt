@@ -1,0 +1,1 @@
+Ignore /build even if it’s a symlink, but only at top-level.

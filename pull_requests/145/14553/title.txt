@@ -1,0 +1,1 @@
+Hunted down and deleted all remaining deprecated owned vectors from docs

@@ -1,0 +1,1 @@
+Fix the handling of assignments to owning pointer paths in check_loans

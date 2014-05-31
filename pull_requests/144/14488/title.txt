@@ -1,0 +1,1 @@
+Doc: `static mut` is unsafe too

@@ -1,0 +1,1 @@
+std: Drop Total from Total{Eq,Ord}

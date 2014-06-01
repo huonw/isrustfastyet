@@ -1,0 +1,1 @@
+rustdoc: Create anchor pages for primitive types

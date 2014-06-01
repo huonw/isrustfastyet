@@ -1,0 +1,1 @@
+doc: add an `.as_slice` example to the cheatsheet.

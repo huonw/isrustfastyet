@@ -1,0 +1,1 @@
+libtest: Only colorize output if stdout is a tty

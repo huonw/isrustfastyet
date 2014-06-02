@@ -1,0 +1,1 @@
+Fix deriving Encodable trait for unit structs

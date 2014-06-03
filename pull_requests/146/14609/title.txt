@@ -1,0 +1,1 @@
+Document failure cases for `char_at` and friends.

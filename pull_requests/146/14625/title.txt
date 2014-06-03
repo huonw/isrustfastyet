@@ -1,0 +1,1 @@
+Implement ToJson for &[T], and add tests. Closes #14619

@@ -1,0 +1,1 @@
+Some minor documentation touchups for libregex. Fixes #13800.

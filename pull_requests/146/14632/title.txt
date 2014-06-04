@@ -1,0 +1,1 @@
+librustc: remove check::FnKind enum since we only ever use one variant.

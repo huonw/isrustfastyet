@@ -1,0 +1,1 @@
+rustdoc: Include supertraits on inlined traits

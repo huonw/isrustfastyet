@@ -1,0 +1,1 @@
+Optimized `HashMap` for size. Added `DefaultResizePolicy`

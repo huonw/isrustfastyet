@@ -1,0 +1,1 @@
+Fixes #14185 (regex! is generating unused code warnings)

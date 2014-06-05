@@ -1,0 +1,1 @@
+core: Apply stability attributes to ptr mod

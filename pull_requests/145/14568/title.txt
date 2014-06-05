@@ -1,0 +1,1 @@
+Allow an Iterator to update a &mut [T], add IterReader

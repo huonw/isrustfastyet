@@ -1,0 +1,1 @@
+Remove a warning when built with  --disable-manage-submodules

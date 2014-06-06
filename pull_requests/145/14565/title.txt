@@ -1,0 +1,1 @@
+Fix broken markup in query_to_str documentation

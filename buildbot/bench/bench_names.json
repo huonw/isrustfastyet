@@ -183,8 +183,6 @@
 "std::slice::bench::zero_1kb_mut_iter",
 "std::slice::bench::zero_1kb_set_memory",
 "std::str::bench::bench_connect",
-"std::str::bench::bench_push_str",
-"std::str::bench::bench_with_capacity",
 "std::str::bench::char_indicesator",
 "std::str::bench::char_indicesator_rev",
 "std::str::bench::char_iterator",

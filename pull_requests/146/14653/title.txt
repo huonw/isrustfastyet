@@ -1,0 +1,1 @@
+travis: Prevent timeouts with travis_wait

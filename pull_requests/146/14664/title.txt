@@ -1,0 +1,1 @@
+Fixed weird grammar in lifetimes guide.

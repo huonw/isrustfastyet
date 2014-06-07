@@ -1,0 +1,1 @@
+Make ast::Arg usable in quote macros

@@ -1,0 +1,1 @@
+Issue 5527 namespace substs b

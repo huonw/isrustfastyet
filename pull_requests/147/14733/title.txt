@@ -1,0 +1,1 @@
+Fix PartialEq documentation with regards to floats

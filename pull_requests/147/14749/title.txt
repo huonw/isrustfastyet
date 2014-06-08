@@ -1,0 +1,1 @@
+Derive Hash for Bitv and BitvSet

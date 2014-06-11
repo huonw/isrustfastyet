@@ -1,0 +1,1 @@
+Fix an LLVM assertion when matching against static strings

@@ -42,8 +42,8 @@ for plat in PLATFORMS:
         # print(i, changeset, 'successful')
         builds[changeset][plat] = build
 
-# BSD is BAD
-FILT_PLATFORMS = [p for p in PLATFORMS if 'bsd' not in p]
+# BSD is BAD (and so is a windows builder)
+FILT_PLATFORMS = [p for p in PLATFORMS if 'bsd' not in p and p != 'win-32-nopt-c']
 
 for chst, bs in builds.items():
     if len(bs) < len(FILT_PLATFORMS):

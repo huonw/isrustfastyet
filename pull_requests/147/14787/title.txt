@@ -1,0 +1,1 @@
+rustrt: Fix invalid reads caught by valgrind

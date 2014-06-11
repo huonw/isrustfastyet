@@ -1,0 +1,1 @@
+librustc: Use *signed* extension when converting enums to floats.

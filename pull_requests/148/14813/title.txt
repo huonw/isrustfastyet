@@ -1,0 +1,1 @@
+sync: Once is no longer unsafe, update docs

@@ -1,0 +1,1 @@
+librustc: Forbid identifiers that shadow in the same pattern in let

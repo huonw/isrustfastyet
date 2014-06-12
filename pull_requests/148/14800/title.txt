@@ -1,0 +1,1 @@
+Remove outdated info about nested block comments. Fixes #14767

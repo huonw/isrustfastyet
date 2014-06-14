@@ -1,0 +1,1 @@
+Add Bitwise::{swap_bytes, rotate_left, rotate_right} methods

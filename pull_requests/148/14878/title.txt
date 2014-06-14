@@ -1,0 +1,1 @@
+rustdoc: Larger click areas for sidebar items

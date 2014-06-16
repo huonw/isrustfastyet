@@ -1,0 +1,1 @@
+Add examples of how to read from a channel with a timeout, refs #13862

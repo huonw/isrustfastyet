@@ -1,0 +1,1 @@
+librustc: Remove useless code to handle `let _ = ...`

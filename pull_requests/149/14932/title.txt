@@ -1,0 +1,1 @@
+Small improvement for json PrettyEncoder

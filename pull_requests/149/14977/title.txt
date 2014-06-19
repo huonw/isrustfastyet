@@ -1,0 +1,1 @@
+librustc: Make addresses of immutable statics insignificant unless

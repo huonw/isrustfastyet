@@ -1,0 +1,1 @@
+rustdoc: Remove outdated syntax

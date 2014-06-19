@@ -1,0 +1,1 @@
+Remove TraitStore from ty_trait

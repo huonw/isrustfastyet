@@ -1,0 +1,1 @@
+Wrap debuginfo.rs at 80 columns.

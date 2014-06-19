@@ -1,0 +1,1 @@
+change ~[] -> Vec for collect()

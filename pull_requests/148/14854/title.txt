@@ -1,0 +1,1 @@
+Fix an ICE on a cast from an inferred nil to uint

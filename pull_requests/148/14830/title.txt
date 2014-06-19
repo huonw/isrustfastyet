@@ -1,0 +1,1 @@
+librustc: Don't overwrite vtables when coercing to trait object.

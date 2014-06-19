@@ -7,7 +7,7 @@ HISTORY = range(-10,-1 + 1)
 BUILDERS_URL = 'http://buildbot.rust-lang.org/json/builders/'
 URL = 'http://buildbot.rust-lang.org/json/builders/auto-%s/builds?' + '&'.join('select=%d' % i
                                                                                for i in HISTORY)
-GH_URL = 'https://api.github.com/repos/mozilla/rust/pulls/%d'
+GH_URL = 'https://api.github.com/repos/rust-lang/rust/pulls/%d'
 PR_INFO_DIR = '../pull_requests/'
 
 BENCH_URL = 'http://static.rust-lang.org/build-metrics/{sha}/auto-{plat}/{slave}/bench.tar.gz'

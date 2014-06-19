@@ -143,10 +143,10 @@ function Label(d, linkify) {
   function wrap(link, text) {
     return linkify ? '<a href="' + link + '">' + text + '</a>' : text;
   }
-  var ret = wrap('https://github.com/mozilla/rust/commit/' + d.hash, d.hash.substr(0, 7));
+  var ret = wrap('https://github.com/rust-lang/rust/commit/' + d.hash, d.hash.substr(0, 7));
   if (d.pull_request) {
     ret += ' (' +
-         wrap('https://github.com/mozilla/rust/pull/' + d.pull_request,'#' + d.pull_request) + ')';
+         wrap('https://github.com/rust-lang/rust/pull/' + d.pull_request,'#' + d.pull_request) + ')';
   }
   return ret;
 }
@@ -210,7 +210,7 @@ function TextDetail(hash, data) {
       l.id = 'pr-title-' + pr;
       l.classList.add('hidden');
       var script = document.createElement('script');
-      script.src = 'https://api.github.com/repos/mozilla/rust/pulls/' + pr + '?callback=pr_callback';
+      script.src = 'https://api.github.com/repos/rust-lang/rust/pulls/' + pr + '?callback=pr_callback';
       document.body.appendChild(script);
     }
     ul.appendChild(l);

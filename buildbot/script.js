@@ -88,7 +88,7 @@ $(function() {
 
       var pr = 'No pull request';
       if (pr_num !== null) {
-        pr = '<a href="https://github.com/mozilla/rust/pull/' + pr_num +
+        pr = '<a href="https://github.com/rust-lang/rust/pull/' + pr_num +
           '">Pull Request #' + pr_num + '</a>';
       }
       var c = 'Compile time: ' + comp + 's';
@@ -96,7 +96,7 @@ $(function() {
 
       var b_url = 'http://buildbot.rust-lang.org/builders/auto-' + plat + '/builds/' + build_num;
       var b = 'Build: <a href="' + b_url + '"> ' + plat + ' ' + build_num + '</a>';
-      var changeset_url = 'https://github.com/mozilla/rust/commit/' + changeset;
+      var changeset_url = 'https://github.com/rust-lang/rust/commit/' + changeset;
       var cs = 'Merge commit: <a href="' + changeset_url + '">' + changeset.slice(0,7) + '</a>';
       var tt = new ToolTip(item.pageX, item.pageY, item, [pr, c, t, b, cs].join('<br>'));
       tt.drawFloating();

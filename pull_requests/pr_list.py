@@ -2,8 +2,8 @@
 
 import sqlite3, json, sys, cgi
 
-PR_URL = 'https://github.com/mozilla/rust/pull/%d'
-HASH_URL = 'https://github.com/mozilla/rust/commit/%s'
+PR_URL = 'https://github.com/rust-lang/rust/pull/%d'
+HASH_URL = 'https://github.com/rust-lang/rust/commit/%s'
 db = sqlite3.connect('../backend/pr.sqlite3')
 
 cur = db.cursor()

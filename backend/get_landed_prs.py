@@ -56,7 +56,7 @@ for chst, bs in builds.items():
         continue # already done
 
     print('Handling', chst)
-    changes = bs[PLATFORMS[0]]['sourceStamps'][0]['changes']
+    changes = bs[FILT_PLATFORMS[0]]['sourceStamps'][0]['changes']
     if changes:
         changes = changes[0]
         comment = changes['comments']
@@ -77,13 +77,12 @@ for chst, bs in builds.items():
             os.makedirs(dir)
         except OSError:
             pass # already done
-        else:
-            github_info = requests.get(GH_URL % pull_request).json()
-            with open('%s/title.txt' % dir, 'w') as f:
-                f.write(github_info['title'])
-            with open('%s/merge_commit.txt' % dir, 'w') as f:
-                to_write = github_info.get('merge_commit_sha')
-                f.write(to_write if to_write is not None else '')
+        github_info = requests.get(GH_URL % pull_request).json()
+        with open('%s/title.txt' % dir, 'w') as f:
+            f.write(github_info['title'])
+        with open('%s/merge_commit.txt' % dir, 'w') as f:
+            to_write = github_info.get('merge_commit_sha')
+            f.write(to_write if to_write is not None else '')
 
     cur.execute('INSERT INTO change (changeset, pull_request, time) VALUES (?,?,?)',
                 (chst, pull_request, time))

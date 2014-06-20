@@ -1,0 +1,1 @@
+librustc: Put `#[unsafe_destructor]` behind a feature gate.

@@ -1,0 +1,1 @@
+Add support for compiling examples with --test to rustdoc & update the testing guide

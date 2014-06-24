@@ -1,0 +1,1 @@
+Fix spurious non-exhaustive errors for cross-crate struct variants

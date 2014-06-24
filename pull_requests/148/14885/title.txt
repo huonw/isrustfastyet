@@ -1,0 +1,1 @@
+libsyntax: Disallow struct literals after `if`, `while`, `match`, and

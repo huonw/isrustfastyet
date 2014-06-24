@@ -1,0 +1,1 @@
+librustc: Fix poorly formatted doc in feature_gate

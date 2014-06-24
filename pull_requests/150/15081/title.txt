@@ -1,0 +1,1 @@
+Fix a #14731 regression in missing_constructor() for vector patterns

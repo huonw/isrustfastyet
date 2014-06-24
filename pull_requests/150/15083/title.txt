@@ -1,0 +1,1 @@
+Make destructuring trait reference work

@@ -1,0 +1,1 @@
+test: readd TMPDIR to LD_LIBRARY_PATH for run-make

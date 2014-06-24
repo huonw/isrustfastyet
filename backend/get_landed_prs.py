@@ -58,7 +58,7 @@ for chst, bs in builds.items():
     print('Handling', chst)
     changes = bs[FILT_PLATFORMS[0]]['sourceStamps'][0]['changes']
     if changes:
-        changes = changes[0]
+        changes = changes[-1]
         comment = changes['comments']
         try:
             pull_request = int(re.match('auto merge of #(\d+)', comment).group(1))

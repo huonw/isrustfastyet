@@ -1,0 +1,1 @@
+librustc: Don't try to perform the magical

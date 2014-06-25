@@ -1,0 +1,1 @@
+Remove the quad_precision_float feature gate

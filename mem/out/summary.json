@@ -6,6 +6,7 @@
 {"timestamp":1358829598,"hash":"d3bb4990dd4476d59a6b3792304d35adcf88c161","max_memory":1044660224,"cpu_time":82.63,"pull_request":null},
 {"timestamp":1358866960,"hash":"05b6df49b86024eb4f41fb94478ad9cd80dc172c","max_memory":1056538624,"cpu_time":83.96,"pull_request":null},
 {"timestamp":1358897052,"hash":"519b60f313766d840123b48fbc9fc4b42948e6c0","max_memory":1044447232,"cpu_time":82.75,"pull_request":null},
+{"timestamp":1358899893,"hash":"5de1ca99f8a6a26f92fc049ea0d2376316960761","max_memory":1038843904,"cpu_time":83.29,"pull_request":null},
 {"timestamp":1358913159,"hash":"2c870e40744b873bf3205af7b2057cf4f76c3d1f","max_memory":1045577728,"cpu_time":83.39,"pull_request":null},
 {"timestamp":1358924898,"hash":"dfa97c21a57f10ff1f904a81a13ad8406e8224cb","max_memory":1045106688,"cpu_time":83.63,"pull_request":null},
 {"timestamp":1358967368,"hash":"995ccc0d8217418ffbb621109297aa7e78ed33b0","max_memory":1045196800,"cpu_time":83.5,"pull_request":null},
@@ -20,6 +21,7 @@
 {"timestamp":1359165857,"hash":"cf23ccf9b6550ce71bd5435d3be3ff10f49589c2","max_memory":1051549696,"cpu_time":83.22,"pull_request":null},
 {"timestamp":1359183092,"hash":"dd38af240bbce5ca42ae5442730849e4a29698eb","max_memory":1069060096,"cpu_time":83.67,"pull_request":null},
 {"timestamp":1359411358,"hash":"c75cc0aa1073ca91825d6513b9b23068a2a69f5a","max_memory":1079910400,"cpu_time":83.55,"pull_request":null},
+{"timestamp":1359412966,"hash":"ab0b7b27841366d73a808fbbccda6df45169141f","max_memory":1079611392,"cpu_time":82.76,"pull_request":null},
 {"timestamp":1359426975,"hash":"9f11485357f5de2a11f8d6feda36ee2fe63f3347","max_memory":1067708416,"cpu_time":83.2,"pull_request":null},
 {"timestamp":1359435891,"hash":"0ecd9e03ff9a7f96d324b63e49c94d3c5d9a51cb","max_memory":1257123840,"cpu_time":91.6,"pull_request":null},
 {"timestamp":1359480710,"hash":"c2a61d7df33acc606209b0b020208c7f20212394","max_memory":1257545728,"cpu_time":91.53,"pull_request":null},
@@ -4306,6 +4308,7 @@
 {"timestamp":1402512424,"hash":"f9260d41d6e37653bf71b08a041be0310098716a","max_memory":1705365504,"cpu_time":168.13,"pull_request":14746},
 {"timestamp":1402538818,"hash":"f03863ae7d372e2024bf87f0b9f7058237a918a2","max_memory":1701769216,"cpu_time":167.84,"pull_request":14713},
 {"timestamp":1402576333,"hash":"87bf47a0f706685b8e3acbf40585e45ec423f061","max_memory":1699094528,"cpu_time":166.41,"pull_request":14801},
+{"timestamp":1402618025,"hash":"7c7f4b0e0baac739c12080dcbf83ed04c11e9a89","max_memory":1703395328,"cpu_time":167.12,"pull_request":14816},
 {"timestamp":1402699595,"hash":"3851d68a27d41dfd15e12a75b590f362a0675870","max_memory":1995341824,"cpu_time":179.84,"pull_request":14750},
 {"timestamp":1402708304,"hash":"1cde9d8cbb8dca25d381304f999e38e478dc6ba2","max_memory":1995071488,"cpu_time":178.3,"pull_request":14866},
 {"timestamp":1402742206,"hash":"d64f18c490981f33f33e9c24e1ed1316e63f11fc","max_memory":1995759616,"cpu_time":179.43,"pull_request":14884},
@@ -4315,5 +4318,6 @@
 {"timestamp":1403037698,"hash":"ed3308098c7ddd00039f2fcb1a128791757b2b1b","max_memory":1996206080,"cpu_time":179.96,"pull_request":14977},
 {"timestamp":1403131300,"hash":"0dcc9554599750e237119756e03a62fd0a9d8970","max_memory":1995198464,"cpu_time":180.46,"pull_request":15006},
 {"timestamp":1403527593,"hash":"baa72085f41a4e935e671041899da7360f8ba151","max_memory":1983520768,"cpu_time":180.23,"pull_request":15098},
-{"timestamp":1403611310,"hash":"71fe44def9676d519f5ce5d7304e581a42cf2c70","max_memory":1999134720,"cpu_time":181.92,"pull_request":15113}
+{"timestamp":1403611310,"hash":"71fe44def9676d519f5ce5d7304e581a42cf2c70","max_memory":1999134720,"cpu_time":181.92,"pull_request":15113},
+{"timestamp":1403617614,"hash":"82ec1aef293ddc5c6373bd7f5ec323fafbdf7901","max_memory":1999941632,"cpu_time":181.54,"pull_request":14963}
 ]

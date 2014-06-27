@@ -1,0 +1,1 @@
+rustc: update the unnecessary parens lint for struct literals.

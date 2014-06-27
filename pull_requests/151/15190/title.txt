@@ -1,0 +1,1 @@
+librustc: Ensure that proc upvars have static lifetime.

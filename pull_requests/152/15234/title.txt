@@ -1,0 +1,1 @@
+librustc: Remove the fallback to `int` for integers and `f64` for floating point numbers for real.

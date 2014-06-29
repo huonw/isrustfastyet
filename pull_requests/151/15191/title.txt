@@ -1,0 +1,1 @@
+test: Add a test for variance in trait matching.

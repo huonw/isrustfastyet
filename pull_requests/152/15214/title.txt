@@ -1,0 +1,1 @@
+Add remark and an example about the bounds of `Vec::insert`

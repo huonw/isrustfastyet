@@ -1,0 +1,1 @@
+doc: Clarify that an error is a compiler error

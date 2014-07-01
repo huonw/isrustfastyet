@@ -1,0 +1,1 @@
+Add examples for `from_utf8_owned`, `from_char`, `from_chars`, `from_byte` on str

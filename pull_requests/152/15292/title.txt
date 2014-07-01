@@ -1,0 +1,1 @@
+Vim syntax file types and traits cleanup

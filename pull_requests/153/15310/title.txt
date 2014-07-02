@@ -1,0 +1,1 @@
+test: Add tests for issue #12223, "drop allowed while active borrows

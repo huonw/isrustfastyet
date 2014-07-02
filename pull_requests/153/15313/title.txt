@@ -1,0 +1,1 @@
+librustc: Fix `expr_use_visitor` (and, transitively, the borrow check)

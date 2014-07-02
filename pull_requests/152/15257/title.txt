@@ -1,0 +1,1 @@
+close a vulnerability where HashMap::from_iter wasn't being randomized

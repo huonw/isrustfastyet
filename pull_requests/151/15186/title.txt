@@ -1,0 +1,1 @@
+Change exhaustiveness analysis to allow a pattern to specialize with multiple constructors

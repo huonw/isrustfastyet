@@ -1,0 +1,1 @@
+librustc: Don't create extra alloca slot for by value bindings in match.

@@ -1,0 +1,1 @@
+Rationals that have a 1 denom should print like ints

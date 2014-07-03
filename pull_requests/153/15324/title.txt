@@ -1,0 +1,1 @@
+Fix rotate_{left, right} for multiple of bitsize rotation amounts

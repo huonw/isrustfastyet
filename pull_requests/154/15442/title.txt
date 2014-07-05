@@ -1,0 +1,1 @@
+librustc: Make sure to run destructors in the right order when matching on moved value.

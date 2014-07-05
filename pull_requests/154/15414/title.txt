@@ -1,0 +1,1 @@
+Fixed Result type parameters in doc comment.

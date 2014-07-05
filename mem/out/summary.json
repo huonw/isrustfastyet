@@ -4536,6 +4536,7 @@
 {"timestamp":1404209494,"hash":"3deb2c1aa6bb255ebe62b294be5e3c580e19bb9b","max_memory":1774358528,"cpu_time":176.89,"pull_request":15289},
 {"timestamp":1404225708,"hash":"14c0b3ab42a8f963b5e766605f31028e30cd9c0a","max_memory":1917521920,"cpu_time":179.34,"pull_request":15301},
 {"timestamp":1404249993,"hash":"44ec28cfac9fa3f738e0e77ccca1d804125fd1dd","max_memory":1778348032,"cpu_time":184.8,"pull_request":15292},
+{"timestamp":1404260496,"hash":"380657557cb3793d39dfc0d2321fc946cb3496f5","max_memory":1774338048,"cpu_time":184.9,"pull_request":15295},
 {"timestamp":1404279690,"hash":"89259b34c04aff7052dd122552fac3070c830f4f","max_memory":1774264320,"cpu_time":184.04,"pull_request":15085},
 {"timestamp":1404309120,"hash":"ca2778ede7c21efc3cf2e4e1152875ec09360770","max_memory":1890676736,"cpu_time":186.01,"pull_request":15286},
 {"timestamp":1404320192,"hash":"f728ad0134fc87e0751a6a09022f4ab176dfc191","max_memory":1921966080,"cpu_time":183.23,"pull_request":15186},
@@ -4549,6 +4550,8 @@
 {"timestamp":1404436879,"hash":"5b11610ced12e42f3de4d7f41fe47bbf07dd5af2","max_memory":2952359936,"cpu_time":172.88,"pull_request":15343},
 {"timestamp":1404443179,"hash":"d623a8bf3c530b900a69c059568079d5cbb4d6b8","max_memory":2951835648,"cpu_time":172.75,"pull_request":15321},
 {"timestamp":1404449776,"hash":"1bff1ff810dcfa8064c11e2b84473f053d1f69f1","max_memory":2952093696,"cpu_time":171.46,"pull_request":15356},
+{"timestamp":1404462680,"hash":"5012b858ed939ced9e4ac6c7a31c0a038661dd92","max_memory":2949476352,"cpu_time":170.98,"pull_request":15378},
+{"timestamp":1404468981,"hash":"36d7d746c8366d78b332cffdff85318e709b38ca","max_memory":2952093696,"cpu_time":171.62,"pull_request":15387},
 {"timestamp":1404487887,"hash":"c9e2ca0dfad8f2aff48c64887b1ec4276929eced","max_memory":2955980800,"cpu_time":170.84,"pull_request":15051},
 {"timestamp":1404530210,"hash":"29d6a8ecc6f43bac7171267993ef07dfdf528281","max_memory":2984947712,"cpu_time":173.31,"pull_request":15425},
 {"timestamp":1404536509,"hash":"d611800a70e6f620b5f96d8509899377a784b364","max_memory":2858078208,"cpu_time":171.3,"pull_request":15284}

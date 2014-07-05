@@ -1,0 +1,1 @@
+rustc: Reorder error and note message to reduce confusion.

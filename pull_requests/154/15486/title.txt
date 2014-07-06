@@ -1,0 +1,1 @@
+Add a test case for #12187, which appears to have been fixed

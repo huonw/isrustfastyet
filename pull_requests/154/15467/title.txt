@@ -1,0 +1,1 @@
+doc: --version no longer displays the host triple

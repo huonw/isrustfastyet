@@ -1,0 +1,1 @@
+Strip empty strings from link args

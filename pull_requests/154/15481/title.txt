@@ -1,0 +1,1 @@
+mk: Fix bootstrapping the nightly builds

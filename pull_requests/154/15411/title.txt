@@ -1,0 +1,1 @@
+Implemented Decodable/Encodable for Cell and RefCell. Fixes #15395.

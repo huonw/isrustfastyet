@@ -1,0 +1,1 @@
+librustc: Accept type aliases for structures in structure literals and structure patterns.

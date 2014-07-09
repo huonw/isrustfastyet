@@ -1,0 +1,1 @@
+Optimize Vec when cloning from a slice

@@ -1,0 +1,1 @@
+rustc: Fix naming output files with --crate-name

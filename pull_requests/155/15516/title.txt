@@ -1,0 +1,1 @@
+mk: Run tidy after tests in 'make check'

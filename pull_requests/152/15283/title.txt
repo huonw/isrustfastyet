@@ -1,0 +1,1 @@
+move Unicode functionality from libcore/collections/regex into libunicode ; add width() method for char ; update libunicode tables for Unicode 7.0

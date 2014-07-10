@@ -1,0 +1,1 @@
+mk: Don't run rustc manually during distcheck

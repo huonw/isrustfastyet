@@ -1,0 +1,1 @@
+Allow a message on #[must_use] & mark iterator adaptor structs with it

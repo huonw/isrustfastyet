@@ -1,0 +1,1 @@
+typeck: check casts from pointers to floats, closes #15445

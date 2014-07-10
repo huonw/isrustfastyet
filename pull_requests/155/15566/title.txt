@@ -1,0 +1,1 @@
+Derive Clone for Command and StdioContainer

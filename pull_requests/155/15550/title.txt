@@ -1,0 +1,1 @@
+etc: Fix install script for rpath removal

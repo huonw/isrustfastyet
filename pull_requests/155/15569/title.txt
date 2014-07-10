@@ -1,0 +1,1 @@
+libcore: Reexport a couple of widely-used low-level intrinsics to reduce

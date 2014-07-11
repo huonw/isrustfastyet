@@ -1,0 +1,1 @@
+More robust install.sh: do runnability test in fresh subdirectory.

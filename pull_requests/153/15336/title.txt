@@ -1,0 +1,1 @@
+Give all fatals, errors, and warnings unique diagnostic codes

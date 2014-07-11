@@ -1,0 +1,1 @@
+New `deriving` that generates O(n) code for PartialOrd, Ord, etc.

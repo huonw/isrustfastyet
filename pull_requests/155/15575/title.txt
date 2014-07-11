@@ -1,0 +1,1 @@
+Mistake in AtomicBool spinlock example

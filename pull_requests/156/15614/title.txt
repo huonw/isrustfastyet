@@ -1,0 +1,1 @@
+rustdoc: render 1-tuples as (T,) instead of (T)

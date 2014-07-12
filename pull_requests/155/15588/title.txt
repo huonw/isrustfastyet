@@ -1,0 +1,1 @@
+std: Move MemoryMap fields to methods

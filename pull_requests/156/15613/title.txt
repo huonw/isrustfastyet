@@ -1,0 +1,1 @@
+rustdoc: support tuple and struct patterns in function arguments

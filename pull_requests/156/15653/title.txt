@@ -1,0 +1,1 @@
+std: make std::io::IoError{,Kind} implement Eq

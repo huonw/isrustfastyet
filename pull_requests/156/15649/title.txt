@@ -1,0 +1,1 @@
+libstd: Add a few doc examples

@@ -43,10 +43,10 @@ for plat in PLATFORMS:
         builds[changeset][plat] = build
 
 # BSD is BAD (and so is a windows builder)
-FILT_PLATFORMS = [p for p in PLATFORMS if 'bsd' not in p and p != 'win-32-nopt-c']
+FILT_PLATFORMS = {p for p in PLATFORMS if 'bsd' not in p}
 
 for chst, bs in builds.items():
-    if len(bs) < len(FILT_PLATFORMS):
+    if not set(bs) >= FILT_PLATFORMS:
         print(chst,'missing platforms')
         continue # doesn't have all platforms
 
@@ -56,7 +56,7 @@ for chst, bs in builds.items():
         continue # already done
 
     print('Handling', chst)
-    changes = bs[FILT_PLATFORMS[0]]['sourceStamps'][0]['changes']
+    changes = bs[next(iter(FILT_PLATFORMS))]['sourceStamps'][0]['changes']
     if changes:
         changes = changes[-1]
         comment = changes['comments']

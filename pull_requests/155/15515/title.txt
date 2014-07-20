@@ -1,0 +1,1 @@
+librustc: Remove cross-borrowing of `Box<T>` to `&T` from the language,

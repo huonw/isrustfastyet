@@ -1,0 +1,1 @@
+Borrow checking for overloaded indexing

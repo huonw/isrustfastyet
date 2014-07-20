@@ -1,0 +1,1 @@
+Don't crash when checking types with only region parameters for destructor safety

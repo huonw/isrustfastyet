@@ -1,0 +1,1 @@
+doc/guide-ffi: A few minor typo/language fixes

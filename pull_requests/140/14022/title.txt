@@ -1,0 +1,1 @@
+librustc: Implement the fully-expanded, UFCS form of explicit self.

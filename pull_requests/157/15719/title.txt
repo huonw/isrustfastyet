@@ -1,0 +1,1 @@
+debuginfo: Don't crash when encountering global variable with unknown source span

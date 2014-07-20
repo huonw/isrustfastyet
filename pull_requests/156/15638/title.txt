@@ -1,0 +1,1 @@
+str: Implement a faster Chars iterator for &str

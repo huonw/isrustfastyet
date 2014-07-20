@@ -1,0 +1,1 @@
+mk: Fix LD_LIBRARY_PATH_ENV_NAMES in cross build

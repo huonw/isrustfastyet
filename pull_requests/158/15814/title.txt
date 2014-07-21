@@ -1,0 +1,1 @@
+Fixed lifetimes on syntax deriving structs, implemented Clone

@@ -1,0 +1,1 @@
+Correctly stringify! types and paths inside macros

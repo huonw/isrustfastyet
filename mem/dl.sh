@@ -10,7 +10,7 @@ CI_FILE=commit_info.txt
 mkdir -p $DL_DIR
 cd $DL_DIR
 
-curl -s ${BASE_URL}${HIST_FILE} -o ${HIST_FILE}
+curl -4 -s ${BASE_URL}${HIST_FILE} -o ${HIST_FILE}
 
 # Check for any hashes that haven't been downloaded (i.e. there is no
 # directory with the same name)
@@ -28,7 +28,7 @@ for hash in $hashes; do
         mkdir -p data/$hash
         cd data/$hash
         for f in $MEM_FILE $TIME_FILE $CI_FILE; do
-            curl -f -s ${BASE_URL}data/${hash}/$f -o $f
+            curl -4 -f -s ${BASE_URL}data/${hash}/$f -o $f
         done
 
         # sometimes we get a 404 error, so just kill the directory and

@@ -11,7 +11,10 @@ GH_URL = 'https://api.github.com/repos/rust-lang/rust/pulls/%d'
 PR_INFO_DIR = '../pull_requests/'
 
 BENCH_URL = 'http://static.rust-lang.org/build-metrics/{sha}/auto-{plat}/{slave}/bench.tar.gz'
-BENCH_INFO_DIR = '../build-metrics/'
+STAB_URL = 'http://static.rust-lang.org/stab-metrics/{sha}/auto-{plat}/{slave}/stab.tar.gz'
+
+METRICS_INFO_DIR = '../build-metrics/'
+
 
 db = sqlite3.connect('pr.sqlite3')
 cur = db.cursor()
@@ -109,27 +112,32 @@ for chst, bs in builds.items():
         build_slave = build['slave']
 
         sys.stdout.flush()
-        bench_url = BENCH_URL.format(sha=chst, plat=plat, slave=build_slave)
-        bench_dir = BENCH_INFO_DIR + '%s/%s/%s/' % (chst[:2], chst, plat)
-        bench_name = bench_dir + 'bench.tar.gz'
+        metrics_dir = METRICS_INFO_DIR + '%s/%s/%s/' % (chst[:2], chst, plat)
 
-        print("\tRetrieving bench info for %s... " % plat, end='')
+        print("\tRetrieving metrics info for %s:" % plat)
         try:
-            os.makedirs(bench_dir)
+            os.makedirs(metrics_dir)
         except OSError:
-            print('Already done.')
+            print('\t\tAlready done.')
         else:
-            try:
-                urllib.request.urlretrieve(bench_url, filename=bench_name)
-            except urllib.error.HTTPError as e:
-                if e.code == 403:
-                    print('failed with 403.')
+            for (name, raw_url) in [('bench', BENCH_URL), ('stab', STAB_URL)]:
+                print('\t\t%s... ' % name, end = '')
+
+                url = raw_url.format(sha = chst, plat = plat, slave = build_slave)
+                file_name = name + '.tar.gz'
+                full_name = metrics_dir + file_name
+                try:
+                    urllib.request.urlretrieve(url, filename=full_name)
+                except urllib.error.HTTPError as e:
+                    if e.code == 403:
+                        print('failed with 403.')
+                    else:
+                        raise
                 else:
-                    raise
-            else:
-                print('success. Inflating bench info.')
-                subprocess.check_call(['tar', 'xf', 'bench.tar.gz'],
-                                      cwd=bench_dir)
+                    print('success. Inflating...', end = '')
+                    subprocess.check_call(['tar', 'xf', 'bench.tar.gz'],
+                                          cwd=metrics_dir)
+                    print('success.')
 
         cur.execute('''
         INSERT INTO build

@@ -1,0 +1,1 @@
+rustc: Append platform exe suffix to output files

@@ -135,7 +135,7 @@ for chst, bs in builds.items():
                         raise
                 else:
                     print('success. Inflating...', end = '')
-                    subprocess.check_call(['tar', 'xf', 'bench.tar.gz'],
+                    subprocess.check_call(['tar', 'xf', file_name],
                                           cwd=metrics_dir)
                     print('success.')
 

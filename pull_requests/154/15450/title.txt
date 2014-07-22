@@ -1,0 +1,1 @@
+Two miscellaneous improvements for Vim

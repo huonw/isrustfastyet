@@ -1,0 +1,1 @@
+Remove misleading code example from The Guide

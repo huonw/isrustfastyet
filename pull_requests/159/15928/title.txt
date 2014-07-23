@@ -1,0 +1,1 @@
+Fix various distribution build targets to package all target bins

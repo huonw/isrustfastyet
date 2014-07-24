@@ -1,0 +1,1 @@
+rustllvm: Don't require null terminators in files

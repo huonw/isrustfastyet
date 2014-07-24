@@ -1,0 +1,1 @@
+sync: Fail with init semaphore count < 0

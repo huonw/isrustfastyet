@@ -1,0 +1,1 @@
+Change Shl<T, T> (resp Shr<T, T>) for Int to Shl<uint, T> (resp Shr<uint, T>)

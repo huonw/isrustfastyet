@@ -1,0 +1,1 @@
+Remove obsolete Japanese translation for a while.

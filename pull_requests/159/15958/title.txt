@@ -1,0 +1,1 @@
+Fix display of `-NaN%` in borrowck stats caused by div by zero

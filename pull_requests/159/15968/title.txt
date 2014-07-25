@@ -1,0 +1,1 @@
+Add keys() and values() methods for SmallIntMap, TreeMap and TrieMap

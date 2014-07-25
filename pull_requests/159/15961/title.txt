@@ -1,0 +1,1 @@
+librustc: Make references to functions not have static lifetime.

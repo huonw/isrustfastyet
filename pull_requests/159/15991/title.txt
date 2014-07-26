@@ -1,0 +1,1 @@
+librustc: Resolve regions and report errors in trait/impl method

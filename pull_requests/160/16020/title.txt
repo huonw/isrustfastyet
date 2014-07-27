@@ -1,0 +1,1 @@
+Implement Hash and PartialOrd for RingBuf

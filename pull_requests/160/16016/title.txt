@@ -1,0 +1,1 @@
+rustdoc: Keep hidden struct fields out of search

@@ -1,0 +1,1 @@
+libserialize: add new `error()` to `Decoder` for Decodable objects to signal parse errors

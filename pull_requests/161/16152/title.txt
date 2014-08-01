@@ -1,0 +1,1 @@
+doc: fix typos in std::num::Int

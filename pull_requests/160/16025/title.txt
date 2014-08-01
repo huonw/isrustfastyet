@@ -1,0 +1,1 @@
+rustdoc: show struct field docs when inlined

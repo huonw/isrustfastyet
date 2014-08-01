@@ -1,0 +1,1 @@
+Derive PartialOrd/Ord/Hash for bitflags structs. Implement Default for io::FilePermission

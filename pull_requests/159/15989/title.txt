@@ -1,0 +1,1 @@
+librustc: Disallow mutation and assignment in pattern guards, and modify

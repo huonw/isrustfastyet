@@ -1,0 +1,1 @@
+Improve handling of ignored function call return values

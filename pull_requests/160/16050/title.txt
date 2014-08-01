@@ -1,0 +1,1 @@
+Fix typo in getopts::getopts documentation, return Matches instead of Opt

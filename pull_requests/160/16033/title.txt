@@ -1,0 +1,1 @@
+Implement Hash for tuples of up to arity 12. Also change the style to be consistent with core::tuple

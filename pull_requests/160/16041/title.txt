@@ -1,0 +1,1 @@
+doc: Monty Hall simulation for std::rand

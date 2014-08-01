@@ -1,0 +1,1 @@
+Improved the doc search by including Levenshtein distance 

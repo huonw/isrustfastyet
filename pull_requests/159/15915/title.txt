@@ -1,0 +1,1 @@
+std: rename MemWriter to SeekableMemWriter, add seekless MemWriter

@@ -1,0 +1,1 @@
+Remove an unneeded workaround in coherence.rs

@@ -1,0 +1,1 @@
+librustc: Forbid pattern bindings after `@`s, for memory safety.

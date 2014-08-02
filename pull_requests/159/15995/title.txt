@@ -1,0 +1,1 @@
+libsync: Add safer abstraction for SPSC queue.

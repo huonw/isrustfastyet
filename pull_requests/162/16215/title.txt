@@ -1,0 +1,1 @@
+Guide: Remove "bin" section from Cargo.toml

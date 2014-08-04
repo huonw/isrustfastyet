@@ -1,0 +1,1 @@
+Add is_unique(), try_unwrap(), get_mut() to alloc::rc

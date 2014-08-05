@@ -1,0 +1,1 @@
+Remove the "NFKC clause" in the reference manual.

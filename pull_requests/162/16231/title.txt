@@ -1,0 +1,1 @@
+Add macro syntax highlighting for Gedit.

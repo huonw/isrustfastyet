@@ -1,0 +1,1 @@
+Emit description and keyword metadata from rustdoc

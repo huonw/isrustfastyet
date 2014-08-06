@@ -1,0 +1,1 @@
+libgetopts: tweak HasHarg/Occur docs

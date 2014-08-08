@@ -1,0 +1,1 @@
+fix grammar in Vec.retain's doc comment

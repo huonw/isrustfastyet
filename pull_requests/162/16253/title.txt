@@ -1,0 +1,1 @@
+Allow mutation of moved upvars when they're marked as mutable.

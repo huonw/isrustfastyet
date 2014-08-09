@@ -1,0 +1,1 @@
+Libcore: Fix documentation comment for f32.

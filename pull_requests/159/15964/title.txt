@@ -1,0 +1,1 @@
+rustc: gensym the module names for --test to avoid introducing names.

@@ -1,0 +1,1 @@
+enable PIE by default on Linux for full ASLR

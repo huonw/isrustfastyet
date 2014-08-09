@@ -1,0 +1,1 @@
+rustdoc: Set a nonzero exit status on failure

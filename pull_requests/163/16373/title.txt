@@ -1,0 +1,1 @@
+mk: Don't emit landing pads in stage 0.

@@ -1,0 +1,1 @@
+don't translate items when monomorphizing foreign-ABI functions

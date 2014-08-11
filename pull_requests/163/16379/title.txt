@@ -1,0 +1,1 @@
+Fix some minor issues in the guide.

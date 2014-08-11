@@ -1,0 +1,1 @@
+librustc: Don't use the same alloca for match binding which we reassign to in arm body.

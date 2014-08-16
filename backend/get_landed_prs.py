@@ -129,8 +129,8 @@ for chst, bs in builds.items():
                 try:
                     urllib.request.urlretrieve(url, filename=full_name)
                 except urllib.error.HTTPError as e:
-                    if e.code == 403:
-                        print('failed with 403.')
+                    if e.code in (403, 404):
+                        print('failed with %d.' % e.code)
                     else:
                         raise
                 else:

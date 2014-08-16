@@ -1,0 +1,1 @@
+Properly canonicalize crate paths specified via --extern

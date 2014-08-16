@@ -1,0 +1,1 @@
+mark &T params without UnsafeCell<U> as readonly

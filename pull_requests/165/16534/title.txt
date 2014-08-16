@@ -1,0 +1,1 @@
+enable DEP (NX bit) for 32-bit Windows executables

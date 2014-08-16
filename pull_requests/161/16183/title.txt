@@ -1,0 +1,1 @@
+doc: Make sure all doc titles say 'Rust'. #12466

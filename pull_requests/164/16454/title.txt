@@ -1,0 +1,1 @@
+libsyntax: Don't strip types and lifetimes from single-segment paths in

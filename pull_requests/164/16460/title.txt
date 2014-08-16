@@ -1,0 +1,1 @@
+librustc: Record unique immutable borrows in the restrictions table.

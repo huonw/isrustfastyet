@@ -1,0 +1,1 @@
+Cleanup and stability for core::slice

@@ -1,0 +1,1 @@
+core/std: squash dead_code warnings from fail! invocations.

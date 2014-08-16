@@ -1,0 +1,1 @@
+libnative: process spawning should not close inherited file descriptors

@@ -1,0 +1,1 @@
+rustc: use Name numbers rather than the Show impl for constants.

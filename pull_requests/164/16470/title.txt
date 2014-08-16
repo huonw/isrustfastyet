@@ -1,0 +1,1 @@
+libcore: rename private cmp macros

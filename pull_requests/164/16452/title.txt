@@ -1,0 +1,1 @@
+fix ICE due to untranslated inner items in unreachable code

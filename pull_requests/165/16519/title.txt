@@ -1,0 +1,1 @@
+Add `Clone` to `std::time::Duration`

@@ -1,0 +1,1 @@
+Enable deprecation lint on crate-local items

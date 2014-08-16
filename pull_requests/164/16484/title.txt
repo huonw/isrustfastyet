@@ -1,0 +1,1 @@
+Fix handling of ignored arguments in FFI wrappers for rust functions

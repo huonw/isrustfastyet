@@ -1,0 +1,1 @@
+time::Tm should impl Eq in addition to PartialEq

@@ -1,0 +1,1 @@
+Add export_name to the attribute whitelist and a description in the manual

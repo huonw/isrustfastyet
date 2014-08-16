@@ -1,0 +1,1 @@
+librustc: Tie up loose ends in unboxed closures.

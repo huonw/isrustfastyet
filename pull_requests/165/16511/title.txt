@@ -1,0 +1,1 @@
+Cleanup trans for structs with base expr.

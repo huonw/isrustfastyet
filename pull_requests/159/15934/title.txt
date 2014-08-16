@@ -1,0 +1,1 @@
+Add Duration type to std and use it in Timer methods.

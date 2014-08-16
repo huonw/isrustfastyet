@@ -1,0 +1,1 @@
+quote_expr macro: embed Ident using special encoding that retains hygiene state.

@@ -1,0 +1,1 @@
+vim: Don't set foldmethod in the syntax file either

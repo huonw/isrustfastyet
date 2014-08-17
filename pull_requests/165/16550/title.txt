@@ -1,0 +1,1 @@
+Fix an error in a code sample in bitv.rs

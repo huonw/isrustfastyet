@@ -1,0 +1,1 @@
+librustc: Allow trait bounds on structures and enumerations, and check

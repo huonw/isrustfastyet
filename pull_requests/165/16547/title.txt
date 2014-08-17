@@ -1,0 +1,1 @@
+Add new keywords (particularly `where` & `virtual`) to editor modes.

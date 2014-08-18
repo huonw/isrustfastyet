@@ -1,0 +1,1 @@
+Explain EOF behavior in File.eof().

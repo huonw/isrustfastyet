@@ -1,0 +1,1 @@
+mark Windows binaries as compatible with ASLR

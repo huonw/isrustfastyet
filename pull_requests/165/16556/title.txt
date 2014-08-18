@@ -1,0 +1,1 @@
+rustdoc: Use proper line break hints with the <wbr> tag

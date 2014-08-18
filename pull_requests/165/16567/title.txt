@@ -1,0 +1,1 @@
+Forbid extern statics from appearing in patterns

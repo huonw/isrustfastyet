@@ -1,0 +1,1 @@
+Fix errors in "Variables" chapter of the guide.

@@ -1,0 +1,1 @@
+Fix TwoWaySearcher to work when used with periodic needles.

@@ -1,0 +1,1 @@
+Guide: Make add_three_times_four() public

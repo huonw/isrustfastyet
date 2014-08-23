@@ -1,0 +1,1 @@
+librustc: Fix bogus logic for static calls to unboxed closures in the

@@ -1,0 +1,1 @@
+libcore: Get rid of useless mem::forget wrapper.

@@ -1,0 +1,1 @@
+fixes missing rust syntax highlighting in example

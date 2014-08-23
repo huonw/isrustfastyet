@@ -1,0 +1,1 @@
+libstd: Add `Fn`/`FnMut`/`FnOnce` to the prelude.

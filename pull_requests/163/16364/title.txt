@@ -1,0 +1,1 @@
+Add division by zero case to the `CheckedDiv` comment

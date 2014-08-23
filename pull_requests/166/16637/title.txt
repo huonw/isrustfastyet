@@ -1,0 +1,1 @@
+librustc: Fix a couple of cases in which unboxed closure typechecking

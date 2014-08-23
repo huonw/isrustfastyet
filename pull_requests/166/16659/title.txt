@@ -1,0 +1,1 @@
+syntax: Fix complexity of string parsing. Closes #16624.

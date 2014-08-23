@@ -1,0 +1,1 @@
+Make variable mutable to allow mutable reference

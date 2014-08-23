@@ -1,0 +1,1 @@
+Fix underflow in core::str::Searcher::new

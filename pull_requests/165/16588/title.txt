@@ -1,0 +1,1 @@
+work around MinGW linker bug for ASLR on Windows

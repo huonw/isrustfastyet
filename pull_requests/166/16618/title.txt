@@ -1,0 +1,1 @@
+Add examples for some StrSlice methods.

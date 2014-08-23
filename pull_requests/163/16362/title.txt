@@ -1,0 +1,1 @@
+Add example of estimating pi using Monte Carlo simulation to std::rand

@@ -1,0 +1,1 @@
+Refactor BitV internals to not use macro, reduce duplication, fix is_disjoint

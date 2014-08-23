@@ -1,0 +1,1 @@
+Change how libgetopts parse arguments without whitespace

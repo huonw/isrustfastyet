@@ -1,0 +1,1 @@
+librustc: Mark unboxed closure calls and definitions with appropriate llvm return/argument attributes.

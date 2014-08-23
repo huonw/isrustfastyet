@@ -1,0 +1,1 @@
+librustc: When checking static method calls to unboxed closures, look at

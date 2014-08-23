@@ -1,0 +1,1 @@
+librustc: Properly tag upvars in proc's to stop misleading unused_mut warnings.

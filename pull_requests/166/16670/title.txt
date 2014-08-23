@@ -1,0 +1,1 @@
+libunicode: optimize char functions for ascii characters

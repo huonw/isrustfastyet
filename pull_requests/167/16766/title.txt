@@ -1,0 +1,1 @@
+rustdoc: Don't assume that a doc attribute was sugared: Fixes #15976

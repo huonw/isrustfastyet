@@ -1,0 +1,1 @@
+Allow a regex filter for RUST_LOG

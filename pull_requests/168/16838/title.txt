@@ -1,0 +1,1 @@
+Don't free embedded, unsized slices in their dtor

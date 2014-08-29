@@ -1,0 +1,1 @@
+add missing ! char to feature gate hint

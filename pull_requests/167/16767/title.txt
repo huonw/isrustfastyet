@@ -1,0 +1,1 @@
+Always insert methods into the search index, even if we're currently in a private module

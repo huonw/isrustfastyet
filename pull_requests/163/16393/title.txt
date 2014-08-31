@@ -1,0 +1,1 @@
+Remove mention of ~T in the FFI guide.

@@ -1,0 +1,1 @@
+Allow *-pointers in PtrTy (fixes #16781)

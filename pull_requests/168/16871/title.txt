@@ -1,0 +1,1 @@
+Fix win64 regression introduced by #15773

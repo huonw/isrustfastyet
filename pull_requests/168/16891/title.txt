@@ -1,0 +1,1 @@
+Allow ExprLit expression macros to be used in patterns.

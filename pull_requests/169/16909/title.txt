@@ -1,0 +1,1 @@
+Make doc search results use <a> tags instead of js for navigating

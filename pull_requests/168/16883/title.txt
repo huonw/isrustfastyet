@@ -1,0 +1,1 @@
+Remove the branch merging optimisations for slice patterns

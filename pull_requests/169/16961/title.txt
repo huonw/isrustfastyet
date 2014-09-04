@@ -1,0 +1,1 @@
+bitv: add larger tests, better benchmarks & remove dead code.

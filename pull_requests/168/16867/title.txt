@@ -1,0 +1,1 @@
+Detect traits being used as structs in check_expr_with_unifier

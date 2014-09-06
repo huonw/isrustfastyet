@@ -1,0 +1,1 @@
+test: Ignore failing gdb pretty tests

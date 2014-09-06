@@ -1,0 +1,1 @@
+&mut [T] now implements Collection. Fixes #16896

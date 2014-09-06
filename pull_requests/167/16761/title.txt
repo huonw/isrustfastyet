@@ -1,0 +1,1 @@
+Clarify what tx and rx mean in docs

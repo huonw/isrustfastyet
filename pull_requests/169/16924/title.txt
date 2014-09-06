@@ -1,0 +1,1 @@
+Fix pointer types in the manual.

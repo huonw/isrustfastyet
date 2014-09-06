@@ -1,0 +1,1 @@
+librustc: Don't ICE with type when name only contain underscores.

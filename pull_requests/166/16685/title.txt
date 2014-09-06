@@ -1,0 +1,1 @@
+glob: Deprecate the library in favor of cargo

@@ -1,0 +1,1 @@
+Restrict transmute intrinsicck to just rust-intrinsic fn's.

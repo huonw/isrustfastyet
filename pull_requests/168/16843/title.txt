@@ -1,0 +1,1 @@
+Relax lifetime bounds on Reader/Writer impls for trait boxes

@@ -1,0 +1,1 @@
+Prevent failure when using fail! with invalid utf8.

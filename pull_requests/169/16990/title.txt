@@ -1,0 +1,1 @@
+Auto-derive Clone for syntax::diagnostic::Level.

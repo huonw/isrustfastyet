@@ -1,0 +1,1 @@
+Have std::io::TempDir::new and new_in return IoResult

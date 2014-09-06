@@ -1,0 +1,1 @@
+rustdoc/html: emphasize the crate part of the full path.

@@ -1,5 +1,4 @@
 [
-"bsd-64-opt",
 "linux-32-nopt-c",
 "linux-32-nopt-t",
 "linux-32-opt",
@@ -13,5 +12,11 @@
 "mac-64-opt",
 "win-32-nopt-c",
 "win-32-nopt-t",
-"win-32-opt"
+"win-32-opt",
+"win32-32-nopt-c",
+"win32-32-nopt-t",
+"win32-32-opt",
+"win64-64-nopt-c",
+"win64-64-nopt-t",
+"win64-64-opt"
 ]

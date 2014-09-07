@@ -1,0 +1,1 @@
+Make integer bit count methods return uints

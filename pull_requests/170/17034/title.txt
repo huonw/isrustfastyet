@@ -1,0 +1,1 @@
+Refactor of readdir to not fail as much

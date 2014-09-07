@@ -3,7 +3,7 @@
 import requests, sqlite3, json, re, os, subprocess, urllib, sys
 from collections import defaultdict
 
-HISTORY = range(-10,-1 + 1)
+HISTORY = range(-50,-1 + 1)
 BUILDERS_URL = 'http://buildbot.rust-lang.org/json/builders/'
 URL = 'http://buildbot.rust-lang.org/json/builders/auto-%s/builds?' + '&'.join('select=%d' % i
                                                                                for i in HISTORY)

@@ -1,0 +1,1 @@
+Use more jQuery to avoid displaying Expand Description more often.

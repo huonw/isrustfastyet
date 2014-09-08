@@ -1,0 +1,1 @@
+native: Remove a bogus assert in net::read

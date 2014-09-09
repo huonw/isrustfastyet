@@ -1,0 +1,1 @@
+enable jemalloc debugging in unoptimized builds

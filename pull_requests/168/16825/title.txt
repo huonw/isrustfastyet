@@ -1,0 +1,1 @@
+Fix vector/array/slice terminology in manual.

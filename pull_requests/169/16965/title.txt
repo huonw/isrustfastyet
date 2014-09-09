@@ -1,0 +1,1 @@
+rand: inform the optimiser that indexing is never out-of-bounds.

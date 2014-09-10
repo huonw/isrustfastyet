@@ -1,0 +1,1 @@
+Add links to forums in README.md, including discuss.rust-lang.org

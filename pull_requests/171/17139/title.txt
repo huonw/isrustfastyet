@@ -1,0 +1,1 @@
+Prefer lualatex, xelatex, pdflatex, in that order. #12804

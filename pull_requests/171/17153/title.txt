@@ -1,0 +1,1 @@
+reintroduce manual link in doc index

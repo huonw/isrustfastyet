@@ -1,0 +1,1 @@
+Avoid creating cyclic types during inference

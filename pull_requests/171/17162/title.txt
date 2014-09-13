@@ -1,0 +1,1 @@
+Make ItemModifier and ItemDecorator take trait objects

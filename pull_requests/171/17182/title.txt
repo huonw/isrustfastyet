@@ -1,0 +1,1 @@
+librustc: Enum nullable pointer opt should not apply to raw pointers.

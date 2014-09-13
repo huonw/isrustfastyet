@@ -1,0 +1,1 @@
+librustc: Make sure region bounds on closures outlive calls to them.

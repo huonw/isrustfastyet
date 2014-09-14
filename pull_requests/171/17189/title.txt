@@ -1,0 +1,1 @@
+ Fix check for existing crate when using --extern

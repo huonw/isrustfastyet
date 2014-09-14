@@ -1,0 +1,1 @@
+Change method lookup to require invariance for mutable references

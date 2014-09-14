@@ -1,0 +1,1 @@
+librustc: Forbid inherent implementations that aren't adjacent to the

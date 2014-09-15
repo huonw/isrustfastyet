@@ -1,0 +1,1 @@
+mk: Don't depend on src/jemalloc/VERSION

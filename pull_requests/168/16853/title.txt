@@ -1,0 +1,1 @@
+Add support for in-place map for `Vec`s of types with same size (take 3)

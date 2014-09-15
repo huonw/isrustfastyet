@@ -1,0 +1,1 @@
+Use mingw-w64 triple for win32

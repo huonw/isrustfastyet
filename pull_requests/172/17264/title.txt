@@ -1,0 +1,1 @@
+Fix infinite recursion in type checker on recursive items

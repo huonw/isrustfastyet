@@ -1,0 +1,1 @@
+Relicense shootout-spectralnorm.rs and shootout-fasta.rs

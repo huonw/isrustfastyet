@@ -1,0 +1,1 @@
+Case-insensitive environment variable names on Windows for process spawning.

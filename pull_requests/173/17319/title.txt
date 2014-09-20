@@ -1,0 +1,1 @@
+Pop the expansion context after expanding a method macro

@@ -1,0 +1,1 @@
+Restore original terminal colors after error messages on Windows.

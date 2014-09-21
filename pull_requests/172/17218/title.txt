@@ -1,0 +1,1 @@
+libsyntax: Explicit error message for sugared doc comments.

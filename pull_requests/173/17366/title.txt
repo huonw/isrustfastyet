@@ -1,0 +1,1 @@
+from_str has an impl for uint, not Option<uint>

@@ -1,0 +1,1 @@
+librustc: Forbid private types in public APIs.

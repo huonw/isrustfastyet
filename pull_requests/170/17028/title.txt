@@ -1,0 +1,1 @@
+librustc: Parse and resolve higher-rank lifetimes in traits.

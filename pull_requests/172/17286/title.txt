@@ -1,0 +1,1 @@
+Stability lint checks code from macro expansion.

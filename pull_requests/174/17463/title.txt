@@ -1,0 +1,1 @@
+Use locale 'C' for running tests. This fixes #17423

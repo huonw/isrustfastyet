@@ -1,0 +1,1 @@
+Correct typo in the Iterator adapters section

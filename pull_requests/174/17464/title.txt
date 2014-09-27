@@ -1,0 +1,1 @@
+librustc: Give trait methods accessible via fewer autoderefs priority

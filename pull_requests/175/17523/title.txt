@@ -1,0 +1,1 @@
+Relicense shootout-fasta-redux.rs to the shootout license.

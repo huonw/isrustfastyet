@@ -1,0 +1,1 @@
+rustdoc: replace DIV inside H1 with SPAN.

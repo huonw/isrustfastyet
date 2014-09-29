@@ -1,0 +1,1 @@
+Add error message for anonymous impl for types not declared in the current module

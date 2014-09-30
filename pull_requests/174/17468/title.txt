@@ -1,0 +1,1 @@
+Emit an error rather than ICEing for a missing built-in bound lang item.

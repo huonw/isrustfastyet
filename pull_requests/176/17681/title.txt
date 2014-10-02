@@ -1,0 +1,1 @@
+Teach --dep-info how to escape filenames containing spaces

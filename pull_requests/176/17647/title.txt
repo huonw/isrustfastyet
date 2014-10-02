@@ -1,0 +1,1 @@
+librustc: Improve pre-trans compile time by 4x by not looking in metadata in type contents.

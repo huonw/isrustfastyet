@@ -1,0 +1,1 @@
+Turn on warnings for legacy cfg syntax and convert the stdlib

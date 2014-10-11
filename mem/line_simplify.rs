@@ -2,16 +2,22 @@ use collections::PriorityQueue;
 
 /// A helper struct for `visvalingam`, defined out here because
 /// #[deriving] doesn't work in fns.
-#[deriving(Ord, Eq)]
+#[deriving(PartialOrd, PartialEq)]
 struct VScore {
     neg_area: f64,
     current: uint,
     left: uint,
     right: uint
 }
+impl Ord for VScore {
+    fn cmp(&self, other: &VScore) -> Ordering {
+        self.partial_cmp(other).unwrap()
+    }
+}
+impl Eq for VScore {}
 
 /// Simplify a line using the Visvalingam algorithm.
-pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
+pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> Vec<(f64, f64)> {
     let max = xs.len();
 
     // the adjacent non-removed points. simulating the points in a
@@ -43,9 +49,13 @@ pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
 
     // While there are still points for which the associated triangle
     // has a small area
-    while !pq.is_empty() && pq.top().neg_area > -eps {
-        let smallest = pq.pop();
-        let (left, right) = *adjacent.get(smallest.current);
+    loop {
+        let smallest = match pq.pop() {
+            None => break,
+            Some(x) if -x.neg_area < eps => break,
+            Some(s) => s
+        };
+        let (left, right) = adjacent[smallest.current];
 
         // A point in this triangle has been removed since this VScore
         // was created, so just skip it.
@@ -55,8 +65,8 @@ pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
 
         // Now we've got a valid triangle, and its area is small, so
         // remove it from the "linked list"
-        let (ll, _) = *adjacent.get(left);
-        let (_, rr) = *adjacent.get(right);
+        let (ll, _) = adjacent[left];
+        let (_, rr) = adjacent[right];
         *adjacent.get_mut(left) = (ll, right);
         *adjacent.get_mut(right) = (left, rr);
         *adjacent.get_mut(smallest.current) = (0, 0);
@@ -88,20 +98,20 @@ pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
 
 #[allow(dead_code)]
 /// Simplify a line using the Ramer–Douglas–Peucker algorithm.
-pub fn rdp(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
+pub fn rdp(xs: &[(f64, f64)], eps: f64) -> Vec<(f64, f64)> {
     return if xs.len() < 2 {
-        xs.to_owned()
+        xs.to_vec()
     } else {
         inner(xs, eps, true)
     };
 
-    fn inner(xs: &[(f64, f64)], eps: f64, include_end: bool) -> ~[(f64, f64)] {
+    fn inner(xs: &[(f64, f64)], eps: f64, include_end: bool) -> Vec<(f64, f64)> {
         let mut idx = 0;
         let mut d_max = 0.0;
-        let (l_x, l_y, other_points, r_x, r_y) = match xs {
-            [(a,b), .. o, (c,d)] => (a,b,o,c,d),
-            _ => fail!("impossible!") // already filtered short lists
-        };
+        let (l_x, l_y) = xs[0];
+        let other_points = xs.slice(1, xs.len() - 1);
+        let (r_x, r_y) = *xs.last().unwrap();
+
 
         // calculate the point furthest from the line between the two
         // ends points.
@@ -117,10 +127,10 @@ pub fn rdp(xs: &[(f64, f64)], eps: f64) -> ~[(f64, f64)] {
             // recurse on either side of the point with the largest
             // deflection (assuming it's sufficiently far away).
             let mut r = inner(xs.slice(0, idx + 1), eps, false);
-            r.push_all_move(inner(xs.slice(idx, xs.len()), eps, true));
+            r.extend(inner(xs.slice(idx, xs.len()), eps, true).into_iter());
             r
         } else {
-            ~[xs[0], xs[xs.len() - 1]]
+            vec![xs[0], xs[xs.len() - 1]]
         };
 
         if !include_end { ret.pop(); }

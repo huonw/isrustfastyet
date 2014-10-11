@@ -15,10 +15,10 @@ curl -4 -s ${BASE_URL}${HIST_FILE} -o ${HIST_FILE}
 # Check for any hashes that haven't been downloaded (i.e. there is no
 # directory with the same name)
 hashes=$(python <<EOF
-import os
+import glob
 history = open('history.txt').read().split()
-already = os.listdir('data')
-print('\n'.join(sorted(set(history) - set(already))))
+already = set(x[len('../out/'):-len('.json')] for x in glob.iglob('../out/*.json') if len(x) >= 20)
+print('\n'.join(sorted(set(history) - already)))
 EOF
 )
 

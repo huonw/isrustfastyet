@@ -242,7 +242,10 @@ fn main() {
                 out.encode(&mut json::Encoder::new(&mut out_f as &mut Writer)).unwrap();
                 c.send(summary);
             }
-        })))
+        })));
+
+        // no parallelism :(
+        results.last_mut().unwrap().mut1().get_ref();
     }
 
     // collect the summaries

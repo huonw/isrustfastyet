@@ -22,6 +22,8 @@ print('\n'.join(sorted(set(history) - already)))
 EOF
 )
 
+a=0
+
 for hash in $hashes; do
     (
         echo $hash
@@ -43,6 +45,10 @@ for hash in $hashes; do
             rm -rf $hash
         fi
     ) &
+    let a++
+    if ! ((a % 10)); then
+        wait
+    fi
 done
 
 wait

@@ -34,7 +34,7 @@ struct CPUAcct {
 #[deriving(Decodable)]
 #[allow(dead_code)]
 struct Data {
-    cli: String,
+    cli: Option<String>,
     stdout: String,
     stderr: String,
     elapsed: f64,

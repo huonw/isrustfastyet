@@ -1,0 +1,1 @@
+librustdoc/html: recognize slices not to nest A tags.

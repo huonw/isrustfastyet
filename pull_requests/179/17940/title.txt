@@ -1,0 +1,1 @@
+compiletest needs to link to native crate, or at least the `rt` library.

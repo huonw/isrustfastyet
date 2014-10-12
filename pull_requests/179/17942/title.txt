@@ -1,0 +1,1 @@
+Remove deprecated into_vec method from &[T]

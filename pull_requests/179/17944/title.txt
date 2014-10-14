@@ -1,0 +1,1 @@
+Stop the expansion of decision trees for fixed slice patterns as soon as possible

@@ -1,0 +1,1 @@
+Changed `extern crate foo as bar;` error message

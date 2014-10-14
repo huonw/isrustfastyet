@@ -1,0 +1,1 @@
+In sieve example, end iteration sooner

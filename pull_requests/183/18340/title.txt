@@ -1,0 +1,1 @@
+Guide: Closures: minor wording fixes

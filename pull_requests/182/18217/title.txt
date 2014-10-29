@@ -1,0 +1,1 @@
+Fix issue #17848 (Questionable advice in bug report instructions)

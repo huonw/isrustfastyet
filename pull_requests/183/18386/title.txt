@@ -1,0 +1,1 @@
+Avoid O(n^2) performance by checking reduced set of obligations

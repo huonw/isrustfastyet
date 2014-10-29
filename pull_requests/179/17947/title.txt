@@ -1,0 +1,1 @@
+Renamed AsciiStr::to_lower and AsciiStr::to_upper

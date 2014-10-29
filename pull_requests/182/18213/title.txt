@@ -1,0 +1,1 @@
+enable parallel codegen by default

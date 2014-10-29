@@ -1,0 +1,1 @@
+test: make the sort failure-safety test unsafeless and more obvious.

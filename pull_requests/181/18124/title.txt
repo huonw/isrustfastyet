@@ -1,0 +1,1 @@
+Check for borrow of local variable introduced within static block.

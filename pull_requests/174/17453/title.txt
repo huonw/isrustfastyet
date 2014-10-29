@@ -1,0 +1,1 @@
+Fixes nits in string guide

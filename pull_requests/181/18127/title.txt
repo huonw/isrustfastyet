@@ -1,0 +1,1 @@
+alloc: Make deriving more friendly with Arc

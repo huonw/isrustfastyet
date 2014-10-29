@@ -1,0 +1,1 @@
+Avoid false ambiguity in multidispatch trait resolution

@@ -1,0 +1,1 @@
+rustdoc: hide private traits in strip-private pass

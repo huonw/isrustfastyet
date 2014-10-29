@@ -1,0 +1,1 @@
+improve clone_from_slice performance

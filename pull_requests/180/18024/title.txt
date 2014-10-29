@@ -1,0 +1,1 @@
+Fix var name in doc for ops.rs

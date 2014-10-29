@@ -1,0 +1,1 @@
+Fix issue #17999 (Unused variables inside `for` are not detected)

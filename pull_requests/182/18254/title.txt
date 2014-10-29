@@ -1,0 +1,1 @@
+Improved examples on Vec documentation

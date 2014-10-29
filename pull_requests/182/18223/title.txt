@@ -1,0 +1,1 @@
+Adjust orphan rules to consider all input types, not just self type.

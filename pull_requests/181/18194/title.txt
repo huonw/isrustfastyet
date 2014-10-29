@@ -1,0 +1,1 @@
+mk/rt: "export CC" does not seem to work (gcc observed), use explicit shell variables instead

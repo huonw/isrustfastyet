@@ -1,0 +1,1 @@
+Avoid building as root with `sudo make install`

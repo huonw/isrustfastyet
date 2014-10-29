@@ -1,0 +1,1 @@
+config.mk: Added variants of `valopt`/`opt` that do not automatically `putvar`

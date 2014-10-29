@@ -1,0 +1,1 @@
+Add a `memoized` function and use it throughout rustc

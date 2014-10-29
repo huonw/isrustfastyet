@@ -1,0 +1,1 @@
+Check object lifetime bounds in coercions, not just trait bounds. 

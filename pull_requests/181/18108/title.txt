@@ -1,0 +1,1 @@
+Optimize BufferedReader::read for large buffers.

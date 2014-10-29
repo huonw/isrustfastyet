@@ -1,0 +1,1 @@
+Add tests for issues #11384 and #12909

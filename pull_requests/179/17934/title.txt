@@ -1,0 +1,1 @@
+librustc: Improve method autoderef/deref/index behavior more, and enable IndexMut on mutable vectors.

@@ -1,0 +1,1 @@
+regex: Fix parsing of character classes

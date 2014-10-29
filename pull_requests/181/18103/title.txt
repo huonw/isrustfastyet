@@ -1,0 +1,1 @@
+libstd: Inline more methods on bitflags.

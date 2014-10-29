@@ -1,0 +1,1 @@
+Make UdpStream block until the next non-empty msg and deprecate it.

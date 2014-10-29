@@ -1,0 +1,1 @@
+Revert "enable parallel codegen by default"

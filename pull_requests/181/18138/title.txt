@@ -1,0 +1,1 @@
+Mark lt as inline in PartialOrd

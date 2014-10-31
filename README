@@ -7,7 +7,7 @@ A fairly quick hack: doesn't do anything fancy, just hits the buildbot
 JSON api and puts it into a database, and then (separately) constructs
 a JSON file (`perf.js`, which sets the `PERF_DATA` global variable).
 
-It also collects data from some benchmarkers to disable detailed 
+It also collects data from some benchmarkers to disable detailed
 memory vs time profiles as well as accurate build speeds.
 
 Requires Python 3 and the requests library.

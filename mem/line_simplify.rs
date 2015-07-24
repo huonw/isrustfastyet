@@ -1,16 +1,16 @@
-use collections::PriorityQueue;
+use std::cmp;
 
 /// A helper struct for `visvalingam`, defined out here because
 /// #[deriving] doesn't work in fns.
-#[deriving(PartialOrd, PartialEq)]
+#[derive(PartialOrd, PartialEq)]
 struct VScore {
     neg_area: f64,
-    current: uint,
-    left: uint,
-    right: uint
+    current: usize,
+    left: usize,
+    right: usize
 }
 impl Ord for VScore {
-    fn cmp(&self, other: &VScore) -> Ordering {
+    fn cmp(&self, other: &VScore) -> cmp::Ordering {
         self.partial_cmp(other).unwrap()
     }
 }
@@ -23,17 +23,17 @@ pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> Vec<(f64, f64)> {
     // the adjacent non-removed points. simulating the points in a
     // linked list with indices into `xs`. Big number (larger than
     // `max`) for no next element, and (0, 0) for deleted.
-    let mut adjacent = Vec::from_fn(xs.len(), |i| {
+    let mut adjacent: Vec<_> = (0..xs.len()).map(|i| {
         if i == 0 { (-1, 1) }
         else { (i - 1, i + 1) }
-    });
+    }).collect();
 
     // stores all the triangles, with the ones with the smallest area
     // first. It *doesn't* get cleared of invalid ones if/when points
     // are removed, they are handled by just skipping them as
     // necessary in the main loop. (This is handled by recording the
     // state in the VScore.)
-    let mut pq = PriorityQueue::new();
+    let mut pq = Vec::new();
 
     // compute the initial triangles, i.e. take all consecutive groups
     // of 3 points and make that traingle.
@@ -41,8 +41,8 @@ pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> Vec<(f64, f64)> {
         let area = match win {
             [(a_x, a_y), (t_x, t_y), (b_x, b_y)] => {
                 area(a_x, a_y, b_x, b_y, t_x, t_y)
-            }
-            _ => fail!("impossible!")
+            },
+            _ => unreachable!(),
         };
         pq.push(VScore { neg_area: -area, current: i + 1, left: i, right: i + 2});
     }
@@ -52,7 +52,7 @@ pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> Vec<(f64, f64)> {
     loop {
         let smallest = match pq.pop() {
             None => break,
-            Some(x) if -x.neg_area < eps => break,
+            Some(ref x) if -x.neg_area < eps => break,
             Some(s) => s
         };
         let (left, right) = adjacent[smallest.current];
@@ -67,9 +67,9 @@ pub fn visvalingam(xs: &[(f64, f64)], eps: f64) -> Vec<(f64, f64)> {
         // remove it from the "linked list"
         let (ll, _) = adjacent[left];
         let (_, rr) = adjacent[right];
-        *adjacent.get_mut(left) = (ll, right);
-        *adjacent.get_mut(right) = (left, rr);
-        *adjacent.get_mut(smallest.current) = (0, 0);
+        *adjacent.get_mut(left).unwrap() = (ll, right);
+        *adjacent.get_mut(right).unwrap() = (left, rr);
+        *adjacent.get_mut(smallest.current).unwrap() = (0, 0);
 
         // Now recompute the triangles involving left and right
         let choices = [(ll, left, right), (left, right, rr)];
@@ -109,7 +109,7 @@ pub fn rdp(xs: &[(f64, f64)], eps: f64) -> Vec<(f64, f64)> {
         let mut idx = 0;
         let mut d_max = 0.0;
         let (l_x, l_y) = xs[0];
-        let other_points = xs.slice(1, xs.len() - 1);
+        let other_points = &xs[1 .. xs.len() - 1];
         let (r_x, r_y) = *xs.last().unwrap();
 
 
@@ -126,8 +126,8 @@ pub fn rdp(xs: &[(f64, f64)], eps: f64) -> Vec<(f64, f64)> {
         let mut ret = if d_max > eps {
             // recurse on either side of the point with the largest
             // deflection (assuming it's sufficiently far away).
-            let mut r = inner(xs.slice(0, idx + 1), eps, false);
-            r.extend(inner(xs.slice(idx, xs.len()), eps, true).into_iter());
+            let mut r = inner(&xs[0 .. idx + 1], eps, false);
+            r.extend(inner(&xs[idx .. xs.len()], eps, true).into_iter());
             r
         } else {
             vec![xs[0], xs[xs.len() - 1]]
